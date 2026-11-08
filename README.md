@@ -65,16 +65,6 @@ misc:
   delay-configuration-load: true   # 必须：插件要抢在 CE 载包之前注册方块行为
 ```
 
-## 服务端设置
-
-默认**不改**世界的时间与天气。本地调试时想要固定正午/晴天，可以在 `config.yml` 里打开：
-
-```yaml
-world:
-  always-day: false     # 改成 true：关掉昼夜循环，时间钉在 6000
-  always-clear: false   # 改成 true：关掉天气循环
-```
-
 ## 命令
 
 ```
