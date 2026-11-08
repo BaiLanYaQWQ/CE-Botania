@@ -19,3 +19,6 @@ plugin/.gradle/
 .vscode/
 *.iml
 .DS_Store
+
+# 盔甲贴图素材（本地保留，不入库：含上游 Botania 纹理，版权归原作者）
+export/盔甲贴图/
