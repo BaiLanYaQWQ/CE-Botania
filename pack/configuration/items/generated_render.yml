@@ -1,0 +1,2879 @@
+# 实体渲染用的外观物品（tools/gen_content.py 生成，勿手改）。
+items:
+  botania:render/agricarnation:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/agricarnation
+    data:
+      item_name: '<!i><white><lang:botania.block.agricarnation>'
+  botania:render/agricarnation_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/agricarnation_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.agricarnation_chibi>'
+  botania:render/animated_torch:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/animated_torch
+    data:
+      item_name: '<!i><white><lang:botania.block.animated_torch>'
+  botania:render/apothecary_deepslate:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/apothecary_deepslate
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_deepslate>'
+  botania:render/apothecary_default:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/apothecary_default
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_default>'
+  botania:render/apothecary_desert:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/apothecary_desert
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_desert>'
+  botania:render/apothecary_forest:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/apothecary_forest
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_forest>'
+  botania:render/apothecary_fungal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/apothecary_fungal
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_fungal>'
+  botania:render/apothecary_livingrock:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/apothecary_livingrock
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_livingrock>'
+  botania:render/apothecary_mesa:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/apothecary_mesa
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_mesa>'
+  botania:render/apothecary_mossy:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/apothecary_mossy
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_mossy>'
+  botania:render/apothecary_mountain:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/apothecary_mountain
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_mountain>'
+  botania:render/apothecary_plains:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/apothecary_plains
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_plains>'
+  botania:render/apothecary_swamp:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/apothecary_swamp
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_swamp>'
+  botania:render/apothecary_taiga:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/apothecary_taiga
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_taiga>'
+  botania:render/avatar:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/avatar
+    data:
+      item_name: '<!i><white><lang:botania.block.avatar>'
+  botania:render/bellethorn:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/bellethorn
+    data:
+      item_name: '<!i><white><lang:botania.block.bellethorn>'
+  botania:render/bellethorn_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/bellethorn_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.bellethorn_chibi>'
+  botania:render/bellows:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/bellows
+    data:
+      item_name: '<!i><white><lang:botania.block.bellows>'
+  botania:render/bergamute:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/bergamute
+    data:
+      item_name: '<!i><white><lang:botania.block.bergamute>'
+  botania:render/bifrost_pane:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/bifrost_pane_post
+    data:
+      item_name: '<!i><white><lang:botania.block.bifrost_pane>'
+  botania:render/black_buried_petals:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/black_buried_petals
+    data:
+      item_name: '<!i><white><lang:botania.block.black_buried_petals>'
+  botania:render/black_double_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/black_double_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.black_double_flower>'
+  botania:render/black_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/black_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.black_mushroom>'
+  botania:render/black_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/black_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.black_mystical_flower>'
+  botania:render/black_pavement_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/black_pavement_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.black_pavement_slab>'
+  botania:render/black_pavement_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/black_pavement_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.black_pavement_stairs>'
+  botania:render/black_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/black_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.black_shiny_flower>'
+  botania:render/blaze_quartz_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/blaze_quartz_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.blaze_quartz_slab>'
+  botania:render/blaze_quartz_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/blaze_quartz_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.blaze_quartz_stairs>'
+  botania:render/blue_buried_petals:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/blue_buried_petals
+    data:
+      item_name: '<!i><white><lang:botania.block.blue_buried_petals>'
+  botania:render/blue_double_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/blue_double_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.blue_double_flower>'
+  botania:render/blue_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/blue_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.blue_mushroom>'
+  botania:render/blue_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/blue_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.blue_mystical_flower>'
+  botania:render/blue_pavement_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/blue_pavement_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.blue_pavement_slab>'
+  botania:render/blue_pavement_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/blue_pavement_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.blue_pavement_stairs>'
+  botania:render/blue_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/blue_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.blue_shiny_flower>'
+  botania:render/brewery:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/brewery
+    data:
+      item_name: '<!i><white><lang:botania.block.brewery>'
+  botania:render/brown_buried_petals:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/brown_buried_petals
+    data:
+      item_name: '<!i><white><lang:botania.block.brown_buried_petals>'
+  botania:render/brown_double_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/brown_double_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.brown_double_flower>'
+  botania:render/brown_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/brown_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.brown_mushroom>'
+  botania:render/brown_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/brown_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.brown_mystical_flower>'
+  botania:render/brown_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/brown_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.brown_shiny_flower>'
+  botania:render/bubbell:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/bubbell
+    data:
+      item_name: '<!i><white><lang:botania.block.bubbell>'
+  botania:render/bubbell_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/bubbell_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.bubbell_chibi>'
+  botania:render/chiseled_metamorphic_swamp_bricks:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/chiseled_metamorphic_swamp_bricks
+    data:
+      item_name: '<!i><white><lang:botania.block.chiseled_metamorphic_swamp_bricks>'
+  botania:render/clayconia:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/clayconia
+    data:
+      item_name: '<!i><white><lang:botania.block.clayconia>'
+  botania:render/clayconia_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/clayconia_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.clayconia_chibi>'
+  botania:render/cocoon:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/cocoon
+    data:
+      item_name: '<!i><white><lang:botania.block.cocoon>'
+  botania:render/corporea_brick_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/corporea_brick_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.corporea_brick_slab>'
+  botania:render/corporea_brick_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/corporea_brick_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.corporea_brick_stairs>'
+  botania:render/corporea_crystal_cube:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/corporea_crystal_cube
+    data:
+      item_name: '<!i><white><lang:botania.block.corporea_crystal_cube>'
+  botania:render/corporea_index:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/corporea_index
+    data:
+      item_name: '<!i><white><lang:botania.block.corporea_index>'
+  botania:render/corporea_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/corporea_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.corporea_slab>'
+  botania:render/corporea_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/corporea_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.corporea_stairs>'
+  botania:render/creative_pool:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/creative_pool
+    data:
+      item_name: '<!i><white><lang:botania.block.creative_pool>'
+  botania:render/cyan_buried_petals:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/cyan_buried_petals
+    data:
+      item_name: '<!i><white><lang:botania.block.cyan_buried_petals>'
+  botania:render/cyan_double_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/cyan_double_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.cyan_double_flower>'
+  botania:render/cyan_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/cyan_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.cyan_mushroom>'
+  botania:render/cyan_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/cyan_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.cyan_mystical_flower>'
+  botania:render/cyan_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/cyan_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.cyan_shiny_flower>'
+  botania:render/daffomill:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/daffomill
+    data:
+      item_name: '<!i><white><lang:botania.block.daffomill>'
+  botania:render/dandelifeon:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/dandelifeon
+    data:
+      item_name: '<!i><white><lang:botania.block.dandelifeon>'
+  botania:render/dark_quartz_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/dark_quartz_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.dark_quartz_slab>'
+  botania:render/dark_quartz_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/dark_quartz_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.dark_quartz_stairs>'
+  botania:render/daybloom_motif:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/daybloom_motif
+    data:
+      item_name: '<!i><white><lang:botania.block.daybloom_motif>'
+  botania:render/detector_light_relay:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/detector_light_relay
+    data:
+      item_name: '<!i><white><lang:botania.block.detector_light_relay>'
+  botania:render/diluted_pool:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/diluted_pool
+    data:
+      item_name: '<!i><white><lang:botania.block.diluted_pool>'
+  botania:render/dreadthorn:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/dreadthorn
+    data:
+      item_name: '<!i><white><lang:botania.block.dreadthorn>'
+  botania:render/dreamwood_fence:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/dreamwood_fence_post
+    data:
+      item_name: '<!i><white><lang:botania.block.dreamwood_fence>'
+  botania:render/dreamwood_fence_gate:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/dreamwood_fence_gate
+    data:
+      item_name: '<!i><white><lang:botania.block.dreamwood_fence_gate>'
+  botania:render/dreamwood_planks_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/dreamwood_planks_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.dreamwood_planks_slab>'
+  botania:render/dreamwood_planks_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/dreamwood_planks_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.dreamwood_planks_stairs>'
+  botania:render/dreamwood_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/dreamwood_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.dreamwood_slab>'
+  botania:render/dreamwood_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/dreamwood_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.dreamwood_stairs>'
+  botania:render/drum_canopy:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/drum_canopy
+    data:
+      item_name: '<!i><white><lang:botania.block.drum_canopy>'
+  botania:render/drum_gathering:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/drum_gathering
+    data:
+      item_name: '<!i><white><lang:botania.block.drum_gathering>'
+  botania:render/drum_wild:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/drum_wild
+    data:
+      item_name: '<!i><white><lang:botania.block.drum_wild>'
+  botania:render/elf_glass_pane:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/elf_glass_pane_post
+    data:
+      item_name: '<!i><white><lang:botania.block.elf_glass_pane>'
+  botania:render/elf_quartz_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/elf_quartz_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.elf_quartz_slab>'
+  botania:render/elf_quartz_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/elf_quartz_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.elf_quartz_stairs>'
+  botania:render/elven_spreader:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/elven_spreader
+    data:
+      item_name: '<!i><white><lang:botania.block.elven_spreader>'
+  botania:render/endoflame:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/endoflame
+    data:
+      item_name: '<!i><white><lang:botania.block.endoflame>'
+  botania:render/entropinnyum:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/entropinnyum
+    data:
+      item_name: '<!i><white><lang:botania.block.entropinnyum>'
+  botania:render/exoflame:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/exoflame
+    data:
+      item_name: '<!i><white><lang:botania.block.exoflame>'
+  botania:render/fabulous_pool:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/fabulous_pool
+    data:
+      item_name: '<!i><white><lang:botania.block.fabulous_pool>'
+  botania:render/fake_air:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/fake_air
+    data:
+      item_name: '<!i><white><lang:botania.block.fake_air>'
+  botania:render/fallen_kanade:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/fallen_kanade
+    data:
+      item_name: '<!i><white><lang:botania.block.fallen_kanade>'
+  botania:render/fel_pumpkin:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/fel_pumpkin
+    data:
+      item_name: '<!i><white><lang:botania.block.fel_pumpkin>'
+  botania:render/forest_eye:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/forest_eye
+    data:
+      item_name: '<!i><white><lang:botania.block.forest_eye>'
+  botania:render/fork_light_relay:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/fork_light_relay
+    data:
+      item_name: '<!i><white><lang:botania.block.fork_light_relay>'
+  botania:render/gaia_head:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/gaia_head
+    data:
+      item_name: '<!i><white><lang:botania.block.gaia_head>'
+  botania:render/gaia_pylon:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/gaia_pylon
+    data:
+      item_name: '<!i><white><lang:botania.block.gaia_pylon>'
+  botania:render/gaia_spreader:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/gaia_spreader
+    data:
+      item_name: '<!i><white><lang:botania.block.gaia_spreader>'
+  botania:render/gaia_wall_head:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/gaia_wall_head
+    data:
+      item_name: '<!i><white><lang:botania.block.gaia_wall_head>'
+  botania:render/gourmaryllis:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/gourmaryllis
+    data:
+      item_name: '<!i><white><lang:botania.block.gourmaryllis>'
+  botania:render/gray_buried_petals:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/gray_buried_petals
+    data:
+      item_name: '<!i><white><lang:botania.block.gray_buried_petals>'
+  botania:render/gray_double_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/gray_double_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.gray_double_flower>'
+  botania:render/gray_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/gray_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.gray_mushroom>'
+  botania:render/gray_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/gray_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.gray_mystical_flower>'
+  botania:render/gray_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/gray_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.gray_shiny_flower>'
+  botania:render/green_buried_petals:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/green_buried_petals
+    data:
+      item_name: '<!i><white><lang:botania.block.green_buried_petals>'
+  botania:render/green_double_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/green_double_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.green_double_flower>'
+  botania:render/green_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/green_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.green_mushroom>'
+  botania:render/green_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/green_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.green_mystical_flower>'
+  botania:render/green_pavement_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/green_pavement_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.green_pavement_slab>'
+  botania:render/green_pavement_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/green_pavement_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.green_pavement_stairs>'
+  botania:render/green_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/green_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.green_shiny_flower>'
+  botania:render/heisei_dream:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/heisei_dream
+    data:
+      item_name: '<!i><white><lang:botania.block.heisei_dream>'
+  botania:render/hopperhock:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/hopperhock
+    data:
+      item_name: '<!i><white><lang:botania.block.hopperhock>'
+  botania:render/hopperhock_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/hopperhock_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.hopperhock_chibi>'
+  botania:render/hourglass:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/hourglass
+    data:
+      item_name: '<!i><white><lang:botania.block.hourglass>'
+  botania:render/hyacidus:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/hyacidus
+    data:
+      item_name: '<!i><white><lang:botania.block.hyacidus>'
+  botania:render/hydroangeas:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/hydroangeas
+    data:
+      item_name: '<!i><white><lang:botania.block.hydroangeas>'
+  botania:render/hydroangeas_motif:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/hydroangeas_motif
+    data:
+      item_name: '<!i><white><lang:botania.block.hydroangeas_motif>'
+  botania:render/incense_plate:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/incense_plate
+    data:
+      item_name: '<!i><white><lang:botania.block.incense_plate>'
+  botania:render/jaded_amaranthus:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/jaded_amaranthus
+    data:
+      item_name: '<!i><white><lang:botania.block.jaded_amaranthus>'
+  botania:render/jiyuulia:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/jiyuulia
+    data:
+      item_name: '<!i><white><lang:botania.block.jiyuulia>'
+  botania:render/jiyuulia_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/jiyuulia_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.jiyuulia_chibi>'
+  botania:render/kekimurus:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/kekimurus
+    data:
+      item_name: '<!i><white><lang:botania.block.kekimurus>'
+  botania:render/labellia:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/labellia
+    data:
+      item_name: '<!i><white><lang:botania.block.labellia>'
+  botania:render/lavender_quartz_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/lavender_quartz_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.lavender_quartz_slab>'
+  botania:render/lavender_quartz_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/lavender_quartz_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.lavender_quartz_stairs>'
+  botania:render/light_blue_buried_petals:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/light_blue_buried_petals
+    data:
+      item_name: '<!i><white><lang:botania.block.light_blue_buried_petals>'
+  botania:render/light_blue_double_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/light_blue_double_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.light_blue_double_flower>'
+  botania:render/light_blue_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/light_blue_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.light_blue_mushroom>'
+  botania:render/light_blue_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/light_blue_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.light_blue_mystical_flower>'
+  botania:render/light_blue_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/light_blue_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.light_blue_shiny_flower>'
+  botania:render/light_gray_buried_petals:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/light_gray_buried_petals
+    data:
+      item_name: '<!i><white><lang:botania.block.light_gray_buried_petals>'
+  botania:render/light_gray_double_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/light_gray_double_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.light_gray_double_flower>'
+  botania:render/light_gray_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/light_gray_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.light_gray_mushroom>'
+  botania:render/light_gray_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/light_gray_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.light_gray_mystical_flower>'
+  botania:render/light_gray_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/light_gray_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.light_gray_shiny_flower>'
+  botania:render/light_launcher:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/light_launcher
+    data:
+      item_name: '<!i><white><lang:botania.block.light_launcher>'
+  botania:render/light_relay:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/light_relay
+    data:
+      item_name: '<!i><white><lang:botania.block.light_relay>'
+  botania:render/lime_buried_petals:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/lime_buried_petals
+    data:
+      item_name: '<!i><white><lang:botania.block.lime_buried_petals>'
+  botania:render/lime_double_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/lime_double_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.lime_double_flower>'
+  botania:render/lime_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/lime_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.lime_mushroom>'
+  botania:render/lime_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/lime_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.lime_mystical_flower>'
+  botania:render/lime_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/lime_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.lime_shiny_flower>'
+  botania:render/livingrock_bricks_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/livingrock_bricks_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.livingrock_bricks_slab>'
+  botania:render/livingrock_bricks_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/livingrock_bricks_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.livingrock_bricks_stairs>'
+  botania:render/livingrock_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/livingrock_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.livingrock_slab>'
+  botania:render/livingrock_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/livingrock_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.livingrock_stairs>'
+  botania:render/livingwood_fence:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/livingwood_fence_post
+    data:
+      item_name: '<!i><white><lang:botania.block.livingwood_fence>'
+  botania:render/livingwood_fence_gate:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/livingwood_fence_gate
+    data:
+      item_name: '<!i><white><lang:botania.block.livingwood_fence_gate>'
+  botania:render/livingwood_planks_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/livingwood_planks_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.livingwood_planks_slab>'
+  botania:render/livingwood_planks_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/livingwood_planks_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.livingwood_planks_stairs>'
+  botania:render/livingwood_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/livingwood_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.livingwood_slab>'
+  botania:render/livingwood_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/livingwood_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.livingwood_stairs>'
+  botania:render/loonium:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/loonium
+    data:
+      item_name: '<!i><white><lang:botania.block.loonium>'
+  botania:render/magenta_buried_petals:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/magenta_buried_petals
+    data:
+      item_name: '<!i><white><lang:botania.block.magenta_buried_petals>'
+  botania:render/magenta_double_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/magenta_double_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.magenta_double_flower>'
+  botania:render/magenta_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/magenta_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.magenta_mushroom>'
+  botania:render/magenta_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/magenta_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.magenta_mystical_flower>'
+  botania:render/magenta_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/magenta_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.magenta_shiny_flower>'
+  botania:render/mana_distributor:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/mana_distributor
+    data:
+      item_name: '<!i><white><lang:botania.block.mana_distributor>'
+  botania:render/mana_flame:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/mana_flame
+    data:
+      item_name: '<!i><white><lang:botania.block.mana_flame>'
+  botania:render/mana_glass_pane:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/mana_glass_pane_post
+    data:
+      item_name: '<!i><white><lang:botania.block.mana_glass_pane>'
+  botania:render/mana_pool:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/mana_pool
+    data:
+      item_name: '<!i><white><lang:botania.block.mana_pool>'
+  botania:render/mana_pylon:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/mana_pylon
+    data:
+      item_name: '<!i><white><lang:botania.block.mana_pylon>'
+  botania:render/mana_quartz_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/mana_quartz_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.mana_quartz_slab>'
+  botania:render/mana_quartz_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/mana_quartz_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.mana_quartz_stairs>'
+  botania:render/mana_spreader:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/mana_spreader
+    data:
+      item_name: '<!i><white><lang:botania.block.mana_spreader>'
+  botania:render/manastar:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/manastar
+    data:
+      item_name: '<!i><white><lang:botania.block.manastar>'
+  botania:render/marimorphosis:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/marimorphosis
+    data:
+      item_name: '<!i><white><lang:botania.block.marimorphosis>'
+  botania:render/marimorphosis_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/marimorphosis_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.marimorphosis_chibi>'
+  botania:render/medumone:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/medumone
+    data:
+      item_name: '<!i><white><lang:botania.block.medumone>'
+  botania:render/metamorphic_desert_bricks_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_desert_bricks_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_desert_bricks_slab>'
+  botania:render/metamorphic_desert_bricks_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_desert_bricks_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_desert_bricks_stairs>'
+  botania:render/metamorphic_desert_cobblestone_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_desert_cobblestone_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_desert_cobblestone_slab>'
+  botania:render/metamorphic_desert_cobblestone_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_desert_cobblestone_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_desert_cobblestone_stairs>'
+  botania:render/metamorphic_desert_stone_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_desert_stone_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_desert_stone_slab>'
+  botania:render/metamorphic_desert_stone_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_desert_stone_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_desert_stone_stairs>'
+  botania:render/metamorphic_forest_bricks_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_forest_bricks_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_forest_bricks_slab>'
+  botania:render/metamorphic_forest_bricks_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_forest_bricks_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_forest_bricks_stairs>'
+  botania:render/metamorphic_forest_cobblestone_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_forest_cobblestone_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_forest_cobblestone_slab>'
+  botania:render/metamorphic_forest_cobblestone_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_forest_cobblestone_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_forest_cobblestone_stairs>'
+  botania:render/metamorphic_forest_stone_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_forest_stone_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_forest_stone_slab>'
+  botania:render/metamorphic_forest_stone_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_forest_stone_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_forest_stone_stairs>'
+  botania:render/metamorphic_fungal_bricks_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_fungal_bricks_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_fungal_bricks_slab>'
+  botania:render/metamorphic_fungal_bricks_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_fungal_bricks_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_fungal_bricks_stairs>'
+  botania:render/metamorphic_fungal_cobblestone_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_fungal_cobblestone_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_fungal_cobblestone_slab>'
+  botania:render/metamorphic_fungal_cobblestone_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_fungal_cobblestone_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_fungal_cobblestone_stairs>'
+  botania:render/metamorphic_fungal_stone_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_fungal_stone_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_fungal_stone_slab>'
+  botania:render/metamorphic_fungal_stone_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_fungal_stone_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_fungal_stone_stairs>'
+  botania:render/metamorphic_mesa_bricks_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_mesa_bricks_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_mesa_bricks_slab>'
+  botania:render/metamorphic_mesa_bricks_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_mesa_bricks_stairs_inner_90deg
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_mesa_bricks_stairs>'
+  botania:render/metamorphic_mesa_cobblestone_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_mesa_cobblestone_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_mesa_cobblestone_slab>'
+  botania:render/metamorphic_mesa_cobblestone_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_mesa_cobblestone_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_mesa_cobblestone_stairs>'
+  botania:render/metamorphic_mesa_stone_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_mesa_stone_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_mesa_stone_slab>'
+  botania:render/metamorphic_mesa_stone_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_mesa_stone_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_mesa_stone_stairs>'
+  botania:render/metamorphic_mountain_bricks_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_mountain_bricks_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_mountain_bricks_slab>'
+  botania:render/metamorphic_mountain_bricks_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_mountain_bricks_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_mountain_bricks_stairs>'
+  botania:render/metamorphic_mountain_cobblestone_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_mountain_cobblestone_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_mountain_cobblestone_slab>'
+  botania:render/metamorphic_mountain_cobblestone_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_mountain_cobblestone_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_mountain_cobblestone_stairs>'
+  botania:render/metamorphic_mountain_stone_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_mountain_stone_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_mountain_stone_slab>'
+  botania:render/metamorphic_mountain_stone_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_mountain_stone_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_mountain_stone_stairs>'
+  botania:render/metamorphic_plains_bricks_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_plains_bricks_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_plains_bricks_slab>'
+  botania:render/metamorphic_plains_bricks_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_plains_bricks_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_plains_bricks_stairs>'
+  botania:render/metamorphic_plains_cobblestone_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_plains_cobblestone_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_plains_cobblestone_slab>'
+  botania:render/metamorphic_plains_cobblestone_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_plains_cobblestone_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_plains_cobblestone_stairs>'
+  botania:render/metamorphic_plains_stone_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_plains_stone_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_plains_stone_slab>'
+  botania:render/metamorphic_plains_stone_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_plains_stone_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_plains_stone_stairs>'
+  botania:render/metamorphic_swamp_bricks:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_swamp_bricks
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_swamp_bricks>'
+  botania:render/metamorphic_swamp_bricks_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_swamp_bricks_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_swamp_bricks_slab>'
+  botania:render/metamorphic_swamp_bricks_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_swamp_bricks_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_swamp_bricks_stairs>'
+  botania:render/metamorphic_swamp_cobblestone_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_swamp_cobblestone_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_swamp_cobblestone_slab>'
+  botania:render/metamorphic_swamp_cobblestone_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_swamp_cobblestone_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_swamp_cobblestone_stairs>'
+  botania:render/metamorphic_swamp_stone_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_swamp_stone_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_swamp_stone_slab>'
+  botania:render/metamorphic_swamp_stone_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_swamp_stone_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_swamp_stone_stairs>'
+  botania:render/metamorphic_taiga_bricks_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_taiga_bricks_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_taiga_bricks_slab>'
+  botania:render/metamorphic_taiga_bricks_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_taiga_bricks_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_taiga_bricks_stairs>'
+  botania:render/metamorphic_taiga_cobblestone_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_taiga_cobblestone_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_taiga_cobblestone_slab>'
+  botania:render/metamorphic_taiga_cobblestone_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_taiga_cobblestone_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_taiga_cobblestone_stairs>'
+  botania:render/metamorphic_taiga_stone_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_taiga_stone_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_taiga_stone_slab>'
+  botania:render/metamorphic_taiga_stone_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/metamorphic_taiga_stone_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.metamorphic_taiga_stone_stairs>'
+  botania:render/mossy_livingrock_bricks_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/mossy_livingrock_bricks_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.mossy_livingrock_bricks_slab>'
+  botania:render/mossy_livingrock_bricks_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/mossy_livingrock_bricks_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.mossy_livingrock_bricks_stairs>'
+  botania:render/munchdew:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/munchdew
+    data:
+      item_name: '<!i><white><lang:botania.block.munchdew>'
+  botania:render/narslimmus:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/narslimmus
+    data:
+      item_name: '<!i><white><lang:botania.block.narslimmus>'
+  botania:render/natura_pylon:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/natura_pylon
+    data:
+      item_name: '<!i><white><lang:botania.block.natura_pylon>'
+  botania:render/nightshade_motif:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/nightshade_motif
+    data:
+      item_name: '<!i><white><lang:botania.block.nightshade_motif>'
+  botania:render/orange_buried_petals:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/orange_buried_petals
+    data:
+      item_name: '<!i><white><lang:botania.block.orange_buried_petals>'
+  botania:render/orange_double_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/orange_double_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.orange_double_flower>'
+  botania:render/orange_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/orange_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.orange_mushroom>'
+  botania:render/orange_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/orange_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.orange_mystical_flower>'
+  botania:render/orange_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/orange_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.orange_shiny_flower>'
+  botania:render/orechid:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/orechid
+    data:
+      item_name: '<!i><white><lang:botania.block.orechid>'
+  botania:render/orechid_ignem:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/orechid_ignem
+    data:
+      item_name: '<!i><white><lang:botania.block.orechid_ignem>'
+  botania:render/pink_buried_petals:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/pink_buried_petals
+    data:
+      item_name: '<!i><white><lang:botania.block.pink_buried_petals>'
+  botania:render/pink_double_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/pink_double_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.pink_double_flower>'
+  botania:render/pink_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/pink_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.pink_mushroom>'
+  botania:render/pink_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/pink_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.pink_mystical_flower>'
+  botania:render/pink_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/pink_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.pink_shiny_flower>'
+  botania:render/polished_livingrock_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/polished_livingrock_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.polished_livingrock_slab>'
+  botania:render/polished_livingrock_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/polished_livingrock_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.polished_livingrock_stairs>'
+  botania:render/pollidisiac:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/pollidisiac
+    data:
+      item_name: '<!i><white><lang:botania.block.pollidisiac>'
+  botania:render/potted_agricarnation:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_agricarnation
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_agricarnation>'
+  botania:render/potted_agricarnation_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_agricarnation_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_agricarnation_chibi>'
+  botania:render/potted_bellethorn:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_bellethorn
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_bellethorn>'
+  botania:render/potted_bellethorn_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_bellethorn_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_bellethorn_chibi>'
+  botania:render/potted_bergamute:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_bergamute
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_bergamute>'
+  botania:render/potted_black_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_black_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_black_mushroom>'
+  botania:render/potted_black_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_black_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_black_mystical_flower>'
+  botania:render/potted_black_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_black_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_black_shiny_flower>'
+  botania:render/potted_blue_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_blue_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_blue_mushroom>'
+  botania:render/potted_blue_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_blue_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_blue_mystical_flower>'
+  botania:render/potted_blue_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_blue_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_blue_shiny_flower>'
+  botania:render/potted_brown_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_brown_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_brown_mushroom>'
+  botania:render/potted_brown_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_brown_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_brown_mystical_flower>'
+  botania:render/potted_brown_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_brown_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_brown_shiny_flower>'
+  botania:render/potted_bubbell:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_bubbell
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_bubbell>'
+  botania:render/potted_bubbell_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_bubbell_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_bubbell_chibi>'
+  botania:render/potted_clayconia:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_clayconia
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_clayconia>'
+  botania:render/potted_clayconia_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_clayconia_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_clayconia_chibi>'
+  botania:render/potted_cyan_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_cyan_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_cyan_mushroom>'
+  botania:render/potted_cyan_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_cyan_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_cyan_mystical_flower>'
+  botania:render/potted_cyan_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_cyan_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_cyan_shiny_flower>'
+  botania:render/potted_daffomill:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_daffomill
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_daffomill>'
+  botania:render/potted_dandelifeon:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_dandelifeon
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_dandelifeon>'
+  botania:render/potted_daybloom_motif:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_daybloom_motif
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_daybloom_motif>'
+  botania:render/potted_dreadthorn:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_dreadthorn
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_dreadthorn>'
+  botania:render/potted_endoflame:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_endoflame
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_endoflame>'
+  botania:render/potted_entropinnyum:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_entropinnyum
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_entropinnyum>'
+  botania:render/potted_exoflame:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_exoflame
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_exoflame>'
+  botania:render/potted_fallen_kanade:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_fallen_kanade
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_fallen_kanade>'
+  botania:render/potted_gourmaryllis:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_gourmaryllis
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_gourmaryllis>'
+  botania:render/potted_gray_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_gray_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_gray_mushroom>'
+  botania:render/potted_gray_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_gray_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_gray_mystical_flower>'
+  botania:render/potted_gray_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_gray_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_gray_shiny_flower>'
+  botania:render/potted_green_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_green_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_green_mushroom>'
+  botania:render/potted_green_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_green_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_green_mystical_flower>'
+  botania:render/potted_green_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_green_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_green_shiny_flower>'
+  botania:render/potted_heisei_dream:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_heisei_dream
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_heisei_dream>'
+  botania:render/potted_hopperhock:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_hopperhock
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_hopperhock>'
+  botania:render/potted_hopperhock_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_hopperhock_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_hopperhock_chibi>'
+  botania:render/potted_hyacidus:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_hyacidus
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_hyacidus>'
+  botania:render/potted_hydroangeas:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_hydroangeas
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_hydroangeas>'
+  botania:render/potted_hydroangeas_motif:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_hydroangeas_motif
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_hydroangeas_motif>'
+  botania:render/potted_jaded_amaranthus:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_jaded_amaranthus
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_jaded_amaranthus>'
+  botania:render/potted_jiyuulia:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_jiyuulia
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_jiyuulia>'
+  botania:render/potted_jiyuulia_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_jiyuulia_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_jiyuulia_chibi>'
+  botania:render/potted_kekimurus:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_kekimurus
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_kekimurus>'
+  botania:render/potted_labellia:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_labellia
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_labellia>'
+  botania:render/potted_light_blue_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_light_blue_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_light_blue_mushroom>'
+  botania:render/potted_light_blue_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_light_blue_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_light_blue_mystical_flower>'
+  botania:render/potted_light_blue_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_light_blue_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_light_blue_shiny_flower>'
+  botania:render/potted_light_gray_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_light_gray_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_light_gray_mushroom>'
+  botania:render/potted_light_gray_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_light_gray_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_light_gray_mystical_flower>'
+  botania:render/potted_light_gray_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_light_gray_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_light_gray_shiny_flower>'
+  botania:render/potted_lime_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_lime_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_lime_mushroom>'
+  botania:render/potted_lime_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_lime_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_lime_mystical_flower>'
+  botania:render/potted_lime_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_lime_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_lime_shiny_flower>'
+  botania:render/potted_loonium:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_loonium
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_loonium>'
+  botania:render/potted_magenta_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_magenta_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_magenta_mushroom>'
+  botania:render/potted_magenta_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_magenta_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_magenta_mystical_flower>'
+  botania:render/potted_magenta_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_magenta_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_magenta_shiny_flower>'
+  botania:render/potted_manastar:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_manastar
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_manastar>'
+  botania:render/potted_marimorphosis:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_marimorphosis
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_marimorphosis>'
+  botania:render/potted_marimorphosis_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_marimorphosis_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_marimorphosis_chibi>'
+  botania:render/potted_medumone:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_medumone
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_medumone>'
+  botania:render/potted_munchdew:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_munchdew
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_munchdew>'
+  botania:render/potted_narslimmus:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_narslimmus
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_narslimmus>'
+  botania:render/potted_nightshade_motif:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_nightshade_motif
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_nightshade_motif>'
+  botania:render/potted_orange_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_orange_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_orange_mushroom>'
+  botania:render/potted_orange_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_orange_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_orange_mystical_flower>'
+  botania:render/potted_orange_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_orange_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_orange_shiny_flower>'
+  botania:render/potted_orechid:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_orechid
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_orechid>'
+  botania:render/potted_orechid_ignem:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_orechid_ignem
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_orechid_ignem>'
+  botania:render/potted_pink_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_pink_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_pink_mushroom>'
+  botania:render/potted_pink_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_pink_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_pink_mystical_flower>'
+  botania:render/potted_pink_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_pink_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_pink_shiny_flower>'
+  botania:render/potted_pollidisiac:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_pollidisiac
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_pollidisiac>'
+  botania:render/potted_pure_daisy:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_pure_daisy
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_pure_daisy>'
+  botania:render/potted_purple_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_purple_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_purple_mushroom>'
+  botania:render/potted_purple_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_purple_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_purple_mystical_flower>'
+  botania:render/potted_purple_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_purple_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_purple_shiny_flower>'
+  botania:render/potted_rafflowsia:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_rafflowsia
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_rafflowsia>'
+  botania:render/potted_rannuncarpus:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_rannuncarpus
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_rannuncarpus>'
+  botania:render/potted_rannuncarpus_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_rannuncarpus_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_rannuncarpus_chibi>'
+  botania:render/potted_red_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_red_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_red_mushroom>'
+  botania:render/potted_red_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_red_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_red_mystical_flower>'
+  botania:render/potted_red_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_red_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_red_shiny_flower>'
+  botania:render/potted_rosa_arcana:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_rosa_arcana
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_rosa_arcana>'
+  botania:render/potted_shulk_me_not:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_shulk_me_not
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_shulk_me_not>'
+  botania:render/potted_solegnolia:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_solegnolia
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_solegnolia>'
+  botania:render/potted_solegnolia_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_solegnolia_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_solegnolia_chibi>'
+  botania:render/potted_spectranthemum:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_spectranthemum
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_spectranthemum>'
+  botania:render/potted_spectrolus:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_spectrolus
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_spectrolus>'
+  botania:render/potted_tangleberrie:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_tangleberrie
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_tangleberrie>'
+  botania:render/potted_tangleberrie_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_tangleberrie_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_tangleberrie_chibi>'
+  botania:render/potted_thermalily:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_thermalily
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_thermalily>'
+  botania:render/potted_tigerseye:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_tigerseye
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_tigerseye>'
+  botania:render/potted_vinculotus:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_vinculotus
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_vinculotus>'
+  botania:render/potted_white_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_white_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_white_mushroom>'
+  botania:render/potted_white_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_white_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_white_mystical_flower>'
+  botania:render/potted_white_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_white_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_white_shiny_flower>'
+  botania:render/potted_yellow_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_yellow_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_yellow_mushroom>'
+  botania:render/potted_yellow_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_yellow_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_yellow_mystical_flower>'
+  botania:render/potted_yellow_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/potted_yellow_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.potted_yellow_shiny_flower>'
+  botania:render/pump:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/pump
+    data:
+      item_name: '<!i><white><lang:botania.block.pump>'
+  botania:render/pure_daisy:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/pure_daisy
+    data:
+      item_name: '<!i><white><lang:botania.block.pure_daisy>'
+  botania:render/purple_buried_petals:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/purple_buried_petals
+    data:
+      item_name: '<!i><white><lang:botania.block.purple_buried_petals>'
+  botania:render/purple_double_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/purple_double_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.purple_double_flower>'
+  botania:render/purple_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/purple_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.purple_mushroom>'
+  botania:render/purple_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/purple_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.purple_mystical_flower>'
+  botania:render/purple_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/purple_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.purple_shiny_flower>'
+  botania:render/rafflowsia:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/rafflowsia
+    data:
+      item_name: '<!i><white><lang:botania.block.rafflowsia>'
+  botania:render/rannuncarpus:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/rannuncarpus
+    data:
+      item_name: '<!i><white><lang:botania.block.rannuncarpus>'
+  botania:render/rannuncarpus_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/rannuncarpus_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.rannuncarpus_chibi>'
+  botania:render/red_buried_petals:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/red_buried_petals
+    data:
+      item_name: '<!i><white><lang:botania.block.red_buried_petals>'
+  botania:render/red_double_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/red_double_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.red_double_flower>'
+  botania:render/red_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/red_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.red_mushroom>'
+  botania:render/red_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/red_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.red_mystical_flower>'
+  botania:render/red_pavement_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/red_pavement_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.red_pavement_slab>'
+  botania:render/red_pavement_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/red_pavement_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.red_pavement_stairs>'
+  botania:render/red_quartz_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/red_quartz_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.red_quartz_slab>'
+  botania:render/red_quartz_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/red_quartz_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.red_quartz_stairs>'
+  botania:render/red_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/red_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.red_shiny_flower>'
+  botania:render/red_string_comparator:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/red_string_comparator
+    data:
+      item_name: '<!i><white><lang:botania.block.red_string_comparator>'
+  botania:render/red_string_container:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/red_string_container
+    data:
+      item_name: '<!i><white><lang:botania.block.red_string_container>'
+  botania:render/red_string_dispenser:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/red_string_dispenser
+    data:
+      item_name: '<!i><white><lang:botania.block.red_string_dispenser>'
+  botania:render/red_string_fertilizer:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/red_string_fertilizer
+    data:
+      item_name: '<!i><white><lang:botania.block.red_string_fertilizer>'
+  botania:render/red_string_interceptor:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/red_string_interceptor
+    data:
+      item_name: '<!i><white><lang:botania.block.red_string_interceptor>'
+  botania:render/red_string_relay:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/red_string_relay
+    data:
+      item_name: '<!i><white><lang:botania.block.red_string_relay>'
+  botania:render/redstone_spreader:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/redstone_spreader
+    data:
+      item_name: '<!i><white><lang:botania.block.redstone_spreader>'
+  botania:render/rosa_arcana:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/rosa_arcana
+    data:
+      item_name: '<!i><white><lang:botania.block.rosa_arcana>'
+  botania:render/runic_altar:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/runic_altar
+    data:
+      item_name: '<!i><white><lang:botania.block.runic_altar>'
+  botania:render/shimmerrock_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/shimmerrock_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.shimmerrock_slab>'
+  botania:render/shimmerrock_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/shimmerrock_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.shimmerrock_stairs>'
+  botania:render/shimmerwood_planks_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/shimmerwood_planks_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.shimmerwood_planks_slab>'
+  botania:render/shimmerwood_planks_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/shimmerwood_planks_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.shimmerwood_planks_stairs>'
+  botania:render/shulk_me_not:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/shulk_me_not
+    data:
+      item_name: '<!i><white><lang:botania.block.shulk_me_not>'
+  botania:render/solegnolia:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/solegnolia
+    data:
+      item_name: '<!i><white><lang:botania.block.solegnolia>'
+  botania:render/solegnolia_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/solegnolia_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.solegnolia_chibi>'
+  botania:render/spark_changer:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/spark_changer
+    data:
+      item_name: '<!i><white><lang:botania.block.spark_changer>'
+  botania:render/spawner_claw:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/spawner_claw
+    data:
+      item_name: '<!i><white><lang:botania.block.spawner_claw>'
+  botania:render/spectranthemum:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/spectranthemum
+    data:
+      item_name: '<!i><white><lang:botania.block.spectranthemum>'
+  botania:render/spectrolus:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/spectrolus
+    data:
+      item_name: '<!i><white><lang:botania.block.spectrolus>'
+  botania:render/starfield:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/starfield
+    data:
+      item_name: '<!i><white><lang:botania.block.starfield>'
+  botania:render/stripped_dreamwood_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/stripped_dreamwood_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.stripped_dreamwood_slab>'
+  botania:render/stripped_dreamwood_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/stripped_dreamwood_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.stripped_dreamwood_stairs>'
+  botania:render/stripped_livingwood_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/stripped_livingwood_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.stripped_livingwood_slab>'
+  botania:render/stripped_livingwood_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/stripped_livingwood_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.stripped_livingwood_stairs>'
+  botania:render/sunny_quartz_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/sunny_quartz_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.sunny_quartz_slab>'
+  botania:render/sunny_quartz_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/sunny_quartz_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.sunny_quartz_stairs>'
+  botania:render/tangleberrie:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/tangleberrie
+    data:
+      item_name: '<!i><white><lang:botania.block.tangleberrie>'
+  botania:render/tangleberrie_chibi:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/tangleberrie_chibi
+    data:
+      item_name: '<!i><white><lang:botania.block.tangleberrie_chibi>'
+  botania:render/terra_plate:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/terra_plate
+    data:
+      item_name: '<!i><white><lang:botania.block.terra_plate>'
+  botania:render/teru_teru_bozu:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/teru_teru_bozu
+    data:
+      item_name: '<!i><white><lang:botania.block.teru_teru_bozu>'
+  botania:render/thermalily:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/thermalily
+    data:
+      item_name: '<!i><white><lang:botania.block.thermalily>'
+  botania:render/tigerseye:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/tigerseye
+    data:
+      item_name: '<!i><white><lang:botania.block.tigerseye>'
+  botania:render/tiny_planet_block:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/tiny_planet_block
+    data:
+      item_name: '<!i><white><lang:botania.block.tiny_planet_block>'
+  botania:render/tiny_potato:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/tiny_potato
+    data:
+      item_name: '<!i><white><lang:botania.block.tiny_potato>'
+  botania:render/toggle_light_relay:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/toggle_light_relay
+    data:
+      item_name: '<!i><white><lang:botania.block.toggle_light_relay>'
+  botania:render/vinculotus:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/vinculotus
+    data:
+      item_name: '<!i><white><lang:botania.block.vinculotus>'
+  botania:render/white_buried_petals:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/white_buried_petals
+    data:
+      item_name: '<!i><white><lang:botania.block.white_buried_petals>'
+  botania:render/white_double_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/white_double_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.white_double_flower>'
+  botania:render/white_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/white_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.white_mushroom>'
+  botania:render/white_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/white_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.white_mystical_flower>'
+  botania:render/white_pavement_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/white_pavement_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.white_pavement_slab>'
+  botania:render/white_pavement_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/white_pavement_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.white_pavement_stairs>'
+  botania:render/white_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/white_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.white_shiny_flower>'
+  botania:render/yellow_buried_petals:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/yellow_buried_petals
+    data:
+      item_name: '<!i><white><lang:botania.block.yellow_buried_petals>'
+  botania:render/yellow_double_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/yellow_double_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.yellow_double_flower>'
+  botania:render/yellow_mushroom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/yellow_mushroom
+    data:
+      item_name: '<!i><white><lang:botania.block.yellow_mushroom>'
+  botania:render/yellow_mystical_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/yellow_mystical_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.yellow_mystical_flower>'
+  botania:render/yellow_pavement_slab:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/yellow_pavement_slab
+    data:
+      item_name: '<!i><white><lang:botania.block.yellow_pavement_slab>'
+  botania:render/yellow_pavement_stairs:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/yellow_pavement_stairs_inner
+    data:
+      item_name: '<!i><white><lang:botania.block.yellow_pavement_stairs>'
+  botania:render/yellow_shiny_flower:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/yellow_shiny_flower
+    data:
+      item_name: '<!i><white><lang:botania.block.yellow_shiny_flower>'

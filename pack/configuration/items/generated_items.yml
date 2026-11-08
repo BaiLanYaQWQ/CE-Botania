@@ -1,0 +1,2957 @@
+# 纯物品（tools/gen_content.py 生成，勿手改）。
+# 图标直接引用上游 models/item/*.json，保留原版分层与手持模型。
+items:
+  botania:ancient_will_ahrim:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/ancient_will_ahrim
+    data:
+      item_name: '<!i><white><lang:botania.item.ancient_will_ahrim>'
+  botania:ancient_will_dharok:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/ancient_will_dharok
+    data:
+      item_name: '<!i><white><lang:botania.item.ancient_will_dharok>'
+  botania:ancient_will_guthan:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/ancient_will_guthan
+    data:
+      item_name: '<!i><white><lang:botania.item.ancient_will_guthan>'
+  botania:ancient_will_karil:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/ancient_will_karil
+    data:
+      item_name: '<!i><white><lang:botania.item.ancient_will_karil>'
+  botania:ancient_will_torag:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/ancient_will_torag
+    data:
+      item_name: '<!i><white><lang:botania.item.ancient_will_torag>'
+  botania:ancient_will_verac:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/ancient_will_verac
+    data:
+      item_name: '<!i><white><lang:botania.item.ancient_will_verac>'
+  botania:astrolabe:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/astrolabe
+    data:
+      item_name: '<!i><white><lang:botania.item.astrolabe>'
+      max_stack_size: 1
+  botania:aura_ring:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/aura_ring
+    data:
+      item_name: '<!i><white><lang:botania.item.aura_ring>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:terra_pick_blacklist
+  botania:aura_ring_greater:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/aura_ring_greater
+    data:
+      item_name: '<!i><white><lang:botania.item.aura_ring_greater>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:terra_pick_blacklist
+  botania:auto_crafting_halo:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/auto_crafting_halo
+    data:
+      item_name: '<!i><white><lang:botania.item.auto_crafting_halo>'
+      max_stack_size: 1
+  botania:balance_cloak:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/balance_cloak
+    data:
+      item_name: '<!i><white><lang:botania.item.balance_cloak>'
+      max_stack_size: 1
+  botania:bauble_box:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/bauble_box
+    data:
+      item_name: '<!i><white><lang:botania.item.bauble_box>'
+      max_stack_size: 1
+  botania:bauble_box_open:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/bauble_box_open
+    data:
+      item_name: '<!i><white><lang:botania.item.bauble_box_open>'
+      max_stack_size: 1
+  botania:black_hole_talisman:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/black_hole_talisman
+    data:
+      item_name: '<!i><white><lang:botania.item.black_hole_talisman>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:pickable_block_providers
+  botania:black_lotus:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/black_lotus
+    data:
+      item_name: '<!i><white><lang:botania.item.black_lotus>'
+    settings:
+      tags:
+        - botania:loonium_blacklist
+  botania:black_petal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/black_petal
+    data:
+      item_name: '<!i><white><lang:botania.item.black_petal>'
+    settings:
+      tags:
+        - botania:petals
+        - botania:petals/black
+  botania:blacker_lotus:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/blacker_lotus
+    data:
+      item_name: '<!i><white><lang:botania.item.blacker_lotus>'
+    settings:
+      tags:
+        - botania:loonium_blacklist
+  botania:blood_pendant:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/blood_pendant
+    data:
+      item_name: '<!i><white><lang:botania.item.blood_pendant>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:blue_petal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/blue_petal
+    data:
+      item_name: '<!i><white><lang:botania.item.blue_petal>'
+    settings:
+      tags:
+        - botania:petals
+        - botania:petals/blue
+  botania:brew_flask:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/brew_flask
+    data:
+      item_name: '<!i><white><lang:botania.item.brew_flask>'
+      max_stack_size: 1
+  botania:brew_flask_1:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/brew_flask_1
+    data:
+      item_name: '<!i><white><lang:botania.item.brew_flask_1>'
+      max_stack_size: 1
+  botania:brew_flask_2:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/brew_flask_2
+    data:
+      item_name: '<!i><white><lang:botania.item.brew_flask_2>'
+      max_stack_size: 1
+  botania:brew_flask_3:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/brew_flask_3
+    data:
+      item_name: '<!i><white><lang:botania.item.brew_flask_3>'
+      max_stack_size: 1
+  botania:brew_flask_4:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/brew_flask_4
+    data:
+      item_name: '<!i><white><lang:botania.item.brew_flask_4>'
+      max_stack_size: 1
+  botania:brew_flask_5:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/brew_flask_5
+    data:
+      item_name: '<!i><white><lang:botania.item.brew_flask_5>'
+      max_stack_size: 1
+  botania:brew_vial:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/brew_vial
+    data:
+      item_name: '<!i><white><lang:botania.item.brew_vial>'
+      max_stack_size: 1
+  botania:brew_vial_1:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/brew_vial_1
+    data:
+      item_name: '<!i><white><lang:botania.item.brew_vial_1>'
+      max_stack_size: 1
+  botania:brew_vial_2:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/brew_vial_2
+    data:
+      item_name: '<!i><white><lang:botania.item.brew_vial_2>'
+      max_stack_size: 1
+  botania:brew_vial_3:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/brew_vial_3
+    data:
+      item_name: '<!i><white><lang:botania.item.brew_vial_3>'
+      max_stack_size: 1
+  botania:brown_petal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/brown_petal
+    data:
+      item_name: '<!i><white><lang:botania.item.brown_petal>'
+    settings:
+      tags:
+        - botania:petals
+        - botania:petals/brown
+  botania:cacophonium:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cacophonium
+    data:
+      item_name: '<!i><white><lang:botania.item.cacophonium>'
+      max_stack_size: 1
+  botania:clip:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/clip
+    data:
+      item_name: '<!i><white><lang:botania.item.clip>'
+      max_stack_size: 1
+  botania:cloud_pendant:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cloud_pendant
+    data:
+      item_name: '<!i><white><lang:botania.item.cloud_pendant>'
+      max_stack_size: 1
+  botania:cobble_rod:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cobble_rod
+    data:
+      item_name: '<!i><white><lang:botania.item.cobble_rod>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+        - botania:pickable_block_providers
+        - botania:rods
+  botania:corporea_spark:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/corporea_spark
+    data:
+      item_name: '<!i><white><lang:botania.item.corporea_spark>'
+  botania:corporea_spark_creative:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/corporea_spark_creative
+    data:
+      item_name: '<!i><white><lang:botania.item.corporea_spark_creative>'
+  botania:corporea_spark_master:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/corporea_spark_master
+    data:
+      item_name: '<!i><white><lang:botania.item.corporea_spark_master>'
+  botania:cosmetic_alien_antenna:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_alien_antenna
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_alien_antenna>'
+  botania:cosmetic_anaglyph_glasses:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_anaglyph_glasses
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_anaglyph_glasses>'
+  botania:cosmetic_ancient_mask:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_ancient_mask
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_ancient_mask>'
+  botania:cosmetic_black_bowtie:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_black_bowtie
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_black_bowtie>'
+  botania:cosmetic_black_tie:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_black_tie
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_black_tie>'
+  botania:cosmetic_blue_butterfly:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_blue_butterfly
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_blue_butterfly>'
+  botania:cosmetic_botanist_emblem:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_botanist_emblem
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_botanist_emblem>'
+  botania:cosmetic_cat_ears:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_cat_ears
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_cat_ears>'
+  botania:cosmetic_clock_eye:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_clock_eye
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_clock_eye>'
+  botania:cosmetic_devil_horns:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_devil_horns
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_devil_horns>'
+  botania:cosmetic_devil_tail:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_devil_tail
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_devil_tail>'
+  botania:cosmetic_eerie_mask:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_eerie_mask
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_eerie_mask>'
+  botania:cosmetic_engineer_goggles:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_engineer_goggles
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_engineer_goggles>'
+  botania:cosmetic_eyepatch:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_eyepatch
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_eyepatch>'
+  botania:cosmetic_four_leaf_clover:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_four_leaf_clover
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_four_leaf_clover>'
+  botania:cosmetic_googly_eyes:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_googly_eyes
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_googly_eyes>'
+  botania:cosmetic_groucho_glasses:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_groucho_glasses
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_groucho_glasses>'
+  botania:cosmetic_hyper_plus:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_hyper_plus
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_hyper_plus>'
+  botania:cosmetic_kamui_eye:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_kamui_eye
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_kamui_eye>'
+  botania:cosmetic_lusitanic_shield:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_lusitanic_shield
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_lusitanic_shield>'
+  botania:cosmetic_orange_shades:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_orange_shades
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_orange_shades>'
+  botania:cosmetic_pink_flower_bud:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_pink_flower_bud
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_pink_flower_bud>'
+  botania:cosmetic_polka_dotted_bows:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_polka_dotted_bows
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_polka_dotted_bows>'
+  botania:cosmetic_puffy_scarf:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_puffy_scarf
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_puffy_scarf>'
+  botania:cosmetic_questgiver_mark:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_questgiver_mark
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_questgiver_mark>'
+  botania:cosmetic_red_glasses:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_red_glasses
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_red_glasses>'
+  botania:cosmetic_red_ribbons:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_red_ribbons
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_red_ribbons>'
+  botania:cosmetic_thick_eyebrows:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_thick_eyebrows
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_thick_eyebrows>'
+  botania:cosmetic_thinking_hand:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_thinking_hand
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_thinking_hand>'
+  botania:cosmetic_tiny_potato_mask:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_tiny_potato_mask
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_tiny_potato_mask>'
+  botania:cosmetic_unicorn_horn:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_unicorn_horn
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_unicorn_horn>'
+  botania:cosmetic_wicked_eyepatch:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_wicked_eyepatch
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_wicked_eyepatch>'
+  botania:cosmetic_witch_pin:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cosmetic_witch_pin
+    data:
+      item_name: '<!i><white><lang:botania.item.cosmetic_witch_pin>'
+  botania:crafting_halo:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/crafting_halo
+    data:
+      item_name: '<!i><white><lang:botania.item.crafting_halo>'
+      max_stack_size: 1
+  botania:crystal_bow:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/crystal_bow
+    data:
+      item_name: '<!i><white><lang:botania.item.crystal_bow>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:crystal_bow_pulling_1:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/crystal_bow_pulling_1
+    data:
+      item_name: '<!i><white><lang:botania.item.crystal_bow_pulling_1>'
+      max_stack_size: 1
+  botania:crystal_bow_pulling_2:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/crystal_bow_pulling_2
+    data:
+      item_name: '<!i><white><lang:botania.item.crystal_bow_pulling_2>'
+      max_stack_size: 1
+  botania:crystal_bow_pulling_3:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/crystal_bow_pulling_3
+    data:
+      item_name: '<!i><white><lang:botania.item.crystal_bow_pulling_3>'
+      max_stack_size: 1
+  botania:crystal_bow_pulling_4:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/crystal_bow_pulling_4
+    data:
+      item_name: '<!i><white><lang:botania.item.crystal_bow_pulling_4>'
+      max_stack_size: 1
+  botania:crystal_bow_pulling_5:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/crystal_bow_pulling_5
+    data:
+      item_name: '<!i><white><lang:botania.item.crystal_bow_pulling_5>'
+      max_stack_size: 1
+  botania:cyan_petal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/cyan_petal
+    data:
+      item_name: '<!i><white><lang:botania.item.cyan_petal>'
+    settings:
+      tags:
+        - botania:petals
+        - botania:petals/cyan
+  botania:dammitreddit:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/dammitreddit
+    data:
+      item_name: '<!i><white><lang:botania.item.dammitreddit>'
+  botania:dasboot:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/dasboot
+    data:
+      item_name: '<!i><white><lang:botania.item.dasboot>'
+  botania:dice:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/dice
+    data:
+      item_name: '<!i><white><lang:botania.item.dice>'
+      max_stack_size: 1
+  botania:dirt_rod:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/dirt_rod
+    data:
+      item_name: '<!i><white><lang:botania.item.dirt_rod>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+        - botania:pickable_block_providers
+        - botania:rods
+  botania:diva_charm:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/diva_charm
+    data:
+      item_name: '<!i><white><lang:botania.item.diva_charm>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:divining_rod:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/divining_rod
+    data:
+      item_name: '<!i><white><lang:botania.item.divining_rod>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+        - botania:rods
+  botania:dodge_ring:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/dodge_ring
+    data:
+      item_name: '<!i><white><lang:botania.item.dodge_ring>'
+      max_stack_size: 1
+  botania:dragonstone:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/dragonstone
+    data:
+      item_name: '<!i><white><lang:botania.item.dragonstone>'
+    settings:
+      tags:
+        - botania:dragonstone_gems
+  botania:dreamwood_twig:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/dreamwood_twig
+    data:
+      item_name: '<!i><white><lang:botania.item.dreamwood_twig>'
+  botania:dreamwood_wand:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/dreamwood_wand
+    data:
+      item_name: '<!i><white><lang:botania.item.dreamwood_wand>'
+      max_stack_size: 1
+  botania:dreamwood_wand_bind:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/dreamwood_wand_bind
+    data:
+      item_name: '<!i><white><lang:botania.item.dreamwood_wand_bind>'
+      max_stack_size: 1
+  botania:dry_seeds:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/dry_seeds
+    data:
+      item_name: '<!i><white><lang:botania.item.dry_seeds>'
+  botania:elementium_axe:
+    material: iron_axe
+    model:
+      type: minecraft:model
+      path: botania:item/elementium_axe
+    data:
+      item_name: '<!i><white><lang:botania.item.elementium_axe>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:elementium_boots:
+    material: iron_boots
+    model:
+      type: minecraft:model
+      path: botania:item/elementium_boots
+    data:
+      item_name: '<!i><white><lang:botania.item.elementium_boots>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:elementium_chestplate:
+    material: iron_chestplate
+    model:
+      type: minecraft:model
+      path: botania:item/elementium_chestplate
+    data:
+      item_name: '<!i><white><lang:botania.item.elementium_chestplate>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:elementium_helmet:
+    material: iron_helmet
+    model:
+      type: minecraft:model
+      path: botania:item/elementium_helmet
+    data:
+      item_name: '<!i><white><lang:botania.item.elementium_helmet>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:elementium_hoe:
+    material: iron_hoe
+    model:
+      type: minecraft:model
+      path: botania:item/elementium_hoe
+    data:
+      item_name: '<!i><white><lang:botania.item.elementium_hoe>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:elementium_ingot:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/elementium_ingot
+    data:
+      item_name: '<!i><white><lang:botania.item.elementium_ingot>'
+    settings:
+      tags:
+        - botania:elementium_ingots
+  botania:elementium_leggings:
+    material: iron_leggings
+    model:
+      type: minecraft:model
+      path: botania:item/elementium_leggings
+    data:
+      item_name: '<!i><white><lang:botania.item.elementium_leggings>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:elementium_nugget:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/elementium_nugget
+    data:
+      item_name: '<!i><white><lang:botania.item.elementium_nugget>'
+    settings:
+      tags:
+        - botania:elementium_nuggets
+  botania:elementium_pickaxe:
+    material: iron_pickaxe
+    model:
+      type: minecraft:model
+      path: botania:item/elementium_pickaxe
+    data:
+      item_name: '<!i><white><lang:botania.item.elementium_pickaxe>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:elementium_shears:
+    material: shears
+    model:
+      type: minecraft:model
+      path: botania:item/elementium_shears
+    data:
+      item_name: '<!i><white><lang:botania.item.elementium_shears>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:elementium_shovel:
+    material: iron_shovel
+    model:
+      type: minecraft:model
+      path: botania:item/elementium_shovel
+    data:
+      item_name: '<!i><white><lang:botania.item.elementium_shovel>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:elementium_sword:
+    material: iron_sword
+    model:
+      type: minecraft:model
+      path: botania:item/elementium_sword
+    data:
+      item_name: '<!i><white><lang:botania.item.elementium_sword>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:elucidator:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/elucidator
+    data:
+      item_name: '<!i><white><lang:botania.item.elucidator>'
+  botania:ender_air_bottle:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/ender_air_bottle
+    data:
+      item_name: '<!i><white><lang:botania.item.ender_air_bottle>'
+  botania:ender_dagger:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/ender_dagger
+    data:
+      item_name: '<!i><white><lang:botania.item.ender_dagger>'
+      max_stack_size: 1
+  botania:ender_hand:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/ender_hand
+    data:
+      item_name: '<!i><white><lang:botania.item.ender_hand>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:exchange_rod:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/exchange_rod
+    data:
+      item_name: '<!i><white><lang:botania.item.exchange_rod>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+        - botania:rods
+  botania:fertilizer:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/fertilizer
+    data:
+      item_name: '<!i><white><lang:botania.item.fertilizer>'
+  botania:fire_rod:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/fire_rod
+    data:
+      item_name: '<!i><white><lang:botania.item.fire_rod>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+        - botania:rods
+  botania:flare_chakram:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/flare_chakram
+    data:
+      item_name: '<!i><white><lang:botania.item.flare_chakram>'
+      max_stack_size: 1
+  botania:flask:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/flask
+    data:
+      item_name: '<!i><white><lang:botania.item.flask>'
+      max_stack_size: 1
+  botania:flight_tiara:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/flight_tiara
+    data:
+      item_name: '<!i><white><lang:botania.item.flight_tiara>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:flower_bag:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/flower_bag
+    data:
+      item_name: '<!i><white><lang:botania.item.flower_bag>'
+      max_stack_size: 1
+  botania:flugel_eye:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/flugel_eye
+    data:
+      item_name: '<!i><white><lang:botania.item.flugel_eye>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:gaia_ingot:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/gaia_ingot
+    data:
+      item_name: '<!i><white><lang:botania.item.gaia_ingot>'
+  botania:ghost_rail:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/ghost_rail
+    data:
+      item_name: '<!i><white><lang:botania.item.ghost_rail>'
+  botania:glass_pickaxe:
+    material: iron_pickaxe
+    model:
+      type: minecraft:model
+      path: botania:item/glass_pickaxe
+    data:
+      item_name: '<!i><white><lang:botania.item.glass_pickaxe>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:goddess_charm:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/goddess_charm
+    data:
+      item_name: '<!i><white><lang:botania.item.goddess_charm>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:golden_seeds:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/golden_seeds
+    data:
+      item_name: '<!i><white><lang:botania.item.golden_seeds>'
+  botania:grass_seeds:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/grass_seeds
+    data:
+      item_name: '<!i><white><lang:botania.item.grass_seeds>'
+  botania:gravity_rod:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/gravity_rod
+    data:
+      item_name: '<!i><white><lang:botania.item.gravity_rod>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+        - botania:rods
+  botania:gray_petal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/gray_petal
+    data:
+      item_name: '<!i><white><lang:botania.item.gray_petal>'
+    settings:
+      tags:
+        - botania:petals
+        - botania:petals/gray
+  botania:green_petal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/green_petal
+    data:
+      item_name: '<!i><white><lang:botania.item.green_petal>'
+    settings:
+      tags:
+        - botania:petals
+        - botania:petals/green
+  botania:holy_cloak:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/holy_cloak
+    data:
+      item_name: '<!i><white><lang:botania.item.holy_cloak>'
+      max_stack_size: 1
+  botania:horn_grass:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/horn_grass
+    data:
+      item_name: '<!i><white><lang:botania.item.horn_grass>'
+  botania:horn_leaves:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/horn_leaves
+    data:
+      item_name: '<!i><white><lang:botania.item.horn_leaves>'
+  botania:horn_snow:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/horn_snow
+    data:
+      item_name: '<!i><white><lang:botania.item.horn_snow>'
+  botania:ice_pendant:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/ice_pendant
+    data:
+      item_name: '<!i><white><lang:botania.item.ice_pendant>'
+      max_stack_size: 1
+  botania:incense_stick:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/incense_stick
+    data:
+      item_name: '<!i><white><lang:botania.item.incense_stick>'
+      max_stack_size: 1
+  botania:infinite_fruit:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/infinite_fruit
+    data:
+      item_name: '<!i><white><lang:botania.item.infinite_fruit>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:infused_seeds:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/infused_seeds
+    data:
+      item_name: '<!i><white><lang:botania.item.infused_seeds>'
+  botania:invisibility_cloak:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/invisibility_cloak
+    data:
+      item_name: '<!i><white><lang:botania.item.invisibility_cloak>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:itemfinder:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/itemfinder
+    data:
+      item_name: '<!i><white><lang:botania.item.itemfinder>'
+      max_stack_size: 1
+  botania:keep_ivy:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/keep_ivy
+    data:
+      item_name: '<!i><white><lang:botania.item.keep_ivy>'
+      max_stack_size: 1
+  botania:king_key:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/king_key
+    data:
+      item_name: '<!i><white><lang:botania.item.king_key>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:knockback_belt:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/knockback_belt
+    data:
+      item_name: '<!i><white><lang:botania.item.knockback_belt>'
+      max_stack_size: 1
+  botania:laputa_shard:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/laputa_shard
+    data:
+      item_name: '<!i><white><lang:botania.item.laputa_shard>'
+      max_stack_size: 1
+  botania:lava_pendant:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lava_pendant
+    data:
+      item_name: '<!i><white><lang:botania.item.lava_pendant>'
+      max_stack_size: 1
+  botania:lens_bounce:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_bounce
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_bounce>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_damage:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_damage
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_damage>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_efficiency:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_efficiency
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_efficiency>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_explosive:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_explosive
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_explosive>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_fire:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_fire
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_fire>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_firework:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_firework
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_firework>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_flare:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_flare
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_flare>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_gravity:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_gravity
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_gravity>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_influence:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_influence
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_influence>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_light:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_light
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_light>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_magnet:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_magnet
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_magnet>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_messenger:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_messenger
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_messenger>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_mine:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_mine
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_mine>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_normal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_normal
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_normal>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_paint:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_paint
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_paint>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_phantom:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_phantom
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_phantom>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_piston:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_piston
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_piston>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_power:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_power
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_power>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_redirect:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_redirect
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_redirect>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_speed:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_speed
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_speed>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_storm:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_storm
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_storm>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_time:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_time
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_time>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_tripwire:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_tripwire
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_tripwire>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_warp:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_warp
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_warp>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lens_weight:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lens_weight
+    data:
+      item_name: '<!i><white><lang:botania.item.lens_weight>'
+    settings:
+      tags:
+        - botania:lens
+  botania:lexicon:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lexicon
+    data:
+      item_name: '<!i><white><lang:botania.item.lexicon>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:loonium_blacklist
+  botania:lexicon_elven:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lexicon_elven
+    data:
+      item_name: '<!i><white><lang:botania.item.lexicon_elven>'
+      max_stack_size: 1
+  botania:life_essence:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/life_essence
+    data:
+      item_name: '<!i><white><lang:botania.item.life_essence>'
+  botania:light_blue_petal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/light_blue_petal
+    data:
+      item_name: '<!i><white><lang:botania.item.light_blue_petal>'
+    settings:
+      tags:
+        - botania:petals
+        - botania:petals/light_blue
+  botania:light_gray_petal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/light_gray_petal
+    data:
+      item_name: '<!i><white><lang:botania.item.light_gray_petal>'
+    settings:
+      tags:
+        - botania:petals
+        - botania:petals/light_gray
+  botania:lime_petal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/lime_petal
+    data:
+      item_name: '<!i><white><lang:botania.item.lime_petal>'
+    settings:
+      tags:
+        - botania:petals
+        - botania:petals/lime
+  botania:living_root:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/living_root
+    data:
+      item_name: '<!i><white><lang:botania.item.living_root>'
+  botania:livingwood_bow:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/livingwood_bow
+    data:
+      item_name: '<!i><white><lang:botania.item.livingwood_bow>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:livingwood_bow_pulling_1:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/livingwood_bow_pulling_1
+    data:
+      item_name: '<!i><white><lang:botania.item.livingwood_bow_pulling_1>'
+      max_stack_size: 1
+  botania:livingwood_bow_pulling_2:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/livingwood_bow_pulling_2
+    data:
+      item_name: '<!i><white><lang:botania.item.livingwood_bow_pulling_2>'
+      max_stack_size: 1
+  botania:livingwood_bow_pulling_3:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/livingwood_bow_pulling_3
+    data:
+      item_name: '<!i><white><lang:botania.item.livingwood_bow_pulling_3>'
+      max_stack_size: 1
+  botania:livingwood_twig:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/livingwood_twig
+    data:
+      item_name: '<!i><white><lang:botania.item.livingwood_twig>'
+  botania:loki_ring:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/loki_ring
+    data:
+      item_name: '<!i><white><lang:botania.item.loki_ring>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:magenta_petal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/magenta_petal
+    data:
+      item_name: '<!i><white><lang:botania.item.magenta_petal>'
+    settings:
+      tags:
+        - botania:petals
+        - botania:petals/magenta
+  botania:magnet_ring:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/magnet_ring
+    data:
+      item_name: '<!i><white><lang:botania.item.magnet_ring>'
+      max_stack_size: 1
+  botania:magnet_ring_greater:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/magnet_ring_greater
+    data:
+      item_name: '<!i><white><lang:botania.item.magnet_ring_greater>'
+      max_stack_size: 1
+  botania:mana_bottle:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mana_bottle
+    data:
+      item_name: '<!i><white><lang:botania.item.mana_bottle>'
+  botania:mana_bottle_1:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mana_bottle_1
+    data:
+      item_name: '<!i><white><lang:botania.item.mana_bottle_1>'
+  botania:mana_bottle_2:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mana_bottle_2
+    data:
+      item_name: '<!i><white><lang:botania.item.mana_bottle_2>'
+  botania:mana_bottle_3:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mana_bottle_3
+    data:
+      item_name: '<!i><white><lang:botania.item.mana_bottle_3>'
+  botania:mana_bottle_4:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mana_bottle_4
+    data:
+      item_name: '<!i><white><lang:botania.item.mana_bottle_4>'
+  botania:mana_bottle_5:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mana_bottle_5
+    data:
+      item_name: '<!i><white><lang:botania.item.mana_bottle_5>'
+  botania:mana_cookie:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mana_cookie
+    data:
+      item_name: '<!i><white><lang:botania.item.mana_cookie>'
+  botania:mana_diamond:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mana_diamond
+    data:
+      item_name: '<!i><white><lang:botania.item.mana_diamond>'
+    settings:
+      tags:
+        - botania:mana_diamond_gems
+  botania:mana_gun:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mana_gun
+    data:
+      item_name: '<!i><white><lang:botania.item.mana_gun>'
+      max_stack_size: 1
+  botania:mana_gun_clip:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mana_gun_clip
+    data:
+      item_name: '<!i><white><lang:botania.item.mana_gun_clip>'
+      max_stack_size: 1
+  botania:mana_gun_noclip:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mana_gun_noclip
+    data:
+      item_name: '<!i><white><lang:botania.item.mana_gun_noclip>'
+      max_stack_size: 1
+  botania:mana_mirror:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mana_mirror
+    data:
+      item_name: '<!i><white><lang:botania.item.mana_mirror>'
+      max_stack_size: 1
+  botania:mana_pearl:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mana_pearl
+    data:
+      item_name: '<!i><white><lang:botania.item.mana_pearl>'
+  botania:mana_powder:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mana_powder
+    data:
+      item_name: '<!i><white><lang:botania.item.mana_powder>'
+    settings:
+      tags:
+        - botania:mana_dusts
+  botania:mana_ring:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mana_ring
+    data:
+      item_name: '<!i><white><lang:botania.item.mana_ring>'
+      max_stack_size: 1
+  botania:mana_ring_greater:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mana_ring_greater
+    data:
+      item_name: '<!i><white><lang:botania.item.mana_ring_greater>'
+      max_stack_size: 1
+  botania:mana_string:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mana_string
+    data:
+      item_name: '<!i><white><lang:botania.item.mana_string>'
+      max_stack_size: 1
+  botania:mana_tablet:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mana_tablet
+    data:
+      item_name: '<!i><white><lang:botania.item.mana_tablet>'
+      max_stack_size: 1
+  botania:manasteel_axe:
+    material: iron_axe
+    model:
+      type: minecraft:model
+      path: botania:item/manasteel_axe
+    data:
+      item_name: '<!i><white><lang:botania.item.manasteel_axe>'
+      max_damage: 300
+      enchantable:
+        value: 20
+      tool:
+        default_mining_speed: 6.2
+        damage_per_block_break: 1
+        rules:
+          - blocks: '#minecraft:mineable/axe'
+            speed: 6.2
+            correct_for_drops: true
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:manasteel_boots:
+    material: iron_boots
+    model:
+      type: minecraft:model
+      path: botania:item/manasteel_boots
+    data:
+      item_name: '<!i><white><lang:botania.item.manasteel_boots>'
+      max_damage: 234
+      enchantable:
+        value: 18
+      equippable:
+        slot: feet
+        asset_id: botania:manasteel
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:manasteel_chestplate:
+    material: iron_chestplate
+    model:
+      type: minecraft:model
+      path: botania:item/manasteel_chestplate
+    data:
+      item_name: '<!i><white><lang:botania.item.manasteel_chestplate>'
+      max_damage: 288
+      enchantable:
+        value: 18
+      equippable:
+        slot: chest
+        asset_id: botania:manasteel
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:manasteel_helmet:
+    material: iron_helmet
+    model:
+      type: minecraft:model
+      path: botania:item/manasteel_helmet
+    data:
+      item_name: '<!i><white><lang:botania.item.manasteel_helmet>'
+      max_damage: 198
+      enchantable:
+        value: 18
+      equippable:
+        slot: head
+        asset_id: botania:manasteel
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:manasteel_hoe:
+    material: iron_hoe
+    model:
+      type: minecraft:model
+      path: botania:item/manasteel_hoe
+    data:
+      item_name: '<!i><white><lang:botania.item.manasteel_hoe>'
+      max_damage: 300
+      enchantable:
+        value: 20
+      tool:
+        default_mining_speed: 6.2
+        damage_per_block_break: 1
+        rules:
+          - blocks: '#minecraft:mineable/hoe'
+            speed: 6.2
+            correct_for_drops: true
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:manasteel_ingot:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/manasteel_ingot
+    data:
+      item_name: '<!i><white><lang:botania.item.manasteel_ingot>'
+    settings:
+      tags:
+        - botania:manasteel_ingots
+  botania:manasteel_leggings:
+    material: iron_leggings
+    model:
+      type: minecraft:model
+      path: botania:item/manasteel_leggings
+    data:
+      item_name: '<!i><white><lang:botania.item.manasteel_leggings>'
+      max_damage: 270
+      enchantable:
+        value: 18
+      equippable:
+        slot: legs
+        asset_id: botania:manasteel
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:manasteel_nugget:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/manasteel_nugget
+    data:
+      item_name: '<!i><white><lang:botania.item.manasteel_nugget>'
+    settings:
+      tags:
+        - botania:manasteel_nuggets
+  botania:manasteel_pick:
+    material: iron_pickaxe
+    model:
+      type: minecraft:model
+      path: botania:item/manasteel_pick
+    data:
+      item_name: '<!i><white><lang:botania.item.manasteel_pick>'
+      max_damage: 300
+      enchantable:
+        value: 20
+      tool:
+        default_mining_speed: 6.2
+        damage_per_block_break: 1
+        rules:
+          - blocks: '#minecraft:mineable/pickaxe'
+            speed: 6.2
+            correct_for_drops: true
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:manasteel_shears:
+    material: shears
+    model:
+      type: minecraft:model
+      path: botania:item/manasteel_shears
+    data:
+      item_name: '<!i><white><lang:botania.item.manasteel_shears>'
+      max_damage: 238
+      enchantable:
+        value: 20
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:manasteel_shovel:
+    material: iron_shovel
+    model:
+      type: minecraft:model
+      path: botania:item/manasteel_shovel
+    data:
+      item_name: '<!i><white><lang:botania.item.manasteel_shovel>'
+      max_damage: 300
+      enchantable:
+        value: 20
+      tool:
+        default_mining_speed: 6.2
+        damage_per_block_break: 1
+        rules:
+          - blocks: '#minecraft:mineable/shovel'
+            speed: 6.2
+            correct_for_drops: true
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:manasteel_sword:
+    material: iron_sword
+    model:
+      type: minecraft:model
+      path: botania:item/manasteel_sword
+    data:
+      item_name: '<!i><white><lang:botania.item.manasteel_sword>'
+      max_damage: 300
+      enchantable:
+        value: 20
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:manaweave_boots:
+    material: iron_boots
+    model:
+      type: minecraft:model
+      path: botania:item/manaweave_boots
+    data:
+      item_name: '<!i><white><lang:botania.item.manaweave_boots>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:manaweave_boots_holiday:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/manaweave_boots_holiday
+    data:
+      item_name: '<!i><white><lang:botania.item.manaweave_boots_holiday>'
+  botania:manaweave_chestplate:
+    material: iron_chestplate
+    model:
+      type: minecraft:model
+      path: botania:item/manaweave_chestplate
+    data:
+      item_name: '<!i><white><lang:botania.item.manaweave_chestplate>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:manaweave_chestplate_holiday:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/manaweave_chestplate_holiday
+    data:
+      item_name: '<!i><white><lang:botania.item.manaweave_chestplate_holiday>'
+  botania:manaweave_cloth:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/manaweave_cloth
+    data:
+      item_name: '<!i><white><lang:botania.item.manaweave_cloth>'
+  botania:manaweave_helmet:
+    material: iron_helmet
+    model:
+      type: minecraft:model
+      path: botania:item/manaweave_helmet
+    data:
+      item_name: '<!i><white><lang:botania.item.manaweave_helmet>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:manaweave_helmet_holiday:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/manaweave_helmet_holiday
+    data:
+      item_name: '<!i><white><lang:botania.item.manaweave_helmet_holiday>'
+  botania:manaweave_leggings:
+    material: iron_leggings
+    model:
+      type: minecraft:model
+      path: botania:item/manaweave_leggings
+    data:
+      item_name: '<!i><white><lang:botania.item.manaweave_leggings>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:manaweave_leggings_holiday:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/manaweave_leggings_holiday
+    data:
+      item_name: '<!i><white><lang:botania.item.manaweave_leggings_holiday>'
+  botania:mining_ring:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mining_ring
+    data:
+      item_name: '<!i><white><lang:botania.item.mining_ring>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:missile_rod:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/missile_rod
+    data:
+      item_name: '<!i><white><lang:botania.item.missile_rod>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+        - botania:rods
+  botania:monocle:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/monocle
+    data:
+      item_name: '<!i><white><lang:botania.item.monocle>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:burst_viewers
+  botania:mutated_seeds:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mutated_seeds
+    data:
+      item_name: '<!i><white><lang:botania.item.mutated_seeds>'
+  botania:mycelium_seeds:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/mycelium_seeds
+    data:
+      item_name: '<!i><white><lang:botania.item.mycelium_seeds>'
+  botania:obedience_stick:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/obedience_stick
+    data:
+      item_name: '<!i><white><lang:botania.item.obedience_stick>'
+      max_stack_size: 1
+  botania:odin_ring:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/odin_ring
+    data:
+      item_name: '<!i><white><lang:botania.item.odin_ring>'
+      max_stack_size: 1
+  botania:open_bucket:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/open_bucket
+    data:
+      item_name: '<!i><white><lang:botania.item.open_bucket>'
+      max_stack_size: 1
+  botania:orange_petal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/orange_petal
+    data:
+      item_name: '<!i><white><lang:botania.item.orange_petal>'
+    settings:
+      tags:
+        - botania:petals
+        - botania:petals/orange
+  botania:overgrowth_seed:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/overgrowth_seed
+    data:
+      item_name: '<!i><white><lang:botania.item.overgrowth_seed>'
+    settings:
+      tags:
+        - botania:loonium_blacklist
+  botania:pattern_1_1:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/pattern_1_1
+    data:
+      item_name: '<!i><white><lang:botania.item.pattern_1_1>'
+  botania:pattern_1_2:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/pattern_1_2
+    data:
+      item_name: '<!i><white><lang:botania.item.pattern_1_2>'
+  botania:pattern_1_3:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/pattern_1_3
+    data:
+      item_name: '<!i><white><lang:botania.item.pattern_1_3>'
+  botania:pattern_2_1:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/pattern_2_1
+    data:
+      item_name: '<!i><white><lang:botania.item.pattern_2_1>'
+  botania:pattern_2_2:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/pattern_2_2
+    data:
+      item_name: '<!i><white><lang:botania.item.pattern_2_2>'
+  botania:pattern_2_3:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/pattern_2_3
+    data:
+      item_name: '<!i><white><lang:botania.item.pattern_2_3>'
+  botania:pattern_3_1:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/pattern_3_1
+    data:
+      item_name: '<!i><white><lang:botania.item.pattern_3_1>'
+  botania:pattern_3_2:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/pattern_3_2
+    data:
+      item_name: '<!i><white><lang:botania.item.pattern_3_2>'
+  botania:pattern_donut:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/pattern_donut
+    data:
+      item_name: '<!i><white><lang:botania.item.pattern_donut>'
+  botania:pebble:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/pebble
+    data:
+      item_name: '<!i><white><lang:botania.item.pebble>'
+  botania:phantom_ink:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/phantom_ink
+    data:
+      item_name: '<!i><white><lang:botania.item.phantom_ink>'
+  botania:pink_petal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/pink_petal
+    data:
+      item_name: '<!i><white><lang:botania.item.pink_petal>'
+    settings:
+      tags:
+        - botania:petals
+        - botania:petals/pink
+  botania:pinkinator:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/pinkinator
+    data:
+      item_name: '<!i><white><lang:botania.item.pinkinator>'
+  botania:pixie_dust:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/pixie_dust
+    data:
+      item_name: '<!i><white><lang:botania.item.pixie_dust>'
+  botania:pixie_ring:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/pixie_ring
+    data:
+      item_name: '<!i><white><lang:botania.item.pixie_ring>'
+      max_stack_size: 1
+  botania:placeholder:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/placeholder
+    data:
+      item_name: '<!i><white><lang:botania.item.placeholder>'
+  botania:podzol_seeds:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/podzol_seeds
+    data:
+      item_name: '<!i><white><lang:botania.item.podzol_seeds>'
+  botania:pool_minecart:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/pool_minecart
+    data:
+      item_name: '<!i><white><lang:botania.item.pool_minecart>'
+  botania:purple_petal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/purple_petal
+    data:
+      item_name: '<!i><white><lang:botania.item.purple_petal>'
+    settings:
+      tags:
+        - botania:petals
+        - botania:petals/purple
+  botania:quartz_blaze:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/quartz_blaze
+    data:
+      item_name: '<!i><white><lang:botania.item.quartz_blaze>'
+  botania:quartz_dark:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/quartz_dark
+    data:
+      item_name: '<!i><white><lang:botania.item.quartz_dark>'
+  botania:quartz_elven:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/quartz_elven
+    data:
+      item_name: '<!i><white><lang:botania.item.quartz_elven>'
+  botania:quartz_lavender:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/quartz_lavender
+    data:
+      item_name: '<!i><white><lang:botania.item.quartz_lavender>'
+  botania:quartz_mana:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/quartz_mana
+    data:
+      item_name: '<!i><white><lang:botania.item.quartz_mana>'
+  botania:quartz_red:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/quartz_red
+    data:
+      item_name: '<!i><white><lang:botania.item.quartz_red>'
+  botania:quartz_sunny:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/quartz_sunny
+    data:
+      item_name: '<!i><white><lang:botania.item.quartz_sunny>'
+  botania:rainbow_rod:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/rainbow_rod
+    data:
+      item_name: '<!i><white><lang:botania.item.rainbow_rod>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+        - botania:rods
+  botania:reach_ring:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/reach_ring
+    data:
+      item_name: '<!i><white><lang:botania.item.reach_ring>'
+      max_stack_size: 1
+  botania:record_gaia_1:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/record_gaia_1
+    data:
+      item_name: '<!i><white><lang:botania.item.record_gaia_1>'
+  botania:record_gaia_2:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/record_gaia_2
+    data:
+      item_name: '<!i><white><lang:botania.item.record_gaia_2>'
+  botania:red_petal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/red_petal
+    data:
+      item_name: '<!i><white><lang:botania.item.red_petal>'
+    settings:
+      tags:
+        - botania:petals
+        - botania:petals/red
+  botania:red_string:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/red_string
+    data:
+      item_name: '<!i><white><lang:botania.item.red_string>'
+      max_stack_size: 1
+  botania:redstone_root:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/redstone_root
+    data:
+      item_name: '<!i><white><lang:botania.item.redstone_root>'
+  botania:rune_air:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/rune_air
+    data:
+      item_name: '<!i><white><lang:botania.item.rune_air>'
+    settings:
+      tags:
+        - botania:runes
+  botania:rune_autumn:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/rune_autumn
+    data:
+      item_name: '<!i><white><lang:botania.item.rune_autumn>'
+    settings:
+      tags:
+        - botania:runes
+  botania:rune_earth:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/rune_earth
+    data:
+      item_name: '<!i><white><lang:botania.item.rune_earth>'
+    settings:
+      tags:
+        - botania:runes
+  botania:rune_envy:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/rune_envy
+    data:
+      item_name: '<!i><white><lang:botania.item.rune_envy>'
+    settings:
+      tags:
+        - botania:runes
+  botania:rune_fire:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/rune_fire
+    data:
+      item_name: '<!i><white><lang:botania.item.rune_fire>'
+    settings:
+      tags:
+        - botania:runes
+  botania:rune_gluttony:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/rune_gluttony
+    data:
+      item_name: '<!i><white><lang:botania.item.rune_gluttony>'
+    settings:
+      tags:
+        - botania:runes
+  botania:rune_greed:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/rune_greed
+    data:
+      item_name: '<!i><white><lang:botania.item.rune_greed>'
+    settings:
+      tags:
+        - botania:runes
+  botania:rune_lust:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/rune_lust
+    data:
+      item_name: '<!i><white><lang:botania.item.rune_lust>'
+    settings:
+      tags:
+        - botania:runes
+  botania:rune_mana:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/rune_mana
+    data:
+      item_name: '<!i><white><lang:botania.item.rune_mana>'
+    settings:
+      tags:
+        - botania:runes
+  botania:rune_pride:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/rune_pride
+    data:
+      item_name: '<!i><white><lang:botania.item.rune_pride>'
+    settings:
+      tags:
+        - botania:runes
+  botania:rune_sloth:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/rune_sloth
+    data:
+      item_name: '<!i><white><lang:botania.item.rune_sloth>'
+    settings:
+      tags:
+        - botania:runes
+  botania:rune_spring:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/rune_spring
+    data:
+      item_name: '<!i><white><lang:botania.item.rune_spring>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:runes
+  botania:rune_summer:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/rune_summer
+    data:
+      item_name: '<!i><white><lang:botania.item.rune_summer>'
+    settings:
+      tags:
+        - botania:runes
+  botania:rune_water:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/rune_water
+    data:
+      item_name: '<!i><white><lang:botania.item.rune_water>'
+    settings:
+      tags:
+        - botania:runes
+  botania:rune_winter:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/rune_winter
+    data:
+      item_name: '<!i><white><lang:botania.item.rune_winter>'
+    settings:
+      tags:
+        - botania:runes
+  botania:rune_wrath:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/rune_wrath
+    data:
+      item_name: '<!i><white><lang:botania.item.rune_wrath>'
+    settings:
+      tags:
+        - botania:runes
+  botania:scorched_seeds:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/scorched_seeds
+    data:
+      item_name: '<!i><white><lang:botania.item.scorched_seeds>'
+  botania:sextant:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/sextant
+    data:
+      item_name: '<!i><white><lang:botania.item.sextant>'
+      max_stack_size: 1
+  botania:skydirt_rod:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/skydirt_rod
+    data:
+      item_name: '<!i><white><lang:botania.item.skydirt_rod>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+        - botania:pickable_block_providers
+        - botania:rods
+  botania:slime_bottle:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/slime_bottle
+    data:
+      item_name: '<!i><white><lang:botania.item.slime_bottle>'
+      max_stack_size: 1
+  botania:slingshot:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/slingshot
+    data:
+      item_name: '<!i><white><lang:botania.item.slingshot>'
+      max_stack_size: 1
+  botania:smelt_rod:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/smelt_rod
+    data:
+      item_name: '<!i><white><lang:botania.item.smelt_rod>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+        - botania:rods
+  botania:spark:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/spark
+    data:
+      item_name: '<!i><white><lang:botania.item.spark>'
+    settings:
+      tags:
+        - botania:terra_pick_blacklist
+  botania:spark_upgrade_dispersive:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/spark_upgrade_dispersive
+    data:
+      item_name: '<!i><white><lang:botania.item.spark_upgrade_dispersive>'
+  botania:spark_upgrade_dominant:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/spark_upgrade_dominant
+    data:
+      item_name: '<!i><white><lang:botania.item.spark_upgrade_dominant>'
+  botania:spark_upgrade_isolated:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/spark_upgrade_isolated
+    data:
+      item_name: '<!i><white><lang:botania.item.spark_upgrade_isolated>'
+  botania:spark_upgrade_recessive:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/spark_upgrade_recessive
+    data:
+      item_name: '<!i><white><lang:botania.item.spark_upgrade_recessive>'
+  botania:spawner_mover:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/spawner_mover
+    data:
+      item_name: '<!i><white><lang:botania.item.spawner_mover>'
+  botania:spawner_mover_full:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/spawner_mover_full
+    data:
+      item_name: '<!i><white><lang:botania.item.spawner_mover_full>'
+  botania:speed_up_belt:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/speed_up_belt
+    data:
+      item_name: '<!i><white><lang:botania.item.speed_up_belt>'
+      max_stack_size: 1
+  botania:spell_cloth:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/spell_cloth
+    data:
+      item_name: '<!i><white><lang:botania.item.spell_cloth>'
+  botania:star_sword:
+    material: iron_sword
+    model:
+      type: minecraft:model
+      path: botania:item/star_sword
+    data:
+      item_name: '<!i><white><lang:botania.item.star_sword>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:super_cloud_pendant:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/super_cloud_pendant
+    data:
+      item_name: '<!i><white><lang:botania.item.super_cloud_pendant>'
+      max_stack_size: 1
+  botania:super_lava_pendant:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/super_lava_pendant
+    data:
+      item_name: '<!i><white><lang:botania.item.super_lava_pendant>'
+      max_stack_size: 1
+  botania:super_travel_belt:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/super_travel_belt
+    data:
+      item_name: '<!i><white><lang:botania.item.super_travel_belt>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:swap_ring:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/swap_ring
+    data:
+      item_name: '<!i><white><lang:botania.item.swap_ring>'
+      max_stack_size: 1
+  botania:temperance_stone:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/temperance_stone
+    data:
+      item_name: '<!i><white><lang:botania.item.temperance_stone>'
+      max_stack_size: 1
+  botania:terra_axe:
+    material: iron_axe
+    model:
+      type: minecraft:model
+      path: botania:item/terra_axe
+    data:
+      item_name: '<!i><white><lang:botania.item.terra_axe>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:terra_pick:
+    material: iron_pickaxe
+    model:
+      type: minecraft:model
+      path: botania:item/terra_pick
+    data:
+      item_name: '<!i><white><lang:botania.item.terra_pick>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:terra_pick_tipped:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/terra_pick_tipped
+    data:
+      item_name: '<!i><white><lang:botania.item.terra_pick_tipped>'
+  botania:terra_sword:
+    material: iron_sword
+    model:
+      type: minecraft:model
+      path: botania:item/terra_sword
+    data:
+      item_name: '<!i><white><lang:botania.item.terra_sword>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:terraform_rod:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/terraform_rod
+    data:
+      item_name: '<!i><white><lang:botania.item.terraform_rod>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+        - botania:rods
+  botania:terrasteel_boots:
+    material: iron_boots
+    model:
+      type: minecraft:model
+      path: botania:item/terrasteel_boots
+    data:
+      item_name: '<!i><white><lang:botania.item.terrasteel_boots>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:terrasteel_chestplate:
+    material: iron_chestplate
+    model:
+      type: minecraft:model
+      path: botania:item/terrasteel_chestplate
+    data:
+      item_name: '<!i><white><lang:botania.item.terrasteel_chestplate>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:terrasteel_helmet:
+    material: iron_helmet
+    model:
+      type: minecraft:model
+      path: botania:item/terrasteel_helmet
+    data:
+      item_name: '<!i><white><lang:botania.item.terrasteel_helmet>'
+    settings:
+      tags:
+        - botania:mana_using_items
+        - botania:terra_pick_blacklist
+  botania:terrasteel_ingot:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/terrasteel_ingot
+    data:
+      item_name: '<!i><white><lang:botania.item.terrasteel_ingot>'
+    settings:
+      tags:
+        - botania:terrasteel_ingots
+  botania:terrasteel_leggings:
+    material: iron_leggings
+    model:
+      type: minecraft:model
+      path: botania:item/terrasteel_leggings
+    data:
+      item_name: '<!i><white><lang:botania.item.terrasteel_leggings>'
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:terrasteel_nugget:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/terrasteel_nugget
+    data:
+      item_name: '<!i><white><lang:botania.item.terrasteel_nugget>'
+    settings:
+      tags:
+        - botania:terrasteel_nuggets
+  botania:third_eye:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/third_eye
+    data:
+      item_name: '<!i><white><lang:botania.item.third_eye>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:thor_ring:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/thor_ring
+    data:
+      item_name: '<!i><white><lang:botania.item.thor_ring>'
+      max_stack_size: 1
+  botania:thorn_chakram:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/thorn_chakram
+    data:
+      item_name: '<!i><white><lang:botania.item.thorn_chakram>'
+      max_stack_size: 1
+  botania:thunder_sword:
+    material: iron_sword
+    model:
+      type: minecraft:model
+      path: botania:item/thunder_sword
+    data:
+      item_name: '<!i><white><lang:botania.item.thunder_sword>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:tiny_planet:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/tiny_planet
+    data:
+      item_name: '<!i><white><lang:botania.item.tiny_planet>'
+  botania:tornado_rod:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/tornado_rod
+    data:
+      item_name: '<!i><white><lang:botania.item.tornado_rod>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+        - botania:rods
+  botania:totalbiscuit:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/totalbiscuit
+    data:
+      item_name: '<!i><white><lang:botania.item.totalbiscuit>'
+  botania:travel_belt:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/travel_belt
+    data:
+      item_name: '<!i><white><lang:botania.item.travel_belt>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:twig_wand:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/twig_wand
+    data:
+      item_name: '<!i><white><lang:botania.item.twig_wand>'
+      max_stack_size: 1
+  botania:twig_wand_bind:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/twig_wand_bind
+    data:
+      item_name: '<!i><white><lang:botania.item.twig_wand_bind>'
+      max_stack_size: 1
+  botania:unholy_cloak:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/unholy_cloak
+    data:
+      item_name: '<!i><white><lang:botania.item.unholy_cloak>'
+      max_stack_size: 1
+  botania:vial:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/vial
+    data:
+      item_name: '<!i><white><lang:botania.item.vial>'
+      max_stack_size: 1
+  botania:vine_ball:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/vine_ball
+    data:
+      item_name: '<!i><white><lang:botania.item.vine_ball>'
+  botania:virus_necrodermal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/virus_necrodermal
+    data:
+      item_name: '<!i><white><lang:botania.item.virus_necrodermal>'
+      max_stack_size: 1
+  botania:virus_nullodermal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/virus_nullodermal
+    data:
+      item_name: '<!i><white><lang:botania.item.virus_nullodermal>'
+  botania:vivid_seeds:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/vivid_seeds
+    data:
+      item_name: '<!i><white><lang:botania.item.vivid_seeds>'
+  botania:vuvuzela:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/vuvuzela
+    data:
+      item_name: '<!i><white><lang:botania.item.vuvuzela>'
+  botania:water_bowl:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/water_bowl
+    data:
+      item_name: '<!i><white><lang:botania.item.water_bowl>'
+  botania:water_ring:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/water_ring
+    data:
+      item_name: '<!i><white><lang:botania.item.water_ring>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+  botania:water_rod:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/water_rod
+    data:
+      item_name: '<!i><white><lang:botania.item.water_rod>'
+      max_stack_size: 1
+    settings:
+      tags:
+        - botania:mana_using_items
+        - botania:rods
+  botania:white_petal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/white_petal
+    data:
+      item_name: '<!i><white><lang:botania.item.white_petal>'
+    settings:
+      tags:
+        - botania:petals
+        - botania:petals/white
+  botania:world_seed:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/world_seed
+    data:
+      item_name: '<!i><white><lang:botania.item.world_seed>'
+      max_stack_size: 1
+  botania:yellow_petal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/yellow_petal
+    data:
+      item_name: '<!i><white><lang:botania.item.yellow_petal>'
+    settings:
+      tags:
+        - botania:petals
+        - botania:petals/yellow

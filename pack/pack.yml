@@ -1,0 +1,5 @@
+author: BaiLanYa
+description: 植物魔法（Botania）CraftEngine 资源包：材质、模型、物品与方块注册
+version: '0.1.0'
+namespace: botania
+enable: true

@@ -1,0 +1,18 @@
+name: CeBotania
+version: '${version}'
+main: net.bailanya.cebotania.CeBotaniaPlugin
+api-version: '1.21'
+author: BaiLanYa
+description: CraftEngine 侧植物魔法（Botania）复刻：魔力系统、花、灌注与仪式。
+softdepend:
+  - CraftEngine
+commands:
+  botania:
+    description: 植物魔法主命令（自检 / 给予 / 调试）
+    usage: /botania <give|selfcheck|mana|debug>
+    aliases: [bota, bot]
+    permission: botania.command
+permissions:
+  botania.command:
+    description: 植物魔法命令
+    default: op

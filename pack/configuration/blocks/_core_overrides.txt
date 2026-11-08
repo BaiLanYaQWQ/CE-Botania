@@ -1,0 +1,23 @@
+# 这些 id 由手写配置接管（core_blocks.yml），gen_content.py 生成时跳过，
+# 否则同一个方块会被定义两次。
+botania:mana_pool
+botania:diluted_pool
+botania:fabulous_pool
+botania:creative_pool
+botania:mana_spreader
+botania:elven_spreader
+botania:gaia_spreader
+botania:redstone_spreader
+botania:apothecary_default
+botania:apothecary_desert
+botania:apothecary_forest
+botania:apothecary_fungal
+botania:apothecary_mesa
+botania:apothecary_mountain
+botania:apothecary_plains
+botania:apothecary_swamp
+botania:apothecary_taiga
+botania:apothecary_livingrock
+botania:apothecary_mossy
+botania:apothecary_deepslate
+botania:runic_altar

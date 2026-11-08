@@ -1,0 +1,8133 @@
+# 合成配方（tools/gen_recipes.py 生成，勿手改）。
+# 数据来自上游 datagen 的 data/botania/recipe，标签引用由物品的 settings.tags 支撑。
+recipes:
+  botania:abstruse_platform:
+    type: shaped
+    category: misc
+    pattern:
+      - '343'
+      - '0P0'
+    ingredients:
+      '0': '#botania:livingwood_logs'
+      '3': 'botania:framed_livingwood'
+      '4': 'botania:pattern_framed_livingwood'
+      'P': 'botania:mana_pearl'
+    result:
+      id: botania:abstruse_platform
+      count: 2
+  botania:alchemy_catalyst:
+    type: shaped
+    category: misc
+    pattern:
+      - 'SGS'
+      - 'BPB'
+      - 'SGS'
+    ingredients:
+      'B': 'minecraft:brewing_stand'
+      'G': 'minecraft:gold_ingot'
+      'P': 'botania:mana_pearl'
+      'S': 'botania:livingrock'
+    result:
+      id: botania:alchemy_catalyst
+      count: 1
+  botania:alfheim_portal:
+    type: shaped
+    category: misc
+    pattern:
+      - 'WTW'
+      - 'WTW'
+      - 'WTW'
+    ingredients:
+      'T': '#botania:terrasteel_nuggets'
+      'W': '#botania:livingwood_logs'
+    result:
+      id: botania:alfheim_portal
+      count: 1
+  botania:animated_torch:
+    type: shaped
+    category: redstone
+    pattern:
+      - 'D'
+      - 'T'
+    ingredients:
+      'D': '#botania:mana_dusts'
+      'T': 'minecraft:redstone_torch'
+    result:
+      id: botania:animated_torch
+      count: 1
+  botania:apothecary_deepslate:
+    type: shaped
+    category: misc
+    pattern:
+      - 'CPC'
+      - ' C '
+      - 'CCC'
+    ingredients:
+      'C': 'minecraft:cobbled_deepslate'
+      'P': '#botania:petals'
+    result:
+      id: botania:apothecary_deepslate
+      count: 1
+  botania:apothecary_default:
+    type: shaped
+    category: misc
+    pattern:
+      - 'CPC'
+      - ' C '
+      - 'CCC'
+    ingredients:
+      'C': 'minecraft:cobblestone'
+      'P': '#botania:petals'
+    result:
+      id: botania:apothecary_default
+      count: 1
+  botania:apothecary_desert:
+    type: shaped
+    category: misc
+    group: 'metamorphic_apothecary'
+    pattern:
+      - 'CPC'
+      - ' C '
+      - 'CCC'
+    ingredients:
+      'C': 'botania:metamorphic_desert_cobblestone'
+      'P': '#botania:petals'
+    result:
+      id: botania:apothecary_desert
+      count: 1
+  botania:apothecary_forest:
+    type: shaped
+    category: misc
+    group: 'metamorphic_apothecary'
+    pattern:
+      - 'CPC'
+      - ' C '
+      - 'CCC'
+    ingredients:
+      'C': 'botania:metamorphic_forest_cobblestone'
+      'P': '#botania:petals'
+    result:
+      id: botania:apothecary_forest
+      count: 1
+  botania:apothecary_fungal:
+    type: shaped
+    category: misc
+    group: 'metamorphic_apothecary'
+    pattern:
+      - 'CPC'
+      - ' C '
+      - 'CCC'
+    ingredients:
+      'C': 'botania:metamorphic_fungal_cobblestone'
+      'P': '#botania:petals'
+    result:
+      id: botania:apothecary_fungal
+      count: 1
+  botania:apothecary_livingrock:
+    type: shaped
+    category: misc
+    pattern:
+      - 'CPC'
+      - ' C '
+      - 'CCC'
+    ingredients:
+      'C': 'botania:livingrock'
+      'P': '#botania:petals'
+    result:
+      id: botania:apothecary_livingrock
+      count: 1
+  botania:apothecary_mesa:
+    type: shaped
+    category: misc
+    group: 'metamorphic_apothecary'
+    pattern:
+      - 'CPC'
+      - ' C '
+      - 'CCC'
+    ingredients:
+      'C': 'botania:metamorphic_mesa_cobblestone'
+      'P': '#botania:petals'
+    result:
+      id: botania:apothecary_mesa
+      count: 1
+  botania:apothecary_mossy:
+    type: shaped
+    category: misc
+    pattern:
+      - 'CPC'
+      - ' C '
+      - 'CCC'
+    ingredients:
+      'C': 'minecraft:mossy_cobblestone'
+      'P': '#botania:petals'
+    result:
+      id: botania:apothecary_mossy
+      count: 1
+  botania:apothecary_mountain:
+    type: shaped
+    category: misc
+    group: 'metamorphic_apothecary'
+    pattern:
+      - 'CPC'
+      - ' C '
+      - 'CCC'
+    ingredients:
+      'C': 'botania:metamorphic_mountain_cobblestone'
+      'P': '#botania:petals'
+    result:
+      id: botania:apothecary_mountain
+      count: 1
+  botania:apothecary_plains:
+    type: shaped
+    category: misc
+    group: 'metamorphic_apothecary'
+    pattern:
+      - 'CPC'
+      - ' C '
+      - 'CCC'
+    ingredients:
+      'C': 'botania:metamorphic_plains_cobblestone'
+      'P': '#botania:petals'
+    result:
+      id: botania:apothecary_plains
+      count: 1
+  botania:apothecary_swamp:
+    type: shaped
+    category: misc
+    group: 'metamorphic_apothecary'
+    pattern:
+      - 'CPC'
+      - ' C '
+      - 'CCC'
+    ingredients:
+      'C': 'botania:metamorphic_swamp_cobblestone'
+      'P': '#botania:petals'
+    result:
+      id: botania:apothecary_swamp
+      count: 1
+  botania:apothecary_taiga:
+    type: shaped
+    category: misc
+    group: 'metamorphic_apothecary'
+    pattern:
+      - 'CPC'
+      - ' C '
+      - 'CCC'
+    ingredients:
+      'C': 'botania:metamorphic_taiga_cobblestone'
+      'P': '#botania:petals'
+    result:
+      id: botania:apothecary_taiga
+      count: 1
+  botania:astrolabe:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' EG'
+      - 'EEE'
+      - 'GED'
+    ingredients:
+      'D': '#botania:dreamwood_logs'
+      'E': '#botania:elementium_ingots'
+      'G': 'botania:life_essence'
+    result:
+      id: botania:astrolabe
+      count: 1
+  botania:aura_ring:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'RI '
+      - 'I I'
+      - ' I '
+    ingredients:
+      'I': '#botania:manasteel_ingots'
+      'R': 'botania:rune_mana'
+    result:
+      id: botania:aura_ring
+      count: 1
+  botania:aura_ring_greater:
+    type: shapeless
+    category: equipment
+    ingredients:
+      'A': '#botania:terrasteel_ingots'
+      'B': 'botania:aura_ring'
+    result:
+      id: botania:aura_ring_greater
+      count: 1
+  botania:auto_crafting_halo:
+    type: shapeless
+    category: equipment
+    ingredients:
+      'A': 'botania:crafting_halo'
+      'B': '#botania:mana_diamond_gems'
+    result:
+      id: botania:auto_crafting_halo
+      count: 1
+  botania:avatar:
+    type: shaped
+    category: redstone
+    pattern:
+      - ' W '
+      - 'WDW'
+      - 'W W'
+    ingredients:
+      'D': '#botania:mana_diamond_gems'
+      'W': '#botania:livingwood_logs'
+    result:
+      id: botania:avatar
+      count: 1
+  botania:azulejo_0_alt:
+    type: shapeless
+    category: building
+    group: 'azulejo_cycling'
+    ingredients:
+      'A': 'botania:azulejo_15'
+    result:
+      id: botania:azulejo_0
+      count: 1
+  botania:azulejo_1:
+    type: shapeless
+    category: building
+    group: 'azulejo_cycling'
+    ingredients:
+      'A': 'botania:azulejo_0'
+    result:
+      id: botania:azulejo_1
+      count: 1
+  botania:azulejo_10:
+    type: shapeless
+    category: building
+    group: 'azulejo_cycling'
+    ingredients:
+      'A': 'botania:azulejo_9'
+    result:
+      id: botania:azulejo_10
+      count: 1
+  botania:azulejo_11:
+    type: shapeless
+    category: building
+    group: 'azulejo_cycling'
+    ingredients:
+      'A': 'botania:azulejo_10'
+    result:
+      id: botania:azulejo_11
+      count: 1
+  botania:azulejo_12:
+    type: shapeless
+    category: building
+    group: 'azulejo_cycling'
+    ingredients:
+      'A': 'botania:azulejo_11'
+    result:
+      id: botania:azulejo_12
+      count: 1
+  botania:azulejo_13:
+    type: shapeless
+    category: building
+    group: 'azulejo_cycling'
+    ingredients:
+      'A': 'botania:azulejo_12'
+    result:
+      id: botania:azulejo_13
+      count: 1
+  botania:azulejo_14:
+    type: shapeless
+    category: building
+    group: 'azulejo_cycling'
+    ingredients:
+      'A': 'botania:azulejo_13'
+    result:
+      id: botania:azulejo_14
+      count: 1
+  botania:azulejo_15:
+    type: shapeless
+    category: building
+    group: 'azulejo_cycling'
+    ingredients:
+      'A': 'botania:azulejo_14'
+    result:
+      id: botania:azulejo_15
+      count: 1
+  botania:azulejo_2:
+    type: shapeless
+    category: building
+    group: 'azulejo_cycling'
+    ingredients:
+      'A': 'botania:azulejo_1'
+    result:
+      id: botania:azulejo_2
+      count: 1
+  botania:azulejo_3:
+    type: shapeless
+    category: building
+    group: 'azulejo_cycling'
+    ingredients:
+      'A': 'botania:azulejo_2'
+    result:
+      id: botania:azulejo_3
+      count: 1
+  botania:azulejo_4:
+    type: shapeless
+    category: building
+    group: 'azulejo_cycling'
+    ingredients:
+      'A': 'botania:azulejo_3'
+    result:
+      id: botania:azulejo_4
+      count: 1
+  botania:azulejo_5:
+    type: shapeless
+    category: building
+    group: 'azulejo_cycling'
+    ingredients:
+      'A': 'botania:azulejo_4'
+    result:
+      id: botania:azulejo_5
+      count: 1
+  botania:azulejo_6:
+    type: shapeless
+    category: building
+    group: 'azulejo_cycling'
+    ingredients:
+      'A': 'botania:azulejo_5'
+    result:
+      id: botania:azulejo_6
+      count: 1
+  botania:azulejo_7:
+    type: shapeless
+    category: building
+    group: 'azulejo_cycling'
+    ingredients:
+      'A': 'botania:azulejo_6'
+    result:
+      id: botania:azulejo_7
+      count: 1
+  botania:azulejo_8:
+    type: shapeless
+    category: building
+    group: 'azulejo_cycling'
+    ingredients:
+      'A': 'botania:azulejo_7'
+    result:
+      id: botania:azulejo_8
+      count: 1
+  botania:azulejo_9:
+    type: shapeless
+    category: building
+    group: 'azulejo_cycling'
+    ingredients:
+      'A': 'botania:azulejo_8'
+    result:
+      id: botania:azulejo_9
+      count: 1
+  botania:balance_cloak:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'WWW'
+      - 'RWR'
+      - 'RSR'
+    ingredients:
+      'R': 'minecraft:emerald'
+      'S': 'botania:life_essence'
+      'W': 'minecraft:light_gray_wool'
+    result:
+      id: botania:balance_cloak
+      count: 1
+  botania:bellows:
+    type: shaped
+    category: misc
+    pattern:
+      - 'SSS'
+      - 'RL '
+      - 'SSS'
+    ingredients:
+      'L': 'minecraft:leather'
+      'R': 'botania:rune_air'
+      'S': 'botania:livingwood_slab'
+    result:
+      id: botania:bellows
+      count: 1
+  botania:bifrost_pane:
+    type: shaped
+    category: misc
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:bifrost_perm'
+    result:
+      id: botania:bifrost_pane
+      count: 16
+  botania:bifrost_perm:
+    type: shapeless
+    category: building
+    ingredients:
+      'A': 'botania:rainbow_rod'
+      'B': 'botania:elf_glass'
+    result:
+      id: botania:bifrost_perm
+      count: 1
+  botania:black_floating_flower:
+    type: shaped
+    category: misc
+    group: 'floating_flowers'
+    pattern:
+      - 'F'
+      - 'S'
+      - 'D'
+    ingredients:
+      'D': 'minecraft:dirt'
+      'F': 'botania:black_shiny_flower'
+      'S': 'botania:grass_seeds'
+    result:
+      id: botania:black_floating_flower
+      count: 1
+  botania:black_hole_talisman:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' G '
+      - 'EAE'
+      - ' E '
+    ingredients:
+      'A': 'botania:ender_air_bottle'
+      'E': '#botania:elementium_ingots'
+      'G': 'botania:life_essence'
+    result:
+      id: botania:black_hole_talisman
+      count: 1
+  botania:black_pavement:
+    type: shapeless
+    category: building
+    group: 'pavement'
+    ingredients:
+      'A': 'botania:livingrock'
+      'B': 'minecraft:cobblestone'
+      'C': 'minecraft:gravel'
+      'D': 'minecraft:coal'
+    result:
+      id: botania:black_pavement
+      count: 3
+  botania:black_pavement_slab:
+    type: shaped
+    category: building
+    group: 'pavement_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:black_pavement'
+    result:
+      id: botania:black_pavement_slab
+      count: 6
+  botania:black_pavement_stairs:
+    type: shaped
+    category: building
+    group: 'pavement_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:black_pavement'
+    result:
+      id: botania:black_pavement_stairs
+      count: 4
+  botania:black_petal_block:
+    type: shaped
+    category: misc
+    group: 'petal_block'
+    pattern:
+      - 'PPP'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:black_petal'
+    result:
+      id: botania:black_petal_block
+      count: 1
+  botania:black_shiny_flower:
+    type: shapeless
+    category: misc
+    group: 'shiny_flower'
+    ingredients:
+      'A': 'minecraft:glowstone_dust'
+      'B': 'minecraft:glowstone_dust'
+      'C': 'botania:black_mystical_flower'
+    result:
+      id: botania:black_shiny_flower
+      count: 1
+  botania:blaze_block:
+    type: shaped
+    category: building
+    pattern:
+      - 'III'
+      - 'III'
+      - 'III'
+    ingredients:
+      'I': 'minecraft:blaze_rod'
+    result:
+      id: botania:blaze_block
+      count: 1
+  botania:blaze_quartz:
+    type: shaped
+    category: building
+    group: 'quartz_block'
+    pattern:
+      - 'QQ'
+      - 'QQ'
+    ingredients:
+      'Q': 'botania:quartz_blaze'
+    result:
+      id: botania:blaze_quartz
+      count: 1
+  botania:blaze_quartz_pillar:
+    type: shaped
+    category: building
+    group: 'quartz_pillar'
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:blaze_quartz'
+    result:
+      id: botania:blaze_quartz_pillar
+      count: 2
+  botania:blaze_quartz_slab:
+    type: shaped
+    category: building
+    group: 'quartz_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:blaze_quartz'
+    result:
+      id: botania:blaze_quartz_slab
+      count: 6
+  botania:blaze_quartz_stairs:
+    type: shaped
+    category: building
+    group: 'quartz_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:blaze_quartz'
+    result:
+      id: botania:blaze_quartz_stairs
+      count: 4
+  botania:blood_pendant:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' P '
+      - 'PGP'
+      - 'DP '
+    ingredients:
+      'D': '#botania:mana_diamond_gems'
+      'G': 'minecraft:ghast_tear'
+      'P': 'minecraft:prismarine_crystals'
+    result:
+      id: botania:blood_pendant
+      count: 1
+  botania:blue_floating_flower:
+    type: shaped
+    category: misc
+    group: 'floating_flowers'
+    pattern:
+      - 'F'
+      - 'S'
+      - 'D'
+    ingredients:
+      'D': 'minecraft:dirt'
+      'F': 'botania:blue_shiny_flower'
+      'S': 'botania:grass_seeds'
+    result:
+      id: botania:blue_floating_flower
+      count: 1
+  botania:blue_pavement:
+    type: shapeless
+    category: building
+    group: 'pavement'
+    ingredients:
+      'A': 'botania:livingrock'
+      'B': 'minecraft:cobblestone'
+      'C': 'minecraft:gravel'
+      'D': 'minecraft:lapis_lazuli'
+    result:
+      id: botania:blue_pavement
+      count: 3
+  botania:blue_pavement_slab:
+    type: shaped
+    category: building
+    group: 'pavement_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:blue_pavement'
+    result:
+      id: botania:blue_pavement_slab
+      count: 6
+  botania:blue_pavement_stairs:
+    type: shaped
+    category: building
+    group: 'pavement_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:blue_pavement'
+    result:
+      id: botania:blue_pavement_stairs
+      count: 4
+  botania:blue_petal_block:
+    type: shaped
+    category: misc
+    group: 'petal_block'
+    pattern:
+      - 'PPP'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:blue_petal'
+    result:
+      id: botania:blue_petal_block
+      count: 1
+  botania:blue_shiny_flower:
+    type: shapeless
+    category: misc
+    group: 'shiny_flower'
+    ingredients:
+      'A': 'minecraft:glowstone_dust'
+      'B': 'minecraft:glowstone_dust'
+      'C': 'botania:blue_mystical_flower'
+    result:
+      id: botania:blue_shiny_flower
+      count: 1
+  botania:brewery:
+    type: shaped
+    category: misc
+    pattern:
+      - 'RSR'
+      - 'RAR'
+      - 'RMR'
+    ingredients:
+      'A': 'botania:rune_mana'
+      'M': '#botania:manasteel_blocks'
+      'R': 'botania:livingrock'
+      'S': 'minecraft:brewing_stand'
+    result:
+      id: botania:brewery
+      count: 1
+  botania:brown_floating_flower:
+    type: shaped
+    category: misc
+    group: 'floating_flowers'
+    pattern:
+      - 'F'
+      - 'S'
+      - 'D'
+    ingredients:
+      'D': 'minecraft:dirt'
+      'F': 'botania:brown_shiny_flower'
+      'S': 'botania:grass_seeds'
+    result:
+      id: botania:brown_floating_flower
+      count: 1
+  botania:brown_petal_block:
+    type: shaped
+    category: misc
+    group: 'petal_block'
+    pattern:
+      - 'PPP'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:brown_petal'
+    result:
+      id: botania:brown_petal_block
+      count: 1
+  botania:brown_shiny_flower:
+    type: shapeless
+    category: misc
+    group: 'shiny_flower'
+    ingredients:
+      'A': 'minecraft:glowstone_dust'
+      'B': 'minecraft:glowstone_dust'
+      'C': 'botania:brown_mystical_flower'
+    result:
+      id: botania:brown_shiny_flower
+      count: 1
+  botania:cacophonium:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' G '
+      - 'GNG'
+      - 'GG '
+    ingredients:
+      'G': 'minecraft:copper_ingot'
+      'N': 'minecraft:note_block'
+    result:
+      id: botania:cacophonium
+      count: 1
+  botania:cell_block:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'minecraft:cactus'
+      'B': 'minecraft:cactus'
+      'C': 'minecraft:cactus'
+      'D': 'minecraft:beetroot'
+      'E': 'minecraft:carrot'
+      'F': 'minecraft:potato'
+    result:
+      id: botania:cell_block
+      count: 3
+  botania:chiseled_blaze_quartz:
+    type: shaped
+    category: building
+    group: 'quartz_chiseled'
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:blaze_quartz_slab'
+    result:
+      id: botania:chiseled_blaze_quartz
+      count: 1
+  botania:chiseled_dark_quartz:
+    type: shaped
+    category: building
+    group: 'quartz_chiseled'
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:dark_quartz_slab'
+    result:
+      id: botania:chiseled_dark_quartz
+      count: 1
+  botania:chiseled_elf_quartz:
+    type: shaped
+    category: building
+    group: 'quartz_chiseled'
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:elf_quartz_slab'
+    result:
+      id: botania:chiseled_elf_quartz
+      count: 1
+  botania:chiseled_lavender_quartz:
+    type: shaped
+    category: building
+    group: 'quartz_chiseled'
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:lavender_quartz_slab'
+    result:
+      id: botania:chiseled_lavender_quartz
+      count: 1
+  botania:chiseled_livingrock_bricks:
+    type: shaped
+    category: building
+    pattern:
+      - 'R'
+      - 'R'
+    ingredients:
+      'R': 'botania:livingrock_bricks_slab'
+    result:
+      id: botania:chiseled_livingrock_bricks
+      count: 1
+  botania:chiseled_mana_quartz:
+    type: shaped
+    category: building
+    group: 'quartz_chiseled'
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:mana_quartz_slab'
+    result:
+      id: botania:chiseled_mana_quartz
+      count: 1
+  botania:chiseled_metamorphic_desert_bricks:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:metamorphic_desert_bricks_slab'
+    result:
+      id: botania:chiseled_metamorphic_desert_bricks
+      count: 1
+  botania:chiseled_metamorphic_forest_bricks:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:metamorphic_forest_bricks_slab'
+    result:
+      id: botania:chiseled_metamorphic_forest_bricks
+      count: 1
+  botania:chiseled_metamorphic_fungal_bricks:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:metamorphic_fungal_bricks_slab'
+    result:
+      id: botania:chiseled_metamorphic_fungal_bricks
+      count: 1
+  botania:chiseled_metamorphic_mesa_bricks:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:metamorphic_mesa_bricks_slab'
+    result:
+      id: botania:chiseled_metamorphic_mesa_bricks
+      count: 1
+  botania:chiseled_metamorphic_mountain_bricks:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:metamorphic_mountain_bricks_slab'
+    result:
+      id: botania:chiseled_metamorphic_mountain_bricks
+      count: 1
+  botania:chiseled_metamorphic_plains_bricks:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:metamorphic_plains_bricks_slab'
+    result:
+      id: botania:chiseled_metamorphic_plains_bricks
+      count: 1
+  botania:chiseled_metamorphic_swamp_bricks:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:metamorphic_swamp_bricks_slab'
+    result:
+      id: botania:chiseled_metamorphic_swamp_bricks
+      count: 1
+  botania:chiseled_metamorphic_taiga_bricks:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:metamorphic_taiga_bricks_slab'
+    result:
+      id: botania:chiseled_metamorphic_taiga_bricks
+      count: 1
+  botania:chiseled_red_quartz:
+    type: shaped
+    category: building
+    group: 'quartz_chiseled'
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:red_quartz_slab'
+    result:
+      id: botania:chiseled_red_quartz
+      count: 1
+  botania:chiseled_sunny_quartz:
+    type: shaped
+    category: building
+    group: 'quartz_chiseled'
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:sunny_quartz_slab'
+    result:
+      id: botania:chiseled_sunny_quartz
+      count: 1
+  botania:clip:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' D '
+      - 'D D'
+      - 'DD '
+    ingredients:
+      'D': '#botania:dreamwood_logs'
+    result:
+      id: botania:clip
+      count: 1
+  botania:cloud_pendant:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'MS '
+      - 'S S'
+      - 'DSF'
+    ingredients:
+      'D': '#botania:manasteel_ingots'
+      'F': 'botania:rune_air'
+      'M': 'botania:rune_autumn'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cloud_pendant
+      count: 1
+  botania:cobble_rod:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' FC'
+      - ' TW'
+      - 'T  '
+    ingredients:
+      'C': 'minecraft:cobblestone'
+      'F': 'botania:rune_fire'
+      'T': 'botania:livingwood_twig'
+      'W': 'botania:rune_water'
+    result:
+      id: botania:cobble_rod
+      count: 1
+  botania:cobweb:
+    type: shaped
+    category: misc
+    pattern:
+      - 'S S'
+      - ' M '
+      - 'S S'
+    ingredients:
+      'M': 'botania:mana_string'
+      'S': 'minecraft:string'
+    result:
+      id: minecraft:cobweb
+      count: 1
+  botania:cocoon:
+    type: shaped
+    category: misc
+    pattern:
+      - 'SSS'
+      - 'CPC'
+      - 'SDS'
+    ingredients:
+      'C': 'botania:manaweave_cloth'
+      'D': 'botania:pixie_dust'
+      'P': 'botania:fel_pumpkin'
+      'S': 'minecraft:string'
+    result:
+      id: botania:cocoon
+      count: 1
+  botania:conjuration_catalyst:
+    type: shaped
+    category: misc
+    pattern:
+      - 'SBS'
+      - 'GPG'
+      - 'SGS'
+    ingredients:
+      'B': 'botania:pixie_dust'
+      'G': '#botania:elementium_ingots'
+      'P': 'botania:alchemy_catalyst'
+      'S': 'botania:livingrock'
+    result:
+      id: botania:conjuration_catalyst
+      count: 1
+  botania:corporea_block:
+    type: shapeless
+    category: building
+    ingredients:
+      'A': 'botania:polished_livingrock'
+      'B': 'botania:corporea_spark'
+    result:
+      id: botania:corporea_block
+      count: 8
+  botania:corporea_brick:
+    type: shaped
+    category: building
+    pattern:
+      - 'RR'
+      - 'RR'
+    ingredients:
+      'R': 'botania:corporea_block'
+    result:
+      id: botania:corporea_brick
+      count: 4
+  botania:corporea_brick_slab:
+    type: shaped
+    category: building
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:corporea_brick'
+    result:
+      id: botania:corporea_brick_slab
+      count: 6
+  botania:corporea_brick_stairs:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:corporea_brick'
+    result:
+      id: botania:corporea_brick_stairs
+      count: 4
+  botania:corporea_brick_wall:
+    type: shaped
+    category: misc
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:corporea_brick'
+    result:
+      id: botania:corporea_brick_wall
+      count: 6
+  botania:corporea_crystal_cube:
+    type: shaped
+    category: redstone
+    pattern:
+      - 'C'
+      - 'G'
+      - 'W'
+    ingredients:
+      'C': 'botania:corporea_spark'
+      'G': 'botania:elf_glass'
+      'W': '#botania:dreamwood_logs'
+    result:
+      id: botania:corporea_crystal_cube
+      count: 1
+  botania:corporea_funnel:
+    type: shapeless
+    category: redstone
+    ingredients:
+      'A': 'minecraft:dropper'
+      'B': 'botania:corporea_spark'
+    result:
+      id: botania:corporea_funnel
+      count: 1
+  botania:corporea_index:
+    type: shaped
+    category: redstone
+    pattern:
+      - 'AOA'
+      - 'OSO'
+      - 'DOD'
+    ingredients:
+      'A': 'botania:ender_air_bottle'
+      'D': '#botania:dragonstone_gems'
+      'O': 'minecraft:obsidian'
+      'S': 'botania:corporea_spark'
+    result:
+      id: botania:corporea_index
+      count: 1
+  botania:corporea_interceptor:
+    type: shapeless
+    category: redstone
+    ingredients:
+      'A': 'minecraft:redstone_block'
+      'B': 'botania:corporea_spark'
+    result:
+      id: botania:corporea_interceptor
+      count: 1
+  botania:corporea_slab:
+    type: shaped
+    category: building
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:corporea_block'
+    result:
+      id: botania:corporea_slab
+      count: 6
+  botania:corporea_spark:
+    type: shapeless
+    category: redstone
+    ingredients:
+      'A': 'botania:spark'
+      'B': 'botania:pixie_dust'
+      'C': 'botania:ender_air_bottle'
+    result:
+      id: botania:corporea_spark
+      count: 4
+  botania:corporea_spark_master:
+    type: shapeless
+    category: redstone
+    ingredients:
+      'A': 'botania:corporea_spark'
+      'B': '#botania:dragonstone_gems'
+    result:
+      id: botania:corporea_spark_master
+      count: 1
+  botania:corporea_stairs:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:corporea_block'
+    result:
+      id: botania:corporea_stairs
+      count: 4
+  botania:cosmetic_alien_antenna:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'minecraft:light_gray_dye'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_alien_antenna
+      count: 1
+  botania:cosmetic_anaglyph_glasses:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'minecraft:cyan_dye'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_anaglyph_glasses
+      count: 1
+  botania:cosmetic_ancient_mask:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'minecraft:pink_dye'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_ancient_mask
+      count: 1
+  botania:cosmetic_black_bowtie:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:white_petal'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_black_bowtie
+      count: 1
+  botania:cosmetic_black_tie:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:orange_petal'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_black_tie
+      count: 1
+  botania:cosmetic_blue_butterfly:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:purple_petal'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_blue_butterfly
+      count: 1
+  botania:cosmetic_botanist_emblem:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'minecraft:lime_dye'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_botanist_emblem
+      count: 1
+  botania:cosmetic_cat_ears:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:blue_petal'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_cat_ears
+      count: 1
+  botania:cosmetic_clock_eye:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'minecraft:orange_dye'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_clock_eye
+      count: 1
+  botania:cosmetic_devil_horns:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'minecraft:light_blue_dye'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_devil_horns
+      count: 1
+  botania:cosmetic_devil_tail:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:green_petal'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_devil_tail
+      count: 1
+  botania:cosmetic_eerie_mask:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'minecraft:gray_dye'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_eerie_mask
+      count: 1
+  botania:cosmetic_engineer_goggles:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:yellow_petal'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_engineer_goggles
+      count: 1
+  botania:cosmetic_eyepatch:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:lime_petal'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_eyepatch
+      count: 1
+  botania:cosmetic_four_leaf_clover:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'minecraft:white_dye'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_four_leaf_clover
+      count: 1
+  botania:cosmetic_googly_eyes:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:black_petal'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_googly_eyes
+      count: 1
+  botania:cosmetic_groucho_glasses:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'minecraft:blue_dye'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_groucho_glasses
+      count: 1
+  botania:cosmetic_hyper_plus:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'minecraft:yellow_dye'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_hyper_plus
+      count: 1
+  botania:cosmetic_kamui_eye:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:red_petal'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_kamui_eye
+      count: 1
+  botania:cosmetic_lusitanic_shield:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'minecraft:green_dye'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_lusitanic_shield
+      count: 1
+  botania:cosmetic_orange_shades:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'minecraft:purple_dye'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_orange_shades
+      count: 1
+  botania:cosmetic_pink_flower_bud:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:light_gray_petal'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_pink_flower_bud
+      count: 1
+  botania:cosmetic_polka_dotted_bows:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:cyan_petal'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_polka_dotted_bows
+      count: 1
+  botania:cosmetic_puffy_scarf:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:light_blue_petal'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_puffy_scarf
+      count: 1
+  botania:cosmetic_questgiver_mark:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'minecraft:black_dye'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_questgiver_mark
+      count: 1
+  botania:cosmetic_red_glasses:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:magenta_petal'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_red_glasses
+      count: 1
+  botania:cosmetic_red_ribbons:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:gray_petal'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_red_ribbons
+      count: 1
+  botania:cosmetic_thick_eyebrows:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'minecraft:brown_dye'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_thick_eyebrows
+      count: 1
+  botania:cosmetic_thinking_hand:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:tiny_potato'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_thinking_hand
+      count: 1
+  botania:cosmetic_tiny_potato_mask:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'minecraft:red_dye'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_tiny_potato_mask
+      count: 1
+  botania:cosmetic_unicorn_horn:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'minecraft:magenta_dye'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_unicorn_horn
+      count: 1
+  botania:cosmetic_wicked_eyepatch:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:pink_petal'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_wicked_eyepatch
+      count: 1
+  botania:cosmetic_witch_pin:
+    type: shaped
+    category: misc
+    group: 'cosmetic_bauble'
+    pattern:
+      - 'PPP'
+      - 'PSP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:brown_petal'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:cosmetic_witch_pin
+      count: 1
+  botania:crafting_halo:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' P '
+      - 'ICI'
+      - ' I '
+    ingredients:
+      'C': 'minecraft:crafting_table'
+      'I': '#botania:manasteel_ingots'
+      'P': 'botania:mana_pearl'
+    result:
+      id: botania:crafting_halo
+      count: 1
+  botania:crafty_crate:
+    type: shaped
+    category: redstone
+    pattern:
+      - 'WCW'
+      - 'W W'
+      - 'W W'
+    ingredients:
+      'C': 'minecraft:crafting_table'
+      'W': 'botania:dreamwood_planks'
+    result:
+      id: botania:crafty_crate
+      count: 1
+  botania:crystal_bow:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' DS'
+      - 'T S'
+      - ' DS'
+    ingredients:
+      'D': '#botania:dragonstone_gems'
+      'S': 'botania:mana_string'
+      'T': 'botania:livingwood_twig'
+    result:
+      id: botania:crystal_bow
+      count: 1
+  botania:cyan_floating_flower:
+    type: shaped
+    category: misc
+    group: 'floating_flowers'
+    pattern:
+      - 'F'
+      - 'S'
+      - 'D'
+    ingredients:
+      'D': 'minecraft:dirt'
+      'F': 'botania:cyan_shiny_flower'
+      'S': 'botania:grass_seeds'
+    result:
+      id: botania:cyan_floating_flower
+      count: 1
+  botania:cyan_petal_block:
+    type: shaped
+    category: misc
+    group: 'petal_block'
+    pattern:
+      - 'PPP'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:cyan_petal'
+    result:
+      id: botania:cyan_petal_block
+      count: 1
+  botania:cyan_shiny_flower:
+    type: shapeless
+    category: misc
+    group: 'shiny_flower'
+    ingredients:
+      'A': 'minecraft:glowstone_dust'
+      'B': 'minecraft:glowstone_dust'
+      'C': 'botania:cyan_mystical_flower'
+    result:
+      id: botania:cyan_shiny_flower
+      count: 1
+  botania:dark_quartz:
+    type: shaped
+    category: building
+    group: 'quartz_block'
+    pattern:
+      - 'QQ'
+      - 'QQ'
+    ingredients:
+      'Q': 'botania:quartz_dark'
+    result:
+      id: botania:dark_quartz
+      count: 1
+  botania:dark_quartz_pillar:
+    type: shaped
+    category: building
+    group: 'quartz_pillar'
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:dark_quartz'
+    result:
+      id: botania:dark_quartz_pillar
+      count: 2
+  botania:dark_quartz_slab:
+    type: shaped
+    category: building
+    group: 'quartz_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:dark_quartz'
+    result:
+      id: botania:dark_quartz_slab
+      count: 6
+  botania:dark_quartz_stairs:
+    type: shaped
+    category: building
+    group: 'quartz_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:dark_quartz'
+    result:
+      id: botania:dark_quartz_stairs
+      count: 4
+  botania:detector_light_relay:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:light_relay'
+      'B': 'minecraft:redstone'
+    result:
+      id: botania:detector_light_relay
+      count: 1
+  botania:diluted_pool:
+    type: shaped
+    category: misc
+    pattern:
+      - 'R R'
+      - 'RRR'
+    ingredients:
+      'R': 'botania:livingrock_slab'
+    result:
+      id: botania:diluted_pool
+      count: 1
+  botania:dirt_rod:
+    type: shaped
+    category: equipment
+    pattern:
+      - '  D'
+      - ' T '
+      - 'E  '
+    ingredients:
+      'D': 'minecraft:dirt'
+      'E': 'botania:rune_earth'
+      'T': 'botania:livingwood_twig'
+    result:
+      id: botania:dirt_rod
+      count: 1
+  botania:diva_charm:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'LGP'
+      - ' HG'
+      - ' GL'
+    ingredients:
+      'G': 'minecraft:gold_ingot'
+      'H': 'botania:rune_pride'
+      'L': 'botania:life_essence'
+      'P': 'botania:tiny_planet'
+    result:
+      id: botania:diva_charm
+      count: 1
+  botania:divining_rod:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' TD'
+      - ' TT'
+      - 'T  '
+    ingredients:
+      'D': '#botania:mana_diamond_gems'
+      'T': 'botania:livingwood_twig'
+    result:
+      id: botania:divining_rod
+      count: 1
+  botania:dodge_ring:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'EM '
+      - 'M M'
+      - ' MR'
+    ingredients:
+      'E': 'minecraft:emerald'
+      'M': '#botania:manasteel_ingots'
+      'R': 'botania:rune_air'
+    result:
+      id: botania:dodge_ring
+      count: 1
+  botania:dragonstone_block:
+    type: shaped
+    category: building
+    pattern:
+      - 'III'
+      - 'III'
+      - 'III'
+    ingredients:
+      'I': '#botania:dragonstone_gems'
+    result:
+      id: botania:dragonstone_block
+      count: 1
+  botania:dreamwood:
+    type: shaped
+    category: building
+    group: 'wood'
+    pattern:
+      - '##'
+      - '##'
+    ingredients:
+      '#': 'botania:dreamwood_log'
+    result:
+      id: botania:dreamwood
+      count: 3
+  botania:dreamwood_fence:
+    type: shaped
+    category: misc
+    group: 'wooden_fence'
+    pattern:
+      - 'BSB'
+      - 'BSB'
+    ingredients:
+      'B': 'botania:dreamwood_planks'
+      'S': 'minecraft:stick'
+    result:
+      id: botania:dreamwood_fence
+      count: 3
+  botania:dreamwood_fence_gate:
+    type: shaped
+    category: redstone
+    group: 'wooden_fence_gate'
+    pattern:
+      - 'SBS'
+      - 'SBS'
+    ingredients:
+      'B': 'botania:dreamwood_planks'
+      'S': 'minecraft:stick'
+    result:
+      id: botania:dreamwood_fence_gate
+      count: 1
+  botania:dreamwood_planks:
+    type: shapeless
+    category: building
+    group: 'planks'
+    ingredients:
+      'A': '#botania:dreamwood_logs'
+    result:
+      id: botania:dreamwood_planks
+      count: 4
+  botania:dreamwood_planks_slab:
+    type: shaped
+    category: building
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:dreamwood_planks'
+    result:
+      id: botania:dreamwood_planks_slab
+      count: 6
+  botania:dreamwood_planks_stairs:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:dreamwood_planks'
+    result:
+      id: botania:dreamwood_planks_stairs
+      count: 4
+  botania:dreamwood_slab:
+    type: shaped
+    category: building
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:dreamwood'
+    result:
+      id: botania:dreamwood_slab
+      count: 6
+  botania:dreamwood_stairs:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:dreamwood'
+    result:
+      id: botania:dreamwood_stairs
+      count: 4
+  botania:dreamwood_twig:
+    type: shaped
+    category: misc
+    pattern:
+      - ' W'
+      - 'W '
+    ingredients:
+      'W': '#botania:dreamwood_logs'
+    result:
+      id: botania:dreamwood_twig
+      count: 1
+  botania:dreamwood_wall:
+    type: shaped
+    category: misc
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:dreamwood'
+    result:
+      id: botania:dreamwood_wall
+      count: 6
+  botania:dreamwood_wand:
+    type: shaped
+    category: equipment
+    group: 'twig_wand'
+    pattern:
+      - ' PS'
+      - ' SP'
+      - 'S  '
+    ingredients:
+      'P': '#botania:petals'
+      'S': 'botania:dreamwood_twig'
+    result:
+      id: botania:dreamwood_wand
+      count: 1
+  botania:drum_canopy:
+    type: shaped
+    category: misc
+    pattern:
+      - 'WLW'
+      - 'WHW'
+      - 'WLW'
+    ingredients:
+      'H': 'botania:horn_leaves'
+      'L': 'minecraft:leather'
+      'W': '#botania:livingwood_logs'
+    result:
+      id: botania:drum_canopy
+      count: 1
+  botania:drum_gathering:
+    type: shaped
+    category: misc
+    pattern:
+      - 'WLW'
+      - 'WEW'
+      - 'WLW'
+    ingredients:
+      'E': '#botania:elementium_ingots'
+      'L': 'minecraft:leather'
+      'W': '#botania:dreamwood_logs'
+    result:
+      id: botania:drum_gathering
+      count: 1
+  botania:drum_wild:
+    type: shaped
+    category: misc
+    pattern:
+      - 'WLW'
+      - 'WHW'
+      - 'WLW'
+    ingredients:
+      'H': 'botania:horn_grass'
+      'L': 'minecraft:leather'
+      'W': '#botania:livingwood_logs'
+    result:
+      id: botania:drum_wild
+      count: 1
+  botania:dry_seeds:
+    type: shapeless
+    category: misc
+    group: 'seeds'
+    ingredients:
+      'A': 'botania:grass_seeds'
+      'B': 'minecraft:dead_bush'
+    result:
+      id: botania:dry_seeds
+      count: 1
+  botania:dye_black:
+    type: shapeless
+    category: misc
+    group: 'dye'
+    ingredients:
+      'A': '#botania:petals/black'
+    result:
+      id: minecraft:black_dye
+      count: 1
+  botania:dye_blue:
+    type: shapeless
+    category: misc
+    group: 'dye'
+    ingredients:
+      'A': '#botania:petals/blue'
+    result:
+      id: minecraft:blue_dye
+      count: 1
+  botania:dye_brown:
+    type: shapeless
+    category: misc
+    group: 'dye'
+    ingredients:
+      'A': '#botania:petals/brown'
+    result:
+      id: minecraft:brown_dye
+      count: 1
+  botania:dye_cyan:
+    type: shapeless
+    category: misc
+    group: 'dye'
+    ingredients:
+      'A': '#botania:petals/cyan'
+    result:
+      id: minecraft:cyan_dye
+      count: 1
+  botania:dye_gray:
+    type: shapeless
+    category: misc
+    group: 'dye'
+    ingredients:
+      'A': '#botania:petals/gray'
+    result:
+      id: minecraft:gray_dye
+      count: 1
+  botania:dye_green:
+    type: shapeless
+    category: misc
+    group: 'dye'
+    ingredients:
+      'A': '#botania:petals/green'
+    result:
+      id: minecraft:green_dye
+      count: 1
+  botania:dye_light_blue:
+    type: shapeless
+    category: misc
+    group: 'dye'
+    ingredients:
+      'A': '#botania:petals/light_blue'
+    result:
+      id: minecraft:light_blue_dye
+      count: 1
+  botania:dye_light_gray:
+    type: shapeless
+    category: misc
+    group: 'dye'
+    ingredients:
+      'A': '#botania:petals/light_gray'
+    result:
+      id: minecraft:light_gray_dye
+      count: 1
+  botania:dye_lime:
+    type: shapeless
+    category: misc
+    group: 'dye'
+    ingredients:
+      'A': '#botania:petals/lime'
+    result:
+      id: minecraft:lime_dye
+      count: 1
+  botania:dye_magenta:
+    type: shapeless
+    category: misc
+    group: 'dye'
+    ingredients:
+      'A': '#botania:petals/magenta'
+    result:
+      id: minecraft:magenta_dye
+      count: 1
+  botania:dye_orange:
+    type: shapeless
+    category: misc
+    group: 'dye'
+    ingredients:
+      'A': '#botania:petals/orange'
+    result:
+      id: minecraft:orange_dye
+      count: 1
+  botania:dye_pink:
+    type: shapeless
+    category: misc
+    group: 'dye'
+    ingredients:
+      'A': '#botania:petals/pink'
+    result:
+      id: minecraft:pink_dye
+      count: 1
+  botania:dye_purple:
+    type: shapeless
+    category: misc
+    group: 'dye'
+    ingredients:
+      'A': '#botania:petals/purple'
+    result:
+      id: minecraft:purple_dye
+      count: 1
+  botania:dye_red:
+    type: shapeless
+    category: misc
+    group: 'dye'
+    ingredients:
+      'A': '#botania:petals/red'
+    result:
+      id: minecraft:red_dye
+      count: 1
+  botania:dye_white:
+    type: shapeless
+    category: misc
+    group: 'dye'
+    ingredients:
+      'A': '#botania:petals/white'
+    result:
+      id: minecraft:white_dye
+      count: 1
+  botania:dye_yellow:
+    type: shapeless
+    category: misc
+    group: 'dye'
+    ingredients:
+      'A': '#botania:petals/yellow'
+    result:
+      id: minecraft:yellow_dye
+      count: 1
+  botania:elementium_axe:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'SS'
+      - 'ST'
+      - ' T'
+    ingredients:
+      'S': '#botania:elementium_ingots'
+      'T': 'botania:dreamwood_twig'
+    result:
+      id: botania:elementium_axe
+      count: 1
+  botania:elementium_block:
+    type: shaped
+    category: building
+    pattern:
+      - 'III'
+      - 'III'
+      - 'III'
+    ingredients:
+      'I': '#botania:elementium_ingots'
+    result:
+      id: botania:elementium_block
+      count: 1
+  botania:elementium_boots:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'S S'
+      - 'S S'
+    ingredients:
+      'S': '#botania:elementium_ingots'
+    result:
+      id: botania:elementium_boots
+      count: 1
+  botania:elementium_chestplate:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'S S'
+      - 'SSS'
+      - 'SSS'
+    ingredients:
+      'S': '#botania:elementium_ingots'
+    result:
+      id: botania:elementium_chestplate
+      count: 1
+  botania:elementium_helmet:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'SSS'
+      - 'S S'
+    ingredients:
+      'S': '#botania:elementium_ingots'
+    result:
+      id: botania:elementium_helmet
+      count: 1
+  botania:elementium_hoe:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'SS'
+      - ' T'
+      - ' T'
+    ingredients:
+      'S': '#botania:elementium_ingots'
+      'T': 'botania:dreamwood_twig'
+    result:
+      id: botania:elementium_hoe
+      count: 1
+  botania:elementium_leggings:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'SSS'
+      - 'S S'
+      - 'S S'
+    ingredients:
+      'S': '#botania:elementium_ingots'
+    result:
+      id: botania:elementium_leggings
+      count: 1
+  botania:elementium_pickaxe:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'SSS'
+      - ' T '
+      - ' T '
+    ingredients:
+      'S': '#botania:elementium_ingots'
+      'T': 'botania:dreamwood_twig'
+    result:
+      id: botania:elementium_pickaxe
+      count: 1
+  botania:elementium_shears:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' S'
+      - 'S '
+    ingredients:
+      'S': '#botania:elementium_ingots'
+    result:
+      id: botania:elementium_shears
+      count: 1
+  botania:elementium_shovel:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'S'
+      - 'T'
+      - 'T'
+    ingredients:
+      'S': '#botania:elementium_ingots'
+      'T': 'botania:dreamwood_twig'
+    result:
+      id: botania:elementium_shovel
+      count: 1
+  botania:elementium_sword:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'S'
+      - 'S'
+      - 'T'
+    ingredients:
+      'S': '#botania:elementium_ingots'
+      'T': 'botania:dreamwood_twig'
+    result:
+      id: botania:elementium_sword
+      count: 1
+  botania:elf_glass_pane:
+    type: shaped
+    category: misc
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:elf_glass'
+    result:
+      id: botania:elf_glass_pane
+      count: 16
+  botania:elf_quartz:
+    type: shaped
+    category: building
+    group: 'quartz_block'
+    pattern:
+      - 'QQ'
+      - 'QQ'
+    ingredients:
+      'Q': 'botania:quartz_elven'
+    result:
+      id: botania:elf_quartz
+      count: 1
+  botania:elf_quartz_pillar:
+    type: shaped
+    category: building
+    group: 'quartz_pillar'
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:elf_quartz'
+    result:
+      id: botania:elf_quartz_pillar
+      count: 2
+  botania:elf_quartz_slab:
+    type: shaped
+    category: building
+    group: 'quartz_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:elf_quartz'
+    result:
+      id: botania:elf_quartz_slab
+      count: 6
+  botania:elf_quartz_stairs:
+    type: shaped
+    category: building
+    group: 'quartz_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:elf_quartz'
+    result:
+      id: botania:elf_quartz_stairs
+      count: 4
+  botania:elven_spreader:
+    type: shaped
+    category: redstone
+    group: 'spreader'
+    pattern:
+      - 'WWW'
+      - 'EP '
+      - 'WWW'
+    ingredients:
+      'E': '#botania:elementium_ingots'
+      'P': '#botania:petals'
+      'W': '#botania:dreamwood_logs'
+    result:
+      id: botania:elven_spreader
+      count: 1
+  botania:ender_dagger:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'P'
+      - 'S'
+      - 'T'
+    ingredients:
+      'P': 'botania:mana_pearl'
+      'S': '#botania:manasteel_ingots'
+      'T': 'botania:livingwood_twig'
+    result:
+      id: botania:ender_dagger
+      count: 1
+  botania:ender_eye_block:
+    type: shaped
+    category: redstone
+    pattern:
+      - 'RER'
+      - 'EOE'
+      - 'RER'
+    ingredients:
+      'E': 'minecraft:ender_eye'
+      'O': 'minecraft:obsidian'
+      'R': 'minecraft:redstone'
+    result:
+      id: botania:ender_eye_block
+      count: 1
+  botania:ender_hand:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'PLO'
+      - 'LEL'
+      - 'OL '
+    ingredients:
+      'E': 'minecraft:ender_chest'
+      'L': 'minecraft:leather'
+      'O': 'minecraft:obsidian'
+      'P': 'botania:mana_pearl'
+    result:
+      id: botania:ender_hand
+      count: 1
+  botania:exchange_rod:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' SR'
+      - ' TS'
+      - 'T  '
+    ingredients:
+      'R': 'botania:rune_sloth'
+      'S': 'minecraft:stone'
+      'T': 'botania:livingwood_twig'
+    result:
+      id: botania:exchange_rod
+      count: 1
+  botania:fabulous_pool:
+    type: shaped
+    category: misc
+    pattern:
+      - 'R R'
+      - 'RRR'
+    ingredients:
+      'R': 'botania:shimmerrock'
+    result:
+      id: botania:fabulous_pool
+      count: 1
+  botania:fabulous_pool_upgrade:
+    type: shaped
+    category: misc
+    pattern:
+      - 'BPB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:bifrost_perm'
+      'P': 'botania:mana_pool'
+    result:
+      id: botania:fabulous_pool
+      count: 1
+  botania:fel_pumpkin:
+    type: shaped
+    category: misc
+    pattern:
+      - ' S '
+      - 'BPF'
+      - ' G '
+    ingredients:
+      'B': 'minecraft:bone'
+      'F': 'minecraft:rotten_flesh'
+      'G': 'minecraft:gunpowder'
+      'P': 'minecraft:pumpkin'
+      'S': 'minecraft:string'
+    result:
+      id: botania:fel_pumpkin
+      count: 1
+  botania:fire_rod:
+    type: shaped
+    category: equipment
+    pattern:
+      - '  F'
+      - ' T '
+      - 'R  '
+    ingredients:
+      'F': 'minecraft:blaze_powder'
+      'R': 'botania:rune_fire'
+      'T': 'botania:livingwood_twig'
+    result:
+      id: botania:fire_rod
+      count: 1
+  botania:flare_chakram:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'BBB'
+      - 'CPC'
+      - 'BBB'
+    ingredients:
+      'B': 'minecraft:blaze_powder'
+      'C': 'botania:thorn_chakram'
+      'P': 'botania:pixie_dust'
+    result:
+      id: botania:flare_chakram
+      count: 2
+  botania:flask:
+    type: shaped
+    category: misc
+    pattern:
+      - 'G G'
+      - ' G '
+    ingredients:
+      'G': 'botania:elf_glass'
+    result:
+      id: botania:flask
+      count: 3
+  botania:flighttiara_0:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'LLL'
+      - 'ILI'
+      - 'FEF'
+    ingredients:
+      'E': 'botania:ender_air_bottle'
+      'F': 'minecraft:feather'
+      'I': '#botania:elementium_ingots'
+      'L': 'botania:life_essence'
+    result:
+      id: botania:flight_tiara
+      count: 1
+  botania:floating_agricarnation:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:agricarnation'
+    result:
+      id: botania:floating_agricarnation
+      count: 1
+  botania:floating_agricarnation_chibi:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:agricarnation_chibi'
+    result:
+      id: botania:floating_agricarnation_chibi
+      count: 1
+  botania:floating_bellethorn:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:bellethorn'
+    result:
+      id: botania:floating_bellethorn
+      count: 1
+  botania:floating_bellethorn_chibi:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:bellethorn_chibi'
+    result:
+      id: botania:floating_bellethorn_chibi
+      count: 1
+  botania:floating_bergamute:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:bergamute'
+    result:
+      id: botania:floating_bergamute
+      count: 1
+  botania:floating_bubbell:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:bubbell'
+    result:
+      id: botania:floating_bubbell
+      count: 1
+  botania:floating_bubbell_chibi:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:bubbell_chibi'
+    result:
+      id: botania:floating_bubbell_chibi
+      count: 1
+  botania:floating_clayconia:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:clayconia'
+    result:
+      id: botania:floating_clayconia
+      count: 1
+  botania:floating_clayconia_chibi:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:clayconia_chibi'
+    result:
+      id: botania:floating_clayconia_chibi
+      count: 1
+  botania:floating_daffomill:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:daffomill'
+    result:
+      id: botania:floating_daffomill
+      count: 1
+  botania:floating_dandelifeon:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:dandelifeon'
+    result:
+      id: botania:floating_dandelifeon
+      count: 1
+  botania:floating_dreadthorn:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:dreadthorn'
+    result:
+      id: botania:floating_dreadthorn
+      count: 1
+  botania:floating_endoflame:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:endoflame'
+    result:
+      id: botania:floating_endoflame
+      count: 1
+  botania:floating_entropinnyum:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:entropinnyum'
+    result:
+      id: botania:floating_entropinnyum
+      count: 1
+  botania:floating_exoflame:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:exoflame'
+    result:
+      id: botania:floating_exoflame
+      count: 1
+  botania:floating_fallen_kanade:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:fallen_kanade'
+    result:
+      id: botania:floating_fallen_kanade
+      count: 1
+  botania:floating_gourmaryllis:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:gourmaryllis'
+    result:
+      id: botania:floating_gourmaryllis
+      count: 1
+  botania:floating_heisei_dream:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:heisei_dream'
+    result:
+      id: botania:floating_heisei_dream
+      count: 1
+  botania:floating_hopperhock:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:hopperhock'
+    result:
+      id: botania:floating_hopperhock
+      count: 1
+  botania:floating_hopperhock_chibi:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:hopperhock_chibi'
+    result:
+      id: botania:floating_hopperhock_chibi
+      count: 1
+  botania:floating_hyacidus:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:hyacidus'
+    result:
+      id: botania:floating_hyacidus
+      count: 1
+  botania:floating_hydroangeas:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:hydroangeas'
+    result:
+      id: botania:floating_hydroangeas
+      count: 1
+  botania:floating_jaded_amaranthus:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:jaded_amaranthus'
+    result:
+      id: botania:floating_jaded_amaranthus
+      count: 1
+  botania:floating_jiyuulia:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:jiyuulia'
+    result:
+      id: botania:floating_jiyuulia
+      count: 1
+  botania:floating_jiyuulia_chibi:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:jiyuulia_chibi'
+    result:
+      id: botania:floating_jiyuulia_chibi
+      count: 1
+  botania:floating_kekimurus:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:kekimurus'
+    result:
+      id: botania:floating_kekimurus
+      count: 1
+  botania:floating_labellia:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:labellia'
+    result:
+      id: botania:floating_labellia
+      count: 1
+  botania:floating_loonium:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:loonium'
+    result:
+      id: botania:floating_loonium
+      count: 1
+  botania:floating_manastar:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:manastar'
+    result:
+      id: botania:floating_manastar
+      count: 1
+  botania:floating_marimorphosis:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:marimorphosis'
+    result:
+      id: botania:floating_marimorphosis
+      count: 1
+  botania:floating_marimorphosis_chibi:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:marimorphosis_chibi'
+    result:
+      id: botania:floating_marimorphosis_chibi
+      count: 1
+  botania:floating_medumone:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:medumone'
+    result:
+      id: botania:floating_medumone
+      count: 1
+  botania:floating_munchdew:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:munchdew'
+    result:
+      id: botania:floating_munchdew
+      count: 1
+  botania:floating_narslimmus:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:narslimmus'
+    result:
+      id: botania:floating_narslimmus
+      count: 1
+  botania:floating_orechid:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:orechid'
+    result:
+      id: botania:floating_orechid
+      count: 1
+  botania:floating_orechid_ignem:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:orechid_ignem'
+    result:
+      id: botania:floating_orechid_ignem
+      count: 1
+  botania:floating_pollidisiac:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:pollidisiac'
+    result:
+      id: botania:floating_pollidisiac
+      count: 1
+  botania:floating_pure_daisy:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:pure_daisy'
+    result:
+      id: botania:floating_pure_daisy
+      count: 1
+  botania:floating_rafflowsia:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:rafflowsia'
+    result:
+      id: botania:floating_rafflowsia
+      count: 1
+  botania:floating_rannuncarpus:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:rannuncarpus'
+    result:
+      id: botania:floating_rannuncarpus
+      count: 1
+  botania:floating_rannuncarpus_chibi:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:rannuncarpus_chibi'
+    result:
+      id: botania:floating_rannuncarpus_chibi
+      count: 1
+  botania:floating_rosa_arcana:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:rosa_arcana'
+    result:
+      id: botania:floating_rosa_arcana
+      count: 1
+  botania:floating_shulk_me_not:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:shulk_me_not'
+    result:
+      id: botania:floating_shulk_me_not
+      count: 1
+  botania:floating_solegnolia:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:solegnolia'
+    result:
+      id: botania:floating_solegnolia
+      count: 1
+  botania:floating_solegnolia_chibi:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:solegnolia_chibi'
+    result:
+      id: botania:floating_solegnolia_chibi
+      count: 1
+  botania:floating_spectranthemum:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:spectranthemum'
+    result:
+      id: botania:floating_spectranthemum
+      count: 1
+  botania:floating_spectrolus:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:spectrolus'
+    result:
+      id: botania:floating_spectrolus
+      count: 1
+  botania:floating_tangleberrie:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:tangleberrie'
+    result:
+      id: botania:floating_tangleberrie
+      count: 1
+  botania:floating_tangleberrie_chibi:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:tangleberrie_chibi'
+    result:
+      id: botania:floating_tangleberrie_chibi
+      count: 1
+  botania:floating_thermalily:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:thermalily'
+    result:
+      id: botania:floating_thermalily
+      count: 1
+  botania:floating_tigerseye:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:tigerseye'
+    result:
+      id: botania:floating_tigerseye
+      count: 1
+  botania:floating_vinculotus:
+    type: shapeless
+    category: misc
+    group: 'floating_flower'
+    ingredients:
+      'A': '#botania:floating_flowers'
+      'B': 'botania:vinculotus'
+    result:
+      id: botania:floating_vinculotus
+      count: 1
+  botania:flower_bag:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'WPW'
+      - 'W W'
+      - ' W '
+    ingredients:
+      'P': '#botania:petals'
+      'W': '#minecraft:wool'
+    result:
+      id: botania:flower_bag
+      count: 1
+  botania:forest_eye:
+    type: shaped
+    category: redstone
+    pattern:
+      - 'MSM'
+      - 'SES'
+      - 'MSM'
+    ingredients:
+      'E': 'minecraft:ender_eye'
+      'M': '#botania:manasteel_ingots'
+      'S': 'botania:livingrock'
+    result:
+      id: botania:forest_eye
+      count: 1
+  botania:fork_light_relay:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:light_relay'
+      'B': 'minecraft:redstone_torch'
+    result:
+      id: botania:fork_light_relay
+      count: 1
+  botania:framed_dreamwood:
+    type: shaped
+    category: building
+    pattern:
+      - 'W W'
+      - 'W W'
+    ingredients:
+      'W': 'botania:dreamwood_planks'
+    result:
+      id: botania:framed_dreamwood
+      count: 4
+  botania:framed_livingwood:
+    type: shaped
+    category: building
+    pattern:
+      - 'W W'
+      - 'W W'
+    ingredients:
+      'W': 'botania:livingwood_planks'
+    result:
+      id: botania:framed_livingwood
+      count: 4
+  botania:gaia_ingot:
+    type: shaped
+    category: misc
+    pattern:
+      - ' S '
+      - 'SIS'
+      - ' S '
+    ingredients:
+      'I': '#botania:terrasteel_ingots'
+      'S': 'botania:life_essence'
+    result:
+      id: botania:gaia_ingot
+      count: 1
+  botania:gaia_pylon:
+    type: shaped
+    category: misc
+    pattern:
+      - ' D '
+      - 'EPE'
+      - ' D '
+    ingredients:
+      'D': 'botania:pixie_dust'
+      'E': '#botania:elementium_ingots'
+      'P': 'botania:mana_pylon'
+    result:
+      id: botania:gaia_pylon
+      count: 1
+  botania:gaia_spreader:
+    type: shapeless
+    category: redstone
+    group: 'spreader'
+    ingredients:
+      'A': 'botania:elven_spreader'
+      'B': '#botania:dragonstone_gems'
+      'C': 'botania:life_essence'
+    result:
+      id: botania:gaia_spreader
+      count: 1
+  botania:ghost_rail:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'minecraft:rail'
+      'B': 'botania:spectral_platform'
+    result:
+      id: botania:ghost_rail
+      count: 1
+  botania:glimmering_dreamwood:
+    type: shapeless
+    category: building
+    group: 'glimmering_dreamwood'
+    ingredients:
+      'A': 'botania:dreamwood'
+      'B': 'minecraft:glowstone_dust'
+    result:
+      id: botania:glimmering_dreamwood
+      count: 1
+  botania:glimmering_dreamwood_from_log:
+    type: shaped
+    category: building
+    group: 'glimmering_dreamwood'
+    pattern:
+      - '##'
+      - '##'
+    ingredients:
+      '#': 'botania:glimmering_dreamwood_log'
+    result:
+      id: botania:glimmering_dreamwood
+      count: 3
+  botania:glimmering_dreamwood_log:
+    type: shapeless
+    category: building
+    group: 'glimmering_dreamwood'
+    ingredients:
+      'A': 'botania:dreamwood_log'
+      'B': 'minecraft:glowstone_dust'
+    result:
+      id: botania:glimmering_dreamwood_log
+      count: 1
+  botania:glimmering_livingwood:
+    type: shapeless
+    category: building
+    group: 'glimmering_livingwood'
+    ingredients:
+      'A': 'botania:livingwood'
+      'B': 'minecraft:glowstone_dust'
+    result:
+      id: botania:glimmering_livingwood
+      count: 1
+  botania:glimmering_livingwood_from_log:
+    type: shaped
+    category: building
+    group: 'glimmering_livingwood'
+    pattern:
+      - '##'
+      - '##'
+    ingredients:
+      '#': 'botania:glimmering_livingwood_log'
+    result:
+      id: botania:glimmering_livingwood
+      count: 3
+  botania:glimmering_livingwood_log:
+    type: shapeless
+    category: building
+    group: 'glimmering_livingwood'
+    ingredients:
+      'A': 'botania:livingwood_log'
+      'B': 'minecraft:glowstone_dust'
+    result:
+      id: botania:glimmering_livingwood_log
+      count: 1
+  botania:glimmering_stripped_dreamwood:
+    type: shapeless
+    category: building
+    group: 'glimmering_dreamwood'
+    ingredients:
+      'A': 'botania:stripped_dreamwood'
+      'B': 'minecraft:glowstone_dust'
+    result:
+      id: botania:glimmering_stripped_dreamwood
+      count: 1
+  botania:glimmering_stripped_dreamwood_from_log:
+    type: shaped
+    category: building
+    group: 'glimmering_dreamwood'
+    pattern:
+      - '##'
+      - '##'
+    ingredients:
+      '#': 'botania:glimmering_stripped_dreamwood_log'
+    result:
+      id: botania:glimmering_stripped_dreamwood
+      count: 3
+  botania:glimmering_stripped_dreamwood_log:
+    type: shapeless
+    category: building
+    group: 'glimmering_dreamwood'
+    ingredients:
+      'A': 'botania:stripped_dreamwood_log'
+      'B': 'minecraft:glowstone_dust'
+    result:
+      id: botania:glimmering_stripped_dreamwood_log
+      count: 1
+  botania:glimmering_stripped_livingwood:
+    type: shapeless
+    category: building
+    group: 'glimmering_livingwood'
+    ingredients:
+      'A': 'botania:stripped_livingwood'
+      'B': 'minecraft:glowstone_dust'
+    result:
+      id: botania:glimmering_stripped_livingwood
+      count: 1
+  botania:glimmering_stripped_livingwood_from_log:
+    type: shaped
+    category: building
+    group: 'glimmering_livingwood'
+    pattern:
+      - '##'
+      - '##'
+    ingredients:
+      '#': 'botania:glimmering_stripped_livingwood_log'
+    result:
+      id: botania:glimmering_stripped_livingwood
+      count: 3
+  botania:glimmering_stripped_livingwood_log:
+    type: shapeless
+    category: building
+    group: 'glimmering_livingwood'
+    ingredients:
+      'A': 'botania:stripped_livingwood_log'
+      'B': 'minecraft:glowstone_dust'
+    result:
+      id: botania:glimmering_stripped_livingwood_log
+      count: 1
+  botania:goddess_charm:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' P '
+      - ' P '
+      - 'ADS'
+    ingredients:
+      'A': 'botania:rune_water'
+      'D': '#botania:mana_diamond_gems'
+      'P': '#botania:petals/pink'
+      'S': 'botania:rune_spring'
+    result:
+      id: botania:goddess_charm
+      count: 1
+  botania:golden_seeds:
+    type: shapeless
+    category: misc
+    group: 'seeds'
+    ingredients:
+      'A': 'botania:grass_seeds'
+      'B': 'minecraft:wheat'
+    result:
+      id: botania:golden_seeds
+      count: 1
+  botania:gravity_rod:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' TD'
+      - ' WT'
+      - 'T  '
+    ingredients:
+      'D': '#botania:dragonstone_gems'
+      'T': 'botania:dreamwood_twig'
+      'W': 'minecraft:wheat'
+    result:
+      id: botania:gravity_rod
+      count: 1
+  botania:gray_floating_flower:
+    type: shaped
+    category: misc
+    group: 'floating_flowers'
+    pattern:
+      - 'F'
+      - 'S'
+      - 'D'
+    ingredients:
+      'D': 'minecraft:dirt'
+      'F': 'botania:gray_shiny_flower'
+      'S': 'botania:grass_seeds'
+    result:
+      id: botania:gray_floating_flower
+      count: 1
+  botania:gray_petal_block:
+    type: shaped
+    category: misc
+    group: 'petal_block'
+    pattern:
+      - 'PPP'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:gray_petal'
+    result:
+      id: botania:gray_petal_block
+      count: 1
+  botania:gray_shiny_flower:
+    type: shapeless
+    category: misc
+    group: 'shiny_flower'
+    ingredients:
+      'A': 'minecraft:glowstone_dust'
+      'B': 'minecraft:glowstone_dust'
+      'C': 'botania:gray_mystical_flower'
+    result:
+      id: botania:gray_shiny_flower
+      count: 1
+  botania:green_floating_flower:
+    type: shaped
+    category: misc
+    group: 'floating_flowers'
+    pattern:
+      - 'F'
+      - 'S'
+      - 'D'
+    ingredients:
+      'D': 'minecraft:dirt'
+      'F': 'botania:green_shiny_flower'
+      'S': 'botania:grass_seeds'
+    result:
+      id: botania:green_floating_flower
+      count: 1
+  botania:green_pavement:
+    type: shapeless
+    category: building
+    group: 'pavement'
+    ingredients:
+      'A': 'botania:livingrock'
+      'B': 'minecraft:cobblestone'
+      'C': 'minecraft:gravel'
+      'D': 'minecraft:slime_ball'
+    result:
+      id: botania:green_pavement
+      count: 3
+  botania:green_pavement_slab:
+    type: shaped
+    category: building
+    group: 'pavement_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:green_pavement'
+    result:
+      id: botania:green_pavement_slab
+      count: 6
+  botania:green_pavement_stairs:
+    type: shaped
+    category: building
+    group: 'pavement_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:green_pavement'
+    result:
+      id: botania:green_pavement_stairs
+      count: 4
+  botania:green_petal_block:
+    type: shaped
+    category: misc
+    group: 'petal_block'
+    pattern:
+      - 'PPP'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:green_petal'
+    result:
+      id: botania:green_petal_block
+      count: 1
+  botania:green_shiny_flower:
+    type: shapeless
+    category: misc
+    group: 'shiny_flower'
+    ingredients:
+      'A': 'minecraft:glowstone_dust'
+      'B': 'minecraft:glowstone_dust'
+      'C': 'botania:green_mystical_flower'
+    result:
+      id: botania:green_shiny_flower
+      count: 1
+  botania:holy_cloak:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'WWW'
+      - 'GWG'
+      - 'GSG'
+    ingredients:
+      'G': 'minecraft:glowstone_dust'
+      'S': 'botania:life_essence'
+      'W': 'minecraft:white_wool'
+    result:
+      id: botania:holy_cloak
+      count: 1
+  botania:horn_grass:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' W '
+      - 'WSW'
+      - 'WW '
+    ingredients:
+      'S': 'botania:grass_seeds'
+      'W': '#botania:livingwood_logs'
+    result:
+      id: botania:horn_grass
+      count: 1
+  botania:horn_leaves:
+    type: shapeless
+    category: equipment
+    ingredients:
+      'A': 'botania:horn_grass'
+      'B': '#minecraft:leaves'
+    result:
+      id: botania:horn_leaves
+      count: 1
+  botania:horn_snow:
+    type: shapeless
+    category: equipment
+    ingredients:
+      'A': 'botania:horn_grass'
+      'B': 'minecraft:snowball'
+    result:
+      id: botania:horn_snow
+      count: 1
+  botania:hourglass:
+    type: shaped
+    category: redstone
+    pattern:
+      - 'GMG'
+      - 'RSR'
+      - 'GMG'
+    ingredients:
+      'G': 'minecraft:gold_ingot'
+      'M': 'botania:mana_glass'
+      'R': 'minecraft:redstone'
+      'S': '#botania:manasteel_ingots'
+    result:
+      id: botania:hourglass
+      count: 1
+  botania:ice_pendant:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'WS '
+      - 'S S'
+      - 'MSR'
+    ingredients:
+      'M': '#botania:manasteel_ingots'
+      'R': 'botania:rune_water'
+      'S': 'botania:mana_string'
+      'W': 'botania:rune_winter'
+    result:
+      id: botania:ice_pendant
+      count: 1
+  botania:incense_plate:
+    type: shaped
+    category: misc
+    pattern:
+      - 'SSW'
+    ingredients:
+      'S': 'botania:livingwood_slab'
+      'W': '#botania:livingwood_logs'
+    result:
+      id: botania:incense_plate
+      count: 1
+  botania:incense_stick:
+    type: shaped
+    category: misc
+    pattern:
+      - '  G'
+      - ' B '
+      - 'T  '
+    ingredients:
+      'B': 'minecraft:blaze_powder'
+      'G': 'minecraft:ghast_tear'
+      'T': 'botania:livingwood_twig'
+    result:
+      id: botania:incense_stick
+      count: 1
+  botania:infused_seeds:
+    type: shapeless
+    category: misc
+    group: 'seeds'
+    ingredients:
+      'A': 'botania:grass_seeds'
+      'B': 'minecraft:prismarine_shard'
+    result:
+      id: botania:infused_seeds
+      count: 1
+  botania:invisibility_cloak:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'CWC'
+      - 'GWG'
+      - 'GPG'
+    ingredients:
+      'C': 'minecraft:prismarine_crystals'
+      'G': 'botania:mana_glass'
+      'P': 'botania:mana_pearl'
+      'W': 'minecraft:white_wool'
+    result:
+      id: botania:invisibility_cloak
+      count: 1
+  botania:itemfinder:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' I '
+      - 'IYI'
+      - 'IEI'
+    ingredients:
+      'E': 'minecraft:emerald'
+      'I': 'minecraft:iron_ingot'
+      'Y': 'minecraft:ender_eye'
+    result:
+      id: botania:itemfinder
+      count: 1
+  botania:keep_ivy:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:pixie_dust'
+      'B': 'minecraft:vine'
+      'C': 'botania:ender_air_bottle'
+    result:
+      id: botania:keep_ivy
+      count: 1
+  botania:knockback_belt:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'AL '
+      - 'L L'
+      - 'SLE'
+    ingredients:
+      'A': 'botania:rune_fire'
+      'E': 'botania:rune_earth'
+      'L': 'minecraft:leather'
+      'S': '#botania:manasteel_ingots'
+    result:
+      id: botania:knockback_belt
+      count: 1
+  botania:laputa_shard:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'SFS'
+      - 'PDP'
+      - 'ASE'
+    ingredients:
+      'A': 'botania:rune_air'
+      'D': '#botania:dragonstone_gems'
+      'E': 'botania:rune_earth'
+      'F': '#botania:mundane_floating_flowers'
+      'P': 'minecraft:prismarine_crystals'
+      'S': 'botania:life_essence'
+    result:
+      id: botania:laputa_shard
+      count: 1
+  botania:lava_pendant:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'MS '
+      - 'S S'
+      - 'DSF'
+    ingredients:
+      'D': '#botania:manasteel_ingots'
+      'F': 'botania:rune_fire'
+      'M': 'botania:rune_summer'
+      'S': 'botania:mana_string'
+    result:
+      id: botania:lava_pendant
+      count: 1
+  botania:lavender_quartz:
+    type: shaped
+    category: building
+    group: 'quartz_block'
+    pattern:
+      - 'QQ'
+      - 'QQ'
+    ingredients:
+      'Q': 'botania:quartz_lavender'
+    result:
+      id: botania:lavender_quartz
+      count: 1
+  botania:lavender_quartz_pillar:
+    type: shaped
+    category: building
+    group: 'quartz_pillar'
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:lavender_quartz'
+    result:
+      id: botania:lavender_quartz_pillar
+      count: 2
+  botania:lavender_quartz_slab:
+    type: shaped
+    category: building
+    group: 'quartz_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:lavender_quartz'
+    result:
+      id: botania:lavender_quartz_slab
+      count: 6
+  botania:lavender_quartz_stairs:
+    type: shaped
+    category: building
+    group: 'quartz_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:lavender_quartz'
+    result:
+      id: botania:lavender_quartz_stairs
+      count: 4
+  botania:lens_bounce:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:lens_normal'
+      'B': 'botania:rune_summer'
+    result:
+      id: botania:lens_bounce
+      count: 1
+  botania:lens_damage:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:lens_normal'
+      'B': 'botania:rune_wrath'
+    result:
+      id: botania:lens_damage
+      count: 1
+  botania:lens_efficiency:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:lens_normal'
+      'B': 'botania:rune_water'
+    result:
+      id: botania:lens_efficiency
+      count: 1
+  botania:lens_explosive:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:lens_normal'
+      'B': 'botania:rune_envy'
+    result:
+      id: botania:lens_explosive
+      count: 1
+  botania:lens_fire:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:lens_normal'
+      'B': 'minecraft:fire_charge'
+    result:
+      id: botania:lens_fire
+      count: 1
+  botania:lens_firework:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:lens_normal'
+      'B': 'minecraft:firework_rocket'
+      'C': '#botania:elementium_ingots'
+    result:
+      id: botania:lens_firework
+      count: 1
+  botania:lens_flare:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:lens_normal'
+      'B': 'botania:elf_glass'
+      'C': '#botania:elementium_ingots'
+    result:
+      id: botania:lens_flare
+      count: 1
+  botania:lens_gravity:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:lens_normal'
+      'B': 'botania:rune_winter'
+    result:
+      id: botania:lens_gravity
+      count: 1
+  botania:lens_influence:
+    type: shaped
+    category: misc
+    pattern:
+      - 'PRP'
+      - 'PLP'
+      - 'PPP'
+    ingredients:
+      'L': 'botania:lens_normal'
+      'P': 'minecraft:prismarine_crystals'
+      'R': 'botania:rune_air'
+    result:
+      id: botania:lens_influence
+      count: 1
+  botania:lens_light:
+    type: shaped
+    category: misc
+    pattern:
+      - 'GFG'
+      - 'FLF'
+      - 'GFG'
+    ingredients:
+      'F': 'minecraft:fire_charge'
+      'G': 'minecraft:glowstone'
+      'L': 'botania:lens_normal'
+    result:
+      id: botania:lens_light
+      count: 1
+  botania:lens_light_alt:
+    type: shaped
+    category: misc
+    pattern:
+      - 'FGF'
+      - 'GLG'
+      - 'FGF'
+    ingredients:
+      'F': 'minecraft:fire_charge'
+      'G': 'minecraft:glowstone'
+      'L': 'botania:lens_normal'
+    result:
+      id: botania:lens_light
+      count: 1
+  botania:lens_magnet:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:lens_normal'
+      'B': 'minecraft:iron_ingot'
+      'C': 'minecraft:gold_ingot'
+    result:
+      id: botania:lens_magnet
+      count: 1
+  botania:lens_messenger:
+    type: shaped
+    category: misc
+    pattern:
+      - ' P '
+      - 'PLP'
+      - ' P '
+    ingredients:
+      'L': 'botania:lens_normal'
+      'P': 'minecraft:paper'
+    result:
+      id: botania:lens_messenger
+      count: 1
+  botania:lens_mine:
+    type: shaped
+    category: misc
+    pattern:
+      - ' P '
+      - 'ALA'
+      - ' R '
+    ingredients:
+      'A': 'minecraft:lapis_lazuli'
+      'L': 'botania:lens_normal'
+      'P': 'minecraft:piston'
+      'R': 'minecraft:redstone'
+    result:
+      id: botania:lens_mine
+      count: 1
+  botania:lens_paint:
+    type: shaped
+    category: misc
+    pattern:
+      - ' E '
+      - 'WLW'
+      - ' E '
+    ingredients:
+      'E': '#botania:elementium_ingots'
+      'L': 'botania:lens_normal'
+      'W': '#minecraft:wool'
+    result:
+      id: botania:lens_paint
+      count: 1
+  botania:lens_phantom:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:lens_normal'
+      'B': 'botania:abstruse_platform'
+    result:
+      id: botania:lens_phantom
+      count: 1
+  botania:lens_piston:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:lens_normal'
+      'B': 'botania:piston_relay'
+    result:
+      id: botania:lens_piston
+      count: 1
+  botania:lens_power:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:lens_normal'
+      'B': 'botania:rune_fire'
+    result:
+      id: botania:lens_power
+      count: 1
+  botania:lens_redirect:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:lens_normal'
+      'B': '#botania:livingwood_logs'
+      'C': '#botania:elementium_ingots'
+    result:
+      id: botania:lens_redirect
+      count: 1
+  botania:lens_speed:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:lens_normal'
+      'B': 'botania:rune_air'
+    result:
+      id: botania:lens_speed
+      count: 1
+  botania:lens_time:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:lens_normal'
+      'B': 'botania:rune_earth'
+    result:
+      id: botania:lens_time
+      count: 1
+  botania:lens_tripwire:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:lens_normal'
+      'B': 'minecraft:tripwire_hook'
+      'C': '#botania:elementium_ingots'
+    result:
+      id: botania:lens_tripwire
+      count: 1
+  botania:lens_warp:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:lens_normal'
+      'B': 'botania:pixie_dust'
+    result:
+      id: botania:lens_warp
+      count: 1
+  botania:lens_weight:
+    type: shaped
+    category: misc
+    pattern:
+      - 'PPP'
+      - 'PLP'
+      - 'PRP'
+    ingredients:
+      'L': 'botania:lens_normal'
+      'P': 'minecraft:prismarine_crystals'
+      'R': 'botania:rune_water'
+    result:
+      id: botania:lens_weight
+      count: 1
+  botania:lexicon:
+    type: shapeless
+    category: equipment
+    ingredients:
+      'A': '#minecraft:saplings'
+      'B': 'minecraft:book'
+    result:
+      id: botania:lexicon
+      count: 1
+  botania:light_blue_floating_flower:
+    type: shaped
+    category: misc
+    group: 'floating_flowers'
+    pattern:
+      - 'F'
+      - 'S'
+      - 'D'
+    ingredients:
+      'D': 'minecraft:dirt'
+      'F': 'botania:light_blue_shiny_flower'
+      'S': 'botania:grass_seeds'
+    result:
+      id: botania:light_blue_floating_flower
+      count: 1
+  botania:light_blue_petal_block:
+    type: shaped
+    category: misc
+    group: 'petal_block'
+    pattern:
+      - 'PPP'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:light_blue_petal'
+    result:
+      id: botania:light_blue_petal_block
+      count: 1
+  botania:light_blue_shiny_flower:
+    type: shapeless
+    category: misc
+    group: 'shiny_flower'
+    ingredients:
+      'A': 'minecraft:glowstone_dust'
+      'B': 'minecraft:glowstone_dust'
+      'C': 'botania:light_blue_mystical_flower'
+    result:
+      id: botania:light_blue_shiny_flower
+      count: 1
+  botania:light_gray_floating_flower:
+    type: shaped
+    category: misc
+    group: 'floating_flowers'
+    pattern:
+      - 'F'
+      - 'S'
+      - 'D'
+    ingredients:
+      'D': 'minecraft:dirt'
+      'F': 'botania:light_gray_shiny_flower'
+      'S': 'botania:grass_seeds'
+    result:
+      id: botania:light_gray_floating_flower
+      count: 1
+  botania:light_gray_petal_block:
+    type: shaped
+    category: misc
+    group: 'petal_block'
+    pattern:
+      - 'PPP'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:light_gray_petal'
+    result:
+      id: botania:light_gray_petal_block
+      count: 1
+  botania:light_gray_shiny_flower:
+    type: shapeless
+    category: misc
+    group: 'shiny_flower'
+    ingredients:
+      'A': 'minecraft:glowstone_dust'
+      'B': 'minecraft:glowstone_dust'
+      'C': 'botania:light_gray_mystical_flower'
+    result:
+      id: botania:light_gray_shiny_flower
+      count: 1
+  botania:light_launcher:
+    type: shaped
+    category: redstone
+    pattern:
+      - 'DDD'
+      - 'DLD'
+    ingredients:
+      'D': '#botania:dreamwood_logs'
+      'L': 'botania:light_relay'
+    result:
+      id: botania:light_launcher
+      count: 1
+  botania:light_relay:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:red_string'
+      'B': '#botania:dragonstone_gems'
+      'C': 'minecraft:glowstone_dust'
+      'D': 'minecraft:glowstone_dust'
+    result:
+      id: botania:light_relay
+      count: 1
+  botania:lime_floating_flower:
+    type: shaped
+    category: misc
+    group: 'floating_flowers'
+    pattern:
+      - 'F'
+      - 'S'
+      - 'D'
+    ingredients:
+      'D': 'minecraft:dirt'
+      'F': 'botania:lime_shiny_flower'
+      'S': 'botania:grass_seeds'
+    result:
+      id: botania:lime_floating_flower
+      count: 1
+  botania:lime_petal_block:
+    type: shaped
+    category: misc
+    group: 'petal_block'
+    pattern:
+      - 'PPP'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:lime_petal'
+    result:
+      id: botania:lime_petal_block
+      count: 1
+  botania:lime_shiny_flower:
+    type: shapeless
+    category: misc
+    group: 'shiny_flower'
+    ingredients:
+      'A': 'minecraft:glowstone_dust'
+      'B': 'minecraft:glowstone_dust'
+      'C': 'botania:lime_mystical_flower'
+    result:
+      id: botania:lime_shiny_flower
+      count: 1
+  botania:livingrock_bricks:
+    type: shaped
+    category: building
+    pattern:
+      - 'RR'
+      - 'RR'
+    ingredients:
+      'R': 'botania:polished_livingrock'
+    result:
+      id: botania:livingrock_bricks
+      count: 4
+  botania:livingrock_bricks_slab:
+    type: shaped
+    category: building
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:livingrock_bricks'
+    result:
+      id: botania:livingrock_bricks_slab
+      count: 6
+  botania:livingrock_bricks_stairs:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:livingrock_bricks'
+    result:
+      id: botania:livingrock_bricks_stairs
+      count: 4
+  botania:livingrock_bricks_wall:
+    type: shaped
+    category: misc
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:livingrock_bricks'
+    result:
+      id: botania:livingrock_bricks_wall
+      count: 6
+  botania:livingrock_slab:
+    type: shaped
+    category: building
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:livingrock'
+    result:
+      id: botania:livingrock_slab
+      count: 6
+  botania:livingrock_slate:
+    type: shaped
+    category: building
+    pattern:
+      - 'R'
+      - 'R'
+    ingredients:
+      'R': 'botania:livingrock_slab'
+    result:
+      id: botania:livingrock_slate
+      count: 1
+  botania:livingrock_stairs:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:livingrock'
+    result:
+      id: botania:livingrock_stairs
+      count: 4
+  botania:livingrock_wall:
+    type: shaped
+    category: misc
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:livingrock'
+    result:
+      id: botania:livingrock_wall
+      count: 6
+  botania:livingwood:
+    type: shaped
+    category: building
+    group: 'wood'
+    pattern:
+      - '##'
+      - '##'
+    ingredients:
+      '#': 'botania:livingwood_log'
+    result:
+      id: botania:livingwood
+      count: 3
+  botania:livingwood_bow:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' TS'
+      - 'T S'
+      - ' TS'
+    ingredients:
+      'S': 'botania:mana_string'
+      'T': 'botania:livingwood_twig'
+    result:
+      id: botania:livingwood_bow
+      count: 1
+  botania:livingwood_fence:
+    type: shaped
+    category: misc
+    group: 'wooden_fence'
+    pattern:
+      - 'BSB'
+      - 'BSB'
+    ingredients:
+      'B': 'botania:livingwood_planks'
+      'S': 'minecraft:stick'
+    result:
+      id: botania:livingwood_fence
+      count: 3
+  botania:livingwood_fence_gate:
+    type: shaped
+    category: redstone
+    group: 'wooden_fence_gate'
+    pattern:
+      - 'SBS'
+      - 'SBS'
+    ingredients:
+      'B': 'botania:livingwood_planks'
+      'S': 'minecraft:stick'
+    result:
+      id: botania:livingwood_fence_gate
+      count: 1
+  botania:livingwood_planks:
+    type: shapeless
+    category: building
+    group: 'planks'
+    ingredients:
+      'A': '#botania:livingwood_logs'
+    result:
+      id: botania:livingwood_planks
+      count: 4
+  botania:livingwood_planks_slab:
+    type: shaped
+    category: building
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:livingwood_planks'
+    result:
+      id: botania:livingwood_planks_slab
+      count: 6
+  botania:livingwood_planks_stairs:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:livingwood_planks'
+    result:
+      id: botania:livingwood_planks_stairs
+      count: 4
+  botania:livingwood_slab:
+    type: shaped
+    category: building
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:livingwood'
+    result:
+      id: botania:livingwood_slab
+      count: 6
+  botania:livingwood_stairs:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:livingwood'
+    result:
+      id: botania:livingwood_stairs
+      count: 4
+  botania:livingwood_twig:
+    type: shaped
+    category: misc
+    pattern:
+      - ' W'
+      - 'W '
+    ingredients:
+      'W': '#botania:livingwood_logs'
+    result:
+      id: botania:livingwood_twig
+      count: 1
+  botania:livingwood_wall:
+    type: shaped
+    category: misc
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:livingwood'
+    result:
+      id: botania:livingwood_wall
+      count: 6
+  botania:magenta_floating_flower:
+    type: shaped
+    category: misc
+    group: 'floating_flowers'
+    pattern:
+      - 'F'
+      - 'S'
+      - 'D'
+    ingredients:
+      'D': 'minecraft:dirt'
+      'F': 'botania:magenta_shiny_flower'
+      'S': 'botania:grass_seeds'
+    result:
+      id: botania:magenta_floating_flower
+      count: 1
+  botania:magenta_petal_block:
+    type: shaped
+    category: misc
+    group: 'petal_block'
+    pattern:
+      - 'PPP'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:magenta_petal'
+    result:
+      id: botania:magenta_petal_block
+      count: 1
+  botania:magenta_shiny_flower:
+    type: shapeless
+    category: misc
+    group: 'shiny_flower'
+    ingredients:
+      'A': 'minecraft:glowstone_dust'
+      'B': 'minecraft:glowstone_dust'
+      'C': 'botania:magenta_mystical_flower'
+    result:
+      id: botania:magenta_shiny_flower
+      count: 1
+  botania:magnet_ring:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'LM '
+      - 'M M'
+      - ' M '
+    ingredients:
+      'L': 'botania:lens_magnet'
+      'M': '#botania:manasteel_ingots'
+    result:
+      id: botania:magnet_ring
+      count: 1
+  botania:magnet_ring_greater:
+    type: shapeless
+    category: equipment
+    ingredients:
+      'A': '#botania:terrasteel_ingots'
+      'B': 'botania:magnet_ring'
+    result:
+      id: botania:magnet_ring_greater
+      count: 1
+  botania:mana_bomb:
+    type: shaped
+    category: misc
+    pattern:
+      - 'LTL'
+      - 'TGT'
+      - 'LTL'
+    ingredients:
+      'G': 'botania:life_essence'
+      'L': '#botania:livingwood_logs'
+      'T': 'minecraft:tnt'
+    result:
+      id: botania:mana_bomb
+      count: 1
+  botania:mana_detector:
+    type: shaped
+    category: redstone
+    pattern:
+      - 'RSR'
+      - 'STS'
+      - 'RSR'
+    ingredients:
+      'R': 'minecraft:redstone'
+      'S': 'botania:livingrock'
+      'T': 'minecraft:target'
+    result:
+      id: botania:mana_detector
+      count: 1
+  botania:mana_diamond_block:
+    type: shaped
+    category: building
+    pattern:
+      - 'III'
+      - 'III'
+      - 'III'
+    ingredients:
+      'I': '#botania:mana_diamond_gems'
+    result:
+      id: botania:mana_diamond_block
+      count: 1
+  botania:mana_distributor:
+    type: shaped
+    category: misc
+    pattern:
+      - 'RRR'
+      - 'S S'
+      - 'RRR'
+    ingredients:
+      'R': 'botania:livingrock'
+      'S': '#botania:manasteel_ingots'
+    result:
+      id: botania:mana_distributor
+      count: 1
+  botania:mana_fluxfield:
+    type: shaped
+    category: misc
+    pattern:
+      - 'SRS'
+      - 'RMR'
+      - 'SRS'
+    ingredients:
+      'M': '#botania:manasteel_ingots'
+      'R': 'minecraft:redstone_block'
+      'S': 'botania:livingrock'
+    result:
+      id: botania:mana_fluxfield
+      count: 1
+  botania:mana_glass_pane:
+    type: shaped
+    category: misc
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:mana_glass'
+    result:
+      id: botania:mana_glass_pane
+      count: 16
+  botania:mana_gun:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'SMD'
+      - ' WT'
+      - '  W'
+    ingredients:
+      'D': '#botania:mana_diamond_gems'
+      'M': 'botania:rune_mana'
+      'S': 'botania:redstone_spreader'
+      'T': 'minecraft:tnt'
+      'W': '#botania:livingwood_logs'
+    result:
+      id: botania:mana_gun
+      count: 1
+  botania:mana_mirror:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' PR'
+      - ' SI'
+      - 'T  '
+    ingredients:
+      'I': '#botania:terrasteel_ingots'
+      'P': 'botania:mana_pearl'
+      'R': 'botania:livingrock'
+      'S': 'botania:livingwood_twig'
+      'T': 'botania:mana_tablet'
+    result:
+      id: botania:mana_mirror
+      count: 1
+  botania:mana_pool:
+    type: shaped
+    category: misc
+    pattern:
+      - 'R R'
+      - 'RRR'
+    ingredients:
+      'R': 'botania:livingrock'
+    result:
+      id: botania:mana_pool
+      count: 1
+  botania:mana_pylon:
+    type: shaped
+    category: misc
+    pattern:
+      - ' G '
+      - 'MDM'
+      - ' G '
+    ingredients:
+      'D': '#botania:mana_diamond_gems'
+      'G': 'minecraft:gold_ingot'
+      'M': '#botania:manasteel_ingots'
+    result:
+      id: botania:mana_pylon
+      count: 1
+  botania:mana_quartz:
+    type: shaped
+    category: building
+    group: 'quartz_block'
+    pattern:
+      - 'QQ'
+      - 'QQ'
+    ingredients:
+      'Q': 'botania:quartz_mana'
+    result:
+      id: botania:mana_quartz
+      count: 1
+  botania:mana_quartz_pillar:
+    type: shaped
+    category: building
+    group: 'quartz_pillar'
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:mana_quartz'
+    result:
+      id: botania:mana_quartz_pillar
+      count: 2
+  botania:mana_quartz_slab:
+    type: shaped
+    category: building
+    group: 'quartz_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:mana_quartz'
+    result:
+      id: botania:mana_quartz_slab
+      count: 6
+  botania:mana_quartz_stairs:
+    type: shaped
+    category: building
+    group: 'quartz_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:mana_quartz'
+    result:
+      id: botania:mana_quartz_stairs
+      count: 4
+  botania:mana_ring_greater:
+    type: shapeless
+    category: equipment
+    ingredients:
+      'A': '#botania:terrasteel_ingots'
+      'B': 'botania:mana_ring'
+    result:
+      id: botania:mana_ring_greater
+      count: 1
+  botania:mana_spreader:
+    type: shaped
+    category: redstone
+    group: 'spreader'
+    pattern:
+      - 'WWW'
+      - 'CP '
+      - 'WWW'
+    ingredients:
+      'C': 'minecraft:copper_ingot'
+      'P': '#botania:petals'
+      'W': '#botania:livingwood_logs'
+    result:
+      id: botania:mana_spreader
+      count: 1
+  botania:mana_tablet:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'SSS'
+      - 'SPS'
+      - 'SSS'
+    ingredients:
+      'P': 'botania:mana_pearl'
+      'S': 'botania:livingrock'
+    result:
+      id: botania:mana_tablet
+      count: 1
+  botania:mana_tablet_alt:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'SSS'
+      - 'SPS'
+      - 'SSS'
+    ingredients:
+      'P': '#botania:mana_diamond_gems'
+      'S': 'botania:livingrock'
+    result:
+      id: botania:mana_tablet
+      count: 1
+  botania:mana_void:
+    type: shaped
+    category: misc
+    pattern:
+      - 'SSS'
+      - 'O O'
+      - 'SSS'
+    ingredients:
+      'O': 'minecraft:obsidian'
+      'S': 'botania:livingrock'
+    result:
+      id: botania:mana_void
+      count: 1
+  botania:manasteel_axe:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'SS'
+      - 'ST'
+      - ' T'
+    ingredients:
+      'S': '#botania:manasteel_ingots'
+      'T': 'botania:livingwood_twig'
+    result:
+      id: botania:manasteel_axe
+      count: 1
+  botania:manasteel_block:
+    type: shaped
+    category: building
+    pattern:
+      - 'III'
+      - 'III'
+      - 'III'
+    ingredients:
+      'I': '#botania:manasteel_ingots'
+    result:
+      id: botania:manasteel_block
+      count: 1
+  botania:manasteel_boots:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'S S'
+      - 'S S'
+    ingredients:
+      'S': '#botania:manasteel_ingots'
+    result:
+      id: botania:manasteel_boots
+      count: 1
+  botania:manasteel_chestplate:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'S S'
+      - 'SSS'
+      - 'SSS'
+    ingredients:
+      'S': '#botania:manasteel_ingots'
+    result:
+      id: botania:manasteel_chestplate
+      count: 1
+  botania:manasteel_helmet:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'SSS'
+      - 'S S'
+    ingredients:
+      'S': '#botania:manasteel_ingots'
+    result:
+      id: botania:manasteel_helmet
+      count: 1
+  botania:manasteel_hoe:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'SS'
+      - ' T'
+      - ' T'
+    ingredients:
+      'S': '#botania:manasteel_ingots'
+      'T': 'botania:livingwood_twig'
+    result:
+      id: botania:manasteel_hoe
+      count: 1
+  botania:manasteel_leggings:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'SSS'
+      - 'S S'
+      - 'S S'
+    ingredients:
+      'S': '#botania:manasteel_ingots'
+    result:
+      id: botania:manasteel_leggings
+      count: 1
+  botania:manasteel_pick:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'SSS'
+      - ' T '
+      - ' T '
+    ingredients:
+      'S': '#botania:manasteel_ingots'
+      'T': 'botania:livingwood_twig'
+    result:
+      id: botania:manasteel_pick
+      count: 1
+  botania:manasteel_shears:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' S'
+      - 'S '
+    ingredients:
+      'S': '#botania:manasteel_ingots'
+    result:
+      id: botania:manasteel_shears
+      count: 1
+  botania:manasteel_shovel:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'S'
+      - 'T'
+      - 'T'
+    ingredients:
+      'S': '#botania:manasteel_ingots'
+      'T': 'botania:livingwood_twig'
+    result:
+      id: botania:manasteel_shovel
+      count: 1
+  botania:manasteel_sword:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'S'
+      - 'S'
+      - 'T'
+    ingredients:
+      'S': '#botania:manasteel_ingots'
+      'T': 'botania:livingwood_twig'
+    result:
+      id: botania:manasteel_sword
+      count: 1
+  botania:manaweave_boots:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'S S'
+      - 'S S'
+    ingredients:
+      'S': 'botania:manaweave_cloth'
+    result:
+      id: botania:manaweave_boots
+      count: 1
+  botania:manaweave_chestplate:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'S S'
+      - 'SSS'
+      - 'SSS'
+    ingredients:
+      'S': 'botania:manaweave_cloth'
+    result:
+      id: botania:manaweave_chestplate
+      count: 1
+  botania:manaweave_cloth:
+    type: shaped
+    category: misc
+    pattern:
+      - 'SS'
+      - 'SS'
+    ingredients:
+      'S': 'botania:mana_string'
+    result:
+      id: botania:manaweave_cloth
+      count: 1
+  botania:manaweave_helmet:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'SSS'
+      - 'S S'
+    ingredients:
+      'S': 'botania:manaweave_cloth'
+    result:
+      id: botania:manaweave_helmet
+      count: 1
+  botania:manaweave_leggings:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'SSS'
+      - 'S S'
+      - 'S S'
+    ingredients:
+      'S': 'botania:manaweave_cloth'
+    result:
+      id: botania:manaweave_leggings
+      count: 1
+  botania:metamorphic_desert_bricks:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick'
+    pattern:
+      - 'QQ'
+      - 'QQ'
+    ingredients:
+      'Q': 'botania:metamorphic_desert_stone'
+    result:
+      id: botania:metamorphic_desert_bricks
+      count: 4
+  botania:metamorphic_desert_bricks_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_desert_bricks'
+    result:
+      id: botania:metamorphic_desert_bricks_slab
+      count: 6
+  botania:metamorphic_desert_bricks_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_desert_bricks'
+    result:
+      id: botania:metamorphic_desert_bricks_stairs
+      count: 4
+  botania:metamorphic_desert_bricks_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_brick_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_desert_bricks'
+    result:
+      id: botania:metamorphic_desert_bricks_wall
+      count: 6
+  botania:metamorphic_desert_cobblestone_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_cobble_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_desert_cobblestone'
+    result:
+      id: botania:metamorphic_desert_cobblestone_slab
+      count: 6
+  botania:metamorphic_desert_cobblestone_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_cobble_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_desert_cobblestone'
+    result:
+      id: botania:metamorphic_desert_cobblestone_stairs
+      count: 4
+  botania:metamorphic_desert_cobblestone_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_cobble_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_desert_cobblestone'
+    result:
+      id: botania:metamorphic_desert_cobblestone_wall
+      count: 6
+  botania:metamorphic_desert_stone_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_stone_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_desert_stone'
+    result:
+      id: botania:metamorphic_desert_stone_slab
+      count: 6
+  botania:metamorphic_desert_stone_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_stone_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_desert_stone'
+    result:
+      id: botania:metamorphic_desert_stone_stairs
+      count: 4
+  botania:metamorphic_desert_stone_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_stone_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_desert_stone'
+    result:
+      id: botania:metamorphic_desert_stone_wall
+      count: 6
+  botania:metamorphic_forest_bricks:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick'
+    pattern:
+      - 'QQ'
+      - 'QQ'
+    ingredients:
+      'Q': 'botania:metamorphic_forest_stone'
+    result:
+      id: botania:metamorphic_forest_bricks
+      count: 4
+  botania:metamorphic_forest_bricks_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_forest_bricks'
+    result:
+      id: botania:metamorphic_forest_bricks_slab
+      count: 6
+  botania:metamorphic_forest_bricks_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_forest_bricks'
+    result:
+      id: botania:metamorphic_forest_bricks_stairs
+      count: 4
+  botania:metamorphic_forest_bricks_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_brick_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_forest_bricks'
+    result:
+      id: botania:metamorphic_forest_bricks_wall
+      count: 6
+  botania:metamorphic_forest_cobblestone_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_cobble_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_forest_cobblestone'
+    result:
+      id: botania:metamorphic_forest_cobblestone_slab
+      count: 6
+  botania:metamorphic_forest_cobblestone_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_cobble_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_forest_cobblestone'
+    result:
+      id: botania:metamorphic_forest_cobblestone_stairs
+      count: 4
+  botania:metamorphic_forest_cobblestone_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_cobble_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_forest_cobblestone'
+    result:
+      id: botania:metamorphic_forest_cobblestone_wall
+      count: 6
+  botania:metamorphic_forest_stone_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_stone_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_forest_stone'
+    result:
+      id: botania:metamorphic_forest_stone_slab
+      count: 6
+  botania:metamorphic_forest_stone_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_stone_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_forest_stone'
+    result:
+      id: botania:metamorphic_forest_stone_stairs
+      count: 4
+  botania:metamorphic_forest_stone_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_stone_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_forest_stone'
+    result:
+      id: botania:metamorphic_forest_stone_wall
+      count: 6
+  botania:metamorphic_fungal_bricks:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick'
+    pattern:
+      - 'QQ'
+      - 'QQ'
+    ingredients:
+      'Q': 'botania:metamorphic_fungal_stone'
+    result:
+      id: botania:metamorphic_fungal_bricks
+      count: 4
+  botania:metamorphic_fungal_bricks_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_fungal_bricks'
+    result:
+      id: botania:metamorphic_fungal_bricks_slab
+      count: 6
+  botania:metamorphic_fungal_bricks_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_fungal_bricks'
+    result:
+      id: botania:metamorphic_fungal_bricks_stairs
+      count: 4
+  botania:metamorphic_fungal_bricks_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_brick_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_fungal_bricks'
+    result:
+      id: botania:metamorphic_fungal_bricks_wall
+      count: 6
+  botania:metamorphic_fungal_cobblestone_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_cobble_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_fungal_cobblestone'
+    result:
+      id: botania:metamorphic_fungal_cobblestone_slab
+      count: 6
+  botania:metamorphic_fungal_cobblestone_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_cobble_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_fungal_cobblestone'
+    result:
+      id: botania:metamorphic_fungal_cobblestone_stairs
+      count: 4
+  botania:metamorphic_fungal_cobblestone_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_cobble_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_fungal_cobblestone'
+    result:
+      id: botania:metamorphic_fungal_cobblestone_wall
+      count: 6
+  botania:metamorphic_fungal_stone_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_stone_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_fungal_stone'
+    result:
+      id: botania:metamorphic_fungal_stone_slab
+      count: 6
+  botania:metamorphic_fungal_stone_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_stone_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_fungal_stone'
+    result:
+      id: botania:metamorphic_fungal_stone_stairs
+      count: 4
+  botania:metamorphic_fungal_stone_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_stone_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_fungal_stone'
+    result:
+      id: botania:metamorphic_fungal_stone_wall
+      count: 6
+  botania:metamorphic_mesa_bricks:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick'
+    pattern:
+      - 'QQ'
+      - 'QQ'
+    ingredients:
+      'Q': 'botania:metamorphic_mesa_stone'
+    result:
+      id: botania:metamorphic_mesa_bricks
+      count: 4
+  botania:metamorphic_mesa_bricks_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_mesa_bricks'
+    result:
+      id: botania:metamorphic_mesa_bricks_slab
+      count: 6
+  botania:metamorphic_mesa_bricks_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_mesa_bricks'
+    result:
+      id: botania:metamorphic_mesa_bricks_stairs
+      count: 4
+  botania:metamorphic_mesa_bricks_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_brick_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_mesa_bricks'
+    result:
+      id: botania:metamorphic_mesa_bricks_wall
+      count: 6
+  botania:metamorphic_mesa_cobblestone_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_cobble_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_mesa_cobblestone'
+    result:
+      id: botania:metamorphic_mesa_cobblestone_slab
+      count: 6
+  botania:metamorphic_mesa_cobblestone_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_cobble_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_mesa_cobblestone'
+    result:
+      id: botania:metamorphic_mesa_cobblestone_stairs
+      count: 4
+  botania:metamorphic_mesa_cobblestone_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_cobble_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_mesa_cobblestone'
+    result:
+      id: botania:metamorphic_mesa_cobblestone_wall
+      count: 6
+  botania:metamorphic_mesa_stone_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_stone_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_mesa_stone'
+    result:
+      id: botania:metamorphic_mesa_stone_slab
+      count: 6
+  botania:metamorphic_mesa_stone_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_stone_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_mesa_stone'
+    result:
+      id: botania:metamorphic_mesa_stone_stairs
+      count: 4
+  botania:metamorphic_mesa_stone_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_stone_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_mesa_stone'
+    result:
+      id: botania:metamorphic_mesa_stone_wall
+      count: 6
+  botania:metamorphic_mountain_bricks:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick'
+    pattern:
+      - 'QQ'
+      - 'QQ'
+    ingredients:
+      'Q': 'botania:metamorphic_mountain_stone'
+    result:
+      id: botania:metamorphic_mountain_bricks
+      count: 4
+  botania:metamorphic_mountain_bricks_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_mountain_bricks'
+    result:
+      id: botania:metamorphic_mountain_bricks_slab
+      count: 6
+  botania:metamorphic_mountain_bricks_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_mountain_bricks'
+    result:
+      id: botania:metamorphic_mountain_bricks_stairs
+      count: 4
+  botania:metamorphic_mountain_bricks_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_brick_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_mountain_bricks'
+    result:
+      id: botania:metamorphic_mountain_bricks_wall
+      count: 6
+  botania:metamorphic_mountain_cobblestone_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_cobble_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_mountain_cobblestone'
+    result:
+      id: botania:metamorphic_mountain_cobblestone_slab
+      count: 6
+  botania:metamorphic_mountain_cobblestone_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_cobble_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_mountain_cobblestone'
+    result:
+      id: botania:metamorphic_mountain_cobblestone_stairs
+      count: 4
+  botania:metamorphic_mountain_cobblestone_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_cobble_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_mountain_cobblestone'
+    result:
+      id: botania:metamorphic_mountain_cobblestone_wall
+      count: 6
+  botania:metamorphic_mountain_stone_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_stone_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_mountain_stone'
+    result:
+      id: botania:metamorphic_mountain_stone_slab
+      count: 6
+  botania:metamorphic_mountain_stone_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_stone_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_mountain_stone'
+    result:
+      id: botania:metamorphic_mountain_stone_stairs
+      count: 4
+  botania:metamorphic_mountain_stone_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_stone_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_mountain_stone'
+    result:
+      id: botania:metamorphic_mountain_stone_wall
+      count: 6
+  botania:metamorphic_plains_bricks:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick'
+    pattern:
+      - 'QQ'
+      - 'QQ'
+    ingredients:
+      'Q': 'botania:metamorphic_plains_stone'
+    result:
+      id: botania:metamorphic_plains_bricks
+      count: 4
+  botania:metamorphic_plains_bricks_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_plains_bricks'
+    result:
+      id: botania:metamorphic_plains_bricks_slab
+      count: 6
+  botania:metamorphic_plains_bricks_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_plains_bricks'
+    result:
+      id: botania:metamorphic_plains_bricks_stairs
+      count: 4
+  botania:metamorphic_plains_bricks_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_brick_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_plains_bricks'
+    result:
+      id: botania:metamorphic_plains_bricks_wall
+      count: 6
+  botania:metamorphic_plains_cobblestone_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_cobble_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_plains_cobblestone'
+    result:
+      id: botania:metamorphic_plains_cobblestone_slab
+      count: 6
+  botania:metamorphic_plains_cobblestone_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_cobble_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_plains_cobblestone'
+    result:
+      id: botania:metamorphic_plains_cobblestone_stairs
+      count: 4
+  botania:metamorphic_plains_cobblestone_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_cobble_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_plains_cobblestone'
+    result:
+      id: botania:metamorphic_plains_cobblestone_wall
+      count: 6
+  botania:metamorphic_plains_stone_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_stone_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_plains_stone'
+    result:
+      id: botania:metamorphic_plains_stone_slab
+      count: 6
+  botania:metamorphic_plains_stone_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_stone_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_plains_stone'
+    result:
+      id: botania:metamorphic_plains_stone_stairs
+      count: 4
+  botania:metamorphic_plains_stone_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_stone_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_plains_stone'
+    result:
+      id: botania:metamorphic_plains_stone_wall
+      count: 6
+  botania:metamorphic_swamp_bricks:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick'
+    pattern:
+      - 'QQ'
+      - 'QQ'
+    ingredients:
+      'Q': 'botania:metamorphic_swamp_stone'
+    result:
+      id: botania:metamorphic_swamp_bricks
+      count: 4
+  botania:metamorphic_swamp_bricks_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_swamp_bricks'
+    result:
+      id: botania:metamorphic_swamp_bricks_slab
+      count: 6
+  botania:metamorphic_swamp_bricks_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_swamp_bricks'
+    result:
+      id: botania:metamorphic_swamp_bricks_stairs
+      count: 4
+  botania:metamorphic_swamp_bricks_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_brick_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_swamp_bricks'
+    result:
+      id: botania:metamorphic_swamp_bricks_wall
+      count: 6
+  botania:metamorphic_swamp_cobblestone_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_cobble_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_swamp_cobblestone'
+    result:
+      id: botania:metamorphic_swamp_cobblestone_slab
+      count: 6
+  botania:metamorphic_swamp_cobblestone_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_cobble_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_swamp_cobblestone'
+    result:
+      id: botania:metamorphic_swamp_cobblestone_stairs
+      count: 4
+  botania:metamorphic_swamp_cobblestone_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_cobble_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_swamp_cobblestone'
+    result:
+      id: botania:metamorphic_swamp_cobblestone_wall
+      count: 6
+  botania:metamorphic_swamp_stone_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_stone_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_swamp_stone'
+    result:
+      id: botania:metamorphic_swamp_stone_slab
+      count: 6
+  botania:metamorphic_swamp_stone_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_stone_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_swamp_stone'
+    result:
+      id: botania:metamorphic_swamp_stone_stairs
+      count: 4
+  botania:metamorphic_swamp_stone_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_stone_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_swamp_stone'
+    result:
+      id: botania:metamorphic_swamp_stone_wall
+      count: 6
+  botania:metamorphic_taiga_bricks:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick'
+    pattern:
+      - 'QQ'
+      - 'QQ'
+    ingredients:
+      'Q': 'botania:metamorphic_taiga_stone'
+    result:
+      id: botania:metamorphic_taiga_bricks
+      count: 4
+  botania:metamorphic_taiga_bricks_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_taiga_bricks'
+    result:
+      id: botania:metamorphic_taiga_bricks_slab
+      count: 6
+  botania:metamorphic_taiga_bricks_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_brick_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_taiga_bricks'
+    result:
+      id: botania:metamorphic_taiga_bricks_stairs
+      count: 4
+  botania:metamorphic_taiga_bricks_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_brick_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_taiga_bricks'
+    result:
+      id: botania:metamorphic_taiga_bricks_wall
+      count: 6
+  botania:metamorphic_taiga_cobblestone_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_cobble_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_taiga_cobblestone'
+    result:
+      id: botania:metamorphic_taiga_cobblestone_slab
+      count: 6
+  botania:metamorphic_taiga_cobblestone_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_cobble_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_taiga_cobblestone'
+    result:
+      id: botania:metamorphic_taiga_cobblestone_stairs
+      count: 4
+  botania:metamorphic_taiga_cobblestone_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_cobble_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_taiga_cobblestone'
+    result:
+      id: botania:metamorphic_taiga_cobblestone_wall
+      count: 6
+  botania:metamorphic_taiga_stone_slab:
+    type: shaped
+    category: building
+    group: 'metamorphic_stone_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_taiga_stone'
+    result:
+      id: botania:metamorphic_taiga_stone_slab
+      count: 6
+  botania:metamorphic_taiga_stone_stairs:
+    type: shaped
+    category: building
+    group: 'metamorphic_stone_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:metamorphic_taiga_stone'
+    result:
+      id: botania:metamorphic_taiga_stone_stairs
+      count: 4
+  botania:metamorphic_taiga_stone_wall:
+    type: shaped
+    category: misc
+    group: 'metamorphic_stone_wall'
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:metamorphic_taiga_stone'
+    result:
+      id: botania:metamorphic_taiga_stone_wall
+      count: 6
+  botania:mining_ring:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'EMP'
+      - 'M M'
+      - ' M '
+    ingredients:
+      'E': 'botania:rune_earth'
+      'M': '#botania:manasteel_ingots'
+      'P': 'minecraft:golden_pickaxe'
+    result:
+      id: botania:mining_ring
+      count: 1
+  botania:missile_rod:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'GDD'
+      - ' TD'
+      - 'T G'
+    ingredients:
+      'D': '#botania:dragonstone_gems'
+      'G': 'botania:life_essence'
+      'T': 'botania:dreamwood_twig'
+    result:
+      id: botania:missile_rod
+      count: 1
+  botania:monocle:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'GN'
+      - 'IN'
+      - ' N'
+    ingredients:
+      'G': 'botania:mana_glass'
+      'I': '#botania:manasteel_ingots'
+      'N': 'minecraft:gold_nugget'
+    result:
+      id: botania:monocle
+      count: 1
+  botania:mossy_dreamwood_planks:
+    type: shapeless
+    category: building
+    ingredients:
+      'A': 'botania:dreamwood_planks'
+      'B': 'minecraft:moss_block'
+    result:
+      id: botania:mossy_dreamwood_planks
+      count: 1
+  botania:mossy_dreamwood_planks_vine:
+    type: shapeless
+    category: building
+    ingredients:
+      'A': 'botania:dreamwood_planks'
+      'B': 'minecraft:vine'
+    result:
+      id: botania:mossy_dreamwood_planks
+      count: 1
+  botania:mossy_livingrock_bricks:
+    type: shapeless
+    category: building
+    ingredients:
+      'A': 'botania:livingrock_bricks'
+      'B': 'minecraft:moss_block'
+    result:
+      id: botania:mossy_livingrock_bricks
+      count: 1
+  botania:mossy_livingrock_bricks_slab:
+    type: shaped
+    category: building
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:mossy_livingrock_bricks'
+    result:
+      id: botania:mossy_livingrock_bricks_slab
+      count: 6
+  botania:mossy_livingrock_bricks_stairs:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:mossy_livingrock_bricks'
+    result:
+      id: botania:mossy_livingrock_bricks_stairs
+      count: 4
+  botania:mossy_livingrock_bricks_vine:
+    type: shapeless
+    category: building
+    ingredients:
+      'A': 'botania:livingrock_bricks'
+      'B': 'minecraft:vine'
+    result:
+      id: botania:mossy_livingrock_bricks
+      count: 1
+  botania:mossy_livingrock_bricks_wall:
+    type: shaped
+    category: misc
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:mossy_livingrock_bricks'
+    result:
+      id: botania:mossy_livingrock_bricks_wall
+      count: 6
+  botania:mossy_livingwood_planks:
+    type: shapeless
+    category: building
+    ingredients:
+      'A': 'botania:livingwood_planks'
+      'B': 'minecraft:moss_block'
+    result:
+      id: botania:mossy_livingwood_planks
+      count: 1
+  botania:mossy_livingwood_planks_vine:
+    type: shapeless
+    category: building
+    ingredients:
+      'A': 'botania:livingwood_planks'
+      'B': 'minecraft:vine'
+    result:
+      id: botania:mossy_livingwood_planks
+      count: 1
+  botania:mushroom_0:
+    type: shapeless
+    category: misc
+    group: 'mushroom'
+    ingredients:
+      'A': 'minecraft:red_mushroom'
+      'B': 'minecraft:white_dye'
+    result:
+      id: botania:white_mushroom
+      count: 1
+  botania:mushroom_1:
+    type: shapeless
+    category: misc
+    group: 'mushroom'
+    ingredients:
+      'A': 'minecraft:red_mushroom'
+      'B': 'minecraft:orange_dye'
+    result:
+      id: botania:orange_mushroom
+      count: 1
+  botania:mushroom_10:
+    type: shapeless
+    category: misc
+    group: 'mushroom'
+    ingredients:
+      'A': 'minecraft:red_mushroom'
+      'B': 'minecraft:purple_dye'
+    result:
+      id: botania:purple_mushroom
+      count: 1
+  botania:mushroom_11:
+    type: shapeless
+    category: misc
+    group: 'mushroom'
+    ingredients:
+      'A': 'minecraft:red_mushroom'
+      'B': 'minecraft:blue_dye'
+    result:
+      id: botania:blue_mushroom
+      count: 1
+  botania:mushroom_12:
+    type: shapeless
+    category: misc
+    group: 'mushroom'
+    ingredients:
+      'A': 'minecraft:red_mushroom'
+      'B': 'minecraft:brown_dye'
+    result:
+      id: botania:brown_mushroom
+      count: 1
+  botania:mushroom_13:
+    type: shapeless
+    category: misc
+    group: 'mushroom'
+    ingredients:
+      'A': 'minecraft:red_mushroom'
+      'B': 'minecraft:green_dye'
+    result:
+      id: botania:green_mushroom
+      count: 1
+  botania:mushroom_14:
+    type: shapeless
+    category: misc
+    group: 'mushroom'
+    ingredients:
+      'A': 'minecraft:red_mushroom'
+      'B': 'minecraft:red_dye'
+    result:
+      id: botania:red_mushroom
+      count: 1
+  botania:mushroom_15:
+    type: shapeless
+    category: misc
+    group: 'mushroom'
+    ingredients:
+      'A': 'minecraft:red_mushroom'
+      'B': 'minecraft:black_dye'
+    result:
+      id: botania:black_mushroom
+      count: 1
+  botania:mushroom_2:
+    type: shapeless
+    category: misc
+    group: 'mushroom'
+    ingredients:
+      'A': 'minecraft:red_mushroom'
+      'B': 'minecraft:magenta_dye'
+    result:
+      id: botania:magenta_mushroom
+      count: 1
+  botania:mushroom_3:
+    type: shapeless
+    category: misc
+    group: 'mushroom'
+    ingredients:
+      'A': 'minecraft:red_mushroom'
+      'B': 'minecraft:light_blue_dye'
+    result:
+      id: botania:light_blue_mushroom
+      count: 1
+  botania:mushroom_4:
+    type: shapeless
+    category: misc
+    group: 'mushroom'
+    ingredients:
+      'A': 'minecraft:red_mushroom'
+      'B': 'minecraft:yellow_dye'
+    result:
+      id: botania:yellow_mushroom
+      count: 1
+  botania:mushroom_5:
+    type: shapeless
+    category: misc
+    group: 'mushroom'
+    ingredients:
+      'A': 'minecraft:red_mushroom'
+      'B': 'minecraft:lime_dye'
+    result:
+      id: botania:lime_mushroom
+      count: 1
+  botania:mushroom_6:
+    type: shapeless
+    category: misc
+    group: 'mushroom'
+    ingredients:
+      'A': 'minecraft:red_mushroom'
+      'B': 'minecraft:pink_dye'
+    result:
+      id: botania:pink_mushroom
+      count: 1
+  botania:mushroom_7:
+    type: shapeless
+    category: misc
+    group: 'mushroom'
+    ingredients:
+      'A': 'minecraft:red_mushroom'
+      'B': 'minecraft:gray_dye'
+    result:
+      id: botania:gray_mushroom
+      count: 1
+  botania:mushroom_8:
+    type: shapeless
+    category: misc
+    group: 'mushroom'
+    ingredients:
+      'A': 'minecraft:red_mushroom'
+      'B': 'minecraft:light_gray_dye'
+    result:
+      id: botania:light_gray_mushroom
+      count: 1
+  botania:mushroom_9:
+    type: shapeless
+    category: misc
+    group: 'mushroom'
+    ingredients:
+      'A': 'minecraft:red_mushroom'
+      'B': 'minecraft:cyan_dye'
+    result:
+      id: botania:cyan_mushroom
+      count: 1
+  botania:mushroom_stew:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:white_mushroom'
+      'B': 'botania:white_mushroom'
+      'C': 'minecraft:bowl'
+    result:
+      id: minecraft:mushroom_stew
+      count: 1
+  botania:mutated_seeds:
+    type: shapeless
+    category: misc
+    group: 'seeds'
+    ingredients:
+      'A': 'botania:grass_seeds'
+      'B': 'minecraft:spider_eye'
+    result:
+      id: botania:mutated_seeds
+      count: 1
+  botania:natura_pylon:
+    type: shaped
+    category: misc
+    pattern:
+      - ' T '
+      - 'TPT'
+      - ' E '
+    ingredients:
+      'E': 'minecraft:ender_eye'
+      'P': 'botania:mana_pylon'
+      'T': '#botania:terrasteel_nuggets'
+    result:
+      id: botania:natura_pylon
+      count: 1
+  botania:obedience_stick:
+    type: shaped
+    category: equipment
+    pattern:
+      - '  M'
+      - ' T '
+      - 'T  '
+    ingredients:
+      'M': '#botania:manasteel_ingots'
+      'T': 'botania:livingwood_twig'
+    result:
+      id: botania:obedience_stick
+      count: 1
+  botania:open_bucket:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'E E'
+      - ' E '
+    ingredients:
+      'E': '#botania:elementium_ingots'
+    result:
+      id: botania:open_bucket
+      count: 1
+  botania:open_crate:
+    type: shaped
+    category: redstone
+    pattern:
+      - 'WWW'
+      - 'W W'
+      - 'W W'
+    ingredients:
+      'W': 'botania:livingwood_planks'
+    result:
+      id: botania:open_crate
+      count: 1
+  botania:orange_floating_flower:
+    type: shaped
+    category: misc
+    group: 'floating_flowers'
+    pattern:
+      - 'F'
+      - 'S'
+      - 'D'
+    ingredients:
+      'D': 'minecraft:dirt'
+      'F': 'botania:orange_shiny_flower'
+      'S': 'botania:grass_seeds'
+    result:
+      id: botania:orange_floating_flower
+      count: 1
+  botania:orange_petal_block:
+    type: shaped
+    category: misc
+    group: 'petal_block'
+    pattern:
+      - 'PPP'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:orange_petal'
+    result:
+      id: botania:orange_petal_block
+      count: 1
+  botania:orange_shiny_flower:
+    type: shapeless
+    category: misc
+    group: 'shiny_flower'
+    ingredients:
+      'A': 'minecraft:glowstone_dust'
+      'B': 'minecraft:glowstone_dust'
+      'C': 'botania:orange_mystical_flower'
+    result:
+      id: botania:orange_shiny_flower
+      count: 1
+  botania:pattern_1_1:
+    type: shaped
+    category: equipment
+    group: 'craft_pattern'
+    pattern:
+      - 'RPP'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:placeholder'
+      'R': 'minecraft:redstone'
+    result:
+      id: botania:pattern_1_1
+      count: 1
+  botania:pattern_1_2:
+    type: shaped
+    category: equipment
+    group: 'craft_pattern'
+    pattern:
+      - 'RPP'
+      - 'RPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:placeholder'
+      'R': 'minecraft:redstone'
+    result:
+      id: botania:pattern_1_2
+      count: 1
+  botania:pattern_1_3:
+    type: shaped
+    category: equipment
+    group: 'craft_pattern'
+    pattern:
+      - 'RPP'
+      - 'RPP'
+      - 'RPP'
+    ingredients:
+      'P': 'botania:placeholder'
+      'R': 'minecraft:redstone'
+    result:
+      id: botania:pattern_1_3
+      count: 1
+  botania:pattern_2_1:
+    type: shaped
+    category: equipment
+    group: 'craft_pattern'
+    pattern:
+      - 'RRP'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:placeholder'
+      'R': 'minecraft:redstone'
+    result:
+      id: botania:pattern_2_1
+      count: 1
+  botania:pattern_2_2:
+    type: shaped
+    category: equipment
+    group: 'craft_pattern'
+    pattern:
+      - 'RRP'
+      - 'RRP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:placeholder'
+      'R': 'minecraft:redstone'
+    result:
+      id: botania:pattern_2_2
+      count: 1
+  botania:pattern_2_3:
+    type: shaped
+    category: equipment
+    group: 'craft_pattern'
+    pattern:
+      - 'RRP'
+      - 'RRP'
+      - 'RRP'
+    ingredients:
+      'P': 'botania:placeholder'
+      'R': 'minecraft:redstone'
+    result:
+      id: botania:pattern_2_3
+      count: 1
+  botania:pattern_3_1:
+    type: shaped
+    category: equipment
+    group: 'craft_pattern'
+    pattern:
+      - 'RRR'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:placeholder'
+      'R': 'minecraft:redstone'
+    result:
+      id: botania:pattern_3_1
+      count: 1
+  botania:pattern_3_2:
+    type: shaped
+    category: equipment
+    group: 'craft_pattern'
+    pattern:
+      - 'RRR'
+      - 'RRR'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:placeholder'
+      'R': 'minecraft:redstone'
+    result:
+      id: botania:pattern_3_2
+      count: 1
+  botania:pattern_donut:
+    type: shaped
+    category: equipment
+    group: 'craft_pattern'
+    pattern:
+      - 'RRR'
+      - 'RPR'
+      - 'RRR'
+    ingredients:
+      'P': 'botania:placeholder'
+      'R': 'minecraft:redstone'
+    result:
+      id: botania:pattern_donut
+      count: 1
+  botania:pattern_framed_dreamwood:
+    type: shaped
+    category: building
+    pattern:
+      - ' W '
+      - 'W W'
+      - ' W '
+    ingredients:
+      'W': 'botania:dreamwood_planks'
+    result:
+      id: botania:pattern_framed_dreamwood
+      count: 4
+  botania:pattern_framed_livingwood:
+    type: shaped
+    category: building
+    pattern:
+      - ' W '
+      - 'W W'
+      - ' W '
+    ingredients:
+      'W': 'botania:livingwood_planks'
+    result:
+      id: botania:pattern_framed_livingwood
+      count: 4
+  botania:petal_black:
+    type: shapeless
+    category: misc
+    group: 'petal'
+    ingredients:
+      'A': 'botania:black_mystical_flower'
+    result:
+      id: botania:black_petal
+      count: 2
+  botania:petal_black_double:
+    type: shapeless
+    category: misc
+    group: 'petal_double'
+    ingredients:
+      'A': 'botania:black_double_flower'
+    result:
+      id: botania:black_petal
+      count: 4
+  botania:petal_blue:
+    type: shapeless
+    category: misc
+    group: 'petal'
+    ingredients:
+      'A': 'botania:blue_mystical_flower'
+    result:
+      id: botania:blue_petal
+      count: 2
+  botania:petal_blue_double:
+    type: shapeless
+    category: misc
+    group: 'petal_double'
+    ingredients:
+      'A': 'botania:blue_double_flower'
+    result:
+      id: botania:blue_petal
+      count: 4
+  botania:petal_brown:
+    type: shapeless
+    category: misc
+    group: 'petal'
+    ingredients:
+      'A': 'botania:brown_mystical_flower'
+    result:
+      id: botania:brown_petal
+      count: 2
+  botania:petal_brown_double:
+    type: shapeless
+    category: misc
+    group: 'petal_double'
+    ingredients:
+      'A': 'botania:brown_double_flower'
+    result:
+      id: botania:brown_petal
+      count: 4
+  botania:petal_cyan:
+    type: shapeless
+    category: misc
+    group: 'petal'
+    ingredients:
+      'A': 'botania:cyan_mystical_flower'
+    result:
+      id: botania:cyan_petal
+      count: 2
+  botania:petal_cyan_double:
+    type: shapeless
+    category: misc
+    group: 'petal_double'
+    ingredients:
+      'A': 'botania:cyan_double_flower'
+    result:
+      id: botania:cyan_petal
+      count: 4
+  botania:petal_gray:
+    type: shapeless
+    category: misc
+    group: 'petal'
+    ingredients:
+      'A': 'botania:gray_mystical_flower'
+    result:
+      id: botania:gray_petal
+      count: 2
+  botania:petal_gray_double:
+    type: shapeless
+    category: misc
+    group: 'petal_double'
+    ingredients:
+      'A': 'botania:gray_double_flower'
+    result:
+      id: botania:gray_petal
+      count: 4
+  botania:petal_green:
+    type: shapeless
+    category: misc
+    group: 'petal'
+    ingredients:
+      'A': 'botania:green_mystical_flower'
+    result:
+      id: botania:green_petal
+      count: 2
+  botania:petal_green_double:
+    type: shapeless
+    category: misc
+    group: 'petal_double'
+    ingredients:
+      'A': 'botania:green_double_flower'
+    result:
+      id: botania:green_petal
+      count: 4
+  botania:petal_light_blue:
+    type: shapeless
+    category: misc
+    group: 'petal'
+    ingredients:
+      'A': 'botania:light_blue_mystical_flower'
+    result:
+      id: botania:light_blue_petal
+      count: 2
+  botania:petal_light_blue_double:
+    type: shapeless
+    category: misc
+    group: 'petal_double'
+    ingredients:
+      'A': 'botania:light_blue_double_flower'
+    result:
+      id: botania:light_blue_petal
+      count: 4
+  botania:petal_light_gray:
+    type: shapeless
+    category: misc
+    group: 'petal'
+    ingredients:
+      'A': 'botania:light_gray_mystical_flower'
+    result:
+      id: botania:light_gray_petal
+      count: 2
+  botania:petal_light_gray_double:
+    type: shapeless
+    category: misc
+    group: 'petal_double'
+    ingredients:
+      'A': 'botania:light_gray_double_flower'
+    result:
+      id: botania:light_gray_petal
+      count: 4
+  botania:petal_lime:
+    type: shapeless
+    category: misc
+    group: 'petal'
+    ingredients:
+      'A': 'botania:lime_mystical_flower'
+    result:
+      id: botania:lime_petal
+      count: 2
+  botania:petal_lime_double:
+    type: shapeless
+    category: misc
+    group: 'petal_double'
+    ingredients:
+      'A': 'botania:lime_double_flower'
+    result:
+      id: botania:lime_petal
+      count: 4
+  botania:petal_magenta:
+    type: shapeless
+    category: misc
+    group: 'petal'
+    ingredients:
+      'A': 'botania:magenta_mystical_flower'
+    result:
+      id: botania:magenta_petal
+      count: 2
+  botania:petal_magenta_double:
+    type: shapeless
+    category: misc
+    group: 'petal_double'
+    ingredients:
+      'A': 'botania:magenta_double_flower'
+    result:
+      id: botania:magenta_petal
+      count: 4
+  botania:petal_orange:
+    type: shapeless
+    category: misc
+    group: 'petal'
+    ingredients:
+      'A': 'botania:orange_mystical_flower'
+    result:
+      id: botania:orange_petal
+      count: 2
+  botania:petal_orange_double:
+    type: shapeless
+    category: misc
+    group: 'petal_double'
+    ingredients:
+      'A': 'botania:orange_double_flower'
+    result:
+      id: botania:orange_petal
+      count: 4
+  botania:petal_pink:
+    type: shapeless
+    category: misc
+    group: 'petal'
+    ingredients:
+      'A': 'botania:pink_mystical_flower'
+    result:
+      id: botania:pink_petal
+      count: 2
+  botania:petal_pink_double:
+    type: shapeless
+    category: misc
+    group: 'petal_double'
+    ingredients:
+      'A': 'botania:pink_double_flower'
+    result:
+      id: botania:pink_petal
+      count: 4
+  botania:petal_purple:
+    type: shapeless
+    category: misc
+    group: 'petal'
+    ingredients:
+      'A': 'botania:purple_mystical_flower'
+    result:
+      id: botania:purple_petal
+      count: 2
+  botania:petal_purple_double:
+    type: shapeless
+    category: misc
+    group: 'petal_double'
+    ingredients:
+      'A': 'botania:purple_double_flower'
+    result:
+      id: botania:purple_petal
+      count: 4
+  botania:petal_red:
+    type: shapeless
+    category: misc
+    group: 'petal'
+    ingredients:
+      'A': 'botania:red_mystical_flower'
+    result:
+      id: botania:red_petal
+      count: 2
+  botania:petal_red_double:
+    type: shapeless
+    category: misc
+    group: 'petal_double'
+    ingredients:
+      'A': 'botania:red_double_flower'
+    result:
+      id: botania:red_petal
+      count: 4
+  botania:petal_white:
+    type: shapeless
+    category: misc
+    group: 'petal'
+    ingredients:
+      'A': 'botania:white_mystical_flower'
+    result:
+      id: botania:white_petal
+      count: 2
+  botania:petal_white_double:
+    type: shapeless
+    category: misc
+    group: 'petal_double'
+    ingredients:
+      'A': 'botania:white_double_flower'
+    result:
+      id: botania:white_petal
+      count: 4
+  botania:petal_yellow:
+    type: shapeless
+    category: misc
+    group: 'petal'
+    ingredients:
+      'A': 'botania:yellow_mystical_flower'
+    result:
+      id: botania:yellow_petal
+      count: 2
+  botania:petal_yellow_double:
+    type: shapeless
+    category: misc
+    group: 'petal_double'
+    ingredients:
+      'A': 'botania:yellow_double_flower'
+    result:
+      id: botania:yellow_petal
+      count: 4
+  botania:pink_floating_flower:
+    type: shaped
+    category: misc
+    group: 'floating_flowers'
+    pattern:
+      - 'F'
+      - 'S'
+      - 'D'
+    ingredients:
+      'D': 'minecraft:dirt'
+      'F': 'botania:pink_shiny_flower'
+      'S': 'botania:grass_seeds'
+    result:
+      id: botania:pink_floating_flower
+      count: 1
+  botania:pink_petal_block:
+    type: shaped
+    category: misc
+    group: 'petal_block'
+    pattern:
+      - 'PPP'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:pink_petal'
+    result:
+      id: botania:pink_petal_block
+      count: 1
+  botania:pink_shiny_flower:
+    type: shapeless
+    category: misc
+    group: 'shiny_flower'
+    ingredients:
+      'A': 'minecraft:glowstone_dust'
+      'B': 'minecraft:glowstone_dust'
+      'C': 'botania:pink_mystical_flower'
+    result:
+      id: botania:pink_shiny_flower
+      count: 1
+  botania:pixie_ring:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'DE '
+      - 'E E'
+      - ' E '
+    ingredients:
+      'D': 'botania:pixie_dust'
+      'E': '#botania:elementium_ingots'
+    result:
+      id: botania:pixie_ring
+      count: 1
+  botania:placeholder:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'minecraft:crafting_table'
+      'B': 'botania:livingrock'
+    result:
+      id: botania:placeholder
+      count: 32
+  botania:polished_livingrock:
+    type: shaped
+    category: building
+    pattern:
+      - 'RR'
+      - 'RR'
+    ingredients:
+      'R': 'botania:livingrock'
+    result:
+      id: botania:polished_livingrock
+      count: 4
+  botania:polished_livingrock_slab:
+    type: shaped
+    category: building
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:polished_livingrock'
+    result:
+      id: botania:polished_livingrock_slab
+      count: 6
+  botania:polished_livingrock_stairs:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:polished_livingrock'
+    result:
+      id: botania:polished_livingrock_stairs
+      count: 4
+  botania:polished_livingrock_wall:
+    type: shaped
+    category: misc
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:polished_livingrock'
+    result:
+      id: botania:polished_livingrock_wall
+      count: 6
+  botania:pool_minecart:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'minecraft:minecart'
+      'B': 'botania:mana_pool'
+    result:
+      id: botania:pool_minecart
+      count: 1
+  botania:pump:
+    type: shaped
+    category: misc
+    pattern:
+      - 'SSS'
+      - 'IBI'
+      - 'SSS'
+    ingredients:
+      'B': 'minecraft:bucket'
+      'I': '#botania:manasteel_ingots'
+      'S': 'botania:livingrock'
+    result:
+      id: botania:pump
+      count: 1
+  botania:purple_floating_flower:
+    type: shaped
+    category: misc
+    group: 'floating_flowers'
+    pattern:
+      - 'F'
+      - 'S'
+      - 'D'
+    ingredients:
+      'D': 'minecraft:dirt'
+      'F': 'botania:purple_shiny_flower'
+      'S': 'botania:grass_seeds'
+    result:
+      id: botania:purple_floating_flower
+      count: 1
+  botania:purple_petal_block:
+    type: shaped
+    category: misc
+    group: 'petal_block'
+    pattern:
+      - 'PPP'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:purple_petal'
+    result:
+      id: botania:purple_petal_block
+      count: 1
+  botania:purple_shiny_flower:
+    type: shapeless
+    category: misc
+    group: 'shiny_flower'
+    ingredients:
+      'A': 'minecraft:glowstone_dust'
+      'B': 'minecraft:glowstone_dust'
+      'C': 'botania:purple_mystical_flower'
+    result:
+      id: botania:purple_shiny_flower
+      count: 1
+  botania:quartz_blaze:
+    type: shaped
+    category: misc
+    pattern:
+      - 'QQQ'
+      - 'QCQ'
+      - 'QQQ'
+    ingredients:
+      'C': 'minecraft:blaze_powder'
+      'Q': 'minecraft:quartz'
+    result:
+      id: botania:quartz_blaze
+      count: 8
+  botania:quartz_dark:
+    type: shaped
+    category: misc
+    pattern:
+      - 'QQQ'
+      - 'QCQ'
+      - 'QQQ'
+    ingredients:
+      'C': 'minecraft:coal'
+      'Q': 'minecraft:quartz'
+    result:
+      id: botania:quartz_dark
+      count: 8
+  botania:quartz_lavender:
+    type: shaped
+    category: misc
+    pattern:
+      - 'QQQ'
+      - 'QCQ'
+      - 'QQQ'
+    ingredients:
+      'C': 'minecraft:allium'
+      'Q': 'minecraft:quartz'
+    result:
+      id: botania:quartz_lavender
+      count: 8
+  botania:quartz_red:
+    type: shaped
+    category: misc
+    pattern:
+      - 'QQQ'
+      - 'QCQ'
+      - 'QQQ'
+    ingredients:
+      'C': 'minecraft:redstone'
+      'Q': 'minecraft:quartz'
+    result:
+      id: botania:quartz_red
+      count: 8
+  botania:quartz_sunny:
+    type: shaped
+    category: misc
+    pattern:
+      - 'QQQ'
+      - 'QCQ'
+      - 'QQQ'
+    ingredients:
+      'C': 'minecraft:sunflower'
+      'Q': 'minecraft:quartz'
+    result:
+      id: botania:quartz_sunny
+      count: 8
+  botania:rainbow_rod:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' PD'
+      - ' EP'
+      - 'E  '
+    ingredients:
+      'D': '#botania:dragonstone_gems'
+      'E': '#botania:elementium_ingots'
+      'P': 'botania:pixie_dust'
+    result:
+      id: botania:rainbow_rod
+      count: 1
+  botania:reach_ring:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'RE '
+      - 'E E'
+      - ' E '
+    ingredients:
+      'E': '#botania:elementium_ingots'
+      'R': 'botania:rune_pride'
+    result:
+      id: botania:reach_ring
+      count: 1
+  botania:red_floating_flower:
+    type: shaped
+    category: misc
+    group: 'floating_flowers'
+    pattern:
+      - 'F'
+      - 'S'
+      - 'D'
+    ingredients:
+      'D': 'minecraft:dirt'
+      'F': 'botania:red_shiny_flower'
+      'S': 'botania:grass_seeds'
+    result:
+      id: botania:red_floating_flower
+      count: 1
+  botania:red_pavement:
+    type: shapeless
+    category: building
+    group: 'pavement'
+    ingredients:
+      'A': 'botania:livingrock'
+      'B': 'minecraft:cobblestone'
+      'C': 'minecraft:gravel'
+      'D': 'minecraft:redstone'
+    result:
+      id: botania:red_pavement
+      count: 3
+  botania:red_pavement_slab:
+    type: shaped
+    category: building
+    group: 'pavement_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:red_pavement'
+    result:
+      id: botania:red_pavement_slab
+      count: 6
+  botania:red_pavement_stairs:
+    type: shaped
+    category: building
+    group: 'pavement_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:red_pavement'
+    result:
+      id: botania:red_pavement_stairs
+      count: 4
+  botania:red_petal_block:
+    type: shaped
+    category: misc
+    group: 'petal_block'
+    pattern:
+      - 'PPP'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:red_petal'
+    result:
+      id: botania:red_petal_block
+      count: 1
+  botania:red_quartz:
+    type: shaped
+    category: building
+    group: 'quartz_block'
+    pattern:
+      - 'QQ'
+      - 'QQ'
+    ingredients:
+      'Q': 'botania:quartz_red'
+    result:
+      id: botania:red_quartz
+      count: 1
+  botania:red_quartz_pillar:
+    type: shaped
+    category: building
+    group: 'quartz_pillar'
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:red_quartz'
+    result:
+      id: botania:red_quartz_pillar
+      count: 2
+  botania:red_quartz_slab:
+    type: shaped
+    category: building
+    group: 'quartz_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:red_quartz'
+    result:
+      id: botania:red_quartz_slab
+      count: 6
+  botania:red_quartz_stairs:
+    type: shaped
+    category: building
+    group: 'quartz_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:red_quartz'
+    result:
+      id: botania:red_quartz_stairs
+      count: 4
+  botania:red_shiny_flower:
+    type: shapeless
+    category: misc
+    group: 'shiny_flower'
+    ingredients:
+      'A': 'minecraft:glowstone_dust'
+      'B': 'minecraft:glowstone_dust'
+      'C': 'botania:red_mystical_flower'
+    result:
+      id: botania:red_shiny_flower
+      count: 1
+  botania:red_string:
+    type: shapeless
+    category: misc
+    group: 'red_string'
+    ingredients:
+      'A': 'minecraft:string'
+      'B': 'minecraft:redstone_block'
+      'C': 'botania:pixie_dust'
+      'D': 'botania:ender_air_bottle'
+    result:
+      id: botania:red_string
+      count: 1
+  botania:red_string_alt:
+    type: shapeless
+    category: misc
+    group: 'red_string'
+    ingredients:
+      'A': 'minecraft:string'
+      'B': 'minecraft:redstone_block'
+      'C': 'botania:pixie_dust'
+      'D': 'botania:ender_air_bottle'
+      'E': 'minecraft:pumpkin'
+    result:
+      id: botania:red_string
+      count: 1
+  botania:red_string_comparator:
+    type: shaped
+    category: redstone
+    pattern:
+      - 'RRR'
+      - 'RMS'
+      - 'RRR'
+    ingredients:
+      'M': 'minecraft:comparator'
+      'R': 'botania:livingrock'
+      'S': 'botania:red_string'
+    result:
+      id: botania:red_string_comparator
+      count: 1
+  botania:red_string_dispenser:
+    type: shaped
+    category: redstone
+    pattern:
+      - 'RRR'
+      - 'RMS'
+      - 'RRR'
+    ingredients:
+      'M': 'minecraft:dispenser'
+      'R': 'botania:livingrock'
+      'S': 'botania:red_string'
+    result:
+      id: botania:red_string_dispenser
+      count: 1
+  botania:red_string_fertilizer:
+    type: shaped
+    category: redstone
+    pattern:
+      - 'RRR'
+      - 'RMS'
+      - 'RRR'
+    ingredients:
+      'M': 'botania:fertilizer'
+      'R': 'botania:livingrock'
+      'S': 'botania:red_string'
+    result:
+      id: botania:red_string_fertilizer
+      count: 1
+  botania:red_string_interceptor:
+    type: shaped
+    category: redstone
+    pattern:
+      - 'RRR'
+      - 'RMS'
+      - 'RRR'
+    ingredients:
+      'M': 'minecraft:stone_button'
+      'R': 'botania:livingrock'
+      'S': 'botania:red_string'
+    result:
+      id: botania:red_string_interceptor
+      count: 1
+  botania:red_string_relay:
+    type: shaped
+    category: redstone
+    pattern:
+      - 'RRR'
+      - 'RMS'
+      - 'RRR'
+    ingredients:
+      'M': 'botania:mana_spreader'
+      'R': 'botania:livingrock'
+      'S': 'botania:red_string'
+    result:
+      id: botania:red_string_relay
+      count: 1
+  botania:redstone_root:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'minecraft:redstone'
+      'B': 'minecraft:fern'
+    result:
+      id: botania:redstone_root
+      count: 1
+  botania:redstone_spreader:
+    type: shapeless
+    category: redstone
+    group: 'spreader'
+    ingredients:
+      'A': 'botania:mana_spreader'
+      'B': 'minecraft:redstone'
+    result:
+      id: botania:redstone_spreader
+      count: 1
+  botania:runic_altar:
+    type: shaped
+    category: misc
+    pattern:
+      - 'SSS'
+      - 'SPS'
+    ingredients:
+      'P': 'botania:mana_pearl'
+      'S': 'botania:livingrock'
+    result:
+      id: botania:runic_altar
+      count: 1
+  botania:runic_altar_alt:
+    type: shaped
+    category: misc
+    pattern:
+      - 'SSS'
+      - 'SPS'
+    ingredients:
+      'P': '#botania:mana_diamond_gems'
+      'S': 'botania:livingrock'
+    result:
+      id: botania:runic_altar
+      count: 1
+  botania:scorched_seeds:
+    type: shapeless
+    category: misc
+    group: 'seeds'
+    ingredients:
+      'A': 'botania:grass_seeds'
+      'B': 'minecraft:blaze_powder'
+    result:
+      id: botania:scorched_seeds
+      count: 1
+  botania:sextant:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' TI'
+      - ' TT'
+      - 'III'
+    ingredients:
+      'I': '#botania:manasteel_ingots'
+      'T': 'botania:livingwood_twig'
+    result:
+      id: botania:sextant
+      count: 1
+  botania:shimmerrock:
+    type: shapeless
+    category: building
+    ingredients:
+      'A': 'botania:livingrock'
+      'B': 'botania:bifrost_perm'
+    result:
+      id: botania:shimmerrock
+      count: 1
+  botania:shimmerrock_slab:
+    type: shaped
+    category: building
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:shimmerrock'
+    result:
+      id: botania:shimmerrock_slab
+      count: 6
+  botania:shimmerrock_stairs:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:shimmerrock'
+    result:
+      id: botania:shimmerrock_stairs
+      count: 4
+  botania:shimmerwood_planks:
+    type: shapeless
+    category: building
+    ingredients:
+      'A': 'botania:dreamwood_planks'
+      'B': 'botania:bifrost_perm'
+    result:
+      id: botania:shimmerwood_planks
+      count: 1
+  botania:shimmerwood_planks_slab:
+    type: shaped
+    category: building
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:shimmerwood_planks'
+    result:
+      id: botania:shimmerwood_planks_slab
+      count: 6
+  botania:shimmerwood_planks_stairs:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:shimmerwood_planks'
+    result:
+      id: botania:shimmerwood_planks_stairs
+      count: 4
+  botania:skydirt_rod:
+    type: shapeless
+    category: equipment
+    ingredients:
+      'A': 'botania:dirt_rod'
+      'B': 'botania:pixie_dust'
+      'C': 'botania:rune_air'
+    result:
+      id: botania:skydirt_rod
+      count: 1
+  botania:slime_bottle:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'EGE'
+      - 'ESE'
+      - ' E '
+    ingredients:
+      'E': '#botania:elementium_ingots'
+      'G': 'botania:elf_glass'
+      'S': 'minecraft:slime_ball'
+    result:
+      id: botania:slime_bottle
+      count: 1
+  botania:slingshot:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' TA'
+      - ' TT'
+      - 'T  '
+    ingredients:
+      'A': 'botania:rune_air'
+      'T': 'botania:livingwood_twig'
+    result:
+      id: botania:slingshot
+      count: 1
+  botania:smelt_rod:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' BF'
+      - ' TB'
+      - 'T  '
+    ingredients:
+      'B': 'minecraft:blaze_rod'
+      'F': 'botania:rune_fire'
+      'T': 'botania:livingwood_twig'
+    result:
+      id: botania:smelt_rod
+      count: 1
+  botania:spark:
+    type: shaped
+    category: misc
+    pattern:
+      - ' P '
+      - 'BNB'
+      - ' P '
+    ingredients:
+      'B': 'minecraft:blaze_powder'
+      'N': 'minecraft:gold_nugget'
+      'P': '#botania:petals'
+    result:
+      id: botania:spark
+      count: 1
+  botania:spark_changer:
+    type: shaped
+    category: redstone
+    pattern:
+      - 'ESE'
+      - 'SRS'
+    ingredients:
+      'E': '#botania:elementium_ingots'
+      'R': 'minecraft:redstone'
+      'S': 'botania:livingrock'
+    result:
+      id: botania:spark_changer
+      count: 1
+  botania:spark_upgrade_dispersive:
+    type: shapeless
+    category: misc
+    group: 'spark_upgrade'
+    ingredients:
+      'A': 'botania:pixie_dust'
+      'B': '#botania:manasteel_ingots'
+      'C': 'botania:rune_water'
+    result:
+      id: botania:spark_upgrade_dispersive
+      count: 1
+  botania:spark_upgrade_dominant:
+    type: shapeless
+    category: misc
+    group: 'spark_upgrade'
+    ingredients:
+      'A': 'botania:pixie_dust'
+      'B': '#botania:manasteel_ingots'
+      'C': 'botania:rune_fire'
+    result:
+      id: botania:spark_upgrade_dominant
+      count: 1
+  botania:spark_upgrade_isolated:
+    type: shapeless
+    category: misc
+    group: 'spark_upgrade'
+    ingredients:
+      'A': 'botania:pixie_dust'
+      'B': '#botania:manasteel_ingots'
+      'C': 'botania:rune_air'
+    result:
+      id: botania:spark_upgrade_isolated
+      count: 1
+  botania:spark_upgrade_recessive:
+    type: shapeless
+    category: misc
+    group: 'spark_upgrade'
+    ingredients:
+      'A': 'botania:pixie_dust'
+      'B': '#botania:manasteel_ingots'
+      'C': 'botania:rune_earth'
+    result:
+      id: botania:spark_upgrade_recessive
+      count: 1
+  botania:spawner_claw:
+    type: shaped
+    category: misc
+    pattern:
+      - 'BSB'
+      - 'PMP'
+      - 'PEP'
+    ingredients:
+      'B': 'minecraft:blaze_rod'
+      'E': 'botania:ender_air_bottle'
+      'M': '#botania:manasteel_blocks'
+      'P': 'minecraft:prismarine_bricks'
+      'S': '#botania:elementium_ingots'
+    result:
+      id: botania:spawner_claw
+      count: 1
+  botania:spawner_mover:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'EIE'
+      - 'ADA'
+      - 'EIE'
+    ingredients:
+      'A': 'botania:ender_air_bottle'
+      'D': '#botania:dragonstone_gems'
+      'E': 'botania:life_essence'
+      'I': '#botania:elementium_ingots'
+    result:
+      id: botania:spawner_mover
+      count: 1
+  botania:spectral_platform:
+    type: shaped
+    category: misc
+    pattern:
+      - '343'
+      - '0D0'
+    ingredients:
+      '0': '#botania:dreamwood_logs'
+      '3': 'botania:framed_dreamwood'
+      '4': 'botania:pattern_framed_dreamwood'
+      'D': 'botania:pixie_dust'
+    result:
+      id: botania:spectral_platform
+      count: 2
+  botania:speed_up_belt:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' M '
+      - 'PBP'
+      - ' S '
+    ingredients:
+      'B': 'botania:travel_belt'
+      'M': 'minecraft:map'
+      'P': 'botania:grass_seeds'
+      'S': 'minecraft:sugar'
+    result:
+      id: botania:speed_up_belt
+      count: 1
+  botania:spell_cloth:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' C '
+      - 'CPC'
+      - ' C '
+    ingredients:
+      'C': 'botania:manaweave_cloth'
+      'P': 'botania:mana_pearl'
+    result:
+      id: botania:spell_cloth
+      count: 1
+  botania:star_sword:
+    type: shaped
+    category: equipment
+    pattern:
+      - '  I'
+      - 'AD '
+      - 'TA '
+    ingredients:
+      'A': 'botania:ender_air_bottle'
+      'D': '#botania:dragonstone_gems'
+      'I': '#botania:elementium_ingots'
+      'T': 'botania:terra_sword'
+    result:
+      id: botania:star_sword
+      count: 1
+  botania:starfield:
+    type: shaped
+    category: misc
+    pattern:
+      - 'EPE'
+      - 'EOE'
+    ingredients:
+      'E': '#botania:elementium_ingots'
+      'O': 'minecraft:obsidian'
+      'P': 'botania:pixie_dust'
+    result:
+      id: botania:starfield
+      count: 1
+  botania:stripped_dreamwood:
+    type: shaped
+    category: building
+    group: 'wood'
+    pattern:
+      - '##'
+      - '##'
+    ingredients:
+      '#': 'botania:stripped_dreamwood_log'
+    result:
+      id: botania:stripped_dreamwood
+      count: 3
+  botania:stripped_dreamwood_slab:
+    type: shaped
+    category: building
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:stripped_dreamwood'
+    result:
+      id: botania:stripped_dreamwood_slab
+      count: 6
+  botania:stripped_dreamwood_stairs:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:stripped_dreamwood'
+    result:
+      id: botania:stripped_dreamwood_stairs
+      count: 4
+  botania:stripped_dreamwood_wall:
+    type: shaped
+    category: misc
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:stripped_dreamwood'
+    result:
+      id: botania:stripped_dreamwood_wall
+      count: 6
+  botania:stripped_livingwood:
+    type: shaped
+    category: building
+    group: 'wood'
+    pattern:
+      - '##'
+      - '##'
+    ingredients:
+      '#': 'botania:stripped_livingwood_log'
+    result:
+      id: botania:stripped_livingwood
+      count: 3
+  botania:stripped_livingwood_slab:
+    type: shaped
+    category: building
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:stripped_livingwood'
+    result:
+      id: botania:stripped_livingwood_slab
+      count: 6
+  botania:stripped_livingwood_stairs:
+    type: shaped
+    category: building
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:stripped_livingwood'
+    result:
+      id: botania:stripped_livingwood_stairs
+      count: 4
+  botania:stripped_livingwood_wall:
+    type: shaped
+    category: misc
+    pattern:
+      - 'BBB'
+      - 'BBB'
+    ingredients:
+      'B': 'botania:stripped_livingwood'
+    result:
+      id: botania:stripped_livingwood_wall
+      count: 6
+  botania:sunny_quartz:
+    type: shaped
+    category: building
+    group: 'quartz_block'
+    pattern:
+      - 'QQ'
+      - 'QQ'
+    ingredients:
+      'Q': 'botania:quartz_sunny'
+    result:
+      id: botania:sunny_quartz
+      count: 1
+  botania:sunny_quartz_pillar:
+    type: shaped
+    category: building
+    group: 'quartz_pillar'
+    pattern:
+      - 'Q'
+      - 'Q'
+    ingredients:
+      'Q': 'botania:sunny_quartz'
+    result:
+      id: botania:sunny_quartz_pillar
+      count: 2
+  botania:sunny_quartz_slab:
+    type: shaped
+    category: building
+    group: 'quartz_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:sunny_quartz'
+    result:
+      id: botania:sunny_quartz_slab
+      count: 6
+  botania:sunny_quartz_stairs:
+    type: shaped
+    category: building
+    group: 'quartz_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:sunny_quartz'
+    result:
+      id: botania:sunny_quartz_stairs
+      count: 4
+  botania:super_cloud_pendant:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'BEB'
+      - 'BPB'
+      - 'NGN'
+    ingredients:
+      'B': 'minecraft:ghast_tear'
+      'E': '#botania:elementium_ingots'
+      'G': 'botania:life_essence'
+      'N': 'minecraft:white_wool'
+      'P': 'botania:cloud_pendant'
+    result:
+      id: botania:super_cloud_pendant
+      count: 1
+  botania:super_lava_pendant:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'BBB'
+      - 'BPB'
+      - 'NGN'
+    ingredients:
+      'B': 'minecraft:blaze_rod'
+      'G': 'botania:life_essence'
+      'N': 'minecraft:nether_brick'
+      'P': 'botania:lava_pendant'
+    result:
+      id: botania:super_lava_pendant
+      count: 1
+  botania:super_travel_belt:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'E  '
+      - ' S '
+      - 'L E'
+    ingredients:
+      'E': '#botania:elementium_ingots'
+      'L': 'botania:life_essence'
+      'S': 'botania:travel_belt'
+    result:
+      id: botania:super_travel_belt
+      count: 1
+  botania:swap_ring:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'CM '
+      - 'M M'
+      - ' M '
+    ingredients:
+      'C': 'minecraft:clay'
+      'M': '#botania:manasteel_ingots'
+    result:
+      id: botania:swap_ring
+      count: 1
+  botania:temperance_stone:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' S '
+      - 'SRS'
+      - ' S '
+    ingredients:
+      'R': 'botania:rune_earth'
+      'S': 'minecraft:stone'
+    result:
+      id: botania:temperance_stone
+      count: 1
+  botania:terra_axe:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'TTG'
+      - 'TST'
+      - ' S '
+    ingredients:
+      'G': 'minecraft:glowstone'
+      'S': 'botania:livingwood_twig'
+      'T': '#botania:terrasteel_ingots'
+    result:
+      id: botania:terra_axe
+      count: 1
+  botania:terra_plate:
+    type: shaped
+    category: misc
+    pattern:
+      - 'LLL'
+      - '0M1'
+      - '283'
+    ingredients:
+      '0': 'botania:rune_water'
+      '1': 'botania:rune_fire'
+      '2': 'botania:rune_earth'
+      '3': 'botania:rune_air'
+      '8': 'botania:rune_mana'
+      'L': 'minecraft:lapis_block'
+      'M': '#botania:manasteel_blocks'
+    result:
+      id: botania:terra_plate
+      count: 1
+  botania:terra_sword:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'I'
+      - 'I'
+      - 'S'
+    ingredients:
+      'I': '#botania:terrasteel_ingots'
+      'S': 'botania:livingwood_twig'
+    result:
+      id: botania:terra_sword
+      count: 1
+  botania:terraform_rod:
+    type: shaped
+    category: equipment
+    pattern:
+      - ' WT'
+      - 'ARS'
+      - 'GM '
+    ingredients:
+      'A': 'botania:rune_autumn'
+      'G': 'botania:grass_seeds'
+      'M': 'botania:rune_summer'
+      'R': 'botania:dirt_rod'
+      'S': 'botania:rune_spring'
+      'T': '#botania:terrasteel_ingots'
+      'W': 'botania:rune_winter'
+    result:
+      id: botania:terraform_rod
+      count: 1
+  botania:terrasteel_block:
+    type: shaped
+    category: building
+    pattern:
+      - 'III'
+      - 'III'
+      - 'III'
+    ingredients:
+      'I': '#botania:terrasteel_ingots'
+    result:
+      id: botania:terrasteel_block
+      count: 1
+  botania:teru_teru_bozu:
+    type: shaped
+    category: misc
+    pattern:
+      - 'C'
+      - 'C'
+      - 'S'
+    ingredients:
+      'C': 'botania:manaweave_cloth'
+      'S': 'minecraft:sunflower'
+    result:
+      id: botania:teru_teru_bozu
+      count: 1
+  botania:third_eye:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'RSR'
+      - 'QEQ'
+      - 'RDR'
+    ingredients:
+      'D': '#botania:mana_diamond_gems'
+      'E': 'minecraft:ender_eye'
+      'Q': 'minecraft:quartz_block'
+      'R': 'minecraft:golden_carrot'
+      'S': 'botania:rune_earth'
+    result:
+      id: botania:third_eye
+      count: 1
+  botania:thorn_chakram:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'VVV'
+      - 'VTV'
+      - 'VVV'
+    ingredients:
+      'T': '#botania:terrasteel_ingots'
+      'V': 'minecraft:vine'
+    result:
+      id: botania:thorn_chakram
+      count: 2
+  botania:thunder_sword:
+    type: shaped
+    category: equipment
+    pattern:
+      - '  I'
+      - 'AD '
+      - 'TA '
+    ingredients:
+      'A': 'botania:ender_air_bottle'
+      'D': '#botania:mana_diamond_gems'
+      'I': '#botania:elementium_ingots'
+      'T': 'botania:terra_sword'
+    result:
+      id: botania:thunder_sword
+      count: 1
+  botania:tiny_planet:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'LSL'
+      - 'SPS'
+      - 'LSL'
+    ingredients:
+      'L': 'botania:livingrock'
+      'P': 'botania:mana_pearl'
+      'S': 'minecraft:stone'
+    result:
+      id: botania:tiny_planet
+      count: 1
+  botania:tiny_planet_block:
+    type: shaped
+    category: misc
+    pattern:
+      - 'SSS'
+      - 'SPS'
+      - 'SSS'
+    ingredients:
+      'P': 'botania:tiny_planet'
+      'S': 'minecraft:stone'
+    result:
+      id: botania:tiny_planet_block
+      count: 1
+  botania:toggle_light_relay:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'botania:light_relay'
+      'B': 'minecraft:lever'
+    result:
+      id: botania:toggle_light_relay
+      count: 1
+  botania:tornado_rod:
+    type: shaped
+    category: equipment
+    pattern:
+      - '  F'
+      - ' T '
+      - 'R  '
+    ingredients:
+      'F': 'minecraft:feather'
+      'R': 'botania:rune_air'
+      'T': 'botania:livingwood_twig'
+    result:
+      id: botania:tornado_rod
+      count: 1
+  botania:travel_belt:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'EL '
+      - 'L L'
+      - 'SLA'
+    ingredients:
+      'A': 'botania:rune_air'
+      'E': 'botania:rune_earth'
+      'L': 'minecraft:leather'
+      'S': '#botania:manasteel_ingots'
+    result:
+      id: botania:travel_belt
+      count: 1
+  botania:turntable:
+    type: shaped
+    category: misc
+    pattern:
+      - 'WWW'
+      - 'WPW'
+      - 'WWW'
+    ingredients:
+      'P': 'minecraft:sticky_piston'
+      'W': '#botania:livingwood_logs'
+    result:
+      id: botania:turntable
+      count: 1
+  botania:twig_wand:
+    type: shaped
+    category: equipment
+    group: 'twig_wand'
+    pattern:
+      - ' PS'
+      - ' SP'
+      - 'S  '
+    ingredients:
+      'P': '#botania:petals'
+      'S': 'botania:livingwood_twig'
+    result:
+      id: botania:twig_wand
+      count: 1
+  botania:unholy_cloak:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'WWW'
+      - 'RWR'
+      - 'RSR'
+    ingredients:
+      'R': 'minecraft:redstone'
+      'S': 'botania:life_essence'
+      'W': 'minecraft:black_wool'
+    result:
+      id: botania:unholy_cloak
+      count: 1
+  botania:vial:
+    type: shaped
+    category: misc
+    pattern:
+      - 'G G'
+      - ' G '
+    ingredients:
+      'G': 'botania:mana_glass'
+    result:
+      id: botania:vial
+      count: 3
+  botania:vine_ball:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'VVV'
+      - 'VVV'
+      - 'VVV'
+    ingredients:
+      'V': 'minecraft:vine'
+    result:
+      id: botania:vine_ball
+      count: 1
+  botania:virus_necrodermal:
+    type: shapeless
+    category: equipment
+    ingredients:
+      'A': 'botania:pixie_dust'
+      'B': 'botania:vine_ball'
+      'C': 'minecraft:magma_cream'
+      'D': 'minecraft:fermented_spider_eye'
+      'E': 'minecraft:ender_eye'
+      'F': 'minecraft:zombie_head'
+    result:
+      id: botania:virus_necrodermal
+      count: 1
+  botania:virus_nullodermal:
+    type: shapeless
+    category: equipment
+    ingredients:
+      'A': 'botania:pixie_dust'
+      'B': 'botania:vine_ball'
+      'C': 'minecraft:magma_cream'
+      'D': 'minecraft:fermented_spider_eye'
+      'E': 'minecraft:ender_eye'
+      'F': 'minecraft:skeleton_skull'
+    result:
+      id: botania:virus_nullodermal
+      count: 1
+  botania:vivid_seeds:
+    type: shapeless
+    category: misc
+    group: 'seeds'
+    ingredients:
+      'A': 'botania:grass_seeds'
+      'B': 'minecraft:green_dye'
+    result:
+      id: botania:vivid_seeds
+      count: 1
+  botania:water_ring:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'WMP'
+      - 'MHM'
+      - 'CM '
+    ingredients:
+      'C': 'minecraft:cod'
+      'H': 'minecraft:heart_of_the_sea'
+      'M': '#botania:manasteel_ingots'
+      'P': 'minecraft:pufferfish'
+      'W': 'botania:rune_water'
+    result:
+      id: botania:water_ring
+      count: 1
+  botania:white_floating_flower:
+    type: shaped
+    category: misc
+    group: 'floating_flowers'
+    pattern:
+      - 'F'
+      - 'S'
+      - 'D'
+    ingredients:
+      'D': 'minecraft:dirt'
+      'F': 'botania:white_shiny_flower'
+      'S': 'botania:grass_seeds'
+    result:
+      id: botania:white_floating_flower
+      count: 1
+  botania:white_pavement:
+    type: shapeless
+    category: building
+    group: 'pavement'
+    ingredients:
+      'A': 'botania:livingrock'
+      'B': 'minecraft:cobblestone'
+      'C': 'minecraft:gravel'
+    result:
+      id: botania:white_pavement
+      count: 3
+  botania:white_pavement_slab:
+    type: shaped
+    category: building
+    group: 'pavement_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:white_pavement'
+    result:
+      id: botania:white_pavement_slab
+      count: 6
+  botania:white_pavement_stairs:
+    type: shaped
+    category: building
+    group: 'pavement_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:white_pavement'
+    result:
+      id: botania:white_pavement_stairs
+      count: 4
+  botania:white_petal_block:
+    type: shaped
+    category: misc
+    group: 'petal_block'
+    pattern:
+      - 'PPP'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:white_petal'
+    result:
+      id: botania:white_petal_block
+      count: 1
+  botania:white_shiny_flower:
+    type: shapeless
+    category: misc
+    group: 'shiny_flower'
+    ingredients:
+      'A': 'minecraft:glowstone_dust'
+      'B': 'minecraft:glowstone_dust'
+      'C': 'botania:white_mystical_flower'
+    result:
+      id: botania:white_shiny_flower
+      count: 1
+  botania:world_seed:
+    type: shaped
+    category: equipment
+    pattern:
+      - 'G'
+      - 'S'
+      - 'D'
+    ingredients:
+      'D': '#botania:dragonstone_gems'
+      'G': 'minecraft:grass_block'
+      'S': 'minecraft:wheat_seeds'
+    result:
+      id: botania:world_seed
+      count: 4
+  botania:yellow_floating_flower:
+    type: shaped
+    category: misc
+    group: 'floating_flowers'
+    pattern:
+      - 'F'
+      - 'S'
+      - 'D'
+    ingredients:
+      'D': 'minecraft:dirt'
+      'F': 'botania:yellow_shiny_flower'
+      'S': 'botania:grass_seeds'
+    result:
+      id: botania:yellow_floating_flower
+      count: 1
+  botania:yellow_pavement:
+    type: shapeless
+    category: building
+    group: 'pavement'
+    ingredients:
+      'A': 'botania:livingrock'
+      'B': 'minecraft:cobblestone'
+      'C': 'minecraft:gravel'
+      'D': 'minecraft:wheat'
+    result:
+      id: botania:yellow_pavement
+      count: 3
+  botania:yellow_pavement_slab:
+    type: shaped
+    category: building
+    group: 'pavement_slab'
+    pattern:
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:yellow_pavement'
+    result:
+      id: botania:yellow_pavement_slab
+      count: 6
+  botania:yellow_pavement_stairs:
+    type: shaped
+    category: building
+    group: 'pavement_stairs'
+    pattern:
+      - 'Q  '
+      - 'QQ '
+      - 'QQQ'
+    ingredients:
+      'Q': 'botania:yellow_pavement'
+    result:
+      id: botania:yellow_pavement_stairs
+      count: 4
+  botania:yellow_petal_block:
+    type: shaped
+    category: misc
+    group: 'petal_block'
+    pattern:
+      - 'PPP'
+      - 'PPP'
+      - 'PPP'
+    ingredients:
+      'P': 'botania:yellow_petal'
+    result:
+      id: botania:yellow_petal_block
+      count: 1
+  botania:yellow_shiny_flower:
+    type: shapeless
+    category: misc
+    group: 'shiny_flower'
+    ingredients:
+      'A': 'minecraft:glowstone_dust'
+      'B': 'minecraft:glowstone_dust'
+      'C': 'botania:yellow_mystical_flower'
+    result:
+      id: botania:yellow_shiny_flower
+      count: 1

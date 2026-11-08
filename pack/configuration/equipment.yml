@@ -1,0 +1,19 @@
+# 自定义盔甲外观（tools/gen_content.py 生成，勿手改）。
+# 1.21.2+ 的装备渲染：humanoid 负责头/胸/靴，humanoid_leggings 负责腿。
+equipments:
+  botania:manasteel:
+    type: component
+    humanoid: "botania:entity/equipment/humanoid/manasteel"
+    humanoid_leggings: "botania:entity/equipment/humanoid_leggings/manasteel"
+  botania:elementium:
+    type: component
+    humanoid: "botania:entity/equipment/humanoid/elementium"
+    humanoid_leggings: "botania:entity/equipment/humanoid_leggings/elementium"
+  botania:terrasteel:
+    type: component
+    humanoid: "botania:entity/equipment/humanoid/terrasteel"
+    humanoid_leggings: "botania:entity/equipment/humanoid_leggings/terrasteel"
+  botania:manaweave:
+    type: component
+    humanoid: "botania:entity/equipment/humanoid/manaweave"
+    humanoid_leggings: "botania:entity/equipment/humanoid_leggings/manaweave"

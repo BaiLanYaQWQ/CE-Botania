@@ -1,0 +1,642 @@
+# 核心玩法方块（tools/gen_core_blocks.py 生成，改脚本重跑，勿手改）。
+# 载体规则见脚本头部注释：优先透明满块（玻璃），不够的退回音符盒。
+
+blocks:
+  botania:mana_pool:
+    behavior:
+      type: botania:mana_pool
+    states:
+      properties:
+        filled:
+          type: boolean
+          default: false
+      appearances:
+        empty:
+          state: "minecraft:glass"
+          model: botania:block/mana_pool
+        full:
+          state: "minecraft:tinted_glass"
+          model: botania:block/mana_pool_full
+      variants:
+        'filled=false':
+          appearance: empty
+        'filled=true':
+          appearance: full
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:mana_pool
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:mana_pool
+  botania:mana_spreader:
+    behavior:
+      type: botania:mana_spreader
+    states:
+      properties:
+        facing:
+          type: 4-direction
+          default: north
+      appearances:
+        north:
+          state: "minecraft:white_stained_glass"
+          model: botania:block/mana_spreader
+        east:
+          state: "minecraft:orange_stained_glass"
+          model:
+            path: botania:block/mana_spreader
+            y: 90
+        south:
+          state: "minecraft:magenta_stained_glass"
+          model:
+            path: botania:block/mana_spreader
+            y: 180
+        west:
+          state: "minecraft:light_blue_stained_glass"
+          model:
+            path: botania:block/mana_spreader
+            y: 270
+      variants:
+        'facing=north':
+          appearance: north
+        'facing=east':
+          appearance: east
+        'facing=south':
+          appearance: south
+        'facing=west':
+          appearance: west
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:mana_spreader
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:mana_spreader
+  botania:elven_spreader:
+    behavior:
+      type: botania:mana_spreader
+    state:
+      auto_state: solid
+      model: botania:block/elven_spreader
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:elven_spreader
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:elven_spreader
+  botania:gaia_spreader:
+    behavior:
+      type: botania:mana_spreader
+    state:
+      auto_state: solid
+      model: botania:block/gaia_spreader
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:gaia_spreader
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:gaia_spreader
+  botania:redstone_spreader:
+    behavior:
+      type: botania:mana_spreader
+    state:
+      auto_state: solid
+      model: botania:block/redstone_spreader
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:redstone_spreader
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:redstone_spreader
+  botania:apothecary_default:
+    behavior:
+      type: botania:petal_apothecary
+    state:
+      state: "minecraft:yellow_stained_glass"
+      model: botania:block/apothecary_default
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:apothecary_default
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:apothecary_default
+  botania:apothecary_default_water:
+    behavior:
+      type: botania:petal_apothecary
+    state:
+      state: "minecraft:lime_stained_glass"
+      model: botania:block/apothecary_default_water
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:apothecary_default_water
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:apothecary_default_water
+  botania:apothecary_desert:
+    behavior:
+      type: botania:petal_apothecary
+    state:
+      state: "minecraft:pink_stained_glass"
+      model: botania:block/apothecary_desert
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:apothecary_desert
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:apothecary_desert
+  botania:apothecary_forest:
+    behavior:
+      type: botania:petal_apothecary
+    state:
+      state: "minecraft:gray_stained_glass"
+      model: botania:block/apothecary_forest
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:apothecary_forest
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:apothecary_forest
+  botania:apothecary_fungal:
+    behavior:
+      type: botania:petal_apothecary
+    state:
+      state: "minecraft:light_gray_stained_glass"
+      model: botania:block/apothecary_fungal
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:apothecary_fungal
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:apothecary_fungal
+  botania:apothecary_mesa:
+    behavior:
+      type: botania:petal_apothecary
+    state:
+      state: "minecraft:cyan_stained_glass"
+      model: botania:block/apothecary_mesa
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:apothecary_mesa
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:apothecary_mesa
+  botania:apothecary_mountain:
+    behavior:
+      type: botania:petal_apothecary
+    state:
+      state: "minecraft:purple_stained_glass"
+      model: botania:block/apothecary_mountain
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:apothecary_mountain
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:apothecary_mountain
+  botania:apothecary_plains:
+    behavior:
+      type: botania:petal_apothecary
+    state:
+      state: "minecraft:blue_stained_glass"
+      model: botania:block/apothecary_plains
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:apothecary_plains
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:apothecary_plains
+  botania:apothecary_swamp:
+    behavior:
+      type: botania:petal_apothecary
+    state:
+      state: "minecraft:brown_stained_glass"
+      model: botania:block/apothecary_swamp
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:apothecary_swamp
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:apothecary_swamp
+  botania:apothecary_taiga:
+    behavior:
+      type: botania:petal_apothecary
+    state:
+      state: "minecraft:green_stained_glass"
+      model: botania:block/apothecary_taiga
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:apothecary_taiga
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:apothecary_taiga
+  botania:apothecary_livingrock:
+    behavior:
+      type: botania:petal_apothecary
+    state:
+      state: "minecraft:red_stained_glass"
+      model: botania:block/apothecary_livingrock
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:apothecary_livingrock
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:apothecary_livingrock
+  botania:apothecary_mossy:
+    behavior:
+      type: botania:petal_apothecary
+    state:
+      auto_state: solid
+      model: botania:block/apothecary_mossy
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:apothecary_mossy
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:apothecary_mossy
+  botania:apothecary_deepslate:
+    behavior:
+      type: botania:petal_apothecary
+    state:
+      auto_state: solid
+      model: botania:block/apothecary_deepslate
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:apothecary_deepslate
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:apothecary_deepslate
+  botania:runic_altar:
+    behavior:
+      type: botania:runic_altar
+    state:
+      state: "minecraft:black_stained_glass"
+      model: botania:block/runic_altar
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 2.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:runic_altar
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:runic_altar
+  botania:diluted_pool:
+    behavior:
+      type: botania:mana_pool
+    state:
+      auto_state: solid
+      model: botania:block/diluted_pool
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:diluted_pool
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:diluted_pool
+  botania:fabulous_pool:
+    behavior:
+      type: botania:mana_pool
+    state:
+      auto_state: solid
+      model: botania:block/fabulous_pool
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:fabulous_pool
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:fabulous_pool
+  botania:creative_pool:
+    behavior:
+      type: botania:mana_pool
+    state:
+      auto_state: solid
+      model: botania:block/creative_pool
+    settings:
+      sounds:
+        break: minecraft:block.stone.break
+        step: minecraft:block.stone.step
+        place: minecraft:block.stone.place
+        hit: minecraft:block.stone.hit
+        fall: minecraft:block.stone.fall
+      hardness: 1.5
+      resistance: 6.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      friction: 0.6
+      item: botania:creative_pool
+    loot:
+      pools:
+        - rolls: 1
+          entries:
+            - type: item
+              item: botania:creative_pool

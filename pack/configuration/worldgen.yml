@@ -1,0 +1,83 @@
+# 神秘花的自然生成（tools/gen_worldgen.py 生成，勿手改）。
+# 只在草方块正上方、且该格是空气时替换掉空气——不会挖穿地形，也不会长到水里。
+placed_features:
+  botania:mystical_flowers:
+    dimension_type:
+      - minecraft:overworld
+    feature:
+      type: 'minecraft:simple_block'
+      to_place:
+        type: 'minecraft:rule_based'
+        rules:
+          - if_true:
+              type: 'minecraft:all_of'
+              predicates:
+                - type: 'minecraft:matching_blocks'
+                  blocks: 'minecraft:air'
+                - type: 'minecraft:matching_blocks'
+                  blocks: 'minecraft:grass_block'
+                  offset:
+                    - 0
+                    - -1
+                    - 0
+            then:
+              type: 'minecraft:weighted'
+              entries:
+                - weight: 1
+                  data:
+                    id: 'botania:white_mystical_flower'
+                - weight: 1
+                  data:
+                    id: 'botania:orange_mystical_flower'
+                - weight: 1
+                  data:
+                    id: 'botania:magenta_mystical_flower'
+                - weight: 1
+                  data:
+                    id: 'botania:light_blue_mystical_flower'
+                - weight: 1
+                  data:
+                    id: 'botania:yellow_mystical_flower'
+                - weight: 1
+                  data:
+                    id: 'botania:lime_mystical_flower'
+                - weight: 1
+                  data:
+                    id: 'botania:pink_mystical_flower'
+                - weight: 1
+                  data:
+                    id: 'botania:gray_mystical_flower'
+                - weight: 1
+                  data:
+                    id: 'botania:light_gray_mystical_flower'
+                - weight: 1
+                  data:
+                    id: 'botania:cyan_mystical_flower'
+                - weight: 1
+                  data:
+                    id: 'botania:purple_mystical_flower'
+                - weight: 1
+                  data:
+                    id: 'botania:blue_mystical_flower'
+                - weight: 1
+                  data:
+                    id: 'botania:brown_mystical_flower'
+                - weight: 1
+                  data:
+                    id: 'botania:green_mystical_flower'
+                - weight: 1
+                  data:
+                    id: 'botania:red_mystical_flower'
+                - weight: 1
+                  data:
+                    id: 'botania:black_mystical_flower'
+    placement:
+      # 原版 placement 的顺序有讲究：count 决定尝试次数，必须排在最前
+      - type: 'minecraft:count'
+        count: 10
+      - type: 'minecraft:in_square'
+      - type: 'minecraft:rarity_filter'
+        chance: 5
+      - type: 'minecraft:heightmap'
+        heightmap: MOTION_BLOCKING
+      - type: 'minecraft:biome'

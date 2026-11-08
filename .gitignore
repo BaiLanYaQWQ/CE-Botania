@@ -1,0 +1,21 @@
+# 服务器运行目录（含 server.jar、世界存档、插件运行时数据）
+Server/
+
+# 构建产物
+build/
+plugin/build/
+plugin/.gradle/
+.gradle/
+*.jar
+# Gradle Wrapper 的 jar 要留
+!plugin/gradle/wrapper/gradle-wrapper.jar
+
+# 中间产物（可由 tools/ 重新生成）
+/tmp-*
+*.log
+
+# 编辑器
+.idea/
+.vscode/
+*.iml
+.DS_Store
