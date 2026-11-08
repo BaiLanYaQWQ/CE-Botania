@@ -63,8 +63,13 @@ public final class CeBotaniaPlugin extends JavaPlugin {
                     () -> new net.bailanya.cebotania.debug.SelfTest(this).run(), 100L);
         }
 
-        // 4.5) 永远白天 + 晴天
-        new net.bailanya.cebotania.core.DaylightKeeper(this).install();
+        // 4.5) 永远白天 + 晴天（只在本地调试时开，默认关）
+        if (getConfig().getBoolean("world.always-day", false)
+                || getConfig().getBoolean("world.always-clear", false)) {
+            new net.bailanya.cebotania.core.DaylightKeeper(this,
+                    getConfig().getBoolean("world.always-day", false),
+                    getConfig().getBoolean("world.always-clear", false)).install();
+        }
 
         // 5) 事件：打花掉花瓣
         Bukkit.getPluginManager().registerEvents(

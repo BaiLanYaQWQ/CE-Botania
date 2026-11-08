@@ -8,8 +8,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 /**
  * 永远白天 + 永远晴天。
  *
- * <p>关掉昼夜与天气循环，把时间钉在正午（6000）、天气钉在晴。
- * 每 5 分钟再校正一次，防止别的插件或命令把时间拨走。</p>
+ * <p><b>默认不启用</b> —— 这只是本地调试时图方便的功能（钉在正午、天气永远晴）。
+ * 想用就在 {@code config.yml} 里打开 {@code world.always-day} / {@code world.always-clear}。</p>
  */
 public final class DaylightKeeper {
 
@@ -17,9 +17,13 @@ public final class DaylightKeeper {
     private static final long NOON = 6000L;
 
     private final JavaPlugin plugin;
+    private final boolean lockDay;
+    private final boolean lockClear;
 
-    public DaylightKeeper(JavaPlugin plugin) {
+    public DaylightKeeper(JavaPlugin plugin, boolean lockDay, boolean lockClear) {
         this.plugin = plugin;
+        this.lockDay = lockDay;
+        this.lockClear = lockClear;
     }
 
     public void install() {
@@ -31,12 +35,16 @@ public final class DaylightKeeper {
     private void apply() {
         for (World world : Bukkit.getWorlds()) {
             try {
-                world.setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
-                world.setGameRule(GameRule.DO_WEATHER_CYCLE, false);
-                world.setTime(NOON);
-                world.setStorm(false);
-                world.setThundering(false);
-                world.setClearWeatherDuration(Integer.MAX_VALUE);
+                if (this.lockDay) {
+                    world.setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
+                    world.setTime(NOON);
+                }
+                if (this.lockClear) {
+                    world.setGameRule(GameRule.DO_WEATHER_CYCLE, false);
+                    world.setStorm(false);
+                    world.setThundering(false);
+                    world.setClearWeatherDuration(Integer.MAX_VALUE);
+                }
             } catch (Throwable throwable) {
                 this.plugin.getLogger().warning("设置白天/晴天失败（"
                         + world.getName() + "）：" + throwable);
