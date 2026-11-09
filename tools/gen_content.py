@@ -33,11 +33,18 @@ CFG = ROOT / "pack" / "configuration"
 NAMESPACE = "botania"
 
 
+# 上游语言文件放在 build/upstream_lang/（由 tools/fetch_lang.py 下载）。
+# 之前是从 /tmp 的源码树里读，/tmp 一被清空就全退化成英文 id —— 就是那次"名字全变英文"。
+LANG_DIR = ROOT / "build" / "upstream_lang"
+
+
 def load_lang(name: str) -> dict[str, str]:
-    p = SRC / f"Xplat/src/main/resources/assets/botania/lang/{name}.json"
-    if not p.is_file():
-        return {}
-    return json.loads(p.read_text(encoding="utf-8"))
+    for candidate in (LANG_DIR / f"{name}.json",
+                      SRC / f"Xplat/src/main/resources/assets/botania/lang/{name}.json"):
+        if candidate.is_file():
+            return json.loads(candidate.read_text(encoding="utf-8"))
+    print(f"警告：找不到语言文件 {name}.json，物品名会退化成英文 id", file=sys.stderr)
+    return {}
 
 
 def clean_name(raw: str) -> str:
@@ -272,16 +279,25 @@ def gen_items(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str]
 
         lines.append(f"  {NAMESPACE}:{name}:")
         lines.append(f"    material: {base_material(name)}")
-        lines.append("    model:")
-        lines.append("      type: minecraft:model")
-        lines.append(f"      path: {NAMESPACE}:item/{name}")
+        armor_material = None
+        for candidate in ("manasteel", "elementium", "terrasteel", "manaweave"):
+            if name in (f"{candidate}_helmet", f"{candidate}_chestplate",
+                        f"{candidate}_leggings", f"{candidate}_boots"):
+                armor_material = candidate
+                break
+        if False:
+            pass
+        else:
+            lines.append("    model:")
+            lines.append("      type: minecraft:model")
+            lines.append(f"      path: {NAMESPACE}:item/{name}")
         lines.append("    data:")
         lines.append(
             f"      item_name: '<!i><white><lang:{NAMESPACE}.item.{name}>'"
         )
         if unstackable(name):
             lines.append("      max_stack_size: 1")
-        stats = tool_stats(name) if name.startswith("manasteel_") else None
+        stats = tool_stats(name)
         if stats is not None:
             # 耐久与附魔能力按上游表
             lines.append(f"      max_damage: {stats[1]}")
@@ -289,15 +305,21 @@ def gen_items(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str]
             lines.append(f"        value: {stats[2]}")
             armor_slot = ARMOR_SLOT.get(next((suffix for suffix in ARMOR_SLOT
                                               if name.endswith(suffix)), ""), None)
+            armor_asset = None
             if armor_slot is not None:
-                # 外观用 Botania 1.7.10 的 2D 盔甲贴图（那会儿还是标准 64x32 布局，
-                # 正好能贴到 CE 的 64x64 humanoid / humanoid_leggings 上）。
-                asset = (name.replace("_helmet", "").replace("_chestplate", "")
-                         .replace("_leggings", "").replace("_boots", ""))
+                # 3D 盔甲：equippable 只给 slot（不给 asset_id），客户端改用物品模型渲染；
+                # 模型再用 display_context 选择——穿戴时是 3D 模型，物品栏还是平面图标。
+                # 这套做法抄的是森罗物语的草帽（kaleidoscopecookery:straw_hat）。
+                armor_asset = (name.replace("_helmet", "").replace("_chestplate", "")
+                               .replace("_leggings", "").replace("_boots", ""))
                 lines.append("      equippable:")
                 lines.append(f"        slot: {armor_slot}")
-                if asset in ("manasteel", "elementium", "terrasteel", "manaweave"):
-                    lines.append(f"        asset_id: botania:{asset}")
+                if name in ARMOR_3D:
+                    # BlockBench Armor3D 导出的部件：靠资源包里的自定义 shader
+                    # 把 2D 纹理膨胀成立体，asset_id 指过去即可
+                    lines.append(f"        asset_id: {ARMOR_3D[name]}")
+                elif armor_asset in ("manasteel", "elementium", "terrasteel", "manaweave"):
+                    lines.append(f"        asset_id: botania:{armor_asset}")
             digging = tool_digging(name)
             if digging is not None:
                 # 挖掘速度 6.2（铁 6.0）+ 钻石级挖掘等级，跟上游 ManasteelTier 一致
@@ -560,16 +582,16 @@ PLANT_CARRIERS: list[str] = [
 # 不可堆叠的东西：法杖、饰品类。上游这些物品的 maxStackSize 都是 1。
 UNSTACKABLE_HINTS = (
     "wand", "twig_wand", "rod", "ring", "pendant", "belt", "charm", "cloak",
-    "halo", "talisman", "monocle", "lexicon", "tablet", "flask", "vial",
+    "halo", "talisman", "monocle", "lexicon", "tablet",
     "slingshot", "astrolabe", "sextant", "clip", "cacophonium", "dice",
     "obedience_stick", "incense_stick", "flower_bag", "bauble_box",
     "spark_changer", "temperance_stone", "diva_charm", "black_hole_talisman",
     "third_eye", "monocle", "crafting_halo", "auto_crafting_halo",
-    "world_seed", "laputa_shard", "goddess_charm", "keep_ivy", "itemfinder",
+    "laputa_shard", "goddess_charm", "keep_ivy", "itemfinder",
     "astrolabe", "sextant", "clip", "open_bucket", "slime_bottle",
-    "thorn_chakram", "flare_chakram", "ender_dagger", "crystal_bow",
+    "ender_dagger", "crystal_bow",
     "livingwood_bow", "mana_gun", "star_sword", "thunder_sword",
-    "terra_sword", "mana_mirror", "brew_flask", "brew_vial",
+    "terra_sword", "mana_mirror",
 )
 
 
@@ -629,14 +651,39 @@ ARMOR_STATS = {
 }
 
 
+# 上游 ManasteelTier / ElementiumTier / TerrasteelTier 的耐久与附魔能力
+MATERIAL_STATS = {
+    "manasteel": {"tool": 300, "enchant": 20, "armor_enchant": 18},
+    "elementium": {"tool": 720, "enchant": 20, "armor_enchant": 18},
+    "terrasteel": {"tool": 2300, "enchant": 26, "armor_enchant": 26},
+    "manaweave": {"tool": 0, "enchant": 0, "armor_enchant": 15},
+}
+# 护甲耐久按倍率算（铁是 15）：魔钢/元素 18，泰拉钢 30，魔纹布 5
+ARMOR_DURA_BASE = {"helmet": 11, "chestplate": 16, "leggings": 15, "boots": 13}
+ARMOR_MULT = {"manasteel": 18, "elementium": 18, "terrasteel": 30, "manaweave": 5}
+
+
+def armor_material(name: str):
+    for material in MATERIAL_STATS:
+        if name.startswith(material + "_"):
+            return material
+    return None
+
+
 def tool_stats(name: str):
     """返回 (底层材质, 耐久上限, 附魔能力)。"""
-    for suffix, (material, durability) in TOOL_STATS.items():
+    material = armor_material(name)
+    if material is None:
+        return None
+    stats = MATERIAL_STATS[material]
+    for suffix, (base_material_name, _) in TOOL_STATS.items():
         if name.endswith(suffix):
-            return material, durability, 20
-    for suffix, (material, durability) in ARMOR_STATS.items():
+            return base_material_name, stats["tool"], stats["enchant"]
+    for suffix, (base_material_name, _) in ARMOR_STATS.items():
         if name.endswith(suffix):
-            return material, durability, 18
+            kind = suffix.lstrip("_")
+            mult = ARMOR_MULT.get(material, 15)
+            return base_material_name, ARMOR_DURA_BASE[kind] * mult, stats["armor_enchant"]
     return None
 
 
@@ -648,6 +695,17 @@ DIGGING = {
     "_hoe": ("#minecraft:mineable/hoe", 6.2),
 }
 
+
+# BlockBench Armor3D 导出的 3D 装备部件（靠自定义 shader 把纹理膨胀成立体）。
+# 只有胸甲/护腿做了 3D，头盔和靴子继续用 2D 纹理。
+# Armor3D 的 "piece" 是按**装备槽**分的，不是按部位：
+#   *_chest_piece  → humanoid 层（头/身/手臂），头盔、胸甲、靴子共用它
+#   *_legs_piece   → humanoid_leggings 层（腿），护腿用它
+# 所以一件套的四件都要指向这两个 piece，而不是只配胸甲/护腿。
+# 3D 盔甲（BlockBench Armor3D 的 shader 方案）暂时停用：
+# 它依赖 GPU subgroup 扩展，部分显卡编译失败会把整个资源包带崩。
+# 目前盔甲走 2D 纹理（botania:manasteel 这类 equipment）。
+ARMOR_3D: dict[str, str] = {}
 
 ARMOR_SLOT = {
     "_helmet": "head",

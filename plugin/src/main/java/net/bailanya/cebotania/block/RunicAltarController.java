@@ -22,6 +22,13 @@ public final class RunicAltarController extends ManaBlockController {
 
     private final List<String> items = new ArrayList<>();
 
+    /** 环绕在祭坛上方的物品展示实体（每个投料一个）。 */
+    private final List<org.bukkit.entity.ItemDisplay> displays = new ArrayList<>();
+    /** 旋转角度。 */
+    private double spin;
+    /** 实体刷新节流。 */
+    private int displayTick;
+
     public RunicAltarController(BlockEntity blockEntity) {
         super(blockEntity, CAPACITY);
     }
@@ -92,13 +99,12 @@ public final class RunicAltarController extends ManaBlockController {
         } catch (Throwable ignored) {
             // 粒子/音效缺失不影响功能
         }
-        this.items.clear();
-        this.mana = 0;
-        markChanged();
+        clear();   // 连带清掉悬浮的物品实体
     }
 
     public void addItem(String id) {
         this.items.add(id);
+        refreshDisplays();
         markChanged();
     }
 
@@ -108,6 +114,7 @@ public final class RunicAltarController extends ManaBlockController {
             return null;
         }
         String removed = this.items.remove(this.items.size() - 1);
+        refreshDisplays();
         markChanged();
         return removed;
     }
@@ -115,7 +122,100 @@ public final class RunicAltarController extends ManaBlockController {
     public void clear() {
         this.items.clear();
         this.mana = 0;
+        refreshDisplays();
         markChanged();
+    }
+
+    @Override
+    public void onUnload() {
+        clearDisplays();
+        super.onUnload();
+    }
+
+    @Override
+    public void onRemove() {
+        clearDisplays();
+        super.onRemove();
+    }
+
+    /** 重新生成环绕实体：每个投料一个 ItemDisplay，围成一圈。 */
+    private void refreshDisplays() {
+        clearDisplays();
+
+        var world = net.bailanya.cebotania.platform.Platform.bukkit(world());
+        var pos = position();
+        if (world == null || pos == null || this.items.isEmpty()) {
+            return;
+        }
+        var center = new org.bukkit.Location(world,
+                pos.x() + 0.5, pos.y() + 1.15, pos.z() + 0.5);
+        for (String id : this.items) {
+            org.bukkit.inventory.ItemStack stack =
+                    net.bailanya.cebotania.platform.BotaniaItems.create(id, 1);
+            if (stack == null) {
+                continue;
+            }
+            try {
+                var raw = world.spawnEntity(center, org.bukkit.entity.EntityType.ITEM_DISPLAY);
+                if (raw instanceof org.bukkit.entity.ItemDisplay display) {
+                    display.setItemStack(stack);
+                    display.setBillboard(org.bukkit.entity.Display.Billboard.CENTER);
+                    display.setItemDisplayTransform(
+                            org.bukkit.entity.ItemDisplay.ItemDisplayTransform.GROUND);
+                    display.setInvulnerable(true);
+                    display.setPersistent(false);
+                    display.setShadowRadius(0f);
+                    display.setShadowStrength(0f);
+                    display.setViewRange(0.35f);
+                    this.displays.add(display);
+                }
+            } catch (Throwable throwable) {
+                java.util.logging.Logger.getLogger("CeBotania").warning(
+                        "祭坛物品实体创建失败：" + throwable);
+            }
+        }
+        layout(0);
+
+    }
+
+    /** 按当前角度把实体摆成一圈（圆心固定用祭坛方块的位置）。 */
+    private void layout(double angle) {
+        int count = this.displays.size();
+        if (count == 0) {
+            return;
+        }
+        var world = net.bailanya.cebotania.platform.Platform.bukkit(world());
+        var pos = position();
+        if (world == null || pos == null) {
+            return;
+        }
+        var center = new org.bukkit.Location(world,
+                pos.x() + 0.5, pos.y() + 1.15, pos.z() + 0.5);
+        double radius = 0.62;
+        for (int index = 0; index < count; index++) {
+            var display = this.displays.get(index);
+            if (display == null || !display.isValid()) {
+                continue;
+            }
+            double theta = angle + index * (2 * Math.PI / count);
+            var target = center.clone().add(
+                    Math.cos(theta) * radius, 0.0, Math.sin(theta) * radius);
+            target.setYaw((float) Math.toDegrees(-theta));
+            display.teleport(target);
+        }
+    }
+
+    private void clearDisplays() {
+        for (var display : this.displays) {
+            try {
+                if (display != null && display.isValid()) {
+                    display.remove();
+                }
+            } catch (Throwable ignored) {
+                // 忽略
+            }
+        }
+        this.displays.clear();
     }
 
     @Override

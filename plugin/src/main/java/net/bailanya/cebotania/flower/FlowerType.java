@@ -49,8 +49,10 @@ public final class FlowerType {
 
     static {
         // —— 产魔花：数值取自上游各类（"每 tick 多少 mana"折算到 intervalTicks 一跳）——
-        // 萤火之焰 Endoflame：烧一份可燃物，1 mana/tick，单件上限 32000。
-        gen("endoflame", 20, 20, 2000, "fuel");
+        // 萤火之焰 Endoflame：吃掉一份燃料后**持续烧**，1 mana/tick。
+        // 上游 FUEL_CAP=32000，实际燃烧刻数 = min(FUEL_CAP, 物品燃烧时间) / 2；
+        // 煤 1600 刻 → 烧 800 刻产 800 魔力（40 秒），烧完才吃下一份。
+        gen("endoflame", 1, 1, 4000, "fuel");
         // 水绣球 Hydroangeas：贴着水源时 1 mana/3 tick（慢，但开局不要钱）。
         gen("hydroangeas", 6, 20, 1000, "water");
         // 热百合 Thermalily：吸岩浆，45 mana/tick，爆发 600 tick。
@@ -71,30 +73,30 @@ public final class FlowerType {
         gen("rafflowsia", 2000, 20, 4000, "flower");
 
         // —— 功能花：manaPerAction 是每跳消耗的魔力（上游的 COST）——
-        func("agricarnation", 5, 3, "grow");
-        func("fallen_kanade", 4, 2, "heal");
-        func("jaded_amaranthus", 12, 8, "bloom");
+        func("agricarnation", 5, 200, "grow");
+        func("fallen_kanade", 120, 1, "heal");
+        func("jaded_amaranthus", 100, 30, "bloom");
         func("hopperhock", 3, 5, "collect");
-        func("exoflame", 6, 6, "smelt");
+        func("exoflame", 300, 2, "smelt");
         func("bellethorn", 8, 10, "thorn");
         func("dreadthorn", 8, 10, "dreadthorn");
-        func("heisei_dream", 10, 10, "dream");
-        func("hyacidus", 6, 10, "poison");
+        func("heisei_dream", 100, 10, "dream");
+        func("hyacidus", 20, 10, "poison");
         func("medumone", 8, 10, "slow");
-        func("tigerseye", 8, 10, "scare");
+        func("tigerseye", 70, 10, "scare");
         func("vinculotus", 8, 10, "bind");
         func("tangleberrie", 6, 10, "tangle");
         func("jiyuulia", 6, 10, "levitate");
         func("solegnolia", 0, 20, "lens");
         func("bergamute", 0, 20, "mute");
         func("daffomill", 6, 4, "blow");
-        func("clayconia", 6, 8, "clay");
-        func("pollidisiac", 8, 10, "breed");
+        func("clayconia", 80, 5, "clay");
+        func("pollidisiac", 12, 10, "breed");
         func("rannuncarpus", 8, 10, "place");
         func("spectranthemum", 12, 10, "teleport");
         func("loonium", 500, 100, "dungeon");
-        func("orechid", 15000, 100, "ore");
-        func("orechid_ignem", 15000, 100, "ore_nether");
+        func("orechid", 17500, 100, "ore");
+        func("orechid_ignem", 20000, 100, "ore_nether");
         func("marimorphosis", 12000, 100, "marble");
     }
 
@@ -114,5 +116,55 @@ public final class FlowerType {
 
     public static Map<String, FlowerType> all() {
         return BY_ID;
+    }
+
+    /**
+     * 给森林法杖用的功能说明（中文一句话）。
+     *
+     * <p>产魔花说"怎么产魔"，功能花说"做什么事"，两者都带上消耗/产出。</p>
+     */
+    public String describe() {
+        String what = switch (this.logic) {
+            case "grow" -> "催熟附近的作物（相当于骨粉）";
+            case "heal" -> "治疗附近的玩家和被动生物";
+            case "bloom" -> "在附近的草地/泥土上种出小花";
+            case "collect" -> "把附近的掉落物吸进最近的容器";
+            case "smelt" -> "给附近的熔炉持续续燃料";
+            case "thorn" -> "攻击附近的怪物";
+            case "dreadthorn" -> "攻击附近的亡灵（僵尸/骷髅）";
+            case "poison" -> "让附近的怪物中毒";
+            case "slow" -> "让附近的怪物变慢";
+            case "scare" -> "把附近的怪物推开";
+            case "ore" -> "把附近的石头变成矿石";
+            case "ore_nether" -> "把附近的下界岩变成下界矿石";
+            case "place" -> "把地上的方块物品种回附近";
+            case "clay" -> "把附近的沙子变成粘土";
+            case "blow" -> "把附近的掉落物吹走";
+            case "breed" -> "让附近的两只动物进入繁殖状态";
+            case "levitate" -> "让附近的怪物飘起来";
+            case "tangle" -> "把附近的生物拽向花心并黏住";
+            case "dream" -> "让附近的怪物变慢、变得虚弱";
+            case "marble" -> "把附近的石头变成变质岩";
+            case "water" -> "贴着水就能产魔";
+            case "lava" -> "贴着岩浆就能产魔";
+            case "fuel" -> "吃掉可燃物后持续燃烧产魔";
+            case "food" -> "吃掉附近掉落的食物产魔";
+            case "tnt" -> "引爆附近的 TNT 产魔";
+            case "cake" -> "吃掉旁边的蛋糕产魔";
+            case "leaves" -> "吃掉附近的树叶产魔";
+            case "wool" -> "吃掉附近的羊毛产魔";
+            case "xp" -> "吸收附近的经验球产魔";
+            case "flower" -> "吃掉附近的其他花产魔";
+            default -> "未知效果";
+        };
+        String how;
+        if (this.kind == Kind.FUNCTIONAL) {
+            how = this.manaPerAction <= 0
+                    ? "免费"
+                    : this.manaPerAction + "魔力/" + this.intervalTicks + "t";
+        } else {
+            how = "+" + this.manaPerAction + "魔力/" + this.intervalTicks + "t";
+        }
+        return what + " · " + how;
     }
 }

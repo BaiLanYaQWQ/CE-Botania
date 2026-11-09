@@ -69,9 +69,14 @@ public final class RunicAltarBehavior extends BukkitBlockBehavior implements Ent
 
         String heldId = BotaniaItems.idOf(held);
         if (heldId.isEmpty()) {
+            // 空手：潜行才是取回，普通空手只报状态（避免误触把材料掏出来）
+            if (!bukkit.isSneaking()) {
+                report(bukkit, altar);
+                return InteractionResult.SUCCESS_AND_CANCEL;
+            }
             String popped = altar.popItem();
             if (popped == null) {
-                report(bukkit, altar);
+                Platform.send(bukkit, "<gray>祭坛是空的");
                 return InteractionResult.SUCCESS_AND_CANCEL;
             }
             ItemStack back = BotaniaItems.create(popped, 1);
@@ -85,9 +90,19 @@ public final class RunicAltarBehavior extends BukkitBlockBehavior implements Ent
             return InteractionResult.SUCCESS_AND_CANCEL;
         }
         // 投料
+        // 投料：只消耗 1 个。用 clone 操作，避免 CE 自定义物品栈被整体替换掉
+        ItemStack after = held.clone();
+        int before = after.getAmount();
+        if (before <= 0) {
+            return InteractionResult.PASS;
+        }
         altar.addItem(heldId);
-        held.setAmount(held.getAmount() - 1);
-        bukkit.getInventory().setItemInMainHand(held.getAmount() <= 0 ? null : held);
+        if (before <= 1) {
+            bukkit.getInventory().setItemInMainHand(null);
+        } else {
+            after.setAmount(before - 1);
+            bukkit.getInventory().setItemInMainHand(after);
+        }
         Platform.send(bukkit, "<green>投入 " + BotaniaItems.displayNameForMessage(heldId)
                 + " <gray>· 祭坛现有 <white>" + altar.items().size() + " <gray>样");
         return InteractionResult.SUCCESS_AND_CANCEL;

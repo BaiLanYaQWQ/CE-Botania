@@ -46,6 +46,20 @@ public final class FlowerLogic {
     private FlowerLogic() {
     }
 
+    /** 附近有没有可燃的掉落物；有就返回它，没有返回 null。 */
+    public static Item findFuelItem(World world, Block self, double radius) {
+        var center = center(self);
+        for (Entity entity : world.getNearbyEntities(center, radius, radius, radius)) {
+            if (entity instanceof Item item) {
+                ItemStack stack = item.getItemStack();
+                if (stack != null && FUELS.contains(stack.getType())) {
+                    return item;
+                }
+            }
+        }
+        return null;
+    }
+
     /** 这个材料能不能当燃料喂给萤火之焰。 */
     public static boolean isFuel(org.bukkit.Material material) {
         return FUELS.contains(material);
@@ -69,10 +83,9 @@ public final class FlowerLogic {
         return switch (logic) {
             case "water" -> nearBlock(self, Material.WATER) ? type.manaPerAction : 0;
             case "lava" -> nearBlock(self, Material.LAVA) ? type.manaPerAction : 0;
-            // 一个燃料在锅里不是只烧一跳：上游按燃烧时长折成很多跳的魔力。
-            // 这里按"一份燃料 = 30 跳产出"折算，煤 ≈ 600 mana，和上游量级一致。
-            case "fuel" -> eatDropped(world, self, consumed, mat -> FUELS.contains(mat), 4.0)
-                    ? type.manaPerAction * 30 : 0;
+            // 燃料不在这一层结算：FlowerController 会接管"持续燃烧"，
+            // 这里只负责告诉它"附近有可燃物可以吃"。
+            case "fuel" -> 0;
             case "food" -> eatDropped(world, self, consumed, mat -> FOODS.contains(mat), 4.0)
                     ? type.manaPerAction * 10 : 0;
             case "tnt" -> {

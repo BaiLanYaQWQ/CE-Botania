@@ -26,7 +26,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 RECIPES = ROOT / "build" / "recipes"
-SRC_TAGS = Path("/tmp/Botania-src/Xplat/src/generated/resources/data/botania/tags/items")
+SRC_TAGS = Path("/home/BaiLanYa/XiaomiMiMoProjects/.mimo-sessions/2026/11/09/"
+                "https-github-com-vazkiimods-botania-botania/botania-repo/"
+                "Xplat/src/generated/resources/data/botania/tags/items")
 OUT = ROOT / "plugin" / "src" / "main" / "resources" / "data"
 
 # 插件实现里会用到的配方类型 → 源文件名

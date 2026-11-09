@@ -111,9 +111,19 @@ public final class ApothecaryBehavior extends BukkitBlockBehavior implements Ent
             Platform.send(bukkit, "<red>先给它注水（手持水桶右键）");
             return InteractionResult.SUCCESS_AND_CANCEL;
         }
+        // 投料：只消耗 1 个。用 clone 操作，避免 CE 自定义物品栈被整体替换掉
+        ItemStack after = held.clone();
+        int before = after.getAmount();
+        if (before <= 0) {
+            return InteractionResult.PASS;
+        }
         controller.addItem(heldId);
-        held.setAmount(held.getAmount() - 1);
-        bukkit.getInventory().setItemInMainHand(held.getAmount() <= 0 ? null : held);
+        if (before <= 1) {
+            bukkit.getInventory().setItemInMainHand(null);
+        } else {
+            after.setAmount(before - 1);
+            bukkit.getInventory().setItemInMainHand(after);
+        }
 
         RecipeBook.Apothecary recipe = this.plugin.recipes().matchApothecary(controller.items());
         String added = BotaniaItems.displayNameForMessage(heldId);
@@ -196,12 +206,16 @@ public final class ApothecaryBehavior extends BukkitBlockBehavior implements Ent
                 + BotaniaItems.displayNameForMessage(recipe.output()) + " 掉在台子上）");
     }
 
-    /** 空手右键：取回最后投入的一件，防止放错东西。 */
+    /** 空手右键：潜行才取回最后一件，普通空手只报状态。 */
     private InteractionResult withdraw(org.bukkit.entity.Player player,
                                        ApothecaryController controller) {
+        if (!player.isSneaking()) {
+            report(player, controller);
+            return InteractionResult.SUCCESS_AND_CANCEL;
+        }
         String popped = controller.popItem();
         if (popped == null) {
-            report(player, controller);
+            Platform.send(player, "<gray>台子里没有东西");
             return InteractionResult.SUCCESS_AND_CANCEL;
         }
         ItemStack item = BotaniaItems.create(popped, 1);

@@ -65,8 +65,10 @@ public final class FlowerBehavior extends GroundPlantBehavior implements EntityB
                 Platform.send(bukkit, "<green>已选中这朵花 <gray>· 再潜行右键发射器完成绑定");
                 return InteractionResult.SUCCESS_AND_CANCEL;
             }
+            // actionbar 会被下一条消息顶掉，所以魔力 + 功能说明合成一条发
             Platform.send(bukkit, "<green>魔力 <white>" + Platform.mana(controller.mana())
-                    + "<gray>/<white>" + Platform.mana(controller.capacity()));
+                    + "<gray>/<white>" + Platform.mana(controller.capacity())
+                    + " <dark_gray>| <aqua>" + controller.type().describe());
             return InteractionResult.SUCCESS_AND_CANCEL;
         }
         var held = bukkit.getInventory().getItemInMainHand();

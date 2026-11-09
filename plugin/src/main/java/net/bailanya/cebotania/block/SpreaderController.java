@@ -1,23 +1,22 @@
 package net.bailanya.cebotania.block;
 
 import net.bailanya.cebotania.platform.Platform;
-import org.bukkit.Location;
 import net.momirealms.craftengine.core.block.ImmutableBlockState;
 import net.momirealms.craftengine.core.block.entity.BlockEntity;
-import net.momirealms.craftengine.core.block.entity.tick.BlockEntityTicker;
-import net.momirealms.craftengine.core.block.entity.BlockEntityController;
 import net.momirealms.craftengine.core.world.BlockPos;
 import net.momirealms.craftengine.core.world.CEWorld;
 import net.momirealms.craftengine.libraries.nbt.CompoundTag;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * 魔力发射器：从附近的产魔花吸魔力，攒够一发就往魔力池打。
+ * 魔力发射器：从附近的产魔花吸魔力，攒够就往朝向方向打。
  *
- * <p>上游的发射器有朝向和棱镜，这里先把"吸—攒—打"这条主链路做通：
- * 吸附近 6 格内所有花的缓冲，攒够 {@link #BURST} 就往 12 格内最近的池子灌。</p>
+ * <p>行为对照上游：</p>
+ * <ul>
+ *   <li>有朝向（{@code facing} 属性，模型随之旋转）</li>
+ *   <li>沿朝向直线探测，碰到能收魔力的方块就送（魔力池 / 符文祭坛 / 另一个发射器）</li>
+ *   <li>探测距离 16 格，支持接力传输</li>
+ *   <li>视觉上是"隔几秒飞过去一颗魔力球"，不是连续光束</li>
+ * </ul>
  */
 public final class SpreaderController extends ManaBlockController {
 
@@ -26,24 +25,60 @@ public final class SpreaderController extends ManaBlockController {
 
     /** 缓存上限 = 一发。 */
     public static final long CAPACITY = 1000L;
-    /** 一次打出去的上限（一小步，不是攒满才射）。 */
+    /** 一次最多送出去多少。 */
     public static final long BURST = 200L;
     /** 吸花的半径。 */
     private static final int PULL_RADIUS = 6;
-    /** 找池子的半径。 */
-    private static final int FIND_RADIUS = 12;
-    /** 每 tick 最多从花那里吸多少。 */
+    /** 沿朝向探测的距离。 */
+    private static final int FIND_RADIUS = 16;
+    /** 每 tick 最多从花吸多少。 */
     private static final long PULL_PER_TICK = 200L;
-    /** 两次发射之间的刻数：小步快跑，池子数字涨得肉眼可见。 */
+    /** 两次发射之间的刻数。 */
     private static final int BURST_INTERVAL = 10;
+    /** 视觉粒子：飞完一格约 20 刻，两次之间隔 60 刻（3 秒）。 */
+    private static final int PARTICLE_TRAVEL = 20;
+    private static final int PARTICLE_GAP = 60;
 
     private int cooldown;
+    private int tickDebug;
 
-    /** 朝向：直接读方块状态的 facing 属性（模型也跟着转）。 */
+    /** 飞行中的魔力粒子：进度 -1 = 没在飞。 */
+    private int particleProgress = -1;
+    private org.bukkit.Location particleFrom;
+    private org.bukkit.Location particleTo;
+    private int particleCooldown;
+
+    /** 被森林法杖绑定过来的花（坐标）；null = 吸附近所有花。 */
+    private String boundFlower;
+
+    public SpreaderController(BlockEntity blockEntity) {
+        super(blockEntity, CAPACITY);
+    }
+
+    @Override
+    protected String rootKey() {
+        return ROOT;
+    }
+
+    public int ticks() {
+        return this.tickDebug;
+    }
+
+    public String boundFlower() {
+        return this.boundFlower;
+    }
+
+    public void bindFlower(String position) {
+        this.boundFlower = position;
+        markChanged();
+    }
+
+    // —— 朝向（读写方块状态里的 facing）——
+
     public net.momirealms.craftengine.core.util.Direction facingDir() {
         BlockEntity entity = blockEntity();
         if (entity != null) {
-            var state = entity.blockState();
+            ImmutableBlockState state = entity.blockState();
             if (state != null) {
                 var property = state.getProperty("facing");
                 if (property != null) {
@@ -57,7 +92,6 @@ public final class SpreaderController extends ManaBlockController {
         return net.momirealms.craftengine.core.util.Direction.NORTH;
     }
 
-    /** 给提示语用的中文方向名。 */
     public String facingName() {
         return switch (facingDir()) {
             case EAST -> "东";
@@ -67,26 +101,14 @@ public final class SpreaderController extends ManaBlockController {
         };
     }
 
-    /** 被森林法杖绑定过来的花（坐标）；null = 不挑食，吸附近所有的花。 */
-    private String boundFlower;
-
-    public String boundFlower() {
-        return this.boundFlower;
-    }
-
-    public void bindFlower(String position) {
-        this.boundFlower = position;
-        markChanged();
-    }
-
-    /** 森林法杖右键：顺时针转 90°（同时把方块状态和模型一起换掉）。 */
+    /** 森林法杖右键：顺时针转 90°（方块状态和模型一起换）。 */
     @SuppressWarnings({"unchecked", "rawtypes"})
     public String rotate() {
         BlockEntity entity = blockEntity();
         if (entity == null || entity.world == null) {
             return facingName();
         }
-        var state = entity.blockState();
+        ImmutableBlockState state = entity.blockState();
         if (state == null) {
             return facingName();
         }
@@ -94,23 +116,83 @@ public final class SpreaderController extends ManaBlockController {
         if (property == null) {
             return facingName();
         }
-        var next = state.cycle((net.momirealms.craftengine.core.block.property.Property) property);
+        ImmutableBlockState next = state.cycle(
+                (net.momirealms.craftengine.core.block.property.Property) property);
         entity.world.setBlockStateAtIfLoaded(entity.pos, next);
         entity.setBlockState(next);
         markChanged();
         return facingName();
     }
 
-    /**
-     * 朝这个方向找第一个能收魔力的方块。
-     *
-     * <p>不只是魔力池 —— 符文祭坛同样要吃魔力（攒够配方需求就自动合成）。</p>
-     */
+    // —— 存档 ——
+
+    @Override
+    protected void saveExtra(CompoundTag tag) {
+        tag.putInt(COOLDOWN_KEY, this.cooldown);
+        if (this.boundFlower != null) {
+            tag.putString("bound", this.boundFlower);
+        }
+    }
+
+    @Override
+    protected void loadExtra(CompoundTag tag) {
+        this.cooldown = tag.getInt(COOLDOWN_KEY, 0);
+        String bound = tag.getString("bound", "");
+        this.boundFlower = bound.isEmpty() ? null : bound;
+    }
+
+    // —— 逐刻 ——
+
+    @Override
+    public void serverTick() {
+        CEWorld world = world();
+        BlockPos pos = position();
+        if (world == null || pos == null) {
+            return;
+        }
+        tick(world, pos);
+    }
+
+    public void tick(CEWorld ceWorld, BlockPos pos) {
+        this.tickDebug++;
+        advanceParticle();
+        if (this.particleCooldown > 0) {
+            this.particleCooldown--;
+        }
+        if (this.cooldown > 0) {
+            this.cooldown--;
+        }
+        // 1) 缓存没满：先看有没有贴着的魔力池（上游可以贴着池子直接抽）
+        if (room() > 0) {
+            pullFromAdjacentPools(ceWorld, pos);
+        }
+        // 2) 还不够就从附近的花吸
+        if (room() > 0) {
+            pullFromFlowers(ceWorld, pos);
+        }
+        // 2) 攒着就往朝向方向送
+        if (this.mana > 0 && this.cooldown <= 0) {
+            ManaBlockController target = targetAhead(ceWorld, pos);
+            if (target != null) {
+                long sent = target.insert(Math.min(this.mana, BURST));
+                if (sent > 0) {
+                    extract(sent);
+                    this.cooldown = BURST_INTERVAL;
+                    if (this.particleCooldown <= 0) {
+                        launchParticle(ceWorld, pos, target);
+                    }
+                }
+            }
+        }
+    }
+
+    /** 沿朝向找第一个能收魔力的方块。 */
     private ManaBlockController targetAhead(CEWorld ceWorld, BlockPos pos) {
         var dir = facingDir();
         for (int step = 1; step <= FIND_RADIUS; step++) {
             BlockPos probe = new BlockPos(
-                    pos.x() + dir.stepX() * step, pos.y() + dir.stepY() * step,
+                    pos.x() + dir.stepX() * step,
+                    pos.y() + dir.stepY() * step,
                     pos.z() + dir.stepZ() * step);
             BlockEntity entity = ceWorld.getBlockEntityAtIfLoaded(probe);
             if (entity == null) {
@@ -124,81 +206,52 @@ public final class SpreaderController extends ManaBlockController {
             if (altar != null && altar.room() > 0 && altar.wantsMana()) {
                 return altar;
             }
+            // 接力：把魔力转给另一台发射器
+            SpreaderController next = entity.controller.get(SpreaderController.class, 0);
+            if (next != null && next != this && next.room() > 0) {
+                BlockPos theirs = next.position();
+                if (theirs != null && !theirs.equals(pos)) {
+                    return next;
+                }
+            }
         }
         return null;
     }
 
-    public SpreaderController(BlockEntity blockEntity) {
-        super(blockEntity, CAPACITY);
-    }
-
-    @Override
-    protected String rootKey() {
-        return ROOT;
-    }
-
-    @Override
-    protected void saveExtra(CompoundTag tag) {
-        tag.putInt(COOLDOWN_KEY, this.cooldown);
-
-        if (this.boundFlower != null) {
-            tag.putString("bound", this.boundFlower);
-        }
-    }
-
-    @Override
-    protected void loadExtra(CompoundTag tag) {
-        this.cooldown = tag.getInt(COOLDOWN_KEY, 0);
-
-        String bound = tag.getString("bound", "");
-        this.boundFlower = bound.isEmpty() ? null : bound;
-    }
-
-    @Override
-    public void serverTick() {
-        net.momirealms.craftengine.core.world.CEWorld world = world();
-        net.momirealms.craftengine.core.world.BlockPos pos = position();
-        if (world == null || pos == null) {
+    /**
+     * 从**贴着**的魔力池直接抽魔力。
+     *
+     * <p>上游的发射器可以和池子贴在一起，直接把池子当自己的缓存用。
+     * 这里照做：六面相邻的池子，按 tick 预算往里搬。</p>
+     */
+    private void pullFromAdjacentPools(CEWorld ceWorld, BlockPos pos) {
+        long budget = Math.min(PULL_PER_TICK, room());
+        if (budget <= 0) {
             return;
         }
-        tick(world, pos);
-    }
-
-    private int tickDebug;
-
-    /** 诊断用。 */
-    public int ticks() {
-        return this.tickDebug;
-    }
-
-    public void tick(CEWorld ceWorld, BlockPos pos) {
-        this.tickDebug++;
-        org.bukkit.World world = Platform.bukkit(ceWorld);
-        if (world == null) {
-            return;
-        }
-        if (this.cooldown > 0) {
-            this.cooldown--;
-        }
-        // 1) 缓存没满：从附近的花吸
-        if (room() > 0) {
-            pullFromFlowers(ceWorld, pos);
-        }
-        // 2) 攒够一发且冷却好了：往池子打
-        if (this.mana > 0 && this.cooldown <= 0) {
-            ManaBlockController pool = targetAhead(ceWorld, pos);
-            if (pool != null) {
-                long sent = pool.insert(Math.min(this.mana, BURST));
-                if (sent > 0) {
-                    extract(sent);
-                    this.cooldown = BURST_INTERVAL;
-                    spawnBurst(ceWorld, pos, pool);
-                }
+        for (var dir : net.momirealms.craftengine.core.util.Direction.values()) {
+            BlockPos probe = new BlockPos(
+                    pos.x() + dir.stepX(), pos.y() + dir.stepY(), pos.z() + dir.stepZ());
+            BlockEntity entity = ceWorld.getBlockEntityAtIfLoaded(probe);
+            if (entity == null) {
+                continue;
+            }
+            ManaPoolController pool = entity.controller.get(ManaPoolController.class, 0);
+            if (pool == null || pool.mana() <= 0) {
+                continue;
+            }
+            long taken = pool.extract(Math.min(budget, pool.mana()));
+            if (taken > 0) {
+                insert(taken);
+                budget -= taken;
+            }
+            if (budget <= 0) {
+                break;
             }
         }
     }
 
-    /** 扫描附近的花，按 tick 预算抽取；花是独立方块实体，用 CE 的区块缓存找。 */
+    /** 扫描附近的花，按 tick 预算抽取。 */
     private void pullFromFlowers(CEWorld ceWorld, BlockPos pos) {
         long budget = Math.min(PULL_PER_TICK, room());
         if (budget <= 0) {
@@ -216,7 +269,6 @@ public final class SpreaderController extends ManaBlockController {
                     if (flower == null || flower.mana() <= 0) {
                         continue;
                     }
-                    // 绑定过就只认那一朵
                     if (this.boundFlower != null) {
                         String key = target.x() + "," + target.y() + "," + target.z();
                         if (!this.boundFlower.equals(key)) {
@@ -233,62 +285,51 @@ public final class SpreaderController extends ManaBlockController {
         }
     }
 
-    /** 最近的魔力池（同世界、半径内）。 */
-    private ManaPoolController nearestPool(CEWorld ceWorld, BlockPos pos) {
-        ManaPoolController best = null;
-        double bestDistance = Double.MAX_VALUE;
-        for (int dx = -FIND_RADIUS; dx <= FIND_RADIUS; dx++) {
-            for (int dz = -FIND_RADIUS; dz <= FIND_RADIUS; dz++) {
-                for (int dy = -6; dy <= 6; dy++) {
-                    BlockPos target = new BlockPos(pos.x() + dx, pos.y() + dy, pos.z() + dz);
-                    BlockEntity entity = ceWorld.getBlockEntityAtIfLoaded(target);
-                    if (entity == null) {
-                        continue;
-                    }
-                    ManaPoolController pool = entity.controller.get(ManaPoolController.class, 0);
-                    if (pool == null || pool.room() <= 0) {
-                        continue;
-                    }
-                    double distance = dx * dx + dy * dy + dz * dz;
-                    if (distance < bestDistance) {
-                        bestDistance = distance;
-                        best = pool;
-                    }
-                }
-            }
-        }
-        return best;
-    }
+    // —— 视觉：隔几秒飞一颗魔力球 ——
 
-    /**
-     * 发射时画一条从发射器到池子的粒子流。
-     *
-     * <p>注意不能走 {@code pool.blockEntity()} —— 它可能是 null（方块实体正在
-     * 重载/被缓存挡住），那样这里会直接 return，玩家就什么都看不见。
-     * 用控制器自己缓存的 world/position 稳一点。</p>
-     */
-    private void spawnBurst(CEWorld ceWorld, BlockPos pos, ManaBlockController pool) {
+    private void launchParticle(CEWorld ceWorld, BlockPos pos, ManaBlockController target) {
         org.bukkit.World bukkit = Platform.bukkit(ceWorld);
-        var poolPos = pool.position();
-        if (bukkit == null || poolPos == null) {
+        var targetPos = target.position();
+        if (bukkit == null || targetPos == null) {
             return;
         }
-        Location from = new Location(bukkit, pos.x() + 0.5, pos.y() + 0.75, pos.z() + 0.5);
-        Location to = new Location(bukkit, poolPos.x() + 0.5, poolPos.y() + 0.6, poolPos.z() + 0.5);
+        this.particleFrom = new org.bukkit.Location(bukkit,
+                pos.x() + 0.5, pos.y() + 0.75, pos.z() + 0.5);
+        this.particleTo = new org.bukkit.Location(bukkit,
+                targetPos.x() + 0.5, targetPos.y() + 0.6, targetPos.z() + 0.5);
+        this.particleProgress = 0;
+        this.particleCooldown = PARTICLE_GAP;
+    }
+
+    /** 推进飞行粒子：沿直线匀速走完，到终点炸一小簇。 */
+    private void advanceParticle() {
+        if (this.particleProgress < 0 || this.particleFrom == null || this.particleTo == null) {
+            return;
+        }
+        org.bukkit.World world = this.particleFrom.getWorld();
+        if (world == null) {
+            this.particleProgress = -1;
+            return;
+        }
+        double t = Math.min(1.0, this.particleProgress / (double) PARTICLE_TRAVEL);
+        var point = this.particleFrom.clone().add(
+                (this.particleTo.getX() - this.particleFrom.getX()) * t,
+                (this.particleTo.getY() - this.particleFrom.getY()) * t,
+                (this.particleTo.getZ() - this.particleFrom.getZ()) * t);
         try {
-            // 直线：发射器 → 池子，按方向等距撒点（上游就是一束直线魔力）
-            int steps = Math.max(8, (int) (from.distance(to) * 3));
-            for (int i = 0; i <= steps; i++) {
-                double t = i / (double) steps;
-                Location point = from.clone().add(
-                        (to.getX() - from.getX()) * t,
-                        (to.getY() - from.getY()) * t,
-                        (to.getZ() - from.getZ()) * t);
-                bukkit.spawnParticle(org.bukkit.Particle.END_ROD, point, 1, 0, 0, 0, 0);
-            }
-            bukkit.spawnParticle(org.bukkit.Particle.SOUL_FIRE_FLAME, to, 5, 0.25, 0.15, 0.25, 0.01);
+            world.spawnParticle(org.bukkit.Particle.END_ROD, point, 2, 0.02, 0.02, 0.02, 0.0);
         } catch (Throwable ignored) {
-            // 粒子 API 在个别核心上可能缺，不影响功能
+            // 粒子缺失不影响功能
+        }
+        this.particleProgress++;
+        if (this.particleProgress > PARTICLE_TRAVEL) {
+            try {
+                world.spawnParticle(org.bukkit.Particle.SOUL_FIRE_FLAME,
+                        this.particleTo, 6, 0.25, 0.15, 0.25, 0.01);
+            } catch (Throwable ignored) {
+                // 同上
+            }
+            this.particleProgress = -1;
         }
     }
 }

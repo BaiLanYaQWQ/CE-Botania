@@ -176,7 +176,6 @@ items:
       path: botania:item/brew_flask
     data:
       item_name: '<!i><white><lang:botania.item.brew_flask>'
-      max_stack_size: 1
   botania:brew_flask_1:
     material: paper
     model:
@@ -184,7 +183,6 @@ items:
       path: botania:item/brew_flask_1
     data:
       item_name: '<!i><white><lang:botania.item.brew_flask_1>'
-      max_stack_size: 1
   botania:brew_flask_2:
     material: paper
     model:
@@ -192,7 +190,6 @@ items:
       path: botania:item/brew_flask_2
     data:
       item_name: '<!i><white><lang:botania.item.brew_flask_2>'
-      max_stack_size: 1
   botania:brew_flask_3:
     material: paper
     model:
@@ -200,7 +197,6 @@ items:
       path: botania:item/brew_flask_3
     data:
       item_name: '<!i><white><lang:botania.item.brew_flask_3>'
-      max_stack_size: 1
   botania:brew_flask_4:
     material: paper
     model:
@@ -208,7 +204,6 @@ items:
       path: botania:item/brew_flask_4
     data:
       item_name: '<!i><white><lang:botania.item.brew_flask_4>'
-      max_stack_size: 1
   botania:brew_flask_5:
     material: paper
     model:
@@ -216,7 +211,6 @@ items:
       path: botania:item/brew_flask_5
     data:
       item_name: '<!i><white><lang:botania.item.brew_flask_5>'
-      max_stack_size: 1
   botania:brew_vial:
     material: paper
     model:
@@ -224,7 +218,6 @@ items:
       path: botania:item/brew_vial
     data:
       item_name: '<!i><white><lang:botania.item.brew_vial>'
-      max_stack_size: 1
   botania:brew_vial_1:
     material: paper
     model:
@@ -232,7 +225,6 @@ items:
       path: botania:item/brew_vial_1
     data:
       item_name: '<!i><white><lang:botania.item.brew_vial_1>'
-      max_stack_size: 1
   botania:brew_vial_2:
     material: paper
     model:
@@ -240,7 +232,6 @@ items:
       path: botania:item/brew_vial_2
     data:
       item_name: '<!i><white><lang:botania.item.brew_vial_2>'
-      max_stack_size: 1
   botania:brew_vial_3:
     material: paper
     model:
@@ -248,7 +239,6 @@ items:
       path: botania:item/brew_vial_3
     data:
       item_name: '<!i><white><lang:botania.item.brew_vial_3>'
-      max_stack_size: 1
   botania:brown_petal:
     material: paper
     model:
@@ -732,6 +722,16 @@ items:
       path: botania:item/elementium_axe
     data:
       item_name: '<!i><white><lang:botania.item.elementium_axe>'
+      max_damage: 720
+      enchantable:
+        value: 20
+      tool:
+        default_mining_speed: 6.2
+        damage_per_block_break: 1
+        rules:
+          - blocks: '#minecraft:mineable/axe'
+            speed: 6.2
+            correct_for_drops: true
     settings:
       tags:
         - botania:mana_using_items
@@ -742,6 +742,12 @@ items:
       path: botania:item/elementium_boots
     data:
       item_name: '<!i><white><lang:botania.item.elementium_boots>'
+      max_damage: 234
+      enchantable:
+        value: 18
+      equippable:
+        slot: feet
+        asset_id: botania:elementium
     settings:
       tags:
         - botania:mana_using_items
@@ -752,6 +758,12 @@ items:
       path: botania:item/elementium_chestplate
     data:
       item_name: '<!i><white><lang:botania.item.elementium_chestplate>'
+      max_damage: 288
+      enchantable:
+        value: 18
+      equippable:
+        slot: chest
+        asset_id: botania:elementium
     settings:
       tags:
         - botania:mana_using_items
@@ -762,6 +774,12 @@ items:
       path: botania:item/elementium_helmet
     data:
       item_name: '<!i><white><lang:botania.item.elementium_helmet>'
+      max_damage: 198
+      enchantable:
+        value: 18
+      equippable:
+        slot: head
+        asset_id: botania:elementium
     settings:
       tags:
         - botania:mana_using_items
@@ -772,6 +790,16 @@ items:
       path: botania:item/elementium_hoe
     data:
       item_name: '<!i><white><lang:botania.item.elementium_hoe>'
+      max_damage: 720
+      enchantable:
+        value: 20
+      tool:
+        default_mining_speed: 6.2
+        damage_per_block_break: 1
+        rules:
+          - blocks: '#minecraft:mineable/hoe'
+            speed: 6.2
+            correct_for_drops: true
     settings:
       tags:
         - botania:mana_using_items
@@ -792,6 +820,12 @@ items:
       path: botania:item/elementium_leggings
     data:
       item_name: '<!i><white><lang:botania.item.elementium_leggings>'
+      max_damage: 270
+      enchantable:
+        value: 18
+      equippable:
+        slot: legs
+        asset_id: botania:elementium
     settings:
       tags:
         - botania:mana_using_items
@@ -822,6 +856,9 @@ items:
       path: botania:item/elementium_shears
     data:
       item_name: '<!i><white><lang:botania.item.elementium_shears>'
+      max_damage: 720
+      enchantable:
+        value: 20
     settings:
       tags:
         - botania:mana_using_items
@@ -832,6 +869,16 @@ items:
       path: botania:item/elementium_shovel
     data:
       item_name: '<!i><white><lang:botania.item.elementium_shovel>'
+      max_damage: 720
+      enchantable:
+        value: 20
+      tool:
+        default_mining_speed: 6.2
+        damage_per_block_break: 1
+        rules:
+          - blocks: '#minecraft:mineable/shovel'
+            speed: 6.2
+            correct_for_drops: true
     settings:
       tags:
         - botania:mana_using_items
@@ -842,6 +889,9 @@ items:
       path: botania:item/elementium_sword
     data:
       item_name: '<!i><white><lang:botania.item.elementium_sword>'
+      max_damage: 720
+      enchantable:
+        value: 20
     settings:
       tags:
         - botania:mana_using_items
@@ -915,7 +965,6 @@ items:
       path: botania:item/flare_chakram
     data:
       item_name: '<!i><white><lang:botania.item.flare_chakram>'
-      max_stack_size: 1
   botania:flask:
     material: paper
     model:
@@ -923,7 +972,6 @@ items:
       path: botania:item/flask
     data:
       item_name: '<!i><white><lang:botania.item.flask>'
-      max_stack_size: 1
   botania:flight_tiara:
     material: paper
     model:
@@ -1845,7 +1893,7 @@ items:
       path: botania:item/manasteel_shears
     data:
       item_name: '<!i><white><lang:botania.item.manasteel_shears>'
-      max_damage: 238
+      max_damage: 300
       enchantable:
         value: 20
     settings:
@@ -1891,6 +1939,12 @@ items:
       path: botania:item/manaweave_boots
     data:
       item_name: '<!i><white><lang:botania.item.manaweave_boots>'
+      max_damage: 65
+      enchantable:
+        value: 15
+      equippable:
+        slot: feet
+        asset_id: botania:manaweave
     settings:
       tags:
         - botania:mana_using_items
@@ -1908,6 +1962,12 @@ items:
       path: botania:item/manaweave_chestplate
     data:
       item_name: '<!i><white><lang:botania.item.manaweave_chestplate>'
+      max_damage: 80
+      enchantable:
+        value: 15
+      equippable:
+        slot: chest
+        asset_id: botania:manaweave
     settings:
       tags:
         - botania:mana_using_items
@@ -1932,6 +1992,12 @@ items:
       path: botania:item/manaweave_helmet
     data:
       item_name: '<!i><white><lang:botania.item.manaweave_helmet>'
+      max_damage: 55
+      enchantable:
+        value: 15
+      equippable:
+        slot: head
+        asset_id: botania:manaweave
     settings:
       tags:
         - botania:mana_using_items
@@ -1949,6 +2015,12 @@ items:
       path: botania:item/manaweave_leggings
     data:
       item_name: '<!i><white><lang:botania.item.manaweave_leggings>'
+      max_damage: 75
+      enchantable:
+        value: 15
+      equippable:
+        slot: legs
+        asset_id: botania:manaweave
     settings:
       tags:
         - botania:mana_using_items
@@ -2698,6 +2770,12 @@ items:
       path: botania:item/terrasteel_boots
     data:
       item_name: '<!i><white><lang:botania.item.terrasteel_boots>'
+      max_damage: 390
+      enchantable:
+        value: 26
+      equippable:
+        slot: feet
+        asset_id: botania:terrasteel
     settings:
       tags:
         - botania:mana_using_items
@@ -2708,6 +2786,12 @@ items:
       path: botania:item/terrasteel_chestplate
     data:
       item_name: '<!i><white><lang:botania.item.terrasteel_chestplate>'
+      max_damage: 480
+      enchantable:
+        value: 26
+      equippable:
+        slot: chest
+        asset_id: botania:terrasteel
     settings:
       tags:
         - botania:mana_using_items
@@ -2718,6 +2802,12 @@ items:
       path: botania:item/terrasteel_helmet
     data:
       item_name: '<!i><white><lang:botania.item.terrasteel_helmet>'
+      max_damage: 330
+      enchantable:
+        value: 26
+      equippable:
+        slot: head
+        asset_id: botania:terrasteel
     settings:
       tags:
         - botania:mana_using_items
@@ -2739,6 +2829,12 @@ items:
       path: botania:item/terrasteel_leggings
     data:
       item_name: '<!i><white><lang:botania.item.terrasteel_leggings>'
+      max_damage: 450
+      enchantable:
+        value: 26
+      equippable:
+        slot: legs
+        asset_id: botania:terrasteel
     settings:
       tags:
         - botania:mana_using_items
@@ -2778,7 +2874,6 @@ items:
       path: botania:item/thorn_chakram
     data:
       item_name: '<!i><white><lang:botania.item.thorn_chakram>'
-      max_stack_size: 1
   botania:thunder_sword:
     material: iron_sword
     model:
@@ -2858,7 +2953,6 @@ items:
       path: botania:item/vial
     data:
       item_name: '<!i><white><lang:botania.item.vial>'
-      max_stack_size: 1
   botania:vine_ball:
     material: paper
     model:
@@ -2943,7 +3037,6 @@ items:
       path: botania:item/world_seed
     data:
       item_name: '<!i><white><lang:botania.item.world_seed>'
-      max_stack_size: 1
   botania:yellow_petal:
     material: paper
     model:
