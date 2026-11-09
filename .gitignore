@@ -22,3 +22,6 @@ plugin/.gradle/
 
 # 盔甲贴图素材（本地保留，不入库：含上游 Botania 纹理，版权归原作者）
 export/盔甲贴图/
+
+# BlockBench 工程文件（本地美术工作文件，不入库）
+BlockBench/
