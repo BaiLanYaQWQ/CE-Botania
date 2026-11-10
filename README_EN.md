@@ -28,27 +28,33 @@ Forge (mod) to Paper (plugin) and claims no rights over the original assets.
 
 ---
 
-## What works today
+## Where the port stands
+
+> In one line: **the full main line is playable — from a wild flower to runes, manasteel gear and the terrasteel prerequisite.**
 
 | Feature | Status | Notes |
 |---|---|---|
-| 16 mystical flower colours, world generation | ✅ | 0–3 flowers per chunk on grass |
-| Breaking flowers drops petals | ✅ | 2–3 petals of the matching colour; shears drop the whole flower |
-| Petal apothecary | ✅ | Fill with water, insert petals/seeds, flower drops out when the recipe matches |
-| 44 petal apothecary recipes | ✅ | Extracted from upstream datagen, supports tags like `#botania:petals/lime` |
-| Generating flowers | ✅ | Endoflame (continuous burn), Hydroangeas, Thermalily, Entropinnyum, Kekimurus, Gourmaryllis and more |
-| Functional flowers | ✅ | 20 implemented — see the changelog for the full table |
-| Mana spreader | ✅ | Directional, 16-block scan, relays to other spreaders, pulls from adjacent pools |
-| Mana pool | ✅ | With/without mana appearance, can float in mid-air |
-| Mana infusion | ✅ | 158 recipes, catalyst checks included |
-| Runic altar | ✅ | 17 recipes, orbiting item display, auto-crafts when mana is full |
+| Mystical flower worldgen | ✅ | 16 colours, scattered on grass in new chunks |
+| Breaking flowers drops petals | ✅ | 2–3 petals of matching colour; shears drop the whole flower |
+| Petal apothecary | ✅ | Fill with water → insert → output drops; **44 recipes**, one apothecary crafts them all |
+| Generating flowers | ✅ | **10 types**; Endoflame now burns continuously (one coal = 800 mana over 40 s) |
+| Functional flowers | ✅ | **20 types**, costs and intervals aligned with upstream |
+| Mana spreader | ✅ | Directional, 16-block scan, **relay chains**, adjacent pool extraction, one mana orb every 3 s |
+| Mana pool | ✅ | Empty/full appearances, can float, extractable by spreaders |
+| Mana infusion | ✅ | **158 recipes** |
+| Runic altar | ✅ | **17 recipes**, inserted items orbit, auto-crafts when mana is full |
 | Pure daisy | ✅ | 3×3×1 area, 40-tick delay per conversion |
-| Manasteel tools & armour | ✅ | Values match upstream; mana repairs durability |
-| Wand of the Forest | ✅ | Inspect mana, select flowers, rotate spreaders |
+| Manasteel tools & armour | ✅ | Values match upstream, mana repairs durability |
+| Wand of the Forest | ✅ | Inspect mana, show flower info, bind flowers, rotate spreaders |
+| **Lexicon** | ✅ | **990+ pages, fully Chinese**, with recipes, crafting grids and implementation status |
 | Terrasteel / Alfheim portal | ⚠️ | Data extracted, behaviour not implemented |
-| Slabs / walls / fences | ⚠️ | Still full-block collision |
+| Decorative block collision | ⚠️ | Slabs/walls/fences still full-block |
 
----
+**Content**: 587 blocks / 1528 items / 610 crafting recipes / 61 tag groups
+
+**Still missing**: 5 functional flowers (teleport, immobilise, dungeon, anti-magic, mute), terrasteel,
+Alfheim portal, and unique behaviours for elven / gaia / redstone spreaders.
+
 
 ## Requirements
 
