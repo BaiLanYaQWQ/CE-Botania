@@ -1,5 +1,144 @@
 {
   "textures": {
-    "particle": "botania:block/livingwood_log"
-  }
+    "particle": "botania:model/bellows",
+    "all": "botania:model/bellows"
+  },
+  "elements": [
+    {
+      "from": [
+        3.0,
+        -6.0,
+        3.0
+      ],
+      "to": [
+        13.0,
+        -4.0,
+        13.0
+      ],
+      "faces": {
+        "down": {
+          "texture": "#all",
+          "uv": [
+            2.5,
+            4.5,
+            5.0,
+            9.5
+          ]
+        },
+        "up": {
+          "texture": "#all",
+          "uv": [
+            5.0,
+            9.5,
+            7.5,
+            14.5
+          ]
+        },
+        "north": {
+          "texture": "#all",
+          "uv": [
+            2.5,
+            9.5,
+            5.0,
+            10.5
+          ]
+        },
+        "south": {
+          "texture": "#all",
+          "uv": [
+            7.5,
+            9.5,
+            10.0,
+            10.5
+          ]
+        },
+        "west": {
+          "texture": "#all",
+          "uv": [
+            0.0,
+            9.5,
+            2.5,
+            10.5
+          ]
+        },
+        "east": {
+          "texture": "#all",
+          "uv": [
+            5.0,
+            9.5,
+            7.5,
+            10.5
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        7.0,
+        -6.0,
+        0.0
+      ],
+      "to": [
+        9.0,
+        -4.0,
+        3.0
+      ],
+      "faces": {
+        "down": {
+          "texture": "#all",
+          "uv": [
+            0.75,
+            10.5,
+            1.25,
+            12.0
+          ]
+        },
+        "up": {
+          "texture": "#all",
+          "uv": [
+            1.25,
+            12.0,
+            1.75,
+            13.5
+          ]
+        },
+        "north": {
+          "texture": "#all",
+          "uv": [
+            0.75,
+            12.0,
+            1.25,
+            13.0
+          ]
+        },
+        "south": {
+          "texture": "#all",
+          "uv": [
+            2.0,
+            12.0,
+            2.5,
+            13.0
+          ]
+        },
+        "west": {
+          "texture": "#all",
+          "uv": [
+            0.0,
+            12.0,
+            0.75,
+            13.0
+          ]
+        },
+        "east": {
+          "texture": "#all",
+          "uv": [
+            1.25,
+            12.0,
+            2.0,
+            13.0
+          ]
+        }
+      }
+    }
+  ]
 }

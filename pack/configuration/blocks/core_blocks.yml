@@ -12,11 +12,23 @@ blocks:
           default: false
       appearances:
         empty:
-          state: "minecraft:glass"
-          model: botania:block/mana_pool
+          state: "minecraft:oak_leaves[distance=7,persistent=false,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/mana_pool
+            display_transform: none
         full:
-          state: "minecraft:tinted_glass"
-          model: botania:block/mana_pool_full
+          state: "minecraft:oak_leaves[distance=6,persistent=false,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/mana_pool_full
+            display_transform: none
       variants:
         'filled=false':
           appearance: empty
@@ -53,23 +65,45 @@ blocks:
           default: north
       appearances:
         north:
-          state: "minecraft:white_stained_glass"
-          model: botania:block/mana_spreader
+          state: "minecraft:oak_leaves[distance=5,persistent=false,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/mana_spreader
+            display_transform: none
+            rotation: '0,180,0'
         east:
-          state: "minecraft:orange_stained_glass"
-          model:
-            path: botania:block/mana_spreader
-            y: 90
+          state: "minecraft:oak_leaves[distance=4,persistent=false,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/mana_spreader
+            display_transform: none
+            rotation: '0,90,0'
         south:
-          state: "minecraft:magenta_stained_glass"
-          model:
-            path: botania:block/mana_spreader
-            y: 180
+          state: "minecraft:oak_leaves[distance=3,persistent=false,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/mana_spreader
+            display_transform: none
+            rotation: '0,0,0'
         west:
-          state: "minecraft:light_blue_stained_glass"
-          model:
-            path: botania:block/mana_spreader
-            y: 270
+          state: "minecraft:oak_leaves[distance=2,persistent=false,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/mana_spreader
+            display_transform: none
+            rotation: '0,270,0'
       variants:
         'facing=north':
           appearance: north
@@ -104,8 +138,14 @@ blocks:
     behavior:
       type: botania:mana_spreader
     state:
-      auto_state: solid
-      model: botania:block/elven_spreader
+      state: "minecraft:spruce_leaves[distance=5,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/elven_spreader
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -131,8 +171,14 @@ blocks:
     behavior:
       type: botania:mana_spreader
     state:
-      auto_state: solid
-      model: botania:block/gaia_spreader
+      state: "minecraft:spruce_leaves[distance=4,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/gaia_spreader
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -158,8 +204,14 @@ blocks:
     behavior:
       type: botania:mana_spreader
     state:
-      auto_state: solid
-      model: botania:block/redstone_spreader
+      state: "minecraft:birch_leaves[distance=7,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/redstone_spreader
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -185,8 +237,14 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:yellow_stained_glass"
-      model: botania:block/apothecary_default
+      state: "minecraft:birch_leaves[distance=6,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/apothecary_default
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -212,8 +270,14 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:lime_stained_glass"
-      model: botania:block/apothecary_default_water
+      state: "minecraft:birch_leaves[distance=5,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/apothecary_default_water
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -239,8 +303,14 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:pink_stained_glass"
-      model: botania:block/apothecary_desert
+      state: "minecraft:birch_leaves[distance=4,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/apothecary_desert
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -266,8 +336,14 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:gray_stained_glass"
-      model: botania:block/apothecary_forest
+      state: "minecraft:jungle_leaves[distance=7,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/apothecary_forest
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -293,8 +369,14 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:light_gray_stained_glass"
-      model: botania:block/apothecary_fungal
+      state: "minecraft:jungle_leaves[distance=6,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/apothecary_fungal
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -320,8 +402,14 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:cyan_stained_glass"
-      model: botania:block/apothecary_mesa
+      state: "minecraft:jungle_leaves[distance=5,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/apothecary_mesa
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -347,8 +435,14 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:purple_stained_glass"
-      model: botania:block/apothecary_mountain
+      state: "minecraft:jungle_leaves[distance=4,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/apothecary_mountain
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -374,8 +468,14 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:blue_stained_glass"
-      model: botania:block/apothecary_plains
+      state: "minecraft:acacia_leaves[distance=7,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/apothecary_plains
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -401,8 +501,14 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:brown_stained_glass"
-      model: botania:block/apothecary_swamp
+      state: "minecraft:acacia_leaves[distance=6,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/apothecary_swamp
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -428,8 +534,14 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:green_stained_glass"
-      model: botania:block/apothecary_taiga
+      state: "minecraft:acacia_leaves[distance=5,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/apothecary_taiga
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -455,8 +567,14 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:red_stained_glass"
-      model: botania:block/apothecary_livingrock
+      state: "minecraft:acacia_leaves[distance=4,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/apothecary_livingrock
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -482,8 +600,14 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      auto_state: solid
-      model: botania:block/apothecary_mossy
+      state: "minecraft:dark_oak_leaves[distance=7,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/apothecary_mossy
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -509,8 +633,14 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      auto_state: solid
-      model: botania:block/apothecary_deepslate
+      state: "minecraft:dark_oak_leaves[distance=6,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/apothecary_deepslate
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -536,8 +666,14 @@ blocks:
     behavior:
       type: botania:runic_altar
     state:
-      state: "minecraft:black_stained_glass"
-      model: botania:block/runic_altar
+      state: "minecraft:dark_oak_leaves[distance=5,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/runic_altar
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -563,8 +699,14 @@ blocks:
     behavior:
       type: botania:mana_pool
     state:
-      auto_state: solid
-      model: botania:block/diluted_pool
+      state: "minecraft:dark_oak_leaves[distance=4,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/diluted_pool
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -590,8 +732,14 @@ blocks:
     behavior:
       type: botania:mana_pool
     state:
-      auto_state: solid
-      model: botania:block/fabulous_pool
+      state: "minecraft:mangrove_leaves[distance=7,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/fabulous_pool
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -617,8 +765,14 @@ blocks:
     behavior:
       type: botania:mana_pool
     state:
-      auto_state: solid
-      model: botania:block/creative_pool
+      state: "minecraft:mangrove_leaves[distance=6,persistent=false,waterlogged=false]"
+      model: botania:block/empty
+      transparent: true
+      entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/creative_pool
+        display_transform: none
     settings:
       sounds:
         break: minecraft:block.stone.break

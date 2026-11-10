@@ -266,6 +266,8 @@ def gen_items(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str]
     zh_out: dict[str, str] = {}
     tags = item_tags()
     for name in idx.item_models:
+        if SKIP_FLOWER(name):
+            continue
         if name.endswith("_active"):
             continue  # 激活态是渲染中间产物，不作为独立物品
         if name in idx.block_set:
@@ -352,6 +354,8 @@ def gen_render_items(names: list[str], idx: Index) -> str:
         "items:",
     ]
     for name in names:
+        if SKIP_FLOWER(name):
+            continue
         lines.append(f"  {NAMESPACE}:render/{name}:")
         lines.append("    material: paper")
         lines.append("    model:")
@@ -379,6 +383,8 @@ def gen_block_items(idx: Index, en: dict, zh: dict, skip: set[str]) -> str:
     ]
     names = sorted(set(idx.block_set) | set(skip))
     for name in names:
+        if SKIP_FLOWER(name):
+            continue
         if name not in idx.block_set:
             continue
         key_en = en.get(f"block.botania.{name}") or name
@@ -433,6 +439,8 @@ def gen_blocks(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str
     zh_out: dict[str, str] = {}
     block_tags = item_tags()
     for name in sorted(idx.block_set):
+        if SKIP_FLOWER(name):
+            continue
         if name in skip:
             # 手写方块（core_blocks.yml）不生成方块配置，但**物品名还是要的**，
             # 否则方块物品会显示成翻译键原文 botania.block.xxx
@@ -762,6 +770,8 @@ def gen_categories(idx: Index, flowers: set[str], skip: set[str]) -> str:
         "flowers": [], "tools": [], "materials": [], "blocks": [], "misc": [],
     }
     for name in idx.item_models:
+        if SKIP_FLOWER(name):
+            continue
         if name.endswith("_active") or name in skip:
             continue
         full = f"{NAMESPACE}:{name}"
@@ -776,6 +786,8 @@ def gen_categories(idx: Index, flowers: set[str], skip: set[str]) -> str:
         else:
             groups["misc"].append(full)
     for name in sorted(idx.block_set):
+        if SKIP_FLOWER(name):
+            continue
         if name in skip:
             continue
         full = f"{NAMESPACE}:{name}"
@@ -836,6 +848,25 @@ def gen_lang(en_out: dict[str, str], zh_out: dict[str, str]) -> tuple[str, str]:
 
 def write_block_items(idx: Index, block_entries: list[str], en: dict, zh: dict) -> None:
     """方块物品在 blocks 段里用 settings.item 绑定，CE 会一并注册为物品。"""
+
+
+# 浮空花（floating_*）：插件版不做（贴图缺失且玩法重复），生成时直接跳过
+SKIP_PREFIXES = ("floating_",)
+
+
+# 这些方块改由 furniture 配置接管（家具渲染 + bbmodel 模型），生成器跳过
+FURNITURE_OVERRIDE: set[str] = set()   # 暂时不用家具方案，方块走石墙载体
+
+
+def skip(name: str) -> bool:
+    return SKIP_FLOWER(name)
+
+
+def SKIP_FLOWER(name: str) -> bool:
+    if name in FURNITURE_OVERRIDE:
+        return True
+    """浮空花一律不做：贴图缺失、玩法重复。"""
+    return ("floating_" in name) or name.endswith("_floating_flower")
 
 
 def main() -> int:

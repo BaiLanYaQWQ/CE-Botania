@@ -206,13 +206,13 @@ public final class SpreaderController extends ManaBlockController {
             if (altar != null && altar.room() > 0 && altar.wantsMana()) {
                 return altar;
             }
-            // 接力：把魔力转给另一台发射器
+            // 遇到发射器：能接力就接力，不能接力就**挡住**（不穿过它去找后面的池子）
             SpreaderController next = entity.controller.get(SpreaderController.class, 0);
-            if (next != null && next != this && next.room() > 0) {
-                BlockPos theirs = next.position();
-                if (theirs != null && !theirs.equals(pos)) {
+            if (next != null && next != this) {
+                if (next.room() > 0 && next.leadsToReceiver(0)) {
                     return next;
                 }
+                return null;   // 拦下：这台发射器的下游没有接收方
             }
         }
         return null;
@@ -249,6 +249,45 @@ public final class SpreaderController extends ManaBlockController {
                 break;
             }
         }
+    }
+
+    /**
+     * 这条接力链最终能不能送到真正的接收方（魔力池 / 符文祭坛）。
+     *
+     * <p>下游全是发射器、末端什么也没接到的话，传过去就是白费魔力，
+     * 所以这种链条既不传魔力、也不放粒子。</p>
+     */
+    private boolean leadsToReceiver(int depth) {
+        if (depth > 8) {
+            return false;   // 防环
+        }
+        CEWorld ceWorld = world();
+        BlockPos pos = position();
+        if (ceWorld == null || pos == null) {
+            return false;
+        }
+        var dir = facingDir();
+        for (int step = 1; step <= FIND_RADIUS; step++) {
+            BlockPos probe = new BlockPos(
+                    pos.x() + dir.stepX() * step,
+                    pos.y() + dir.stepY() * step,
+                    pos.z() + dir.stepZ() * step);
+            BlockEntity entity = ceWorld.getBlockEntityAtIfLoaded(probe);
+            if (entity == null) {
+                continue;
+            }
+            if (entity.controller.get(ManaPoolController.class, 0) != null) {
+                return true;
+            }
+            if (entity.controller.get(RunicAltarController.class, 0) != null) {
+                return true;
+            }
+            SpreaderController next = entity.controller.get(SpreaderController.class, 0);
+            if (next != null && next != this) {
+                return next.leadsToReceiver(depth + 1);
+            }
+        }
+        return false;
     }
 
     /** 扫描附近的花，按 tick 预算抽取。 */

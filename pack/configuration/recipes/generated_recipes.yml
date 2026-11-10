@@ -55,7 +55,7 @@ recipes:
     result:
       id: botania:animated_torch
       count: 1
-  botania:apothecary_deepslate:
+  botania:apothecary_default:
     type: shaped
     category: misc
     pattern:
@@ -66,158 +66,7 @@ recipes:
       'C': 'minecraft:cobbled_deepslate'
       'P': '#botania:petals'
     result:
-      id: botania:apothecary_deepslate
-      count: 1
-  botania:apothecary_default:
-    type: shaped
-    category: misc
-    pattern:
-      - 'CPC'
-      - ' C '
-      - 'CCC'
-    ingredients:
-      'C': 'minecraft:cobblestone'
-      'P': '#botania:petals'
-    result:
       id: botania:apothecary_default
-      count: 1
-  botania:apothecary_desert:
-    type: shaped
-    category: misc
-    group: 'metamorphic_apothecary'
-    pattern:
-      - 'CPC'
-      - ' C '
-      - 'CCC'
-    ingredients:
-      'C': 'botania:metamorphic_desert_cobblestone'
-      'P': '#botania:petals'
-    result:
-      id: botania:apothecary_desert
-      count: 1
-  botania:apothecary_forest:
-    type: shaped
-    category: misc
-    group: 'metamorphic_apothecary'
-    pattern:
-      - 'CPC'
-      - ' C '
-      - 'CCC'
-    ingredients:
-      'C': 'botania:metamorphic_forest_cobblestone'
-      'P': '#botania:petals'
-    result:
-      id: botania:apothecary_forest
-      count: 1
-  botania:apothecary_fungal:
-    type: shaped
-    category: misc
-    group: 'metamorphic_apothecary'
-    pattern:
-      - 'CPC'
-      - ' C '
-      - 'CCC'
-    ingredients:
-      'C': 'botania:metamorphic_fungal_cobblestone'
-      'P': '#botania:petals'
-    result:
-      id: botania:apothecary_fungal
-      count: 1
-  botania:apothecary_livingrock:
-    type: shaped
-    category: misc
-    pattern:
-      - 'CPC'
-      - ' C '
-      - 'CCC'
-    ingredients:
-      'C': 'botania:livingrock'
-      'P': '#botania:petals'
-    result:
-      id: botania:apothecary_livingrock
-      count: 1
-  botania:apothecary_mesa:
-    type: shaped
-    category: misc
-    group: 'metamorphic_apothecary'
-    pattern:
-      - 'CPC'
-      - ' C '
-      - 'CCC'
-    ingredients:
-      'C': 'botania:metamorphic_mesa_cobblestone'
-      'P': '#botania:petals'
-    result:
-      id: botania:apothecary_mesa
-      count: 1
-  botania:apothecary_mossy:
-    type: shaped
-    category: misc
-    pattern:
-      - 'CPC'
-      - ' C '
-      - 'CCC'
-    ingredients:
-      'C': 'minecraft:mossy_cobblestone'
-      'P': '#botania:petals'
-    result:
-      id: botania:apothecary_mossy
-      count: 1
-  botania:apothecary_mountain:
-    type: shaped
-    category: misc
-    group: 'metamorphic_apothecary'
-    pattern:
-      - 'CPC'
-      - ' C '
-      - 'CCC'
-    ingredients:
-      'C': 'botania:metamorphic_mountain_cobblestone'
-      'P': '#botania:petals'
-    result:
-      id: botania:apothecary_mountain
-      count: 1
-  botania:apothecary_plains:
-    type: shaped
-    category: misc
-    group: 'metamorphic_apothecary'
-    pattern:
-      - 'CPC'
-      - ' C '
-      - 'CCC'
-    ingredients:
-      'C': 'botania:metamorphic_plains_cobblestone'
-      'P': '#botania:petals'
-    result:
-      id: botania:apothecary_plains
-      count: 1
-  botania:apothecary_swamp:
-    type: shaped
-    category: misc
-    group: 'metamorphic_apothecary'
-    pattern:
-      - 'CPC'
-      - ' C '
-      - 'CCC'
-    ingredients:
-      'C': 'botania:metamorphic_swamp_cobblestone'
-      'P': '#botania:petals'
-    result:
-      id: botania:apothecary_swamp
-      count: 1
-  botania:apothecary_taiga:
-    type: shaped
-    category: misc
-    group: 'metamorphic_apothecary'
-    pattern:
-      - 'CPC'
-      - ' C '
-      - 'CCC'
-    ingredients:
-      'C': 'botania:metamorphic_taiga_cobblestone'
-      'P': '#botania:petals'
-    result:
-      id: botania:apothecary_taiga
       count: 1
   botania:astrolabe:
     type: shaped
@@ -469,21 +318,6 @@ recipes:
     result:
       id: botania:bifrost_perm
       count: 1
-  botania:black_floating_flower:
-    type: shaped
-    category: misc
-    group: 'floating_flowers'
-    pattern:
-      - 'F'
-      - 'S'
-      - 'D'
-    ingredients:
-      'D': 'minecraft:dirt'
-      'F': 'botania:black_shiny_flower'
-      'S': 'botania:grass_seeds'
-    result:
-      id: botania:black_floating_flower
-      count: 1
   botania:black_hole_talisman:
     type: shaped
     category: equipment
@@ -632,21 +466,6 @@ recipes:
     result:
       id: botania:blood_pendant
       count: 1
-  botania:blue_floating_flower:
-    type: shaped
-    category: misc
-    group: 'floating_flowers'
-    pattern:
-      - 'F'
-      - 'S'
-      - 'D'
-    ingredients:
-      'D': 'minecraft:dirt'
-      'F': 'botania:blue_shiny_flower'
-      'S': 'botania:grass_seeds'
-    result:
-      id: botania:blue_floating_flower
-      count: 1
   botania:blue_pavement:
     type: shapeless
     category: building
@@ -721,21 +540,6 @@ recipes:
       'S': 'minecraft:brewing_stand'
     result:
       id: botania:brewery
-      count: 1
-  botania:brown_floating_flower:
-    type: shaped
-    category: misc
-    group: 'floating_flowers'
-    pattern:
-      - 'F'
-      - 'S'
-      - 'D'
-    ingredients:
-      'D': 'minecraft:dirt'
-      'F': 'botania:brown_shiny_flower'
-      'S': 'botania:grass_seeds'
-    result:
-      id: botania:brown_floating_flower
       count: 1
   botania:brown_petal_block:
     type: shaped
@@ -1699,21 +1503,6 @@ recipes:
     result:
       id: botania:crystal_bow
       count: 1
-  botania:cyan_floating_flower:
-    type: shaped
-    category: misc
-    group: 'floating_flowers'
-    pattern:
-      - 'F'
-      - 'S'
-      - 'D'
-    ingredients:
-      'D': 'minecraft:dirt'
-      'F': 'botania:cyan_shiny_flower'
-      'S': 'botania:grass_seeds'
-    result:
-      id: botania:cyan_floating_flower
-      count: 1
   botania:cyan_petal_block:
     type: shaped
     category: misc
@@ -2555,526 +2344,6 @@ recipes:
     result:
       id: botania:flight_tiara
       count: 1
-  botania:floating_agricarnation:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:agricarnation'
-    result:
-      id: botania:floating_agricarnation
-      count: 1
-  botania:floating_agricarnation_chibi:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:agricarnation_chibi'
-    result:
-      id: botania:floating_agricarnation_chibi
-      count: 1
-  botania:floating_bellethorn:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:bellethorn'
-    result:
-      id: botania:floating_bellethorn
-      count: 1
-  botania:floating_bellethorn_chibi:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:bellethorn_chibi'
-    result:
-      id: botania:floating_bellethorn_chibi
-      count: 1
-  botania:floating_bergamute:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:bergamute'
-    result:
-      id: botania:floating_bergamute
-      count: 1
-  botania:floating_bubbell:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:bubbell'
-    result:
-      id: botania:floating_bubbell
-      count: 1
-  botania:floating_bubbell_chibi:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:bubbell_chibi'
-    result:
-      id: botania:floating_bubbell_chibi
-      count: 1
-  botania:floating_clayconia:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:clayconia'
-    result:
-      id: botania:floating_clayconia
-      count: 1
-  botania:floating_clayconia_chibi:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:clayconia_chibi'
-    result:
-      id: botania:floating_clayconia_chibi
-      count: 1
-  botania:floating_daffomill:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:daffomill'
-    result:
-      id: botania:floating_daffomill
-      count: 1
-  botania:floating_dandelifeon:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:dandelifeon'
-    result:
-      id: botania:floating_dandelifeon
-      count: 1
-  botania:floating_dreadthorn:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:dreadthorn'
-    result:
-      id: botania:floating_dreadthorn
-      count: 1
-  botania:floating_endoflame:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:endoflame'
-    result:
-      id: botania:floating_endoflame
-      count: 1
-  botania:floating_entropinnyum:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:entropinnyum'
-    result:
-      id: botania:floating_entropinnyum
-      count: 1
-  botania:floating_exoflame:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:exoflame'
-    result:
-      id: botania:floating_exoflame
-      count: 1
-  botania:floating_fallen_kanade:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:fallen_kanade'
-    result:
-      id: botania:floating_fallen_kanade
-      count: 1
-  botania:floating_gourmaryllis:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:gourmaryllis'
-    result:
-      id: botania:floating_gourmaryllis
-      count: 1
-  botania:floating_heisei_dream:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:heisei_dream'
-    result:
-      id: botania:floating_heisei_dream
-      count: 1
-  botania:floating_hopperhock:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:hopperhock'
-    result:
-      id: botania:floating_hopperhock
-      count: 1
-  botania:floating_hopperhock_chibi:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:hopperhock_chibi'
-    result:
-      id: botania:floating_hopperhock_chibi
-      count: 1
-  botania:floating_hyacidus:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:hyacidus'
-    result:
-      id: botania:floating_hyacidus
-      count: 1
-  botania:floating_hydroangeas:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:hydroangeas'
-    result:
-      id: botania:floating_hydroangeas
-      count: 1
-  botania:floating_jaded_amaranthus:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:jaded_amaranthus'
-    result:
-      id: botania:floating_jaded_amaranthus
-      count: 1
-  botania:floating_jiyuulia:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:jiyuulia'
-    result:
-      id: botania:floating_jiyuulia
-      count: 1
-  botania:floating_jiyuulia_chibi:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:jiyuulia_chibi'
-    result:
-      id: botania:floating_jiyuulia_chibi
-      count: 1
-  botania:floating_kekimurus:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:kekimurus'
-    result:
-      id: botania:floating_kekimurus
-      count: 1
-  botania:floating_labellia:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:labellia'
-    result:
-      id: botania:floating_labellia
-      count: 1
-  botania:floating_loonium:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:loonium'
-    result:
-      id: botania:floating_loonium
-      count: 1
-  botania:floating_manastar:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:manastar'
-    result:
-      id: botania:floating_manastar
-      count: 1
-  botania:floating_marimorphosis:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:marimorphosis'
-    result:
-      id: botania:floating_marimorphosis
-      count: 1
-  botania:floating_marimorphosis_chibi:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:marimorphosis_chibi'
-    result:
-      id: botania:floating_marimorphosis_chibi
-      count: 1
-  botania:floating_medumone:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:medumone'
-    result:
-      id: botania:floating_medumone
-      count: 1
-  botania:floating_munchdew:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:munchdew'
-    result:
-      id: botania:floating_munchdew
-      count: 1
-  botania:floating_narslimmus:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:narslimmus'
-    result:
-      id: botania:floating_narslimmus
-      count: 1
-  botania:floating_orechid:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:orechid'
-    result:
-      id: botania:floating_orechid
-      count: 1
-  botania:floating_orechid_ignem:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:orechid_ignem'
-    result:
-      id: botania:floating_orechid_ignem
-      count: 1
-  botania:floating_pollidisiac:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:pollidisiac'
-    result:
-      id: botania:floating_pollidisiac
-      count: 1
-  botania:floating_pure_daisy:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:pure_daisy'
-    result:
-      id: botania:floating_pure_daisy
-      count: 1
-  botania:floating_rafflowsia:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:rafflowsia'
-    result:
-      id: botania:floating_rafflowsia
-      count: 1
-  botania:floating_rannuncarpus:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:rannuncarpus'
-    result:
-      id: botania:floating_rannuncarpus
-      count: 1
-  botania:floating_rannuncarpus_chibi:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:rannuncarpus_chibi'
-    result:
-      id: botania:floating_rannuncarpus_chibi
-      count: 1
-  botania:floating_rosa_arcana:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:rosa_arcana'
-    result:
-      id: botania:floating_rosa_arcana
-      count: 1
-  botania:floating_shulk_me_not:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:shulk_me_not'
-    result:
-      id: botania:floating_shulk_me_not
-      count: 1
-  botania:floating_solegnolia:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:solegnolia'
-    result:
-      id: botania:floating_solegnolia
-      count: 1
-  botania:floating_solegnolia_chibi:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:solegnolia_chibi'
-    result:
-      id: botania:floating_solegnolia_chibi
-      count: 1
-  botania:floating_spectranthemum:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:spectranthemum'
-    result:
-      id: botania:floating_spectranthemum
-      count: 1
-  botania:floating_spectrolus:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:spectrolus'
-    result:
-      id: botania:floating_spectrolus
-      count: 1
-  botania:floating_tangleberrie:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:tangleberrie'
-    result:
-      id: botania:floating_tangleberrie
-      count: 1
-  botania:floating_tangleberrie_chibi:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:tangleberrie_chibi'
-    result:
-      id: botania:floating_tangleberrie_chibi
-      count: 1
-  botania:floating_thermalily:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:thermalily'
-    result:
-      id: botania:floating_thermalily
-      count: 1
-  botania:floating_tigerseye:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:tigerseye'
-    result:
-      id: botania:floating_tigerseye
-      count: 1
-  botania:floating_vinculotus:
-    type: shapeless
-    category: misc
-    group: 'floating_flower'
-    ingredients:
-      'A': '#botania:floating_flowers'
-      'B': 'botania:vinculotus'
-    result:
-      id: botania:floating_vinculotus
-      count: 1
   botania:flower_bag:
     type: shaped
     category: equipment
@@ -3347,21 +2616,6 @@ recipes:
     result:
       id: botania:gravity_rod
       count: 1
-  botania:gray_floating_flower:
-    type: shaped
-    category: misc
-    group: 'floating_flowers'
-    pattern:
-      - 'F'
-      - 'S'
-      - 'D'
-    ingredients:
-      'D': 'minecraft:dirt'
-      'F': 'botania:gray_shiny_flower'
-      'S': 'botania:grass_seeds'
-    result:
-      id: botania:gray_floating_flower
-      count: 1
   botania:gray_petal_block:
     type: shaped
     category: misc
@@ -3385,21 +2639,6 @@ recipes:
       'C': 'botania:gray_mystical_flower'
     result:
       id: botania:gray_shiny_flower
-      count: 1
-  botania:green_floating_flower:
-    type: shaped
-    category: misc
-    group: 'floating_flowers'
-    pattern:
-      - 'F'
-      - 'S'
-      - 'D'
-    ingredients:
-      'D': 'minecraft:dirt'
-      'F': 'botania:green_shiny_flower'
-      'S': 'botania:grass_seeds'
-    result:
-      id: botania:green_floating_flower
       count: 1
   botania:green_pavement:
     type: shapeless
@@ -3624,23 +2863,6 @@ recipes:
       'S': '#botania:manasteel_ingots'
     result:
       id: botania:knockback_belt
-      count: 1
-  botania:laputa_shard:
-    type: shaped
-    category: equipment
-    pattern:
-      - 'SFS'
-      - 'PDP'
-      - 'ASE'
-    ingredients:
-      'A': 'botania:rune_air'
-      'D': '#botania:dragonstone_gems'
-      'E': 'botania:rune_earth'
-      'F': '#botania:mundane_floating_flowers'
-      'P': 'minecraft:prismarine_crystals'
-      'S': 'botania:life_essence'
-    result:
-      id: botania:laputa_shard
       count: 1
   botania:lava_pendant:
     type: shaped
@@ -3970,21 +3192,6 @@ recipes:
     result:
       id: botania:lexicon
       count: 1
-  botania:light_blue_floating_flower:
-    type: shaped
-    category: misc
-    group: 'floating_flowers'
-    pattern:
-      - 'F'
-      - 'S'
-      - 'D'
-    ingredients:
-      'D': 'minecraft:dirt'
-      'F': 'botania:light_blue_shiny_flower'
-      'S': 'botania:grass_seeds'
-    result:
-      id: botania:light_blue_floating_flower
-      count: 1
   botania:light_blue_petal_block:
     type: shaped
     category: misc
@@ -4008,21 +3215,6 @@ recipes:
       'C': 'botania:light_blue_mystical_flower'
     result:
       id: botania:light_blue_shiny_flower
-      count: 1
-  botania:light_gray_floating_flower:
-    type: shaped
-    category: misc
-    group: 'floating_flowers'
-    pattern:
-      - 'F'
-      - 'S'
-      - 'D'
-    ingredients:
-      'D': 'minecraft:dirt'
-      'F': 'botania:light_gray_shiny_flower'
-      'S': 'botania:grass_seeds'
-    result:
-      id: botania:light_gray_floating_flower
       count: 1
   botania:light_gray_petal_block:
     type: shaped
@@ -4070,21 +3262,6 @@ recipes:
       'D': 'minecraft:glowstone_dust'
     result:
       id: botania:light_relay
-      count: 1
-  botania:lime_floating_flower:
-    type: shaped
-    category: misc
-    group: 'floating_flowers'
-    pattern:
-      - 'F'
-      - 'S'
-      - 'D'
-    ingredients:
-      'D': 'minecraft:dirt'
-      'F': 'botania:lime_shiny_flower'
-      'S': 'botania:grass_seeds'
-    result:
-      id: botania:lime_floating_flower
       count: 1
   botania:lime_petal_block:
     type: shaped
@@ -4324,21 +3501,6 @@ recipes:
     result:
       id: botania:livingwood_wall
       count: 6
-  botania:magenta_floating_flower:
-    type: shaped
-    category: misc
-    group: 'floating_flowers'
-    pattern:
-      - 'F'
-      - 'S'
-      - 'D'
-    ingredients:
-      'D': 'minecraft:dirt'
-      'F': 'botania:magenta_shiny_flower'
-      'S': 'botania:grass_seeds'
-    result:
-      id: botania:magenta_floating_flower
-      count: 1
   botania:magenta_petal_block:
     type: shaped
     category: misc
@@ -6141,21 +5303,6 @@ recipes:
     result:
       id: botania:open_crate
       count: 1
-  botania:orange_floating_flower:
-    type: shaped
-    category: misc
-    group: 'floating_flowers'
-    pattern:
-      - 'F'
-      - 'S'
-      - 'D'
-    ingredients:
-      'D': 'minecraft:dirt'
-      'F': 'botania:orange_shiny_flower'
-      'S': 'botania:grass_seeds'
-    result:
-      id: botania:orange_floating_flower
-      count: 1
   botania:orange_petal_block:
     type: shaped
     category: misc
@@ -6618,21 +5765,6 @@ recipes:
     result:
       id: botania:yellow_petal
       count: 4
-  botania:pink_floating_flower:
-    type: shaped
-    category: misc
-    group: 'floating_flowers'
-    pattern:
-      - 'F'
-      - 'S'
-      - 'D'
-    ingredients:
-      'D': 'minecraft:dirt'
-      'F': 'botania:pink_shiny_flower'
-      'S': 'botania:grass_seeds'
-    result:
-      id: botania:pink_floating_flower
-      count: 1
   botania:pink_petal_block:
     type: shaped
     category: misc
@@ -6745,21 +5877,6 @@ recipes:
       'S': 'botania:livingrock'
     result:
       id: botania:pump
-      count: 1
-  botania:purple_floating_flower:
-    type: shaped
-    category: misc
-    group: 'floating_flowers'
-    pattern:
-      - 'F'
-      - 'S'
-      - 'D'
-    ingredients:
-      'D': 'minecraft:dirt'
-      'F': 'botania:purple_shiny_flower'
-      'S': 'botania:grass_seeds'
-    result:
-      id: botania:purple_floating_flower
       count: 1
   botania:purple_petal_block:
     type: shaped
@@ -6876,21 +5993,6 @@ recipes:
       'R': 'botania:rune_pride'
     result:
       id: botania:reach_ring
-      count: 1
-  botania:red_floating_flower:
-    type: shaped
-    category: misc
-    group: 'floating_flowers'
-    pattern:
-      - 'F'
-      - 'S'
-      - 'D'
-    ingredients:
-      'D': 'minecraft:dirt'
-      'F': 'botania:red_shiny_flower'
-      'S': 'botania:grass_seeds'
-    result:
-      id: botania:red_floating_flower
       count: 1
   botania:red_pavement:
     type: shapeless
@@ -7101,6 +6203,15 @@ recipes:
     ingredients:
       'A': 'minecraft:redstone'
       'B': 'minecraft:fern'
+    result:
+      id: botania:redstone_root
+      count: 1
+  botania:redstone_root_from_grass:
+    type: shapeless
+    category: misc
+    ingredients:
+      'A': 'minecraft:redstone'
+      'B': 'minecraft:short_grass'
     result:
       id: botania:redstone_root
       count: 1
@@ -7968,21 +7079,6 @@ recipes:
     result:
       id: botania:water_ring
       count: 1
-  botania:white_floating_flower:
-    type: shaped
-    category: misc
-    group: 'floating_flowers'
-    pattern:
-      - 'F'
-      - 'S'
-      - 'D'
-    ingredients:
-      'D': 'minecraft:dirt'
-      'F': 'botania:white_shiny_flower'
-      'S': 'botania:grass_seeds'
-    result:
-      id: botania:white_floating_flower
-      count: 1
   botania:white_pavement:
     type: shapeless
     category: building
@@ -8056,21 +7152,6 @@ recipes:
     result:
       id: botania:world_seed
       count: 4
-  botania:yellow_floating_flower:
-    type: shaped
-    category: misc
-    group: 'floating_flowers'
-    pattern:
-      - 'F'
-      - 'S'
-      - 'D'
-    ingredients:
-      'D': 'minecraft:dirt'
-      'F': 'botania:yellow_shiny_flower'
-      'S': 'botania:grass_seeds'
-    result:
-      id: botania:yellow_floating_flower
-      count: 1
   botania:yellow_pavement:
     type: shapeless
     category: building

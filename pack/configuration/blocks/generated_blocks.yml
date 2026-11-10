@@ -185,18 +185,8 @@ blocks:
               item: botania:animated_torch
   botania:avatar:
     state:
-      auto_state:
-        type: sugar_cane
-        id: transparent
-      transparent: true
-      entity_culling: false
-      entity_renderer:
-        type: item_display
-        item: botania:render/avatar
-        display_transform: none
-        scale: 1.0
-        translation: '0,0,0'
-        rotation: '0,180,0'
+      auto_state: solid
+      model: botania:block/avatar
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -207,10 +197,6 @@ blocks:
       hardness: 1.5
       resistance: 3.0
       require_correct_tools: false
-      can_occlude: false
-      is_suffocating: false
-      is_view_blocking: false
-      fluid_state: false
       item: botania:avatar
     loot:
       pools:
@@ -939,30 +925,6 @@ blocks:
         - botania:double_mystical_flowers
       item: botania:black_double_flower
     loot: {}
-  botania:black_floating_flower:
-    state:
-      auto_state: solid
-      model: botania:block/black_floating_flower
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:mundane_floating_flowers
-      item: botania:black_floating_flower
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:black_floating_flower
   botania:black_mushroom:
     behavior:
       type: botania:ground_plant
@@ -1414,30 +1376,6 @@ blocks:
         - botania:double_mystical_flowers
       item: botania:blue_double_flower
     loot: {}
-  botania:blue_floating_flower:
-    state:
-      auto_state: solid
-      model: botania:block/blue_floating_flower
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:mundane_floating_flowers
-      item: botania:blue_floating_flower
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:blue_floating_flower
   botania:blue_mushroom:
     behavior:
       type: botania:ground_plant
@@ -1771,30 +1709,6 @@ blocks:
         - botania:double_mystical_flowers
       item: botania:brown_double_flower
     loot: {}
-  botania:brown_floating_flower:
-    state:
-      auto_state: solid
-      model: botania:block/brown_floating_flower
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:mundane_floating_flowers
-      item: botania:brown_floating_flower
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:brown_floating_flower
   botania:brown_mushroom:
     behavior:
       type: botania:ground_plant
@@ -3084,30 +2998,6 @@ blocks:
         - botania:double_mystical_flowers
       item: botania:cyan_double_flower
     loot: {}
-  botania:cyan_floating_flower:
-    state:
-      auto_state: solid
-      model: botania:block/cyan_floating_flower
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:mundane_floating_flowers
-      item: botania:cyan_floating_flower
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:cyan_floating_flower
   botania:cyan_mushroom:
     behavior:
       type: botania:ground_plant
@@ -4536,1306 +4426,6 @@ blocks:
           entries:
             - type: item
               item: botania:fel_pumpkin
-  botania:floating_agricarnation:
-    state:
-      auto_state: solid
-      model: botania:block/floating_agricarnation
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_agricarnation
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_agricarnation
-  botania:floating_agricarnation_chibi:
-    state:
-      auto_state: solid
-      model: botania:block/floating_agricarnation_chibi
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_agricarnation_chibi
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_agricarnation_chibi
-  botania:floating_bellethorn:
-    state:
-      auto_state: solid
-      model: botania:block/floating_bellethorn
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_bellethorn
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_bellethorn
-  botania:floating_bellethorn_chibi:
-    state:
-      auto_state: solid
-      model: botania:block/floating_bellethorn_chibi
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_bellethorn_chibi
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_bellethorn_chibi
-  botania:floating_bergamute:
-    state:
-      auto_state: solid
-      model: botania:block/floating_bergamute
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:misc_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_bergamute
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_bergamute
-  botania:floating_bubbell:
-    state:
-      auto_state: solid
-      model: botania:block/floating_bubbell
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_bubbell
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_bubbell
-  botania:floating_bubbell_chibi:
-    state:
-      auto_state: solid
-      model: botania:block/floating_bubbell_chibi
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_bubbell_chibi
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_bubbell_chibi
-  botania:floating_clayconia:
-    state:
-      auto_state: solid
-      model: botania:block/floating_clayconia
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_clayconia
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_clayconia
-  botania:floating_clayconia_chibi:
-    state:
-      auto_state: solid
-      model: botania:block/floating_clayconia_chibi
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_clayconia_chibi
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_clayconia_chibi
-  botania:floating_daffomill:
-    state:
-      auto_state: solid
-      model: botania:block/floating_daffomill
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_daffomill
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_daffomill
-  botania:floating_dandelifeon:
-    state:
-      auto_state: solid
-      model: botania:block/floating_dandelifeon
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:generating_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_dandelifeon
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_dandelifeon
-  botania:floating_dreadthorn:
-    state:
-      auto_state: solid
-      model: botania:block/floating_dreadthorn
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_dreadthorn
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_dreadthorn
-  botania:floating_endoflame:
-    state:
-      auto_state: solid
-      model: botania:block/floating_endoflame
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:generating_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_endoflame
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_endoflame
-  botania:floating_entropinnyum:
-    state:
-      auto_state: solid
-      model: botania:block/floating_entropinnyum
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:generating_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_entropinnyum
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_entropinnyum
-  botania:floating_exoflame:
-    state:
-      auto_state: solid
-      model: botania:block/floating_exoflame
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_exoflame
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_exoflame
-  botania:floating_fallen_kanade:
-    state:
-      auto_state: solid
-      model: botania:block/floating_fallen_kanade
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_fallen_kanade
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_fallen_kanade
-  botania:floating_gourmaryllis:
-    state:
-      auto_state: solid
-      model: botania:block/floating_gourmaryllis
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:generating_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_gourmaryllis
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_gourmaryllis
-  botania:floating_heisei_dream:
-    state:
-      auto_state: solid
-      model: botania:block/floating_heisei_dream
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_heisei_dream
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_heisei_dream
-  botania:floating_hopperhock:
-    state:
-      auto_state: solid
-      model: botania:block/floating_hopperhock
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_hopperhock
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_hopperhock
-  botania:floating_hopperhock_chibi:
-    state:
-      auto_state: solid
-      model: botania:block/floating_hopperhock_chibi
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_hopperhock_chibi
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_hopperhock_chibi
-  botania:floating_hyacidus:
-    state:
-      auto_state: solid
-      model: botania:block/floating_hyacidus
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_hyacidus
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_hyacidus
-  botania:floating_hydroangeas:
-    state:
-      auto_state: solid
-      model: botania:block/floating_hydroangeas
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:generating_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_hydroangeas
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_hydroangeas
-  botania:floating_jaded_amaranthus:
-    state:
-      auto_state: solid
-      model: botania:block/floating_jaded_amaranthus
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_jaded_amaranthus
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_jaded_amaranthus
-  botania:floating_jiyuulia:
-    state:
-      auto_state: solid
-      model: botania:block/floating_jiyuulia
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_jiyuulia
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_jiyuulia
-  botania:floating_jiyuulia_chibi:
-    state:
-      auto_state: solid
-      model: botania:block/floating_jiyuulia_chibi
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_jiyuulia_chibi
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_jiyuulia_chibi
-  botania:floating_kekimurus:
-    state:
-      auto_state: solid
-      model: botania:block/floating_kekimurus
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:generating_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_kekimurus
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_kekimurus
-  botania:floating_labellia:
-    state:
-      auto_state: solid
-      model: botania:block/floating_labellia
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_labellia
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_labellia
-  botania:floating_loonium:
-    state:
-      auto_state: solid
-      model: botania:block/floating_loonium
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_loonium
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_loonium
-  botania:floating_manastar:
-    state:
-      auto_state: solid
-      model: botania:block/floating_manastar
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:misc_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_manastar
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_manastar
-  botania:floating_marimorphosis:
-    state:
-      auto_state: solid
-      model: botania:block/floating_marimorphosis
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_marimorphosis
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_marimorphosis
-  botania:floating_marimorphosis_chibi:
-    state:
-      auto_state: solid
-      model: botania:block/floating_marimorphosis_chibi
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_marimorphosis_chibi
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_marimorphosis_chibi
-  botania:floating_medumone:
-    state:
-      auto_state: solid
-      model: botania:block/floating_medumone
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_medumone
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_medumone
-  botania:floating_munchdew:
-    state:
-      auto_state: solid
-      model: botania:block/floating_munchdew
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:generating_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_munchdew
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_munchdew
-  botania:floating_narslimmus:
-    state:
-      auto_state: solid
-      model: botania:block/floating_narslimmus
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:generating_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_narslimmus
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_narslimmus
-  botania:floating_orechid:
-    state:
-      auto_state: solid
-      model: botania:block/floating_orechid
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_orechid
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_orechid
-  botania:floating_orechid_ignem:
-    state:
-      auto_state: solid
-      model: botania:block/floating_orechid_ignem
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_orechid_ignem
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_orechid_ignem
-  botania:floating_pollidisiac:
-    state:
-      auto_state: solid
-      model: botania:block/floating_pollidisiac
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_pollidisiac
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_pollidisiac
-  botania:floating_pure_daisy:
-    state:
-      auto_state: solid
-      model: botania:block/floating_pure_daisy
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:misc_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_pure_daisy
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_pure_daisy
-  botania:floating_rafflowsia:
-    state:
-      auto_state: solid
-      model: botania:block/floating_rafflowsia
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:generating_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_rafflowsia
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_rafflowsia
-  botania:floating_rannuncarpus:
-    state:
-      auto_state: solid
-      model: botania:block/floating_rannuncarpus
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_rannuncarpus
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_rannuncarpus
-  botania:floating_rannuncarpus_chibi:
-    state:
-      auto_state: solid
-      model: botania:block/floating_rannuncarpus_chibi
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_rannuncarpus_chibi
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_rannuncarpus_chibi
-  botania:floating_rosa_arcana:
-    state:
-      auto_state: solid
-      model: botania:block/floating_rosa_arcana
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:generating_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_rosa_arcana
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_rosa_arcana
-  botania:floating_shulk_me_not:
-    state:
-      auto_state: solid
-      model: botania:block/floating_shulk_me_not
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:generating_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_shulk_me_not
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_shulk_me_not
-  botania:floating_solegnolia:
-    state:
-      auto_state: solid
-      model: botania:block/floating_solegnolia
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_solegnolia
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_solegnolia
-  botania:floating_solegnolia_chibi:
-    state:
-      auto_state: solid
-      model: botania:block/floating_solegnolia_chibi
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_solegnolia_chibi
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_solegnolia_chibi
-  botania:floating_spectranthemum:
-    state:
-      auto_state: solid
-      model: botania:block/floating_spectranthemum
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_spectranthemum
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_spectranthemum
-  botania:floating_spectrolus:
-    state:
-      auto_state: solid
-      model: botania:block/floating_spectrolus
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:generating_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_spectrolus
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_spectrolus
-  botania:floating_tangleberrie:
-    state:
-      auto_state: solid
-      model: botania:block/floating_tangleberrie
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_tangleberrie
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_tangleberrie
-  botania:floating_tangleberrie_chibi:
-    state:
-      auto_state: solid
-      model: botania:block/floating_tangleberrie_chibi
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_tangleberrie_chibi
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_tangleberrie_chibi
-  botania:floating_thermalily:
-    state:
-      auto_state: solid
-      model: botania:block/floating_thermalily
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:generating_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_thermalily
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_thermalily
-  botania:floating_tigerseye:
-    state:
-      auto_state: solid
-      model: botania:block/floating_tigerseye
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_tigerseye
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_tigerseye
-  botania:floating_vinculotus:
-    state:
-      auto_state: solid
-      model: botania:block/floating_vinculotus
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:functional_floating_flowers
-        - botania:special_floating_flowers
-      item: botania:floating_vinculotus
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:floating_vinculotus
   botania:forest_eye:
     state:
       auto_state:
@@ -5989,9 +4579,7 @@ blocks:
               item: botania:gaia_head
   botania:gaia_pylon:
     state:
-      auto_state:
-        type: sugar_cane
-        id: transparent
+      state: "minecraft:polished_blackstone_wall[up=true,north=none,east=none,south=none,west=none,waterlogged=false]"
       transparent: true
       entity_culling: false
       entity_renderer:
@@ -6000,7 +4588,7 @@ blocks:
         display_transform: none
         scale: 1.0
         translation: '0,0,0'
-        rotation: '0,180,0'
+        rotation: '0,0,0'
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -6388,30 +4976,6 @@ blocks:
         - botania:double_mystical_flowers
       item: botania:gray_double_flower
     loot: {}
-  botania:gray_floating_flower:
-    state:
-      auto_state: solid
-      model: botania:block/gray_floating_flower
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:mundane_floating_flowers
-      item: botania:gray_floating_flower
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:gray_floating_flower
   botania:gray_mushroom:
     behavior:
       type: botania:ground_plant
@@ -6604,30 +5168,6 @@ blocks:
         - botania:double_mystical_flowers
       item: botania:green_double_flower
     loot: {}
-  botania:green_floating_flower:
-    state:
-      auto_state: solid
-      model: botania:block/green_floating_flower
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:mundane_floating_flowers
-      item: botania:green_floating_flower
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:green_floating_flower
   botania:green_mushroom:
     behavior:
       type: botania:ground_plant
@@ -6983,18 +5523,8 @@ blocks:
               item: botania:hopperhock_chibi
   botania:hourglass:
     state:
-      auto_state:
-        type: sugar_cane
-        id: transparent
-      transparent: true
-      entity_culling: false
-      entity_renderer:
-        type: item_display
-        item: botania:render/hourglass
-        display_transform: none
-        scale: 1.0
-        translation: '0,0,0'
-        rotation: '0,180,0'
+      auto_state: solid
+      model: botania:block/hourglass
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -7005,10 +5535,6 @@ blocks:
       hardness: 1.5
       resistance: 3.0
       require_correct_tools: false
-      can_occlude: false
-      is_suffocating: false
-      is_view_blocking: false
-      fluid_state: false
       item: botania:hourglass
     loot:
       pools:
@@ -7619,30 +6145,6 @@ blocks:
         - botania:double_mystical_flowers
       item: botania:light_blue_double_flower
     loot: {}
-  botania:light_blue_floating_flower:
-    state:
-      auto_state: solid
-      model: botania:block/light_blue_floating_flower
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:mundane_floating_flowers
-      item: botania:light_blue_floating_flower
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:light_blue_floating_flower
   botania:light_blue_mushroom:
     behavior:
       type: botania:ground_plant
@@ -7835,30 +6337,6 @@ blocks:
         - botania:double_mystical_flowers
       item: botania:light_gray_double_flower
     loot: {}
-  botania:light_gray_floating_flower:
-    state:
-      auto_state: solid
-      model: botania:block/light_gray_floating_flower
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:mundane_floating_flowers
-      item: botania:light_gray_floating_flower
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:light_gray_floating_flower
   botania:light_gray_mushroom:
     behavior:
       type: botania:ground_plant
@@ -8121,30 +6599,6 @@ blocks:
         - botania:double_mystical_flowers
       item: botania:lime_double_flower
     loot: {}
-  botania:lime_floating_flower:
-    state:
-      auto_state: solid
-      model: botania:block/lime_floating_flower
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:mundane_floating_flowers
-      item: botania:lime_floating_flower
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:lime_floating_flower
   botania:lime_mushroom:
     behavior:
       type: botania:ground_plant
@@ -8984,30 +7438,6 @@ blocks:
         - botania:double_mystical_flowers
       item: botania:magenta_double_flower
     loot: {}
-  botania:magenta_floating_flower:
-    state:
-      auto_state: solid
-      model: botania:block/magenta_floating_flower
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:mundane_floating_flowers
-      item: botania:magenta_floating_flower
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:magenta_floating_flower
   botania:magenta_mushroom:
     behavior:
       type: botania:ground_plant
@@ -9343,9 +7773,7 @@ blocks:
               item: botania:mana_glass_pane
   botania:mana_pylon:
     state:
-      auto_state:
-        type: sugar_cane
-        id: transparent
+      state: "minecraft:mud_brick_wall[up=true,north=none,east=none,south=none,west=none,waterlogged=false]"
       transparent: true
       entity_culling: false
       entity_renderer:
@@ -9354,7 +7782,7 @@ blocks:
         display_transform: none
         scale: 1.0
         translation: '0,0,0'
-        rotation: '0,180,0'
+        rotation: '0,0,0'
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -13182,9 +11610,7 @@ blocks:
               item: botania:narslimmus
   botania:natura_pylon:
     state:
-      auto_state:
-        type: sugar_cane
-        id: transparent
+      state: "minecraft:end_stone_brick_wall[up=true,north=none,east=none,south=none,west=none,waterlogged=false]"
       transparent: true
       entity_culling: false
       entity_renderer:
@@ -13193,7 +11619,7 @@ blocks:
         display_transform: none
         scale: 1.0
         translation: '0,0,0'
-        rotation: '0,180,0'
+        rotation: '0,0,0'
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -13344,30 +11770,6 @@ blocks:
         - botania:double_mystical_flowers
       item: botania:orange_double_flower
     loot: {}
-  botania:orange_floating_flower:
-    state:
-      auto_state: solid
-      model: botania:block/orange_floating_flower
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:mundane_floating_flowers
-      item: botania:orange_floating_flower
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:orange_floating_flower
   botania:orange_mushroom:
     behavior:
       type: botania:ground_plant
@@ -13688,30 +12090,6 @@ blocks:
         - botania:double_mystical_flowers
       item: botania:pink_double_flower
     loot: {}
-  botania:pink_floating_flower:
-    state:
-      auto_state: solid
-      model: botania:block/pink_floating_flower
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:mundane_floating_flowers
-      item: botania:pink_floating_flower
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:pink_floating_flower
   botania:pink_mushroom:
     behavior:
       type: botania:ground_plant
@@ -17560,30 +15938,6 @@ blocks:
         - botania:double_mystical_flowers
       item: botania:purple_double_flower
     loot: {}
-  botania:purple_floating_flower:
-    state:
-      auto_state: solid
-      model: botania:block/purple_floating_flower
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:mundane_floating_flowers
-      item: botania:purple_floating_flower
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:purple_floating_flower
   botania:purple_mushroom:
     behavior:
       type: botania:ground_plant
@@ -17900,30 +16254,6 @@ blocks:
         - botania:double_mystical_flowers
       item: botania:red_double_flower
     loot: {}
-  botania:red_floating_flower:
-    state:
-      auto_state: solid
-      model: botania:block/red_floating_flower
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:mundane_floating_flowers
-      item: botania:red_floating_flower
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:red_floating_flower
   botania:red_mushroom:
     behavior:
       type: botania:ground_plant
@@ -19678,18 +18008,8 @@ blocks:
               item: botania:terrasteel_block
   botania:teru_teru_bozu:
     state:
-      auto_state:
-        type: sugar_cane
-        id: transparent
-      transparent: true
-      entity_culling: false
-      entity_renderer:
-        type: item_display
-        item: botania:render/teru_teru_bozu
-        display_transform: none
-        scale: 1.0
-        translation: '0,0,0'
-        rotation: '0,180,0'
+      auto_state: solid
+      model: botania:block/teru_teru_bozu
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -19700,10 +18020,6 @@ blocks:
       hardness: 1.5
       resistance: 3.0
       require_correct_tools: false
-      can_occlude: false
-      is_suffocating: false
-      is_view_blocking: false
-      fluid_state: false
       item: botania:teru_teru_bozu
     loot:
       pools:
@@ -20050,30 +18366,6 @@ blocks:
         - botania:double_mystical_flowers
       item: botania:white_double_flower
     loot: {}
-  botania:white_floating_flower:
-    state:
-      auto_state: solid
-      model: botania:block/white_floating_flower
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:mundane_floating_flowers
-      item: botania:white_floating_flower
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:white_floating_flower
   botania:white_mushroom:
     behavior:
       type: botania:ground_plant
@@ -20372,30 +18664,6 @@ blocks:
         - botania:double_mystical_flowers
       item: botania:yellow_double_flower
     loot: {}
-  botania:yellow_floating_flower:
-    state:
-      auto_state: solid
-      model: botania:block/yellow_floating_flower
-    settings:
-      sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
-      tags:
-        - botania:floating_flowers
-        - botania:mundane_floating_flowers
-      item: botania:yellow_floating_flower
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:yellow_floating_flower
   botania:yellow_mushroom:
     behavior:
       type: botania:ground_plant

@@ -10,7 +10,9 @@
 
 **Language**: [中文](README.md) | English (this page)
 
-📌 **Latest update**: [Changelog 2026-11-09](docs/CHANGELOG-2026-11-09-EN.md) · [中文更新日志](docs/更新日志-2026-11-09.md)
+📌 **Latest update**: [Changelog 2026-11-10](docs/CHANGELOG-2026-11-10-EN.md) · [中文更新日志](docs/更新日志-2026-11-10.md)
+
+📚 Previous: [2026-11-09](docs/CHANGELOG-2026-11-09-EN.md)
 
 ---
 

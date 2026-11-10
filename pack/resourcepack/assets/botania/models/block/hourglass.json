@@ -1,5 +1,6 @@
 {
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "particle": "botania:block/mana_glass"
+    "all": "botania:model/hourglass"
   }
 }

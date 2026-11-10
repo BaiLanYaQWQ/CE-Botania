@@ -8,7 +8,9 @@
 
 **语言 / Language** · 中文（本页） | [English](README_EN.md)
 
-📌 **最新更新**：[2026-11-09 更新日志](docs/更新日志-2026-11-09.md) · [English changelog](docs/CHANGELOG-2026-11-09-EN.md)
+📌 **最新更新**：[2026-11-10 更新日志](docs/更新日志-2026-11-10.md) · [English changelog](docs/CHANGELOG-2026-11-10-EN.md)
+
+📚 往期：[2026-11-09](docs/更新日志-2026-11-09.md)
 
 ---
 

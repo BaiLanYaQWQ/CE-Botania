@@ -105,13 +105,6 @@ items:
       path: botania:block/apothecary_taiga
     data:
       item_name: '<!i><white><lang:botania.block.apothecary_taiga>'
-  botania:render/avatar:
-    material: paper
-    model:
-      type: minecraft:model
-      path: botania:block/avatar
-    data:
-      item_name: '<!i><white><lang:botania.block.avatar>'
   botania:render/bellethorn:
     material: paper
     model:
@@ -777,13 +770,6 @@ items:
       path: botania:block/hopperhock_chibi
     data:
       item_name: '<!i><white><lang:botania.block.hopperhock_chibi>'
-  botania:render/hourglass:
-    material: paper
-    model:
-      type: minecraft:model
-      path: botania:block/hourglass
-    data:
-      item_name: '<!i><white><lang:botania.block.hourglass>'
   botania:render/hyacidus:
     material: paper
     model:
@@ -2730,13 +2716,6 @@ items:
       path: botania:block/terra_plate
     data:
       item_name: '<!i><white><lang:botania.block.terra_plate>'
-  botania:render/teru_teru_bozu:
-    material: paper
-    model:
-      type: minecraft:model
-      path: botania:block/teru_teru_bozu
-    data:
-      item_name: '<!i><white><lang:botania.block.teru_teru_bozu>'
   botania:render/thermalily:
     material: paper
     model:
@@ -2877,3 +2856,17 @@ items:
       path: botania:block/yellow_shiny_flower
     data:
       item_name: '<!i><white><lang:botania.block.yellow_shiny_flower>'
+  botania:render/apothecary_default_water:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/apothecary_default_water
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_default>'
+  botania:render/mana_pool_full:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/mana_pool_full
+    data:
+      item_name: '<!i><white><lang:botania.block.mana_pool>'

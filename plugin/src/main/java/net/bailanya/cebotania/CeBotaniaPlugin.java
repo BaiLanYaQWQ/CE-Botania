@@ -25,6 +25,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class CeBotaniaPlugin extends JavaPlugin {
 
     private RecipeBook recipes;
+    private net.bailanya.cebotania.lexicon.Lexicon lexicon;
     private net.bailanya.cebotania.listener.ManaRepair manaRepair;
     private net.bailanya.cebotania.core.TickBus tickBus;
 
@@ -51,6 +52,10 @@ public final class CeBotaniaPlugin extends JavaPlugin {
         BlockBehaviors.register(SpreaderBehavior.KEY, SpreaderBehavior.factory());
         BlockBehaviors.register(ApothecaryBehavior.KEY, ApothecaryBehavior.factory(this));
 
+        // 2b) 植物魔法辞典：索引界面 + 成书阅读
+        this.lexicon = net.bailanya.cebotania.lexicon.Lexicon.load(getClassLoader());
+        getLogger().info(this.lexicon.summary());
+
         // 3) 逐刻调度：方块实体自己登记，这里只负责按刻推
         this.tickBus = new net.bailanya.cebotania.core.TickBus(this);
         net.bailanya.cebotania.core.BotaniaRuntime.install(this.tickBus);
@@ -70,6 +75,10 @@ public final class CeBotaniaPlugin extends JavaPlugin {
                 new net.bailanya.cebotania.listener.GroundPlantSupport(this), this);
         Bukkit.getPluginManager().registerEvents(
                 new net.bailanya.cebotania.listener.TickAutoRegister(this), this);
+        Bukkit.getPluginManager().registerEvents(
+                new net.bailanya.cebotania.listener.SoilTurning(), this);
+        Bukkit.getPluginManager().registerEvents(
+                new net.bailanya.cebotania.lexicon.LexiconListener(this.lexicon), this);
         this.manaRepair = new net.bailanya.cebotania.listener.ManaRepair(this);
         Bukkit.getPluginManager().registerEvents(this.manaRepair, this);
 
@@ -91,6 +100,10 @@ public final class CeBotaniaPlugin extends JavaPlugin {
         }
         net.bailanya.cebotania.core.BotaniaRuntime.uninstall();
         getLogger().info("植物魔法已停用");
+    }
+
+    public net.bailanya.cebotania.lexicon.Lexicon lexicon() {
+        return this.lexicon;
     }
 
     public net.bailanya.cebotania.listener.ManaRepair manaRepair() {
