@@ -23,24 +23,6 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public final class PetalDropListener implements Listener {
 
-    /** 原版花 → 花瓣颜色。 */
-    private static final Map<Material, String> VANILLA_FLOWERS = Map.ofEntries(
-            Map.entry(Material.DANDELION, "yellow"),
-            Map.entry(Material.POPPY, "red"),
-            Map.entry(Material.BLUE_ORCHID, "light_blue"),
-            Map.entry(Material.ALLIUM, "magenta"),
-            Map.entry(Material.AZURE_BLUET, "light_gray"),
-            Map.entry(Material.RED_TULIP, "red"),
-            Map.entry(Material.ORANGE_TULIP, "orange"),
-            Map.entry(Material.WHITE_TULIP, "white"),
-            Map.entry(Material.PINK_TULIP, "pink"),
-            Map.entry(Material.OXEYE_DAISY, "white"),
-            Map.entry(Material.CORNFLOWER, "blue"),
-            Map.entry(Material.LILY_OF_THE_VALLEY, "white"),
-            Map.entry(Material.WITHER_ROSE, "black"),
-            Map.entry(Material.TORCHFLOWER, "orange")
-    );
-
     @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     public void onBreak(BlockBreakEvent event) {
         Block block = event.getBlock();
@@ -101,6 +83,7 @@ public final class PetalDropListener implements Listener {
             }
             return null;
         }
-        return VANILLA_FLOWERS.get(block.getType());
+        // 原版花不掉植物魔法的花瓣（上游只有神秘花才掉）
+        return null;
     }
 }

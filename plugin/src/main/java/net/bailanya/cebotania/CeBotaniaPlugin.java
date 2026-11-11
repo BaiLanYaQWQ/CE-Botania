@@ -93,7 +93,7 @@ public final class CeBotaniaPlugin extends JavaPlugin {
                     // 单世界出错不影响其它世界
                 }
             }
-        }, 60L, 10L);
+        }, 60L, 5L);
 
         // 5) 事件：打花掉花瓣
         Bukkit.getPluginManager().registerEvents(
@@ -108,6 +108,8 @@ public final class CeBotaniaPlugin extends JavaPlugin {
                 new net.bailanya.cebotania.listener.SparkListener(), this);
         Bukkit.getPluginManager().registerEvents(
                 new net.bailanya.cebotania.listener.TerraTools(), this);
+        Bukkit.getPluginManager().registerEvents(
+                new net.bailanya.cebotania.listener.PylonEnchant(), this);
         Bukkit.getPluginManager().registerEvents(
                 new net.bailanya.cebotania.lexicon.LexiconListener(this.lexicon), this);
         this.manaRepair = new net.bailanya.cebotania.listener.ManaRepair(this);

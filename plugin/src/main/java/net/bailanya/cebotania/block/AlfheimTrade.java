@@ -111,7 +111,7 @@ public final class AlfheimTrade {
                 try {
                     world.spawnParticle(org.bukkit.Particle.PORTAL, spawnAt, 40,
                             0.6, 0.6, 0.6, 0.3);
-                    world.playSound(spawnAt, org.bukkit.Sound.BLOCK_PORTAL_TRAVEL, 0.7f, 1.3f);
+                    // 交易不放传送门音效
                 } catch (Throwable ignored) {
                     // 忽略
                 }
@@ -138,7 +138,8 @@ public final class AlfheimTrade {
                 if (st != null && !st.isEmpty()
                         && st.owner().value().id().value().equals("alfheim_portal")) {
                     // 再确认掉落物在这个核心的中空区
-                    for (var p : AlfheimPortalBehavior.portalInterior(probe)) {
+                    boolean ax = true;
+                    for (var p : AlfheimPortalBehavior.portalInterior(probe, ax)) {
                         if (p.x() == bx && p.y() == by && p.z() == bz) {
                             return probe;
                         }

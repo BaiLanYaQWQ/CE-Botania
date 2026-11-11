@@ -243,19 +243,14 @@ public final class AlfheimPortalBehavior extends BukkitBlockBehavior implements
         return count;
     }
 
-    /** 中空 3×3 区域（传送门特效区），两个朝向都返回。 */
-    public static java.util.List<BlockPos> portalInterior(BlockPos core) {
+    /** 中空 3×3 区域（传送门特效区），alongX 指定框架平面朝向。 */
+    public static java.util.List<BlockPos> portalInterior(BlockPos core, boolean alongX) {
         java.util.List<BlockPos> out = new java.util.ArrayList<>();
-        // 沿 x 展开
-        for (int dx = -1; dx <= 1; dx++) {
+        for (int a = -1; a <= 1; a++) {
             for (int dy = 1; dy <= 3; dy++) {
-                out.add(new BlockPos(core.x() + dx, core.y() + dy, core.z()));
-            }
-        }
-        // 沿 z 展开
-        for (int dz = -1; dz <= 1; dz++) {
-            for (int dy = 1; dy <= 3; dy++) {
-                out.add(new BlockPos(core.x(), core.y() + dy, core.z() + dz));
+                out.add(alongX
+                        ? new BlockPos(core.x() + a, core.y() + dy, core.z())
+                        : new BlockPos(core.x(), core.y() + dy, core.z() + a));
             }
         }
         return out;
@@ -278,8 +273,21 @@ public final class AlfheimPortalBehavior extends BukkitBlockBehavior implements
         return Boolean.TRUE.equals(value);
     }
 
-    /** 开门：只在 3×3 里放绿色粒子（不填方块）。 */
+    /** 开门：3×3 填成绿色传送门方块 + 粒子。 */
     private void openPortal(CEWorld ceWorld, org.bukkit.World bukkitWorld, BlockPos core) {
+        var gateKey = net.momirealms.craftengine.core.util.Key
+                .of("botania", "alfheim_portal_block");
+        boolean alongX = countFrameInPlane(ceWorld, core, true)
+                >= countFrameInPlane(ceWorld, core, false);
+        for (var p : portalInterior(core, alongX)) {
+            try {
+                net.momirealms.craftengine.bukkit.api.CraftEngineBlocks
+                        .place(new org.bukkit.Location(bukkitWorld, p.x(), p.y(), p.z()),
+                                gateKey, false);
+            } catch (Throwable ignored) {
+                // 放置失败跳过
+            }
+        }
         try {
             var loc = new org.bukkit.Location(bukkitWorld, core.x() + 0.5, core.y() + 2.0,
                     core.z() + 0.5);
@@ -291,9 +299,24 @@ public final class AlfheimPortalBehavior extends BukkitBlockBehavior implements
         }
     }
 
-    /** 关门：只停特效。 */
+    /** 关门：清掉 3×3 绿色门方块。 */
     private void closePortal(CEWorld ceWorld, org.bukkit.World bukkitWorld, BlockPos core,
                              org.bukkit.block.Block coreBlock) {
+        boolean alongX = countFrameInPlane(ceWorld, core, true)
+                >= countFrameInPlane(ceWorld, core, false);
+        for (var p : portalInterior(core, alongX)) {
+            try {
+                var b = bukkitWorld.getBlockAt(p.x(), p.y(), p.z());
+                var st = net.momirealms.craftengine.bukkit.api.CraftEngineBlocks
+                        .getCustomBlockState(b);
+                if (st != null && !st.isEmpty()
+                        && st.owner().value().id().value().equals("alfheim_portal_block")) {
+                    b.setType(Material.AIR, false);
+                }
+            } catch (Throwable ignored) {
+                // 忽略
+            }
+        }
         if (coreBlock != null) {
             var loc = coreBlock.getLocation().add(0.5, 2.0, 0.5);
             try {

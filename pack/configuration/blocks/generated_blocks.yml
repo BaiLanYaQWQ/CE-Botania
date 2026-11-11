@@ -18917,10 +18917,15 @@ blocks:
 
   botania:alfheim_portal_block:
     state:
-      state: "minecraft:lime_stained_glass_pane[north=false,east=false,south=false,west=false,waterlogged=false]"
-      model: botania:block/alfheim_gate
+      state: "minecraft:tripwire[attached=false,disarmed=true,east=true,north=false,south=false,west=false,powered=false]"
+      model: botania:block/empty
       transparent: true
       entity_culling: false
+      entity_renderer:
+        type: item_display
+        item: botania:render/alfheim_gate
+        display_transform: none
+        scale: 1.0
     settings:
       sounds:
         break: minecraft:block.glass.break
@@ -18932,4 +18937,4 @@ blocks:
       is_suffocating: false
       is_view_blocking: false
       fluid_state: false
-      item: botania:alfheim_portal_block
+

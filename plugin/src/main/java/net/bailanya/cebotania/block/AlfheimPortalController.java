@@ -48,8 +48,6 @@ public final class AlfheimPortalController extends ManaBlockController {
         }
         this.maintainTick++;
         if (this.maintainTick % 10 != 0) {
-            // 特效：每 tick 少量绿色粒子
-            spawnGateParticles();
             return;
         }
         var ceWorld = world();
@@ -111,31 +109,6 @@ public final class AlfheimPortalController extends ManaBlockController {
                     // 忽略
                 }
             }
-        }
-    }
-
-    /** 在中间 3×3 区域撒绿色粒子（像地狱门那种流动感）。 */
-    private void spawnGateParticles() {
-        var ceWorld = world();
-        var pos = position();
-        if (ceWorld == null || pos == null) {
-            return;
-        }
-        var bukkit = net.bailanya.cebotania.platform.Platform.bukkit(ceWorld);
-        if (bukkit == null) {
-            return;
-        }
-        try {
-            var random = java.util.concurrent.ThreadLocalRandom.current();
-            for (int i = 0; i < 4; i++) {
-                // 铺满中间 3×3（x-1..x+2, z-1..z+2, y+1..y+4）
-                double x = pos.x() - 1 + random.nextDouble() * 3.0;
-                double y = pos.y() + 1.0 + random.nextDouble() * 3.0;
-                double z = pos.z() - 1 + random.nextDouble() * 3.0;
-                bukkit.spawnParticle(org.bukkit.Particle.HAPPY_VILLAGER, x, y, z, 1, 0, 0, 0, 0);
-            }
-        } catch (Throwable ignored) {
-            // 忽略
         }
     }
 

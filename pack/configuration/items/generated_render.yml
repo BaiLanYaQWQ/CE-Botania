@@ -2896,3 +2896,11 @@ items:
       path: botania:block/alfheim_portal_activated
     data:
       item_name: '<!i><white><lang:botania.block.alfheim_portal>'
+
+  botania:render/alfheim_gate:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/alfheim_gate
+    data:
+      item_name: '<!i><white><lang:botania.block.alfheim_portal>'
