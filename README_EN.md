@@ -52,11 +52,38 @@ Forge (mod) to Paper (plugin) and claims no rights over the original assets.
 | **Spark system** | ✅ | Installs on pools/altars/plates, 16-block circular relay, particles only on transfer |
 | Decorative block collision | ⚠️ | Slabs/walls/fences still full-block |
 
-**Content**: 587 blocks / 1528 items / 610 crafting recipes / 61 tag groups
+**Content**: 700+ blocks / 1500+ items / 610+ crafting recipes / 61 tag groups
 
-**Still missing**: 5 functional flowers (teleport, immobilise, dungeon, anti-magic, mute), terrasteel,
-Alfheim portal, and unique behaviours for elven / gaia / redstone spreaders.
+**Still missing**: Gaia Guardian (boss fight), precise decorative block collision, pixie entities
+(trades currently swap directly), and unique behaviours for elven / gaia / redstone spreaders.
 
+
+## Progression pipeline
+
+```
+Mystical flower --break--> petal --+--> petal apothecary (fill with water)
+                                   |            |
+                                   |            v
+                                   |      functional / generating flowers
+                                   |            |
+                                   |          generate
+                                   |            v
+                                   |     mana spreader --> mana pool
+                                   |                          |
+                    +--------------+                          +--------------+
+                    v                                                        v
+              mana infusion                                        spark (16-block circle relay)
+        manasteel / mana diamond / mana pearl                           |
+                    |                                                    v
+                    v                                          runic altar --> runes
+        agglomeration plate --> terrasteel ingot                        |
+                    |                                                    v
+                    v                                          terrasteel tools & armour
+              Alfheim portal --> elementium / dreamwood / elf glass
+```
+
+> **Note**: only **mystical flowers / shiny flowers / double flowers / mushrooms** drop petals.
+> Vanilla flowers do **not** drop Botania petals.
 
 ## Requirements
 
