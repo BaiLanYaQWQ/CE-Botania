@@ -2720,6 +2720,16 @@ items:
       path: botania:item/terra_axe
     data:
       item_name: '<!i><white><lang:botania.item.terra_axe>'
+      max_damage: 2300
+      enchantable:
+        value: 26
+      tool:
+        default_mining_speed: 9.0
+        damage_per_block_break: 1
+        rules:
+          - blocks: '#minecraft:mineable/axe'
+            speed: 9.0
+            correct_for_drops: true
     settings:
       tags:
         - botania:mana_using_items
@@ -2730,6 +2740,16 @@ items:
       path: botania:item/terra_pick
     data:
       item_name: '<!i><white><lang:botania.item.terra_pick>'
+      max_damage: 2300
+      enchantable:
+        value: 26
+      tool:
+        default_mining_speed: 9.0
+        damage_per_block_break: 1
+        rules:
+          - blocks: '#minecraft:mineable/pickaxe'
+            speed: 9.0
+            correct_for_drops: true
     settings:
       tags:
         - botania:mana_using_items
@@ -2748,6 +2768,9 @@ items:
     data:
       item_name: '<!i><white><lang:botania.item.terra_sword>'
       max_stack_size: 1
+      max_damage: 2300
+      enchantable:
+        value: 26
     settings:
       tags:
         - botania:mana_using_items

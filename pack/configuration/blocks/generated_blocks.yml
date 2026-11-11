@@ -128,9 +128,37 @@ blocks:
             - type: item
               item: botania:alchemy_catalyst
   botania:alfheim_portal:
-    state:
-      auto_state: solid
-      model: botania:block/alfheim_portal
+    behavior:
+      type: botania:alfheim_portal
+    states:
+      properties:
+        open:
+          type: boolean
+          default: false
+      appearances:
+        closed:
+          state: "minecraft:oak_leaves[distance=2,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/alfheim_portal
+            display_transform: none
+        open:
+          state: "minecraft:oak_leaves[distance=3,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/alfheim_portal_activated
+            display_transform: none
+      variants:
+        'open=false':
+          appearance: closed
+        'open=true':
+          appearance: open
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -140,14 +168,11 @@ blocks:
         fall: minecraft:block.stone.fall
       hardness: 1.5
       resistance: 3.0
-      require_correct_tools: false
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
       item: botania:alfheim_portal
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:alfheim_portal
+
   botania:animated_torch:
     state:
       auto_state:
@@ -4579,7 +4604,8 @@ blocks:
               item: botania:gaia_head
   botania:gaia_pylon:
     state:
-      state: "minecraft:polished_blackstone_wall[up=true,north=none,east=none,south=none,west=none,waterlogged=false]"
+      state: "minecraft:spruce_leaves[distance=5,persistent=true,waterlogged=false]"
+      model: botania:block/empty
       transparent: true
       entity_culling: false
       entity_renderer:
@@ -4588,7 +4614,7 @@ blocks:
         display_transform: none
         scale: 1.0
         translation: '0,0,0'
-        rotation: '0,0,0'
+        rotation: '0,180,0'
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -7773,7 +7799,8 @@ blocks:
               item: botania:mana_glass_pane
   botania:mana_pylon:
     state:
-      state: "minecraft:mud_brick_wall[up=true,north=none,east=none,south=none,west=none,waterlogged=false]"
+      state: "minecraft:oak_leaves[distance=2,persistent=true,waterlogged=false]"
+      model: botania:block/empty
       transparent: true
       entity_culling: false
       entity_renderer:
@@ -7782,7 +7809,7 @@ blocks:
         display_transform: none
         scale: 1.0
         translation: '0,0,0'
-        rotation: '0,0,0'
+        rotation: '0,180,0'
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -11610,7 +11637,8 @@ blocks:
               item: botania:narslimmus
   botania:natura_pylon:
     state:
-      state: "minecraft:end_stone_brick_wall[up=true,north=none,east=none,south=none,west=none,waterlogged=false]"
+      state: "minecraft:birch_leaves[distance=4,persistent=true,waterlogged=false]"
+      model: botania:block/empty
       transparent: true
       entity_culling: false
       entity_renderer:
@@ -11619,7 +11647,7 @@ blocks:
         display_transform: none
         scale: 1.0
         translation: '0,0,0'
-        rotation: '0,0,0'
+        rotation: '0,180,0'
     settings:
       sounds:
         break: minecraft:block.stone.break
@@ -17949,40 +17977,33 @@ blocks:
             - type: item
               item: botania:tangleberrie_chibi
   botania:terra_plate:
+    behavior:
+      type: botania:terra_plate
     state:
-      auto_state:
-        type: sugar_cane
-        id: transparent
+      state: "minecraft:jungle_leaves[distance=6,persistent=true,waterlogged=false]"
+      model: botania:block/empty
       transparent: true
       entity_culling: false
       entity_renderer:
         type: item_display
         item: botania:render/terra_plate
         display_transform: none
-        scale: 1.0
-        translation: '0,0,0'
-        rotation: '0,180,0'
     settings:
+      name: '<lang:botania.block.terra_plate>'
       sounds:
-        break: minecraft:block.stone.break
-        step: minecraft:block.stone.step
-        place: minecraft:block.stone.place
-        hit: minecraft:block.stone.hit
-        fall: minecraft:block.stone.fall
-      hardness: 1.5
-      resistance: 3.0
-      require_correct_tools: false
+        break: minecraft:block.metal.break
+        step: minecraft:block.metal.step
+        place: minecraft:block.metal.place
+        hit: minecraft:block.metal.hit
+        fall: minecraft:block.metal.fall
+      hardness: 3.0
+      resistance: 10.0
       can_occlude: false
       is_suffocating: false
       is_view_blocking: false
       fluid_state: false
       item: botania:terra_plate
-    loot:
-      pools:
-        - rolls: 1
-          entries:
-            - type: item
-              item: botania:terra_plate
+
   botania:terrasteel_block:
     state:
       auto_state: solid
@@ -18893,3 +18914,22 @@ blocks:
       fluid_state: false
       item: botania:yellow_shiny_flower
     loot: {}
+
+  botania:alfheim_portal_block:
+    state:
+      state: "minecraft:lime_stained_glass_pane[north=false,east=false,south=false,west=false,waterlogged=false]"
+      model: botania:block/alfheim_gate
+      transparent: true
+      entity_culling: false
+    settings:
+      sounds:
+        break: minecraft:block.glass.break
+        place: minecraft:block.glass.place
+        hit: minecraft:block.glass.hit
+      hardness: 0.0
+      resistance: 0.0
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      fluid_state: false
+      item: botania:alfheim_portal_block

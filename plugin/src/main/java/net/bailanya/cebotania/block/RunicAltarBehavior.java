@@ -61,7 +61,48 @@ public final class RunicAltarBehavior extends BukkitBlockBehavior implements Ent
         }
         ItemStack held = bukkit.getInventory().getItemInMainHand();
 
-        // 森林法杖：点火
+        // 手持活石 → 魔力注满后放上去
+        if (BotaniaItems.idOf(held).equals("botania:livingrock")) {
+            if (!altar.hasLivingrock()) {
+                var recipe = altar.currentRecipe();
+                if (recipe == null) {
+                    Platform.send(bukkit, "<red>材料还没凑齐，先投配方材料");
+                } else if (altar.mana() < recipe.mana()) {
+                    Platform.send(bukkit, "<red>魔力还没注满："
+                            + Platform.mana(altar.mana()) + "/" + Platform.mana(recipe.mana())
+                            + "（等发射器/火花灌满再放活石）");
+                } else {
+                    altar.installLivingrock();
+                    held.setAmount(held.getAmount() - 1);
+                    bukkit.getInventory().setItemInMainHand(held.getAmount() <= 0 ? null : held);
+                    Platform.send(bukkit, "<green>活石已放入祭坛 <gray>· 再用森林法杖右键点火");
+                }
+            } else {
+                Platform.send(bukkit, "<gray>祭坛上已经有活石了");
+            }
+            return InteractionResult.SUCCESS_AND_CANCEL;
+        }
+
+        // 手持火花 → 装到祭坛上
+        if (BotaniaItems.idOf(held).equals("botania:spark")) {
+            if (altar.hasSpark()) {
+                Platform.send(bukkit, "<gray>祭坛上已经有火花了");
+                return InteractionResult.SUCCESS_AND_CANCEL;
+            }
+            var sparkWorld = Platform.bukkit(context.getLevel());
+            var sparkPos = context.getClickedPos();
+            if (sparkWorld != null) {
+                SparkNetwork.spawn(sparkWorld, sparkPos.x(), sparkPos.y(), sparkPos.z(),
+                        "符文祭坛 " + sparkPos.x() + "," + sparkPos.y() + "," + sparkPos.z());
+                altar.installSpark();
+                held.setAmount(held.getAmount() - 1);
+                bukkit.getInventory().setItemInMainHand(held.getAmount() <= 0 ? null : held);
+                Platform.send(bukkit, "<light_purple>火花已装在符文祭坛上");
+            }
+            return InteractionResult.SUCCESS_AND_CANCEL;
+        }
+
+        // 森林法杖：潜行拆火花 / 普通点火
         if (BotaniaItems.holdingWand(bukkit)) {
             ignite(bukkit, altar);
             return InteractionResult.SUCCESS_AND_CANCEL;
@@ -108,46 +149,57 @@ public final class RunicAltarBehavior extends BukkitBlockBehavior implements Ent
         return InteractionResult.SUCCESS_AND_CANCEL;
     }
 
-    /** 点火：先看配方，再从附近魔力池抽魔力合成。 */
+    /** 点火：材料齐 + 魔力满 + 有活石，直接成型。 */
     private void ignite(org.bukkit.entity.Player player, RunicAltarController altar) {
-        RecipeBook.Runic recipe = this.plugin.recipes().matchRunic(altar.items());
+        if (altar.items().isEmpty()) {
+            Platform.send(player, "<gray>祭坛是空的 <dark_gray>（手持材料投入）");
+            return;
+        }
+        var recipe = altar.currentRecipe();
         if (recipe == null) {
             Platform.send(player, "<red>材料不对，凑不出任何符文配方");
             return;
         }
-        long need = recipe.mana();
-        ManaPoolController pool = nearestPool(altar, 8);
-        if (pool == null) {
-            Platform.send(player, "<red>附近 8 格内没有魔力池");
+        if (altar.mana() < recipe.mana()) {
+            Platform.send(player, "<red>魔力还没注满："
+                    + Platform.mana(altar.mana()) + "/" + Platform.mana(recipe.mana())
+                    + "（用发射器或火花往祭坛里灌）");
             return;
         }
-        if (pool.mana() < need) {
-            Platform.send(player, "<red>魔力不够：需要 <white>" + Platform.mana(need)
-                    + " <red>，池里有 <white>" + Platform.mana(pool.mana()));
+        if (!altar.hasLivingrock()) {
+            Platform.send(player, "<red>还没放活石 <gray>（魔力已满，手持活石右键祭坛放上去）");
             return;
         }
-        pool.extract(need);
-        ItemStack result = BotaniaItems.create(recipe.output(), recipe.count());
-        if (result == null) {
+        var item = BotaniaItems.create(recipe.output(), recipe.count());
+        if (item == null) {
             Platform.send(player, "<red>产物物品不存在：" + recipe.output());
             return;
         }
         var entity = altar.blockEntity();
-        var location = entity == null ? player.getLocation()
-                : Platform.blockAt(entity.world, entity.pos).getLocation().add(0.5, 1.0, 0.5);
-        var drop = location.getWorld().dropItem(location, result);
+        var world = altar.world();
+        var pos = altar.position();
+        if (entity == null || world == null || pos == null) {
+            return;
+        }
+        var block = Platform.blockAt(world, pos);
+        if (block == null) {
+            return;
+        }
+        var location = block.getLocation().add(0.5, 1.0, 0.5);
+        var drop = block.getWorld().dropItem(location, item);
         drop.setPickupDelay(10);
         try {
-            location.getWorld().spawnParticle(org.bukkit.Particle.ENCHANT, location, 30,
-                    0.4, 0.4, 0.4, 0.4);
-            location.getWorld().playSound(location, org.bukkit.Sound.BLOCK_ENCHANTMENT_TABLE_USE,
-                    0.8f, 1.2f);
+            block.getWorld().spawnParticle(org.bukkit.Particle.ENCHANT, location, 40,
+                    0.5, 0.5, 0.5, 0.4);
+            block.getWorld().playSound(location,
+                    org.bukkit.Sound.BLOCK_ENCHANTMENT_TABLE_USE, 1f, 1.2f);
         } catch (Throwable ignored) {
             // 粒子/音效缺失不影响功能
         }
         altar.clear();
         Platform.send(player, "<green>符文完成！ <gray>（"
-                + BotaniaItems.displayNameForMessage(recipe.output()) + " ×" + recipe.count() + "）");
+                + BotaniaItems.displayNameForMessage(recipe.output())
+                + " ×" + recipe.count() + "）");
     }
 
     private ManaPoolController nearestPool(RunicAltarController altar, int radius) {

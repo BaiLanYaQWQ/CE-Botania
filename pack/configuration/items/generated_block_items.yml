@@ -72,6 +72,16 @@ items:
     behavior:
       type: block_item
       block: botania:animated_torch
+  botania:apothecary_deepslate:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/apothecary_deepslate
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_deepslate>'
+    behavior:
+      type: block_item
+      block: botania:apothecary_deepslate
   botania:apothecary_default:
     material: paper
     model:
@@ -82,6 +92,106 @@ items:
     behavior:
       type: block_item
       block: botania:apothecary_default
+  botania:apothecary_desert:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/apothecary_desert
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_desert>'
+    behavior:
+      type: block_item
+      block: botania:apothecary_desert
+  botania:apothecary_forest:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/apothecary_forest
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_forest>'
+    behavior:
+      type: block_item
+      block: botania:apothecary_forest
+  botania:apothecary_fungal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/apothecary_fungal
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_fungal>'
+    behavior:
+      type: block_item
+      block: botania:apothecary_fungal
+  botania:apothecary_livingrock:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/apothecary_livingrock
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_livingrock>'
+    behavior:
+      type: block_item
+      block: botania:apothecary_livingrock
+  botania:apothecary_mesa:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/apothecary_mesa
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_mesa>'
+    behavior:
+      type: block_item
+      block: botania:apothecary_mesa
+  botania:apothecary_mossy:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/apothecary_mossy
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_mossy>'
+    behavior:
+      type: block_item
+      block: botania:apothecary_mossy
+  botania:apothecary_mountain:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/apothecary_mountain
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_mountain>'
+    behavior:
+      type: block_item
+      block: botania:apothecary_mountain
+  botania:apothecary_plains:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/apothecary_plains
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_plains>'
+    behavior:
+      type: block_item
+      block: botania:apothecary_plains
+  botania:apothecary_swamp:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/apothecary_swamp
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_swamp>'
+    behavior:
+      type: block_item
+      block: botania:apothecary_swamp
+  botania:apothecary_taiga:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:item/apothecary_taiga
+    data:
+      item_name: '<!i><white><lang:botania.block.apothecary_taiga>'
+    behavior:
+      type: block_item
+      block: botania:apothecary_taiga
   botania:avatar:
     material: paper
     model:
@@ -6488,3 +6598,14 @@ items:
     behavior:
       type: block_item
       block: botania:yellow_shiny_flower
+
+  botania:alfheim_portal_block:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/alfheim_portal_activated
+    data:
+      item_name: '<!i><white><lang:botania.block.alfheim_portal>'
+    settings:
+      tags:
+        - botania:no_item

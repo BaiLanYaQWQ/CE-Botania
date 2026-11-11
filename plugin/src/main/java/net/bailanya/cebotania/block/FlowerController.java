@@ -35,6 +35,9 @@ public final class FlowerController extends ManaBlockController {
     /** 上一个吃掉的燃料是什么（给玩家看）。 */
     private String burningFuel;
 
+    /** 被弱磁兰抑制时停止一切产出。 */
+    private boolean suppressed;
+
     /** 方块被悄悄清掉（例如支撑没了）时，自己从调度里退出来。 */
     private int staleTicks;
 
@@ -51,6 +54,14 @@ public final class FlowerController extends ManaBlockController {
 
     public FlowerType type() {
         return this.type;
+    }
+
+    public boolean suppressed() {
+        return this.suppressed;
+    }
+
+    public void setSuppressed(boolean value) {
+        this.suppressed = value;
     }
 
     public int ticks() {
@@ -114,6 +125,9 @@ public final class FlowerController extends ManaBlockController {
             return;
         }
 
+        if (this.suppressed) {
+            return;   // 被弱磁兰压制：不产魔、不做事
+        }
         this.tickCounter++;
         if (this.tickCounter % Math.max(1, this.type.intervalTicks) != 0) {
             return;

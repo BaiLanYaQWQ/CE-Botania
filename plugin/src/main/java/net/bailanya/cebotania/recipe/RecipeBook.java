@@ -31,6 +31,10 @@ public final class RecipeBook {
     }
 
     /** 符文祭坛配方。 */
+    /** 精灵交易条目。 */
+    public record Elven(String input, String tag, String output, int count) {
+    }
+
     public record Runic(String id, List<Ingredient> ingredients, String output, int count, long mana) {
     }
 
@@ -38,6 +42,7 @@ public final class RecipeBook {
     private final List<Apothecary> apothecary = new ArrayList<>();
     private final List<Infusion> infusions = new ArrayList<>();
     private final List<Runic> runics = new ArrayList<>();
+    private final java.util.List<Elven> elvens = new java.util.ArrayList<>();
 
     public Tags tags() {
         return this.tags;
@@ -69,6 +74,7 @@ public final class RecipeBook {
         book.loadApothecary(loader);
         book.loadInfusions(loader);
         book.loadRunics(loader);
+        book.loadElven(loader);
         return book;
     }
 
@@ -235,6 +241,55 @@ public final class RecipeBook {
             }
         }
         return null;
+    }
+
+    /** 精灵交易：单件物品匹配。 */
+    public Elven matchElven(List<String> items) {
+        if (items.size() != 1) {
+            return null;
+        }
+        String target = items.get(0);
+        for (Elven elven : this.elvens) {
+            if (elven.input() != null && elven.input().equals(target)) {
+                return elven;
+            }
+            if (elven.tag() != null && this.tags.contains(elven.tag(), target)) {
+                return elven;
+            }
+        }
+        return null;
+    }
+
+    private void loadElven(ClassLoader loader) {
+        try (var in = loader.getResourceAsStream("data/recipes/elven_trade.json")) {
+            if (in == null) {
+                return;
+            }
+            var reader = new java.io.InputStreamReader(in, java.nio.charset.StandardCharsets.UTF_8);
+            var array = com.google.gson.JsonParser.parseReader(reader).getAsJsonArray();
+            for (var element : array) {
+                var object = element.getAsJsonObject();
+                var ingredients = object.getAsJsonArray("ingredients");
+                var output = object.getAsJsonObject("output");
+                if (ingredients == null || ingredients.isEmpty() || output == null) {
+                    continue;
+                }
+                var first = ingredients.get(0).getAsJsonObject();
+                String inputId = first.has("item") ? first.get("item").getAsString() : null;
+                String inputTag = first.has("tag") ? first.get("tag").getAsString() : null;
+                if (inputId == null && inputTag == null) {
+                    continue;
+                }
+                if (!output.has("item")) {
+                    continue;
+                }
+                String outId = output.get("item").getAsString();
+                int count = output.has("count") ? output.get("count").getAsInt() : 1;
+                this.elvens.add(new Elven(inputId, inputTag, outId, count));
+            }
+        } catch (Throwable ignored) {
+            // 数据缺失就跳过
+        }
     }
 
     /** 符文祭坛：材料多重集合匹配。 */

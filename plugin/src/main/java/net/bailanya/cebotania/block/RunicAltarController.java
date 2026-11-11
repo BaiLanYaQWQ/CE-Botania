@@ -22,6 +22,11 @@ public final class RunicAltarController extends ManaBlockController {
 
     private final List<String> items = new ArrayList<>();
 
+    /** 祭坛上有没有装火花。 */
+    private boolean hasSpark;
+    /** 魔力满了之后有没有放入活石（上游的最后一步）。 */
+    private boolean hasLivingrock;
+
     /** 环绕在祭坛上方的物品展示实体（每个投料一个）。 */
     private final List<org.bukkit.entity.ItemDisplay> displays = new ArrayList<>();
     /** 旋转角度。 */
@@ -63,12 +68,21 @@ public final class RunicAltarController extends ManaBlockController {
         if (accepted <= 0) {
             return 0;
         }
+        // 上游：魔力注满后不自动成型，要再放入一块活石、然后用森林法杖点
         var recipe = currentRecipe();
-        if (recipe == null || this.mana < recipe.mana()) {
-            return accepted;
+        if (recipe != null && this.mana >= recipe.mana() && !this.hasLivingrock) {
+            // 满魔力提示（只提示一次，靠调用方节流）
         }
-        craft(recipe);
         return accepted;
+    }
+
+    public boolean hasLivingrock() {
+        return this.hasLivingrock;
+    }
+
+    public void installLivingrock() {
+        this.hasLivingrock = true;
+        markChanged();
     }
 
     /** 成型：清空材料、弹出产物。 */
@@ -122,6 +136,7 @@ public final class RunicAltarController extends ManaBlockController {
     public void clear() {
         this.items.clear();
         this.mana = 0;
+        this.hasLivingrock = false;
         refreshDisplays();
         markChanged();
     }
@@ -132,8 +147,33 @@ public final class RunicAltarController extends ManaBlockController {
         super.onUnload();
     }
 
+    /** 宿主被拆时，把火花掉出来。 */
+    private void dropSpark() {
+        if (!this.hasSpark) {
+            return;
+        }
+        this.hasSpark = false;
+        try {
+            var w = net.bailanya.cebotania.platform.Platform.bukkit(world());
+            var pos = position();
+            if (w == null || pos == null) {
+                return;
+            }
+            // 先删掉上面那个火花实体
+            net.bailanya.cebotania.block.SparkNetwork.despawn(w, pos.x(), pos.y(), pos.z());
+            var stack = net.bailanya.cebotania.platform.BotaniaItems.create("botania:spark", 1);
+            if (stack != null) {
+                w.dropItem(new org.bukkit.Location(w, pos.x() + 0.5, pos.y() + 0.5,
+                        pos.z() + 0.5), stack);
+            }
+        } catch (Throwable ignored) {
+            // 掉落失败不影响拆除
+        }
+    }
+
     @Override
     public void onRemove() {
+        dropSpark();
         clearDisplays();
         super.onRemove();
     }
@@ -218,13 +258,31 @@ public final class RunicAltarController extends ManaBlockController {
         this.displays.clear();
     }
 
+    public boolean hasSpark() {
+        return this.hasSpark;
+    }
+
+    public void removeSpark() {
+        this.hasSpark = false;
+        markChanged();
+    }
+
+    public void installSpark() {
+        this.hasSpark = true;
+        markChanged();
+    }
+
     @Override
     protected void saveExtra(CompoundTag tag) {
+        tag.putBoolean("hasSpark", this.hasSpark);
+        tag.putBoolean("hasLivingrock", this.hasLivingrock);
         tag.putString(ITEMS_KEY, String.join(",", this.items));
     }
 
     @Override
     protected void loadExtra(CompoundTag tag) {
+        this.hasSpark = tag.getBoolean("hasSpark", false);
+        this.hasLivingrock = tag.getBoolean("hasLivingrock", false);
         this.items.clear();
         String joined = tag.getString(ITEMS_KEY, "");
         if (!joined.isEmpty()) {

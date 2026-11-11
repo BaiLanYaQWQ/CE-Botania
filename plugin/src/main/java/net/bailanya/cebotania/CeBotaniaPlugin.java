@@ -5,6 +5,8 @@ import net.bailanya.cebotania.block.FlowerBehavior;
 import net.bailanya.cebotania.block.GroundPlantBehavior;
 import net.bailanya.cebotania.block.PureDaisyBehavior;
 import net.bailanya.cebotania.block.RunicAltarBehavior;
+import net.bailanya.cebotania.block.TerrasteelBehavior;
+import net.bailanya.cebotania.block.AlfheimPortalBehavior;
 import net.bailanya.cebotania.block.ManaPoolBehavior;
 import net.bailanya.cebotania.block.SpreaderBehavior;
 import net.bailanya.cebotania.command.BotaniaCommand;
@@ -48,6 +50,8 @@ public final class CeBotaniaPlugin extends JavaPlugin {
         BlockBehaviors.register(FlowerBehavior.KEY, FlowerBehavior.flowerFactory());
         BlockBehaviors.register(PureDaisyBehavior.KEY, PureDaisyBehavior.pureDaisyFactory());
         BlockBehaviors.register(RunicAltarBehavior.KEY, RunicAltarBehavior.runicFactory(this));
+        BlockBehaviors.register(TerrasteelBehavior.KEY, TerrasteelBehavior.factory(this));
+        BlockBehaviors.register(AlfheimPortalBehavior.KEY, AlfheimPortalBehavior.factory(this));
         BlockBehaviors.register(ManaPoolBehavior.KEY, ManaPoolBehavior.factory(this));
         BlockBehaviors.register(SpreaderBehavior.KEY, SpreaderBehavior.factory());
         BlockBehaviors.register(ApothecaryBehavior.KEY, ApothecaryBehavior.factory(this));
@@ -63,10 +67,33 @@ public final class CeBotaniaPlugin extends JavaPlugin {
 
         // 4) 自检（默认开；不想看日志就关掉 debug.self-test）
         saveDefaultConfig();
-        if (getConfig().getBoolean("debug.self-test", true)) {
+        if (getConfig().getBoolean("debug.self-test", false)) {
             Bukkit.getScheduler().runTaskLater(this,
                     () -> new net.bailanya.cebotania.debug.SelfTest(this).run(), 100L);
         }
+
+        // 4.6) 火花网络：每 10 tick 搬运一次魔力
+        Bukkit.getScheduler().runTaskTimer(this, () -> {
+            for (var world : Bukkit.getWorlds()) {
+                try {
+                    net.bailanya.cebotania.block.SparkNetwork.tick(world);
+                } catch (Throwable ignored) {
+                    // 单个世界出错不影响其它世界
+                }
+            }
+        }, 40L, 10L);
+
+        // 4.7) 精灵交易：每 10 tick 扫一遍传送门里的掉落物
+        Bukkit.getScheduler().runTaskTimer(this, () -> {
+            for (var w : Bukkit.getWorlds()) {
+                try {
+                    net.bailanya.cebotania.block.AlfheimTrade.tick(this, w);
+                    net.bailanya.cebotania.block.AlfheimTrade.drawPortals(w);
+                } catch (Throwable ignored) {
+                    // 单世界出错不影响其它世界
+                }
+            }
+        }, 60L, 10L);
 
         // 5) 事件：打花掉花瓣
         Bukkit.getPluginManager().registerEvents(
@@ -77,6 +104,10 @@ public final class CeBotaniaPlugin extends JavaPlugin {
                 new net.bailanya.cebotania.listener.TickAutoRegister(this), this);
         Bukkit.getPluginManager().registerEvents(
                 new net.bailanya.cebotania.listener.SoilTurning(), this);
+        Bukkit.getPluginManager().registerEvents(
+                new net.bailanya.cebotania.listener.SparkListener(), this);
+        Bukkit.getPluginManager().registerEvents(
+                new net.bailanya.cebotania.listener.TerraTools(), this);
         Bukkit.getPluginManager().registerEvents(
                 new net.bailanya.cebotania.lexicon.LexiconListener(this.lexicon), this);
         this.manaRepair = new net.bailanya.cebotania.listener.ManaRepair(this);

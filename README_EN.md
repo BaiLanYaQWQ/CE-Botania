@@ -10,9 +10,9 @@
 
 **Language**: [中文](README.md) | English (this page)
 
-📌 **Latest update**: [Changelog 2026-11-10](docs/CHANGELOG-2026-11-10-EN.md) · [中文更新日志](docs/更新日志-2026-11-10.md)
+📌 **Latest update**: [Changelog 2026-11-11](docs/CHANGELOG-2026-11-11-EN.md) · [中文更新日志](docs/更新日志-2026-11-11.md)
 
-📚 Previous: [2026-11-09](docs/CHANGELOG-2026-11-09-EN.md)
+📚 Previous: [2026-11-10](docs/CHANGELOG-2026-11-10-EN.md) · [2026-11-09](docs/CHANGELOG-2026-11-09-EN.md)
 
 ---
 
@@ -47,7 +47,9 @@ Forge (mod) to Paper (plugin) and claims no rights over the original assets.
 | Manasteel tools & armour | ✅ | Values match upstream, mana repairs durability |
 | Wand of the Forest | ✅ | Inspect mana, show flower info, bind flowers, rotate spreaders |
 | **Lexicon** | ✅ | **990+ pages, fully Chinese**, with recipes, crafting grids and implementation status |
-| Terrasteel / Alfheim portal | ⚠️ | Data extracted, behaviour not implemented |
+| **Terrasteel line** | ✅ | Agglomeration plate + three tools (3×3 mine / tree felling / beam) |
+| **Alfheim portal** | ✅ | 11-block livingwood frame (both orientations) + states + 14 trades |
+| **Spark system** | ✅ | Installs on pools/altars/plates, 16-block circular relay, particles only on transfer |
 | Decorative block collision | ⚠️ | Slabs/walls/fences still full-block |
 
 **Content**: 587 blocks / 1528 items / 610 crafting recipes / 61 tag groups

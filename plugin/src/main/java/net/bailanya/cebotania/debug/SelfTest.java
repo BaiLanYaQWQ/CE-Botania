@@ -38,6 +38,8 @@ public final class SelfTest {
             this.plugin.getLogger().warning("[自检] 没有可用世界，跳过");
             return;
         }
+        // 默认只统计不放置；需要实测时把 PLACE_TEST_BLOCKS 改成 true
+        final boolean PLACE_TEST_BLOCKS = false;
         int x = 96;
         int y = world.getHighestBlockYAt(x, 96) + 2;
         int z = 96;
@@ -58,10 +60,10 @@ public final class SelfTest {
         world.getBlockAt(x + 2, y - 1, z).setType(Material.GRASS_BLOCK, false);
         world.getBlockAt(x + 3, y - 1, z).setType(Material.GRASS_BLOCK, false);
 
-        boolean apothecary = place(world, x, y, z, "botania:apothecary_default");
-        boolean flower = place(world, x + 1, y, z, "botania:endoflame");
-        boolean spreader = place(world, x + 2, y, z, "botania:mana_spreader");
-        boolean pool = place(world, x + 3, y, z, "botania:mana_pool");
+        boolean apothecary = PLACE_TEST_BLOCKS && place(world, x, y, z, "botania:apothecary_default");
+        boolean flower = PLACE_TEST_BLOCKS && place(world, x + 1, y, z, "botania:endoflame");
+        boolean spreader = PLACE_TEST_BLOCKS && place(world, x + 2, y, z, "botania:mana_spreader");
+        boolean pool = PLACE_TEST_BLOCKS && place(world, x + 3, y, z, "botania:mana_pool");
         this.plugin.getLogger().info("[自检] 调度池方块实体数="
                 + net.bailanya.cebotania.core.BotaniaRuntime.tickBus().size());
         this.plugin.getLogger().info("[自检] 摆件于 (" + x + "," + y + "," + z + ")：花药台="

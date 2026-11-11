@@ -55,13 +55,56 @@ public final class ManaRepair implements Listener {
     }
 
     public void setStored(ItemStack stack, long amount) {
+        if (stack == null || !isManasteel(stack)) {
+            return;   // 法杖之类的普通物品不写魔力标记
+        }
         ItemMeta meta = stack.getItemMeta();
         if (meta == null) {
             return;
         }
         long clamped = Math.max(0, Math.min(CAPACITY, amount));
         meta.getPersistentDataContainer().set(this.key, PersistentDataType.LONG, clamped);
+        applyLore(meta, clamped);
         stack.setItemMeta(meta);
+    }
+
+    /** 把"魔力 X / Y"写进物品 lore。 */
+    private void applyLore(ItemMeta meta, long stored) {
+        try {
+            var lore = meta.lore();
+            if (lore == null) {
+                lore = new java.util.ArrayList<>();
+            } else {
+                lore = new java.util.ArrayList<>(lore);
+            }
+            // 移除旧的魔力行
+            lore.removeIf(line -> line.toString().contains("魔力"));
+            var component = net.kyori.adventure.text.minimessage.MiniMessage.miniMessage().deserialize(
+                    "<dark_gray>魔力 <aqua>" + stored + "</aqua><dark_gray> / " + CAPACITY + "</dark_gray>");
+            lore.add(component);
+            meta.lore(lore);
+        } catch (Throwable ignored) {
+            // 老版本 API 差异就跳过
+        }
+    }
+
+    /** 打开背包时刷新所有魔钢装备的 lore。 */
+    @EventHandler(priority = EventPriority.MONITOR)
+    public void onOpen(org.bukkit.event.inventory.InventoryOpenEvent event) {
+        if (!(event.getPlayer() instanceof org.bukkit.entity.Player)) {
+            return;
+        }
+        for (ItemStack stack : event.getInventory().getContents()) {
+            if (stack != null && isManasteel(stack)) {
+                setStored(stack, stored(stack));   // 触发 lore 刷新
+            }
+        }
+        // 手里的也刷
+        var player = event.getPlayer();
+        setStored(player.getInventory().getItemInMainHand(),
+                stored(player.getInventory().getItemInMainHand()));
+        setStored(player.getInventory().getItemInOffHand(),
+                stored(player.getInventory().getItemInOffHand()));
     }
 
     /** 往装备里灌魔力，返回实际吃进去的量。 */

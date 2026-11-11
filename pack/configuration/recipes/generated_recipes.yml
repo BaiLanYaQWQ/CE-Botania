@@ -63,7 +63,7 @@ recipes:
       - ' C '
       - 'CCC'
     ingredients:
-      'C': 'minecraft:cobbled_deepslate'
+      'C': 'minecraft:cobblestone'
       'P': '#botania:petals'
     result:
       id: botania:apothecary_default
@@ -7212,3 +7212,12 @@ recipes:
     result:
       id: botania:yellow_shiny_flower
       count: 1
+
+  botania:terrasteel_nugget_from_ingot:
+    type: shapeless
+    category: misc
+    ingredients:
+      - 'botania:terrasteel_ingot'
+    result:
+      id: 'botania:terrasteel_nugget'
+      count: 9

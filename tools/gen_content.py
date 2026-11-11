@@ -299,6 +299,27 @@ def gen_items(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str]
         )
         if unstackable(name):
             lines.append("      max_stack_size: 1")
+        # 泰拉工具：上游 TERRASTEEL(2300, 9, 4, 4, 26)
+        if name in ("terra_sword", "terra_pick", "terra_axe"):
+            lines.append("      max_damage: 2300")
+            lines.append("      enchantable:")
+            lines.append("        value: 26")
+            if name == "terra_pick":
+                lines.append("      tool:")
+                lines.append("        default_mining_speed: 9.0")
+                lines.append("        damage_per_block_break: 1")
+                lines.append("        rules:")
+                lines.append("          - blocks: '#minecraft:mineable/pickaxe'")
+                lines.append("            speed: 9.0")
+                lines.append("            correct_for_drops: true")
+            elif name == "terra_axe":
+                lines.append("      tool:")
+                lines.append("        default_mining_speed: 9.0")
+                lines.append("        damage_per_block_break: 1")
+                lines.append("        rules:")
+                lines.append("          - blocks: '#minecraft:mineable/axe'")
+                lines.append("            speed: 9.0")
+                lines.append("            correct_for_drops: true")
         stats = tool_stats(name)
         if stats is not None:
             # 耐久与附魔能力按上游表

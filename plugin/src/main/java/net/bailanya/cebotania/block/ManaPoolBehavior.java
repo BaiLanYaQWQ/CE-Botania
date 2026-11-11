@@ -87,6 +87,19 @@ public final class ManaPoolBehavior extends BukkitBlockBehavior implements Entit
                     + " <dark_gray>(" + Math.round(pool.fillRatio() * 100) + "%)");
             return InteractionResult.SUCCESS_AND_CANCEL;
         }
+        // 手持火花 → 安装
+        if (BotaniaItems.idOf(held).equals("botania:spark")) {
+            if (pool.hasSpark()) {
+                Platform.send(bukkit, "<gray>这个池子已经有火花了");
+                return InteractionResult.SUCCESS_AND_CANCEL;
+            }
+            pool.installSpark();
+            held.setAmount(held.getAmount() - 1);
+            bukkit.getInventory().setItemInMainHand(held.getAmount() <= 0 ? null : held);
+            Platform.send(bukkit, "<light_purple>火花 #" + pool.sparkId()
+                    + " <gray>已安装 · 会自动给附近 6 格内的耗魔方块供魔");
+            return InteractionResult.SUCCESS_AND_CANCEL;
+        }
         // 手持魔钢装备：从池子里给它灌魔力（装备用它顶耐久）
         if (net.bailanya.cebotania.listener.ManaRepair.isManasteel(held)) {
             var repair = this.plugin.manaRepair();

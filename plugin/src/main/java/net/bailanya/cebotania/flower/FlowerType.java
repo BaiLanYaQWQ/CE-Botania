@@ -145,6 +145,11 @@ public final class FlowerType {
             case "tangle" -> "把附近的生物拽向花心并黏住";
             case "dream" -> "让附近的怪物变慢、变得虚弱";
             case "marble" -> "把附近的石头变成变质岩";
+            case "lens" -> "压制附近的花，让它们停止产魔";
+            case "mute" -> "降低附近的音量（近似实现，插件端无法真正静音）";
+            case "bind" -> "拦住附近的末影人，阻止它们传送";
+            case "teleport" -> "把附近的掉落物传送进最近的容器";
+            case "dungeon" -> "在附近刷出怪物";
             case "water" -> "贴着水就能产魔";
             case "lava" -> "贴着岩浆就能产魔";
             case "fuel" -> "吃掉可燃物后持续燃烧产魔";

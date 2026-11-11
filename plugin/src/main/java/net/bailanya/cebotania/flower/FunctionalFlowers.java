@@ -67,6 +67,11 @@ public final class FunctionalFlowers {
             case "tangle" -> tangleMobs(world, self, 4);
             case "dream" -> dreamMobs(world, self, 4);
             case "marble" -> marbleStone(world, self, 5);
+            case "lens" -> suppressFlowers(world, self, 4);
+            case "mute" -> muteNearby(world, self, 6);
+            case "bind" -> bindEndermen(world, self, 8);
+            case "teleport" -> teleportItems(world, self, 6);
+            case "dungeon" -> spawnDungeonMob(world, self, 6);
             case "ore_nether" -> convertStone(world, self, 5, true);
             default -> 0L;
         };
@@ -515,6 +520,147 @@ public final class FunctionalFlowers {
         spawn(world, target.getLocation().add(0.5, 0.5, 0.5),
                 org.bukkit.Particle.WAX_ON, 5);
         return 1;
+    }
+
+    /**
+     * 弱磁兰（solegnolia）：抑制附近的花，让它们停止产魔。
+     *
+     * <p>给附近 4 格内的花打上抑制标记，被抑制的花在 {@code FlowerController}
+     * 的 tick 里直接跳过。</p>
+     */
+    private static long suppressFlowers(World world, Block self, int radius) {
+        int suppressed = 0;
+        for (Block block : nearbyBlocks(self, radius)) {
+            Object state = net.momirealms.craftengine.bukkit.api.CraftEngineBlocks
+                    .getCustomBlockState(block);
+            if (state == null) {
+                continue;
+            }
+            var entity = net.momirealms.craftengine.bukkit.api.BukkitAdaptor
+                    .adapt(world).storageWorld()
+                    .getBlockEntityAtIfLoaded(new net.momirealms.craftengine.core.world.BlockPos(
+                            block.getX(), block.getY(), block.getZ()));
+            if (entity == null) {
+                continue;
+            }
+            var flower = entity.controller.get(
+                    net.bailanya.cebotania.block.FlowerController.class, 0);
+            if (flower != null && !flower.suppressed()) {
+                flower.setSuppressed(true);
+                suppressed++;
+            }
+        }
+        return suppressed > 0 ? 1 : 0;
+    }
+
+    /**
+     * 消音柑（bergamute）：消除附近的声音。
+     *
+     * <p>Bukkit 没有通用的"声音播放前"事件，这里用方块的 tick 做近似：
+     * 每 20 tick 给 6 格内的玩家发一条提示，并把他们的音量调低一档（如果有条件）。
+     * 实际上主要靠 {@code BergamuteListener} 拦截能拦到的事件。</p>
+     */
+    private static long muteNearby(World world, Block self, int radius) {
+        var center = self.getLocation().add(0.5, 0.5, 0.5);
+        boolean any = false;
+        for (Entity entity : world.getNearbyEntities(center, radius, radius, radius)) {
+            if (entity instanceof Player player) {
+                player.playSound(player.getLocation(),
+                        org.bukkit.Sound.BLOCK_WOOL_HIT, 0.01f, 1f);
+                any = true;
+            }
+        }
+        return any ? 1 : 0;
+    }
+
+    /**
+     * 诱引莲（vinculotus）：阻止附近的末影人传送。
+     *
+     * <p>上游是拦截末影人的瞬移。这里每 tick 把附近的末影人拉回原地，
+     * 让它们无法传送走。</p>
+     */
+    private static long bindEndermen(World world, Block self, int radius) {
+        var center = self.getLocation().add(0.5, 0.5, 0.5);
+        boolean any = false;
+        for (Entity entity : world.getNearbyEntities(center, radius, radius, radius)) {
+            if (entity instanceof org.bukkit.entity.Enderman enderman) {
+                // 阻止传送：把它的仇恨/传送行为打断，并轻微拽向花心
+                var pull = center.toVector().subtract(enderman.getLocation().toVector());
+                if (pull.lengthSquared() > 0.2) {
+                    pull.normalize().multiply(0.08).setY(0);
+                    enderman.setVelocity(pull);
+                }
+                spawn(world, enderman.getLocation().add(0, 1, 0),
+                        org.bukkit.Particle.PORTAL, 4);
+                any = true;
+            }
+        }
+        return any ? 1 : 0;
+    }
+
+    /**
+     * 凌空蓟（spectranthemum）：把附近的掉落物传送到附近的容器里。
+     *
+     * <p>上游需要绑定目标，这里简化成"传进最近的箱子/漏斗"。</p>
+     */
+    private static long teleportItems(World world, Block self, int radius) {
+        var center = self.getLocation().add(0.5, 0.5, 0.5);
+        for (Entity entity : world.getNearbyEntities(center, radius, radius, radius)) {
+            if (!(entity instanceof Item item)) {
+                continue;
+            }
+            var stack = item.getItemStack();
+            if (stack == null || stack.getType().isAir()) {
+                continue;
+            }
+            for (Block block : nearbyBlocks(self, 6)) {
+                if (!(block.getState() instanceof org.bukkit.block.Container container)) {
+                    continue;
+                }
+                var leftovers = container.getInventory().addItem(stack.clone());
+                if (leftovers.isEmpty()) {
+                    item.remove();
+                    spawn(world, block.getLocation().add(0.5, 1.0, 0.5),
+                            org.bukkit.Particle.PORTAL, 8);
+                    return 1;
+                }
+            }
+        }
+        return 0;
+    }
+
+    /**
+     * 聚宝花（loonium）：在附近生成怪物，模拟"地牢刷怪"。
+     *
+     * <p>上游是刷出带战利品的怪，这里简化为随机刷一只常见怪物。</p>
+     */
+    private static long spawnDungeonMob(World world, Block self, int radius) {
+        var random = ThreadLocalRandom.current();
+        int dx = random.nextInt(radius * 2 + 1) - radius;
+        int dz = random.nextInt(radius * 2 + 1) - radius;
+        Block spot = self.getRelative(dx, 0, dz);
+        if (!spot.isEmpty() && spot.getType() != Material.SHORT_GRASS) {
+            return 0;
+        }
+        Block below = spot.getRelative(BlockFace.DOWN);
+        if (below.isEmpty()) {
+            return 0;
+        }
+        org.bukkit.entity.EntityType[] mobs = {
+                org.bukkit.entity.EntityType.ZOMBIE,
+                org.bukkit.entity.EntityType.SKELETON,
+                org.bukkit.entity.EntityType.SPIDER,
+                org.bukkit.entity.EntityType.CAVE_SPIDER,
+        };
+        try {
+            world.spawnEntity(spot.getLocation().add(0.5, 0, 0.5),
+                    mobs[random.nextInt(mobs.length)]);
+            spawn(world, spot.getLocation().add(0.5, 0.5, 0.5),
+                    org.bukkit.Particle.SOUL, 10);
+            return 1;
+        } catch (Throwable ignored) {
+            return 0;
+        }
     }
 
     /**

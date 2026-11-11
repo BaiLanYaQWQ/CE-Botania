@@ -2856,6 +2856,7 @@ items:
       path: botania:block/yellow_shiny_flower
     data:
       item_name: '<!i><white><lang:botania.block.yellow_shiny_flower>'
+
   botania:render/apothecary_default_water:
     material: paper
     model:
@@ -2863,6 +2864,7 @@ items:
       path: botania:block/apothecary_default_water
     data:
       item_name: '<!i><white><lang:botania.block.apothecary_default>'
+
   botania:render/mana_pool_full:
     material: paper
     model:
@@ -2870,3 +2872,27 @@ items:
       path: botania:block/mana_pool_full
     data:
       item_name: '<!i><white><lang:botania.block.mana_pool>'
+
+  botania:render/alfheim_portal:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/alfheim_portal
+    data:
+      item_name: '<!i><white><lang:botania.block.alfheim_portal>'
+
+  botania:render/alfheim_portal_activated:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/alfheim_portal_activated
+    data:
+      item_name: '<!i><white><lang:botania.block.alfheim_portal>'
+
+  botania:render/alfheim_portal_block:
+    material: paper
+    model:
+      type: minecraft:model
+      path: botania:block/alfheim_portal_activated
+    data:
+      item_name: '<!i><white><lang:botania.block.alfheim_portal>'
