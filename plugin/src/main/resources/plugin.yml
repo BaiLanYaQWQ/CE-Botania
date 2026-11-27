@@ -10,7 +10,6 @@ commands:
   botania:
     description: 植物魔法主命令（自检 / 给予 / 调试）
     usage: /botania <give|selfcheck|mana|debug>
-    aliases: [bota, bot]
     permission: botania.command
 permissions:
   botania.command:
