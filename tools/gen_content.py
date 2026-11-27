@@ -2,10 +2,9 @@
 """把 Botania 上游清单生成为 CraftEngine 的物品 / 方块 / 语言配置。
 
 用法：
-    python3 tools/gen_content.py
+    python3 tools/gen_content.py [--check]
 
-输入：build/asset_index.json（extract_assets.py 的产物）
-      /tmp/Botania-src 的 lang/en_us.json、zh_cn.json
+输入：仓库中的方块状态、模型、物品标签及 tools/content_lang 中的语言快照
 输出：pack/configuration/items/generated_items.yml
       pack/configuration/blocks/generated_blocks.yml
       pack/configuration/langs/zh_cn.yml、en_us.yml
@@ -19,15 +18,20 @@
 """
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = Path("/tmp/Botania-src")
-INDEX = ROOT / "build" / "asset_index.json"
+ASSETS = ROOT / "pack" / "resourcepack" / "assets" / "botania"
+MODELS_DIR = ASSETS / "models"
 CFG = ROOT / "pack" / "configuration"
+LANG_DIR = ROOT / "tools" / "content_lang"
+
+# 精灵门薄片是 CraftEngine 的渲染物品，由专门的配置注册。
+RENDER_ONLY_ITEM_MODELS = {"alfheim_gate"}
 
 # 上游物品名特殊字符清理：把 "Botania" 前缀之类剥掉不影响，保留原文。
 NAMESPACE = "botania"
@@ -55,18 +59,8 @@ def tripwire(*, attached: bool = True, powered: bool = False,
     return f"minecraft:tripwire[{state}]"
 
 
-# 上游语言文件放在 build/upstream_lang/（由 tools/fetch_lang.py 下载）。
-# 之前是从 /tmp 的源码树里读，/tmp 一被清空就全退化成英文 id —— 就是那次"名字全变英文"。
-LANG_DIR = ROOT / "build" / "upstream_lang"
-
-
 def load_lang(name: str) -> dict[str, str]:
-    for candidate in (LANG_DIR / f"{name}.json",
-                      SRC / f"Xplat/src/main/resources/assets/botania/lang/{name}.json"):
-        if candidate.is_file():
-            return json.loads(candidate.read_text(encoding="utf-8"))
-    print(f"警告：找不到语言文件 {name}.json，物品名会退化成英文 id", file=sys.stderr)
-    return {}
+    return json.loads((LANG_DIR / f"{name}.json").read_text(encoding="utf-8"))
 
 
 def clean_name(raw: str) -> str:
@@ -84,10 +78,12 @@ def yaml_str(s: str) -> str:
 
 class Index:
     def __init__(self) -> None:
-        data = json.loads(INDEX.read_text(encoding="utf-8"))
-        self.item_models: list[str] = data["item_models"]
-        self.block_models: list[str] = data["block_models"]
-        self.blockstates: dict[str, dict] = data["blockstates"]
+        self.item_models = sorted(path.stem for path in (MODELS_DIR / "item").glob("*.json")
+                                  if path.stem not in RENDER_ONLY_ITEM_MODELS)
+        self.blockstates = {
+            path.stem: json.loads(path.read_text(encoding="utf-8"))
+            for path in sorted((ASSETS / "blockstates").glob("*.json"))
+        }
         self.item_set = set(self.item_models)
         self.block_set = set(self.blockstates)
 
@@ -123,8 +119,6 @@ class Index:
         return None
 
 
-
-MODELS_DIR = ROOT / "pack" / "resourcepack" / "assets" / "botania" / "models"
 
 # 满方块常见的原版父模型；命中就按"整块"处理
 FULL_PARENTS = ("minecraft:block/cube", "minecraft:block/block")
@@ -201,7 +195,7 @@ def is_cross_model(model: str | None, idx: Index) -> bool:
     name = model.split("/")[-1]
     if name == "cross":
         return True
-    p = ROOT / "pack/resourcepack/assets/botania/models" / f"{model.split(':', 1)[-1]}.json"
+    p = MODELS_DIR / f"{model.split(':', 1)[-1]}.json"
     if not p.is_file():
         return False
     try:
@@ -1012,10 +1006,12 @@ def SKIP_FLOWER(name: str) -> bool:
 
 
 def main() -> int:
-    if not INDEX.is_file():
-        print("先运行 tools/extract_assets.py", file=sys.stderr)
-        return 2
+    parser = argparse.ArgumentParser(description="从仓库中的资源生成 CraftEngine 配置")
+    parser.add_argument("--check", action="store_true", help="检查配置是否与生成结果一致")
+    args = parser.parse_args()
     idx = Index()
+    if not idx.item_models or not idx.block_set:
+        parser.error("资源包中找不到物品模型或方块状态")
     en = load_lang("en_us")
     zh = load_lang("zh_cn")
     skip = core_overrides()
@@ -1030,20 +1026,30 @@ def main() -> int:
     render_txt = gen_render_items(render_names, idx)
     block_items_txt = gen_block_items(idx, en, zh, skip)
     categories_txt = gen_categories(idx, flowers, skip)
-    (CFG / "items" / "generated_render.yml").write_text(render_txt, encoding="utf-8")
-    (CFG / "items" / "generated_block_items.yml").write_text(block_items_txt, encoding="utf-8")
     zh1.update(category_lang())
     en1.update(category_lang())
     zh_txt, en_txt = gen_lang({**en1, **en2}, {**zh1, **zh2})
 
-    (CFG / "items").mkdir(parents=True, exist_ok=True)
-    (CFG / "blocks").mkdir(parents=True, exist_ok=True)
-    (CFG / "langs").mkdir(parents=True, exist_ok=True)
-    (CFG / "items" / "generated_items.yml").write_text(items_txt, encoding="utf-8")
-    (CFG / "blocks" / "generated_blocks.yml").write_text(blocks_txt, encoding="utf-8")
-    (CFG / "categories.yml").write_text(categories_txt, encoding="utf-8")
-    (CFG / "langs" / "zh_cn.yml").write_text(zh_txt, encoding="utf-8")
-    (CFG / "langs" / "en_us.yml").write_text(en_txt, encoding="utf-8")
+    outputs = {
+        "items/generated_render.yml": render_txt,
+        "items/generated_block_items.yml": block_items_txt,
+        "items/generated_items.yml": items_txt,
+        "blocks/generated_blocks.yml": blocks_txt,
+        "categories.yml": categories_txt,
+        "langs/zh_cn.yml": zh_txt,
+        "langs/en_us.yml": en_txt,
+    }
+    if args.check:
+        different = [CFG / name for name, content in outputs.items()
+                     if not (CFG / name).is_file() or (CFG / name).read_bytes() != content.encode("utf-8")]
+        for path in different:
+            print(f"生成结果不一致：{path.relative_to(ROOT)}", file=sys.stderr)
+        return 1 if different else 0
+
+    for name, content in outputs.items():
+        path = CFG / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(content.encode("utf-8"))
 
     print(f"物品 {items_txt.count(chr(10) + '  botania:')} 条")
     print(f"方块 {blocks_txt.count(chr(10) + '  botania:')} 条")

@@ -152,14 +152,20 @@ Botania/
 
 ## 改内容的工作流
 
-内容全部由脚本从上游生成，**不要手改生成出来的 yml**：
+物品、方块、分类、语言及精灵门的 X 向模型可用仓库内的资源离线重建。使用 Python 3.10 或更新版本，在干净检出中运行以下命令：
+
+```bash
+python3 tools/gen_content.py
+python3 tools/gen_core_blocks.py
+```
+
+给命令加 `--check` 可逐字节核对生成结果，发现缺失或差异时返回非零状态。语言快照在 `tools/content_lang/`。更新上游素材、配方或名称时，再运行对应的提取脚本：
 
 ```bash
 python3 tools/extract_assets.py /path/to/Botania-src   # 换材质/模型后
+python3 tools/fetch_lang.py --update-content           # 更新名称快照
 python3 tools/extract_recipes.py                       # 换配方后
 python3 tools/extract_flowers.py                       # 换花参数后
-python3 tools/gen_content.py                           # 重新生成物品/方块/分类
-python3 tools/gen_core_blocks.py                       # 重新生成核心方块
 python3 tools/gen_plugin_data.py                       # 配方进插件 jar
 ```
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """生成核心玩法方块的 CraftEngine 配置。
 
-用法：python3 tools/gen_core_blocks.py
+用法：python3 tools/gen_core_blocks.py [--check]
 产物：pack/configuration/blocks/core_blocks.yml
       pack/resourcepack/assets/botania/models/block/alfheim_gate_x.json
 
@@ -10,7 +10,9 @@
 """
 from __future__ import annotations
 
+import argparse
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -122,7 +124,7 @@ def block_yaml(block: str, behavior: str, carriers: list[str]) -> list[str]:
     return lines
 
 
-def write_alfheim_gate_x() -> None:
+def alfheim_gate_x_json() -> str:
     gate = json.loads((MODELS / "alfheim_gate.json").read_text(encoding="utf-8"))
     # 将基准薄面绕方块中心旋转 90 度，北面转到东面。
     element, = gate["elements"]
@@ -132,16 +134,20 @@ def write_alfheim_gate_x() -> None:
     element["to"] = [16 - min_z, max_y, max_x]
     faces = element["faces"]
     element["faces"] = {"east": faces["north"], "west": faces["south"]}
-    output = MODELS / "alfheim_gate_x.json"
-    try:
-        if json.loads(output.read_text(encoding="utf-8")) == gate:
-            return
-    except (FileNotFoundError, json.JSONDecodeError):
-        pass
-    output.write_text(json.dumps(gate, indent=2) + "\n", encoding="utf-8")
+    # 基准模型把坐标与简单面定义放在单行，这里沿用相同格式。
+    model = json.dumps(gate, indent=2)
+    for fields, indent in (({"from": element["from"], "to": element["to"]}, 6),
+                           (element["faces"], 8)):
+        for key, value in fields.items():
+            expanded = json.dumps(value, indent=2).replace("\n", "\n" + " " * indent)
+            model = model.replace(f'"{key}": {expanded}', f'"{key}": {json.dumps(value)}')
+    return model + "\n"
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description="生成核心玩法方块及精灵门模型")
+    parser.add_argument("--check", action="store_true", help="检查配置是否与生成结果一致")
+    args = parser.parse_args()
     lines = [
         "# 核心玩法方块（tools/gen_core_blocks.py 生成，改脚本重跑，勿手改）。",
         # 保留配置中的旧标题，以便逐字节重建现有文件。
@@ -158,8 +164,21 @@ def main() -> int:
         if behavior == "mana_spreader" and block != "mana_spreader":
             lines.append("")
         cursor += need
-    OUT.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    write_alfheim_gate_x()
+    outputs = {
+        OUT: "\n".join(lines) + "\n",
+        MODELS / "alfheim_gate_x.json": alfheim_gate_x_json(),
+    }
+    different = []
+    for path, content in outputs.items():
+        expected = content.encode("utf-8")
+        if not args.check:
+            path.write_bytes(expected)
+        elif not path.is_file() or path.read_bytes() != expected:
+            different.append(path)
+    if args.check:
+        for path in different:
+            print(f"生成结果不一致：{path.relative_to(ROOT)}", file=sys.stderr)
+        return 1 if different else 0
     print(f"核心方块 {len(CORE)} 个，占用透明载体 {cursor} / {len(CARRIERS)}")
     return 0
 

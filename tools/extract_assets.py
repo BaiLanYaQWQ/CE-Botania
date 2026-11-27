@@ -7,7 +7,7 @@
 产物：
     pack/resourcepack/assets/botania/textures/...
     pack/resourcepack/assets/botania/models/...
-    build/asset_index.json   物品/方块模型清单（给 gen_content.py 用）
+    build/asset_index.json   物品/方块模型清单（用于查看提取结果）
 
 说明：
   * 上游模型是 1.20.1 的 models/*.json（标准 MC 格式），CE 与 1.21.4+ 的
