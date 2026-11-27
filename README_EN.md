@@ -141,8 +141,17 @@ tools/      Python generators — extract assets/recipes and emit CE configs
 docs/       Changelog and testing notes
 ```
 
-Everything under `pack/configuration/` and `pack/resourcepack/` is **generated** by the scripts in
-`tools/`. Edit the generators, not the generated YAML.
+A clean checkout contains the assets and translation snapshots required to rebuild the items, blocks,
+categories, translations, and X-axis Alfheim gate model. Run these commands offline with Python 3.10
+or later.
+
+```bash
+python3 tools/gen_content.py
+python3 tools/gen_core_blocks.py
+```
+
+Add `--check` to either command to compare its generated files byte for byte without writing them.
+Use `python3 tools/fetch_lang.py --update-content` when updating the upstream item and block names.
 
 ---
 
