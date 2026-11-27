@@ -133,6 +133,16 @@ chunk reload. The server log and production JAR SHA-256 are saved under
 
 The distribution built from `89df10b` also passed player interaction checks. A Leaves test player received three livingwood from `/botania give livingwood 3`; the same command left the inventory empty without permission. A Minecraft 26.3 protocol client received subcommand and item ID suggestions and used the Forest Wand granted by the command to open and close portals on both axes. Each opening consumed 200,000 mana and filled nine gate cells. All nine returned to air on closing.
 
+## Baubles (development build)
+
+With an empty cursor, right-click the chestplate slot in your survival inventory to open the nine-slot menu. This also works with a chestplate equipped. Players can use `/baubles` or `/饰品` instead. Click a supported ring in your inventory to equip it in an empty ring slot. Click an equipped ring to take it back; it stays equipped if your inventory is full.
+
+The two slots support the Ring of Magnetization and its greater variant. Their attraction boxes extend 6 and 16 blocks along each axis. The stronger effect applies when both rings are equipped. Sneaking suspends attraction, and dropping an item pauses it for 100 ticks. Rings persist with the player and follow `keepInventory` on death.
+
+The Solegnolia protects a sphere extending five blocks from its center. The Petite Solegnolia protects one block. A wearer inside this area stops attracting items, and items inside are protected from rings outside. Power the flower with redstone to suspend this protection.
+
+Craft the basic ring with one magnetizing lens and four manasteel ingots. Combine it with one terrasteel ingot in a shapeless recipe to upgrade it.
+
 ## Commands
 
 | Command | Description |

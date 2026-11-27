@@ -87,7 +87,8 @@ public final class FlowerType {
         func("vinculotus", 8, 10, "bind");
         func("tangleberrie", 6, 10, "tangle");
         func("jiyuulia", 6, 10, "levitate");
-        func("solegnolia", 0, 20, "lens");
+        func("solegnolia", 0, 20, "magnet_suppression");
+        func("solegnolia_chibi", 0, 20, "magnet_suppression");
         func("bergamute", 0, 20, "mute");
         func("daffomill", 6, 4, "blow");
         func("clayconia", 80, 5, "clay");
@@ -145,7 +146,7 @@ public final class FlowerType {
             case "tangle" -> "把附近的生物拽向花心并黏住";
             case "dream" -> "让附近的怪物变慢、变得虚弱";
             case "marble" -> "把附近的石头变成变质岩";
-            case "lens" -> "压制附近的花，让它们停止产魔";
+            case "magnet_suppression" -> "抑制附近的磁化指环，红石信号可关闭抑制";
             case "mute" -> "降低附近的音量（近似实现，插件端无法真正静音）";
             case "bind" -> "拦住附近的末影人，阻止它们传送";
             case "teleport" -> "把附近的掉落物传送进最近的容器";

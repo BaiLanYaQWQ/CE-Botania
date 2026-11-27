@@ -67,7 +67,6 @@ public final class FunctionalFlowers {
             case "tangle" -> tangleMobs(world, self, 4);
             case "dream" -> dreamMobs(world, self, 4);
             case "marble" -> marbleStone(world, self, 5);
-            case "lens" -> suppressFlowers(world, self, 4);
             case "mute" -> muteNearby(world, self, 6);
             case "bind" -> bindEndermen(world, self, 8);
             case "teleport" -> teleportItems(world, self, 6);
@@ -520,37 +519,6 @@ public final class FunctionalFlowers {
         spawn(world, target.getLocation().add(0.5, 0.5, 0.5),
                 org.bukkit.Particle.WAX_ON, 5);
         return 1;
-    }
-
-    /**
-     * 弱磁兰（solegnolia）：抑制附近的花，让它们停止产魔。
-     *
-     * <p>给附近 4 格内的花打上抑制标记，被抑制的花在 {@code FlowerController}
-     * 的 tick 里直接跳过。</p>
-     */
-    private static long suppressFlowers(World world, Block self, int radius) {
-        int suppressed = 0;
-        for (Block block : nearbyBlocks(self, radius)) {
-            Object state = net.momirealms.craftengine.bukkit.api.CraftEngineBlocks
-                    .getCustomBlockState(block);
-            if (state == null) {
-                continue;
-            }
-            var entity = net.momirealms.craftengine.bukkit.api.BukkitAdaptor
-                    .adapt(world).storageWorld()
-                    .getBlockEntityAtIfLoaded(new net.momirealms.craftengine.core.world.BlockPos(
-                            block.getX(), block.getY(), block.getZ()));
-            if (entity == null) {
-                continue;
-            }
-            var flower = entity.controller.get(
-                    net.bailanya.cebotania.block.FlowerController.class, 0);
-            if (flower != null && !flower.suppressed()) {
-                flower.setSuppressed(true);
-                suppressed++;
-            }
-        }
-        return suppressed > 0 ? 1 : 0;
     }
 
     /**

@@ -7,6 +7,10 @@ description: CraftEngine 侧植物魔法（Botania）复刻：魔力系统、花
 softdepend:
   - CraftEngine
 commands:
+  baubles:
+    description: 打开植物魔法饰品栏
+    aliases: [饰品]
+    usage: /baubles
   botania:
     description: 植物魔法主命令（自检 / 给予 / 调试）
     usage: /botania <give|selfcheck|mana|debug>

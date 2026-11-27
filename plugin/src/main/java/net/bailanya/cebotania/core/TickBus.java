@@ -1,7 +1,10 @@
 package net.bailanya.cebotania.core;
 
 import net.bailanya.cebotania.block.ManaBlockController;
+import net.bailanya.cebotania.flower.SolegnoliaIndex;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.block.Block;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Set;
@@ -22,6 +25,7 @@ public final class TickBus {
 
     private final JavaPlugin plugin;
     private final Set<ManaBlockController> controllers = ConcurrentHashMap.newKeySet();
+    private final SolegnoliaIndex solegnolias = new SolegnoliaIndex();
     private int taskId = -1;
 
     public TickBus(JavaPlugin plugin) {
@@ -33,7 +37,26 @@ public final class TickBus {
     }
 
     public void unregister(ManaBlockController controller) {
-        this.controllers.remove(controller);
+        synchronized (this.solegnolias) {
+            this.controllers.remove(controller);
+            this.solegnolias.remove(controller);
+        }
+    }
+
+    public void updateSolegnolia(ManaBlockController controller, Block block, int range) {
+        synchronized (this.solegnolias) {
+            if (range > 0 && this.controllers.contains(controller)) {
+                this.solegnolias.activate(controller, block, range);
+            } else {
+                this.solegnolias.remove(controller);
+            }
+        }
+    }
+
+    public boolean suppressesMagnets(Location location) {
+        synchronized (this.solegnolias) {
+            return this.solegnolias.suppresses(location);
+        }
     }
 
     public int size() {
@@ -78,7 +101,10 @@ public final class TickBus {
             Bukkit.getScheduler().cancelTask(this.taskId);
             this.taskId = -1;
         }
-        this.controllers.clear();
+        synchronized (this.solegnolias) {
+            this.controllers.clear();
+            this.solegnolias.clear();
+        }
     }
 
     private void pump() {
@@ -89,7 +115,7 @@ public final class TickBus {
                 // 单个方块炸了不能拖垮整条产线：摘掉它并留个日志
                 this.plugin.getLogger().warning("方块实体 tick 失败，已从调度里摘除："
                         + throwable);
-                this.controllers.remove(controller);
+                unregister(controller);
             }
         }
     }

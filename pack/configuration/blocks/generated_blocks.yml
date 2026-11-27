@@ -17764,7 +17764,7 @@ blocks:
               item: botania:solegnolia
   botania:solegnolia_chibi:
     behavior:
-      type: botania:ground_plant
+      type: botania:flower
     state:
       auto_state:
         type: sugar_cane

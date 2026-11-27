@@ -1,8 +1,10 @@
 package net.bailanya.cebotania.block;
 
+import net.bailanya.cebotania.core.BotaniaRuntime;
 import net.bailanya.cebotania.flower.FlowerLogic;
 import net.bailanya.cebotania.flower.FlowerType;
 import net.bailanya.cebotania.flower.FunctionalFlowers;
+import net.bailanya.cebotania.flower.SolegnoliaIndex;
 import net.bailanya.cebotania.platform.Platform;
 import net.momirealms.craftengine.bukkit.api.CraftEngineBlocks;
 import net.momirealms.craftengine.core.block.entity.BlockEntity;
@@ -28,15 +30,13 @@ public final class FlowerController extends ManaBlockController {
 
     private final String flowerId;
     private final FlowerType type;
+    private final int magnetSuppressionRange;
     private int tickCounter;
 
     /** 萤火之焰：当前这份燃料还能烧多少刻（0 = 没在烧）。 */
     private int burnTicks;
     /** 上一个吃掉的燃料是什么（给玩家看）。 */
     private String burningFuel;
-
-    /** 被弱磁兰抑制时停止一切产出。 */
-    private boolean suppressed;
 
     /** 方块被悄悄清掉（例如支撑没了）时，自己从调度里退出来。 */
     private int staleTicks;
@@ -46,6 +46,11 @@ public final class FlowerController extends ManaBlockController {
                 ? 1000L : FlowerType.byId(flowerId).bufferCapacity);
         this.flowerId = flowerId;
         this.type = FlowerType.byId(flowerId);
+        this.magnetSuppressionRange = switch (flowerId) {
+            case "solegnolia", "floating_solegnolia" -> SolegnoliaIndex.RANGE;
+            case "solegnolia_chibi", "floating_solegnolia_chibi" -> SolegnoliaIndex.CHIBI_RANGE;
+            default -> 0;
+        };
     }
 
     public String flowerId() {
@@ -54,14 +59,6 @@ public final class FlowerController extends ManaBlockController {
 
     public FlowerType type() {
         return this.type;
-    }
-
-    public boolean suppressed() {
-        return this.suppressed;
-    }
-
-    public void setSuppressed(boolean value) {
-        this.suppressed = value;
     }
 
     public int ticks() {
@@ -102,7 +99,7 @@ public final class FlowerController extends ManaBlockController {
 
     /** 由逐刻调度调用。 */
     public void tick(CEWorld ceWorld, BlockPos pos) {
-        if (this.type == null) {
+        if (this.type == null && this.magnetSuppressionRange == 0) {
             return;
         }
         World world = Platform.bukkit(ceWorld);
@@ -110,14 +107,28 @@ public final class FlowerController extends ManaBlockController {
             return;
         }
         Block block = world.getBlockAt(pos.x(), pos.y(), pos.z());
+        var state = block.isEmpty() ? null : CraftEngineBlocks.getCustomBlockState(block);
+        boolean missing = state == null;
+        if (this.magnetSuppressionRange > 0) {
+            missing = missing || !state.owner().value().id().value().equals(this.flowerId);
+            var bus = BotaniaRuntime.tickBus();
+            if (bus != null) {
+                int range = missing || block.getBlockPower() > 0 ? 0 : this.magnetSuppressionRange;
+                bus.updateSolegnolia(this, block, range);
+            }
+        }
         // 方块已经不在了：连续几次就注销，避免在调度池里空转
-        if (block.isEmpty() || CraftEngineBlocks.getCustomBlockState(block) == null) {
+        if (missing) {
             if (++this.staleTicks > 20) {
                 onRemove();
             }
             return;
         }
         this.staleTicks = 0;
+        if (this.magnetSuppressionRange > 0) {
+            this.tickCounter++;
+            return;
+        }
 
         // —— 萤火之焰：一份燃料持续烧，1 mana/tick，烧完才吃下一份 ——
         if ("fuel".equals(this.type.logic)) {
@@ -125,9 +136,6 @@ public final class FlowerController extends ManaBlockController {
             return;
         }
 
-        if (this.suppressed) {
-            return;   // 被弱磁兰压制：不产魔、不做事
-        }
         this.tickCounter++;
         if (this.tickCounter % Math.max(1, this.type.intervalTicks) != 0) {
             return;

@@ -3,6 +3,9 @@ package net.bailanya.cebotania;
 import net.bailanya.cebotania.block.ApothecaryBehavior;
 import net.bailanya.cebotania.block.FlowerBehavior;
 import net.bailanya.cebotania.block.GroundPlantBehavior;
+import net.bailanya.cebotania.bauble.BaubleEquipment;
+import net.bailanya.cebotania.bauble.BaubleMenu;
+import net.bailanya.cebotania.bauble.MagnetRings;
 import net.bailanya.cebotania.block.PureDaisyBehavior;
 import net.bailanya.cebotania.block.RunicAltarBehavior;
 import net.bailanya.cebotania.block.TerrasteelBehavior;
@@ -104,6 +107,16 @@ public final class CeBotaniaPlugin extends JavaPlugin {
                 new net.bailanya.cebotania.lexicon.LexiconListener(this.lexicon), this);
         this.manaRepair = new net.bailanya.cebotania.listener.ManaRepair(this);
         Bukkit.getPluginManager().registerEvents(this.manaRepair, this);
+
+        var equipment = new BaubleEquipment();
+        var baubleMenu = new BaubleMenu(this, equipment);
+        var magnets = new MagnetRings(equipment);
+        var events = Bukkit.getPluginManager();
+        events.registerEvents(equipment, this);
+        events.registerEvents(baubleMenu, this);
+        events.registerEvents(magnets, this);
+        Bukkit.getScheduler().runTaskTimer(this, magnets, 1L, 1L);
+        java.util.Objects.requireNonNull(getCommand("baubles")).setExecutor(baubleMenu);
 
         // 6) 命令
         PluginCommand command = getCommand("botania");
