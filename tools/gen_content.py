@@ -14,7 +14,7 @@
   * 命名空间固定 botania，id 与上游一致，便于对照上游代码与配方。
   * 纯物品走 `model: minecraft:model path: botania:item/<id>`，保留上游图标。
   * 方块走 `blocks:` 段：单状态 solid；多状态按 variant 取默认外观，
-    由 core_blocks.yml（手写）覆盖需要精确物理行为的核心方块。
+    由 core_blocks.yml 覆盖需要精确物理行为的核心方块。
   * 语言文件用 botania.item.<id> / botania.block.<id> 作为键。
 """
 from __future__ import annotations
@@ -31,6 +31,28 @@ CFG = ROOT / "pack" / "configuration"
 
 # 上游物品名特殊字符清理：把 "Botania" 前缀之类剥掉不影响，保留原文。
 NAMESPACE = "botania"
+
+EXTRA_RENDER_MODELS = {
+    "apothecary_default_water": ("apothecary_default_water", "apothecary_default"),
+    "mana_pool_full": ("mana_pool_full", "mana_pool"),
+    "alfheim_portal": ("alfheim_portal", "alfheim_portal"),
+    "alfheim_portal_activated": ("alfheim_portal_activated", "alfheim_portal"),
+    "alfheim_portal_block": ("alfheim_portal_activated", "alfheim_portal"),
+    "alfheim_gate": ("alfheim_gate", "alfheim_portal"),
+    "alfheim_gate_x": ("alfheim_gate_x", "alfheim_portal"),
+}
+
+DIRECTIONS = ("east", "north", "south", "west")
+PYLON_TRIPWIRE = {"gaia_pylon": "south", "mana_pylon": "north", "natura_pylon": "east"}
+
+
+def tripwire(*, attached: bool = True, powered: bool = False,
+             directions: tuple[str, ...] = DIRECTIONS) -> str:
+    flags = {"attached": attached, "disarmed": True}
+    flags.update((direction, direction in directions) for direction in DIRECTIONS)
+    flags["powered"] = powered
+    state = ",".join(f"{key}={str(value).lower()}" for key, value in flags.items())
+    return f"minecraft:tripwire[{state}]"
 
 
 # 上游语言文件放在 build/upstream_lang/（由 tools/fetch_lang.py 下载）。
@@ -190,8 +212,7 @@ def is_cross_model(model: str | None, idx: Index) -> bool:
     return parent.endswith("shapes/cross") or parent.endswith("block/cross")
 
 
-# 需要非满方块物理的方块：花、花药台、发射器、池子等由 core_blocks.yml 手写覆盖，
-# 这里仅记录集合供生成器跳过。
+# 核心玩法方块由 gen_core_blocks.py 生成，这里读取覆盖名单以避免重复注册。
 CORE_OVERRIDES_FILE = CFG / "blocks" / "_core_overrides.txt"
 FLOWER_IDS_FILE = CFG / "blocks" / "_flower_ids.txt"
 
@@ -360,7 +381,7 @@ def gen_items(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str]
             lines.append("      tags:")
             for tag in sorted(owned):
                 lines.append(f"        - {tag}")
-    return "\n".join(lines) + "\n", en_out, zh_out
+    return "\n".join(lines) + "\n\n", en_out, zh_out
 
 
 
@@ -375,18 +396,26 @@ def gen_render_items(names: list[str], idx: Index) -> str:
         "items:",
     ]
     for name in names:
-        if SKIP_FLOWER(name):
+        if SKIP_FLOWER(name) or name in EXTRA_RENDER_MODELS:
             continue
-        lines.append(f"  {NAMESPACE}:render/{name}:")
-        lines.append("    material: paper")
-        lines.append("    model:")
-        lines.append("      type: minecraft:model")
-        model = idx.default_model(name) or ""
-        lines.append(f"      path: {model}")
-        lines.append("    data:")
-        lines.append(f"      item_name: '<!i><white><lang:{NAMESPACE}.block.{name}>'")
+        lines.extend(render_item(f"render/{name}", idx.default_model(name) or "", name))
+    for name, (model, translation) in EXTRA_RENDER_MODELS.items():
+        lines.append("")
+        lines.extend(render_item(f"render/{name}", f"botania:block/{model}", translation))
     return "\n".join(lines) + "\n"
 
+
+
+def render_item(name: str, model: str, translation: str) -> list[str]:
+    return [
+        f"  {NAMESPACE}:{name}:",
+        "    material: paper",
+        "    model:",
+        "      type: minecraft:model",
+        f"      path: {model}",
+        "    data:",
+        f"      item_name: '<!i><white><lang:{NAMESPACE}.block.{translation}>'",
+    ]
 
 
 def gen_block_items(idx: Index, en: dict, zh: dict, skip: set[str]) -> str:
@@ -434,6 +463,9 @@ def gen_block_items(idx: Index, en: dict, zh: dict, skip: set[str]) -> str:
             for tag in sorted(owned):
                 lines.append(f"        - {tag}")
         del key_en, key_zh
+    lines.append("")
+    lines.extend(render_item("alfheim_portal_block", "botania:block/alfheim_gate", "alfheim_portal"))
+    lines.extend(["    settings:", "      tags:", "        - botania:no_item"])
     return "\n".join(lines) + "\n"
 
 
@@ -445,6 +477,77 @@ def carrier_plan(idx: Index, flowers: set[str]) -> dict[str, str]:
     现在统一回到"共享透明载体 + 实体渲染"，宁可渲染上妥协，也不劫持原版方块。
     """
     return {}
+
+
+def item_display(renderer: str, indent: int, carrier: str | None = None) -> list[str]:
+    if carrier:
+        lines = [f'state: "{carrier}"', "model: botania:block/empty"]
+    else:
+        lines = ["auto_state:", "  type: sugar_cane", "  id: transparent"]
+    lines.extend([
+        "transparent: true",
+        "entity_culling: false",
+        "entity_renderer:",
+        "  type: item_display",
+        f"  item: botania:render/{renderer}",
+        "  display_transform: none",
+    ])
+    return [" " * indent + line for line in lines]
+
+
+def portal_states(property_name: str, off: tuple[str, str, str],
+                  on: tuple[str, str, str]) -> list[str]:
+    lines = [
+        "    states:",
+        "      properties:",
+        f"        {property_name}:",
+        "          type: boolean",
+        "          default: false",
+        "      appearances:",
+    ]
+    for appearance, carrier, renderer in (off, on):
+        lines.append(f"        {appearance}:")
+        lines.extend(item_display(renderer, 10, carrier))
+    lines.extend([
+        "      variants:",
+        f"        '{property_name}=false':",
+        f"          appearance: {off[0]}",
+        f"        '{property_name}=true':",
+        f"          appearance: {on[0]}",
+    ])
+    return lines
+
+
+def special_block_settings(name: str, sound: str, hardness: float, resistance: float,
+                           *, fluid_state: bool = True, label: bool = False,
+                           events: tuple[str, ...] = ("break", "step", "place", "hit", "fall")) -> list[str]:
+    lines = ["    settings:", "      support_shape: cobweb"]
+    if label:
+        lines.append(f"      name: '<lang:botania.block.{name}>'")
+    lines.append("      sounds:")
+    lines.extend(f"        {event}: minecraft:block.{sound}.{event}" for event in events)
+    lines.extend([
+        f"      hardness: {hardness}",
+        f"      resistance: {resistance}",
+        "      can_occlude: false",
+        "      is_suffocating: false",
+        "      is_view_blocking: false",
+    ])
+    if fluid_state:
+        lines.append("      fluid_state: false")
+    lines.append(f"      item: botania:{name}")
+    return lines
+
+
+def block_loot(name: str) -> list[str]:
+    return [
+        "    loot:",
+        "      pools:",
+        "        - rolls: 1",
+        "          entries:",
+        "            - type: item",
+        f"              item: {NAMESPACE}:{name}",
+    ]
 
 
 def gen_blocks(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str]) -> tuple[str, dict, dict]:
@@ -463,7 +566,7 @@ def gen_blocks(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str
         if SKIP_FLOWER(name):
             continue
         if name in skip:
-            # 手写方块（core_blocks.yml）不生成方块配置，但**物品名还是要的**，
+            # 核心方块的配置由 gen_core_blocks.py 生成，仍需生成物品名，
             # 否则方块物品会显示成翻译键原文 botania.block.xxx
             key_en = en.get(f"block.botania.{name}") or name
             key_zh = zh.get(f"block.botania.{name}") or key_en
@@ -481,6 +584,23 @@ def gen_blocks(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str
         zh_out[f"{NAMESPACE}.block.{name}"] = clean_name(key_zh)
 
         lines.append(f"  {NAMESPACE}:{name}:")
+        if name == "alfheim_portal":
+            lines.extend(["    behavior:", "      type: botania:alfheim_portal"])
+            lines.extend(portal_states(
+                "open",
+                ("closed", tripwire(), name),
+                ("open", tripwire(directions=("east", "north", "south")), "alfheim_portal_activated"),
+            ))
+            lines.extend(special_block_settings(name, "stone", 1.5, 3.0, fluid_state=False))
+            lines.extend(block_loot(name))
+            lines.append("")
+            continue
+        if name == "terra_plate":
+            lines.extend(["    behavior:", "      type: botania:terra_plate", "    state:"])
+            lines.extend(item_display(name, 6, tripwire(powered=True)))
+            lines.extend(special_block_settings(name, "metal", 3.0, 10.0, label=True))
+            lines.append("")
+            continue
         if name == "pure_daisy":
             # 纯洁雏菊自己有方块实体（净化相邻方块），不走普通产魔花那套
             lines.append("    behavior:")
@@ -501,20 +621,17 @@ def gen_blocks(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str
             lines.append("      auto_state: solid")
             lines.append(f"      model: {NAMESPACE}:{model}")
         else:
-            lines.append("      auto_state:")
-            lines.append("        type: sugar_cane")
-            lines.append("        id: transparent")
-            lines.append("      transparent: true")
-            lines.append("      entity_culling: false")
-            lines.append("      entity_renderer:")
-            lines.append("        type: item_display")
-            lines.append(f"        item: {NAMESPACE}:render/{name}")
-            lines.append("        display_transform: none")
+            carrier = None
+            if name in PYLON_TRIPWIRE:
+                directions = tuple(direction for direction in DIRECTIONS
+                                   if direction != PYLON_TRIPWIRE[name])
+                carrier = tripwire(directions=directions)
+            lines.extend(item_display(name, 6, carrier))
             lines.append("        scale: 1.0")
             lines.append("        translation: '0,0,0'")
             lines.append("        rotation: '0,180,0'")
         tool_tags = []
-        lines.append("    settings:")
+        lines.extend(["    settings:", "      support_shape: cobweb"])
         if geometry == "cross" or name in flowers:
             # 和原版花一样：一碰就碎、不需要工具、音效用草方块那套
             lines.append("      sounds:")
@@ -569,13 +686,17 @@ def gen_blocks(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str
             # 野花不掉方块：原版是打掉直接掉花瓣（插件里的 PetalDropListener 负责）
             lines.append("    loot: {}")
         else:
-            lines.append("    loot:")
-            lines.append("      pools:")
-            lines.append("        - rolls: 1")
-            lines.append("          entries:")
-            lines.append("            - type: item")
-            lines.append(f"              item: {NAMESPACE}:{name}")
-    return "\n".join(lines) + "\n", en_out, zh_out
+            lines.extend(block_loot(name))
+
+    lines.extend(["", "  botania:alfheim_portal_block:"])
+    lines.extend(portal_states(
+        "along_x",
+        ("along_z", tripwire(attached=False, directions=("east",)), "alfheim_gate"),
+        ("along_x", tripwire(attached=False, directions=("north",)), "alfheim_gate_x"),
+    ))
+    lines.extend(special_block_settings("alfheim_portal_block", "glass", 0.0, 0.0,
+                                        events=("break", "place", "hit")))
+    return "\n".join(lines) + "\n\n", en_out, zh_out
 
 
 

@@ -23,10 +23,53 @@ public final class SpreaderController extends ManaBlockController {
     private static final String ROOT = "cebotania:spreader";
     private static final String COOLDOWN_KEY = "cooldown";
 
+    /** 发射器变体（对应上游 ManaSpreaderBlock.Variant）。 */
+    public enum Variant {
+        MANA(1000L, 160L, 1.0f, false),
+        REDSTONE(1000L, 160L, 1.0f, true),
+        ELVEN(1000L, 240L, 1.25f, false),
+        GAIA(6400L, 640L, 2.0f, false);
+
+        public final long capacity;
+        public final long burst;
+        public final float speed;
+        public final boolean needsRedstone;
+
+        Variant(long capacity, long burst, float speed, boolean needsRedstone) {
+            this.capacity = capacity;
+            this.burst = burst;
+            this.speed = speed;
+            this.needsRedstone = needsRedstone;
+        }
+    }
+
     /** 缓存上限 = 一发。 */
     public static final long CAPACITY = 1000L;
     /** 一次最多送出去多少。 */
     public static final long BURST = 200L;
+
+    /** 这个发射器是哪种变体（按方块 ID 判断）。 */
+    public Variant variant() {
+        var entity = blockEntity();
+        if (entity == null) {
+            return Variant.MANA;
+        }
+        var state = entity.blockState();
+        if (state == null) {
+            return Variant.MANA;
+        }
+        String id = state.owner().value().id().value();
+        if (id.contains("elven")) {
+            return Variant.ELVEN;
+        }
+        if (id.contains("gaia")) {
+            return Variant.GAIA;
+        }
+        if (id.contains("redstone")) {
+            return Variant.REDSTONE;
+        }
+        return Variant.MANA;
+    }
     /** 吸花的半径。 */
     private static final int PULL_RADIUS = 6;
     /** 沿朝向探测的距离。 */
@@ -35,7 +78,7 @@ public final class SpreaderController extends ManaBlockController {
     private static final long PULL_PER_TICK = 200L;
     /** 两次发射之间的刻数。 */
     private static final int BURST_INTERVAL = 10;
-    /** 视觉粒子：飞完一格约 20 刻，两次之间隔 60 刻（3 秒）。 */
+    /** 视觉粒子：飞完一格约 20 刻（按变体速度缩短）。 */
     private static final int PARTICLE_TRAVEL = 20;
     private static final int PARTICLE_GAP = 60;
 
@@ -53,6 +96,11 @@ public final class SpreaderController extends ManaBlockController {
 
     public SpreaderController(BlockEntity blockEntity) {
         super(blockEntity, CAPACITY);
+    }
+
+    /** 当前变体的容量。 */
+    public long variantCapacity() {
+        return variant().capacity;
     }
 
     @Override
@@ -97,6 +145,8 @@ public final class SpreaderController extends ManaBlockController {
             case EAST -> "东";
             case SOUTH -> "南";
             case WEST -> "西";
+            case UP -> "上";
+            case DOWN -> "下";
             default -> "北";
         };
     }
@@ -172,9 +222,14 @@ public final class SpreaderController extends ManaBlockController {
         }
         // 2) 攒着就往朝向方向送
         if (this.mana > 0 && this.cooldown <= 0) {
+            Variant variant = variant();
+            // 红石发射器：必须有红石信号才发射
+            if (variant.needsRedstone && !hasRedstoneSignal(ceWorld, pos)) {
+                return;
+            }
             ManaBlockController target = targetAhead(ceWorld, pos);
             if (target != null) {
-                long sent = target.insert(Math.min(this.mana, BURST));
+                long sent = target.insert(Math.min(this.mana, variant.burst));
                 if (sent > 0) {
                     extract(sent);
                     this.cooldown = BURST_INTERVAL;
@@ -370,5 +425,30 @@ public final class SpreaderController extends ManaBlockController {
             }
             this.particleProgress = -1;
         }
+    }
+
+    /** 检查方块周围有没有红石信号（红石发射器用）。 */
+    private boolean hasRedstoneSignal(CEWorld ceWorld, BlockPos pos) {
+        var bukkit = net.bailanya.cebotania.platform.Platform.bukkit(ceWorld);
+        if (bukkit == null) {
+            return false;
+        }
+        try {
+            var block = bukkit.getBlockAt(pos.x(), pos.y(), pos.z());
+            return block.getBlockPower() > 0 || block.isBlockPowered();
+        } catch (Throwable ignored) {
+            return false;
+        }
+    }
+
+    /** 容量按变体算（盖亚 6400，其他 1000）。 */
+    @Override
+    public long capacity() {
+        return variant().capacity;
+    }
+
+    @Override
+    public long room() {
+        return Math.max(0, capacity() - this.mana);
     }
 }

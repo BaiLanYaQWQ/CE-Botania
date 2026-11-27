@@ -22,12 +22,20 @@ public final class BlockStates {
     /** 精灵门核心的开启属性名。 */
     public static final String OPEN = "open";
 
+    /** 精灵门通道的薄片朝向属性名。 */
+    public static final String ALONG_X = "along_x";
+
     /**
      * 把方块的 {@code filled} 属性设成指定值。
      *
      * @return 真的改了才返回 true
      */
     @SuppressWarnings({"unchecked", "rawtypes"})
+    /** 精灵门通道：切换薄片朝向（true = 沿 x 平面，南北框架用）。 */
+    public static boolean setAlongX(BlockEntity entity, boolean alongX) {
+        return setBoolean(entity, ALONG_X, alongX);
+    }
+
     /** 精灵门核心：切换开启/关闭外观。 */
     public static boolean setPortalOpen(BlockEntity entity, boolean open) {
         return setBoolean(entity, OPEN, open);

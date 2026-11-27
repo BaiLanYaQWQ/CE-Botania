@@ -1,0 +1,16 @@
+{
+  "textures": {
+    "particle": "botania:block/alfheim_gate",
+    "all": "botania:block/alfheim_gate"
+  },
+  "elements": [
+    {
+      "from": [7.9, 0, 0],
+      "to": [8.1, 16, 16],
+      "faces": {
+        "east": {"texture": "#all"},
+        "west": {"texture": "#all"}
+      }
+    }
+  ]
+}

@@ -6,11 +6,12 @@ blocks:
     behavior:
       type: botania:mana_pool
     state:
-      state: "minecraft:oak_leaves[distance=6,persistent=true,waterlogged=false]"
+      state: "minecraft:oak_leaves[distance=2,persistent=true,waterlogged=false]"
       model: botania:block/empty
       transparent: true
       entity_culling: false
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -37,11 +38,11 @@ blocks:
     states:
       properties:
         facing:
-          type: 4-direction
+          type: direction
           default: north
       appearances:
         north:
-          state: "minecraft:oak_leaves[distance=5,persistent=true,waterlogged=false]"
+          state: "minecraft:oak_leaves[distance=3,persistent=true,waterlogged=false]"
           model: botania:block/empty
           transparent: true
           entity_culling: false
@@ -61,7 +62,7 @@ blocks:
             display_transform: none
             rotation: '0,90,0'
         south:
-          state: "minecraft:oak_leaves[distance=3,persistent=true,waterlogged=false]"
+          state: "minecraft:oak_leaves[distance=5,persistent=true,waterlogged=false]"
           model: botania:block/empty
           transparent: true
           entity_culling: false
@@ -71,7 +72,7 @@ blocks:
             display_transform: none
             rotation: '0,0,0'
         west:
-          state: "minecraft:oak_leaves[distance=2,persistent=true,waterlogged=false]"
+          state: "minecraft:oak_leaves[distance=6,persistent=true,waterlogged=false]"
           model: botania:block/empty
           transparent: true
           entity_culling: false
@@ -80,6 +81,26 @@ blocks:
             item: botania:render/mana_spreader
             display_transform: none
             rotation: '0,270,0'
+        up:
+          state: "minecraft:spruce_leaves[distance=2,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/mana_spreader
+            display_transform: none
+            rotation: '-90,0,0'
+        down:
+          state: "minecraft:spruce_leaves[distance=3,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/mana_spreader
+            display_transform: none
+            rotation: '90,0,0'
       variants:
         'facing=north':
           appearance: north
@@ -89,7 +110,12 @@ blocks:
           appearance: south
         'facing=west':
           appearance: west
+        'facing=up':
+          appearance: up
+        'facing=down':
+          appearance: down
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -113,16 +139,86 @@ blocks:
   botania:elven_spreader:
     behavior:
       type: botania:mana_spreader
-    state:
-      state: "minecraft:spruce_leaves[distance=5,persistent=true,waterlogged=false]"
-      model: botania:block/empty
-      transparent: true
-      entity_culling: false
-      entity_renderer:
-        type: item_display
-        item: botania:render/elven_spreader
-        display_transform: none
+    states:
+      properties:
+        facing:
+          type: direction
+          default: north
+      appearances:
+        north:
+          state: "minecraft:spruce_leaves[distance=4,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/elven_spreader
+            display_transform: none
+            rotation: '0,180,0'
+        east:
+          state: "minecraft:spruce_leaves[distance=5,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/elven_spreader
+            display_transform: none
+            rotation: '0,90,0'
+        south:
+          state: "minecraft:spruce_leaves[distance=6,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/elven_spreader
+            display_transform: none
+        west:
+          state: "minecraft:birch_leaves[distance=2,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/elven_spreader
+            display_transform: none
+            rotation: '0,270,0'
+        up:
+          state: "minecraft:birch_leaves[distance=3,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/elven_spreader
+            display_transform: none
+            rotation: '-90,0,0'
+        down:
+          state: "minecraft:birch_leaves[distance=4,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/elven_spreader
+            display_transform: none
+            rotation: '90,0,0'
+      variants:
+        'facing=north':
+          appearance: north
+        'facing=east':
+          appearance: east
+        'facing=south':
+          appearance: south
+        'facing=west':
+          appearance: west
+        'facing=up':
+          appearance: up
+        'facing=down':
+          appearance: down
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -143,19 +239,90 @@ blocks:
           entries:
             - type: item
               item: botania:elven_spreader
+
   botania:gaia_spreader:
     behavior:
       type: botania:mana_spreader
-    state:
-      state: "minecraft:spruce_leaves[distance=4,persistent=true,waterlogged=false]"
-      model: botania:block/empty
-      transparent: true
-      entity_culling: false
-      entity_renderer:
-        type: item_display
-        item: botania:render/gaia_spreader
-        display_transform: none
+    states:
+      properties:
+        facing:
+          type: direction
+          default: north
+      appearances:
+        north:
+          state: "minecraft:birch_leaves[distance=5,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/gaia_spreader
+            display_transform: none
+            rotation: '0,180,0'
+        east:
+          state: "minecraft:birch_leaves[distance=6,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/gaia_spreader
+            display_transform: none
+            rotation: '0,90,0'
+        south:
+          state: "minecraft:jungle_leaves[distance=2,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/gaia_spreader
+            display_transform: none
+        west:
+          state: "minecraft:jungle_leaves[distance=3,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/gaia_spreader
+            display_transform: none
+            rotation: '0,270,0'
+        up:
+          state: "minecraft:jungle_leaves[distance=4,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/gaia_spreader
+            display_transform: none
+            rotation: '-90,0,0'
+        down:
+          state: "minecraft:jungle_leaves[distance=5,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/gaia_spreader
+            display_transform: none
+            rotation: '90,0,0'
+      variants:
+        'facing=north':
+          appearance: north
+        'facing=east':
+          appearance: east
+        'facing=south':
+          appearance: south
+        'facing=west':
+          appearance: west
+        'facing=up':
+          appearance: up
+        'facing=down':
+          appearance: down
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -176,19 +343,90 @@ blocks:
           entries:
             - type: item
               item: botania:gaia_spreader
+
   botania:redstone_spreader:
     behavior:
       type: botania:mana_spreader
-    state:
-      state: "minecraft:birch_leaves[distance=2,persistent=true,waterlogged=false]"
-      model: botania:block/empty
-      transparent: true
-      entity_culling: false
-      entity_renderer:
-        type: item_display
-        item: botania:render/redstone_spreader
-        display_transform: none
+    states:
+      properties:
+        facing:
+          type: direction
+          default: north
+      appearances:
+        north:
+          state: "minecraft:jungle_leaves[distance=6,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/redstone_spreader
+            display_transform: none
+            rotation: '0,180,0'
+        east:
+          state: "minecraft:acacia_leaves[distance=2,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/redstone_spreader
+            display_transform: none
+            rotation: '0,90,0'
+        south:
+          state: "minecraft:acacia_leaves[distance=3,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/redstone_spreader
+            display_transform: none
+        west:
+          state: "minecraft:acacia_leaves[distance=4,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/redstone_spreader
+            display_transform: none
+            rotation: '0,270,0'
+        up:
+          state: "minecraft:acacia_leaves[distance=5,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/redstone_spreader
+            display_transform: none
+            rotation: '-90,0,0'
+        down:
+          state: "minecraft:acacia_leaves[distance=6,persistent=true,waterlogged=false]"
+          model: botania:block/empty
+          transparent: true
+          entity_culling: false
+          entity_renderer:
+            type: item_display
+            item: botania:render/redstone_spreader
+            display_transform: none
+            rotation: '90,0,0'
+      variants:
+        'facing=north':
+          appearance: north
+        'facing=east':
+          appearance: east
+        'facing=south':
+          appearance: south
+        'facing=west':
+          appearance: west
+        'facing=up':
+          appearance: up
+        'facing=down':
+          appearance: down
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -209,11 +447,12 @@ blocks:
           entries:
             - type: item
               item: botania:redstone_spreader
+
   botania:apothecary_default:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:birch_leaves[distance=6,persistent=true,waterlogged=false]"
+      state: "minecraft:dark_oak_leaves[distance=2,persistent=true,waterlogged=false]"
       model: botania:block/empty
       transparent: true
       entity_culling: false
@@ -222,6 +461,7 @@ blocks:
         item: botania:render/apothecary_default
         display_transform: none
     settings:
+      support_shape: cobweb
       name: '<lang:botania.block.apothecary_default>'
       sounds:
         break: minecraft:block.stone.break
@@ -247,7 +487,7 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:birch_leaves[distance=5,persistent=true,waterlogged=false]"
+      state: "minecraft:dark_oak_leaves[distance=3,persistent=true,waterlogged=false]"
       model: botania:block/empty
       transparent: true
       entity_culling: false
@@ -256,6 +496,7 @@ blocks:
         item: botania:render/apothecary_default_water
         display_transform: none
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -280,7 +521,7 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:birch_leaves[distance=4,persistent=true,waterlogged=false]"
+      state: "minecraft:dark_oak_leaves[distance=4,persistent=true,waterlogged=false]"
       model: botania:block/empty
       transparent: true
       entity_culling: false
@@ -289,6 +530,7 @@ blocks:
         item: botania:render/apothecary_desert
         display_transform: none
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -313,7 +555,7 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:jungle_leaves[distance=2,persistent=true,waterlogged=false]"
+      state: "minecraft:dark_oak_leaves[distance=5,persistent=true,waterlogged=false]"
       model: botania:block/empty
       transparent: true
       entity_culling: false
@@ -322,6 +564,7 @@ blocks:
         item: botania:render/apothecary_forest
         display_transform: none
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -346,7 +589,7 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:jungle_leaves[distance=6,persistent=true,waterlogged=false]"
+      state: "minecraft:dark_oak_leaves[distance=6,persistent=true,waterlogged=false]"
       model: botania:block/empty
       transparent: true
       entity_culling: false
@@ -355,6 +598,7 @@ blocks:
         item: botania:render/apothecary_fungal
         display_transform: none
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -379,7 +623,7 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:jungle_leaves[distance=5,persistent=true,waterlogged=false]"
+      state: "minecraft:mangrove_leaves[distance=2,persistent=true,waterlogged=false]"
       model: botania:block/empty
       transparent: true
       entity_culling: false
@@ -388,6 +632,7 @@ blocks:
         item: botania:render/apothecary_mesa
         display_transform: none
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -412,7 +657,7 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:jungle_leaves[distance=4,persistent=true,waterlogged=false]"
+      state: "minecraft:mangrove_leaves[distance=3,persistent=true,waterlogged=false]"
       model: botania:block/empty
       transparent: true
       entity_culling: false
@@ -421,6 +666,7 @@ blocks:
         item: botania:render/apothecary_mountain
         display_transform: none
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -445,7 +691,7 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:acacia_leaves[distance=2,persistent=true,waterlogged=false]"
+      state: "minecraft:mangrove_leaves[distance=4,persistent=true,waterlogged=false]"
       model: botania:block/empty
       transparent: true
       entity_culling: false
@@ -454,6 +700,7 @@ blocks:
         item: botania:render/apothecary_plains
         display_transform: none
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -478,7 +725,7 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:acacia_leaves[distance=6,persistent=true,waterlogged=false]"
+      state: "minecraft:mangrove_leaves[distance=5,persistent=true,waterlogged=false]"
       model: botania:block/empty
       transparent: true
       entity_culling: false
@@ -487,6 +734,7 @@ blocks:
         item: botania:render/apothecary_swamp
         display_transform: none
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -511,7 +759,7 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:acacia_leaves[distance=5,persistent=true,waterlogged=false]"
+      state: "minecraft:mangrove_leaves[distance=6,persistent=true,waterlogged=false]"
       model: botania:block/empty
       transparent: true
       entity_culling: false
@@ -520,6 +768,7 @@ blocks:
         item: botania:render/apothecary_taiga
         display_transform: none
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -544,7 +793,7 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:acacia_leaves[distance=4,persistent=true,waterlogged=false]"
+      state: "minecraft:cherry_leaves[distance=2,persistent=true,waterlogged=false]"
       model: botania:block/empty
       transparent: true
       entity_culling: false
@@ -553,6 +802,7 @@ blocks:
         item: botania:render/apothecary_livingrock
         display_transform: none
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -577,7 +827,7 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:dark_oak_leaves[distance=2,persistent=true,waterlogged=false]"
+      state: "minecraft:cherry_leaves[distance=3,persistent=true,waterlogged=false]"
       model: botania:block/empty
       transparent: true
       entity_culling: false
@@ -586,6 +836,7 @@ blocks:
         item: botania:render/apothecary_mossy
         display_transform: none
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -610,7 +861,7 @@ blocks:
     behavior:
       type: botania:petal_apothecary
     state:
-      state: "minecraft:dark_oak_leaves[distance=6,persistent=true,waterlogged=false]"
+      state: "minecraft:cherry_leaves[distance=4,persistent=true,waterlogged=false]"
       model: botania:block/empty
       transparent: true
       entity_culling: false
@@ -619,6 +870,7 @@ blocks:
         item: botania:render/apothecary_deepslate
         display_transform: none
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -643,7 +895,7 @@ blocks:
     behavior:
       type: botania:runic_altar
     state:
-      state: "minecraft:dark_oak_leaves[distance=5,persistent=true,waterlogged=false]"
+      state: "minecraft:cherry_leaves[distance=5,persistent=true,waterlogged=false]"
       model: botania:block/empty
       transparent: true
       entity_culling: false
@@ -652,6 +904,7 @@ blocks:
         item: botania:render/runic_altar
         display_transform: none
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -676,7 +929,7 @@ blocks:
     behavior:
       type: botania:mana_pool
     state:
-      state: "minecraft:dark_oak_leaves[distance=4,persistent=true,waterlogged=false]"
+      state: "minecraft:cherry_leaves[distance=6,persistent=true,waterlogged=false]"
       model: botania:block/empty
       transparent: true
       entity_culling: false
@@ -685,6 +938,7 @@ blocks:
         item: botania:render/diluted_pool
         display_transform: none
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -709,7 +963,7 @@ blocks:
     behavior:
       type: botania:mana_pool
     state:
-      state: "minecraft:mangrove_leaves[distance=2,persistent=true,waterlogged=false]"
+      state: "minecraft:pale_oak_leaves[distance=2,persistent=true,waterlogged=false]"
       model: botania:block/empty
       transparent: true
       entity_culling: false
@@ -718,6 +972,7 @@ blocks:
         item: botania:render/fabulous_pool
         display_transform: none
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
@@ -742,7 +997,7 @@ blocks:
     behavior:
       type: botania:mana_pool
     state:
-      state: "minecraft:mangrove_leaves[distance=6,persistent=true,waterlogged=false]"
+      state: "minecraft:pale_oak_leaves[distance=3,persistent=true,waterlogged=false]"
       model: botania:block/empty
       transparent: true
       entity_culling: false
@@ -751,6 +1006,7 @@ blocks:
         item: botania:render/creative_pool
         display_transform: none
     settings:
+      support_shape: cobweb
       sounds:
         break: minecraft:block.stone.break
         step: minecraft:block.stone.step
