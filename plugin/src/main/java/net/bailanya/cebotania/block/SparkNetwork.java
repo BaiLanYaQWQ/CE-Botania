@@ -1,14 +1,14 @@
 package net.bailanya.cebotania.block;
 
 import net.bailanya.cebotania.platform.BotaniaItems;
-import net.bailanya.cebotania.platform.Platform;
 import org.bukkit.Location;
 import org.bukkit.entity.ItemDisplay;
-import org.bukkit.entity.Player;
 import org.bukkit.persistence.PersistentDataType;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 火花网络：实体方案。
@@ -133,7 +133,7 @@ public final class SparkNetwork {
             return;
         }
         // 按下方方块归类
-        List<Source> sources = new ArrayList<>();
+        Map<Long, List<Source>> sources = new HashMap<>();
         List<Sink> sinks = new ArrayList<>();
         var ceWorld = net.momirealms.craftengine.bukkit.api.BukkitAdaptor
                 .adapt(world).storageWorld();
@@ -149,27 +149,40 @@ public final class SparkNetwork {
             }
             var pool = entity.controller.get(ManaPoolController.class, 0);
             if (pool != null && pool.mana() > 0) {
-                sources.add(new Source(spark, pool));
+                var location = spark.location();
+                var source = new Source(location, pool);
+                // 半径为一个区块宽度。按原收集顺序向可能接收魔力的区块登记。
+                int cx = location.getBlockX() >> 4;
+                int cz = location.getBlockZ() >> 4;
+                for (int x = cx - 1; x <= cx + 1; x++) {
+                    for (int z = cz - 1; z <= cz + 1; z++) {
+                        sources.computeIfAbsent(org.bukkit.Chunk.getChunkKey(x, z),
+                                ignored -> new ArrayList<>()).add(source);
+                    }
+                }
                 continue;
             }
             var altar = entity.controller.get(RunicAltarController.class, 0);
             if (altar != null && altar.room() > 0) {
-                sinks.add(new Sink(spark, altar));
+                sinks.add(new Sink(spark.location(), altar));
                 continue;
             }
             var plate = entity.controller.get(TerrasteelController.class, 0);
             if (plate != null && plate.room() > 0) {
-                sinks.add(new Sink(spark, plate));
+                sinks.add(new Sink(spark.location(), plate));
             }
         }
         // 圆形范围接力
         for (var sink : sinks) {
-            for (var source : sources) {
+            long key = org.bukkit.Chunk.getChunkKey(sink.location.getBlockX() >> 4, sink.location.getBlockZ() >> 4);
+            for (var source : sources.getOrDefault(key, List.of())) {
+                if (sink.target.room() == 0) {
+                    break;
+                }
                 if (source.pool.mana() <= 0) {
                     continue;
                 }
-                double dist = sink.spark.location().distance(source.spark.location());
-                if (dist > LINK_RADIUS) {
+                if (sink.location.distanceSquared(source.location) > LINK_RADIUS * LINK_RADIUS) {
                     continue;
                 }
                 long moved = Math.min(TRANSFER,
@@ -183,7 +196,7 @@ public final class SparkNetwork {
                 }
                 sink.target.insert(taken);
                 // 只有真的搬运了才放粒子
-                drawLink(source.spark.location(), sink.spark.location());
+                drawLink(source.location, sink.location);
             }
         }
     }
@@ -208,9 +221,9 @@ public final class SparkNetwork {
         }
     }
 
-    private record Source(Spark spark, ManaPoolController pool) {
+    private record Source(Location location, ManaPoolController pool) {
     }
 
-    private record Sink(Spark spark, ManaBlockController target) {
+    private record Sink(Location location, ManaBlockController target) {
     }
 }

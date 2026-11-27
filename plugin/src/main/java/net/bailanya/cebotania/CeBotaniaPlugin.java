@@ -7,6 +7,7 @@ import net.bailanya.cebotania.block.PureDaisyBehavior;
 import net.bailanya.cebotania.block.RunicAltarBehavior;
 import net.bailanya.cebotania.block.TerrasteelBehavior;
 import net.bailanya.cebotania.block.AlfheimPortalBehavior;
+import net.bailanya.cebotania.block.AlfheimTrade;
 import net.bailanya.cebotania.block.ManaPoolBehavior;
 import net.bailanya.cebotania.block.SpreaderBehavior;
 import net.bailanya.cebotania.command.BotaniaCommand;
@@ -51,7 +52,8 @@ public final class CeBotaniaPlugin extends JavaPlugin {
         BlockBehaviors.register(PureDaisyBehavior.KEY, PureDaisyBehavior.pureDaisyFactory());
         BlockBehaviors.register(RunicAltarBehavior.KEY, RunicAltarBehavior.runicFactory(this));
         BlockBehaviors.register(TerrasteelBehavior.KEY, TerrasteelBehavior.factory(this));
-        BlockBehaviors.register(AlfheimPortalBehavior.KEY, AlfheimPortalBehavior.factory(this));
+        var alfheimTrade = new AlfheimTrade(this.recipes);
+        BlockBehaviors.register(AlfheimPortalBehavior.KEY, AlfheimPortalBehavior.factory(alfheimTrade));
         BlockBehaviors.register(ManaPoolBehavior.KEY, ManaPoolBehavior.factory(this));
         BlockBehaviors.register(SpreaderBehavior.KEY, SpreaderBehavior.factory());
         BlockBehaviors.register(ApothecaryBehavior.KEY, ApothecaryBehavior.factory(this));
@@ -82,18 +84,6 @@ public final class CeBotaniaPlugin extends JavaPlugin {
                 }
             }
         }, 40L, 10L);
-
-        // 4.7) 精灵交易：每 10 tick 扫一遍传送门里的掉落物
-        Bukkit.getScheduler().runTaskTimer(this, () -> {
-            for (var w : Bukkit.getWorlds()) {
-                try {
-                    net.bailanya.cebotania.block.AlfheimTrade.tick(this, w);
-                    net.bailanya.cebotania.block.AlfheimTrade.drawPortals(w);
-                } catch (Throwable ignored) {
-                    // 单世界出错不影响其它世界
-                }
-            }
-        }, 60L, 5L);
 
         // 5) 事件：打花掉花瓣
         Bukkit.getPluginManager().registerEvents(
