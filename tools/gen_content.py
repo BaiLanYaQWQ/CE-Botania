@@ -7,13 +7,14 @@
 输入：仓库中的方块状态、模型、物品标签及 tools/content_lang 中的语言快照
 输出：pack/configuration/items/generated_items.yml
       pack/configuration/blocks/generated_blocks.yml
+      pack/configuration/blocks/generated_stairs_*.yml、generated_slabs.yml
       pack/configuration/langs/zh_cn.yml、en_us.yml
 
 约定：
   * 命名空间固定 botania，id 与上游一致，便于对照上游代码与配方。
   * 纯物品走 `model: minecraft:model path: botania:item/<id>`，保留上游图标。
-  * 方块走 `blocks:` 段：单状态 solid；多状态按 variant 取默认外观，
-    由 core_blocks.yml 覆盖需要精确物理行为的核心方块。
+  * 方块走 `blocks:` 段，楼梯与台阶根据原版状态配置物理行为和外观。
+    核心玩法方块由 core_blocks.yml 提供。
   * 语言文件用 botania.item.<id> / botania.block.<id> 作为键。
 """
 from __future__ import annotations
@@ -23,6 +24,10 @@ import json
 import re
 import sys
 from pathlib import Path
+
+from gen_connections import CONNECTION_TAGS, connection_kind, connection_render_models, connection_states
+from gen_steps import STEP_TAGS, slab_loot, step_kind, step_output_paths, step_render_models, step_states
+from gen_walls import WALL_TAG, is_wall, wall_render_models, wall_states
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "pack" / "resourcepack" / "assets" / "botania"
@@ -47,7 +52,7 @@ EXTRA_RENDER_MODELS = {
 }
 
 DIRECTIONS = ("east", "north", "south", "west")
-PYLON_TRIPWIRE = {"gaia_pylon": "south", "mana_pylon": "north", "natura_pylon": "east"}
+PYLON_LEAF_DISTANCE = {"mana_pylon": 1, "natura_pylon": 2, "gaia_pylon": 3}
 
 
 def tripwire(*, attached: bool = True, powered: bool = False,
@@ -129,6 +134,8 @@ def resolve_model(path: str, depth: int = 0):
     if depth > 12 or not path:
         return None, None
     ns, _, rel = path.partition(":")
+    if ":" not in path:
+        return None, f"minecraft:{path}"
     if ns == "minecraft":
         return None, path
     f = MODELS_DIR / (rel + ".json")
@@ -392,7 +399,26 @@ def gen_render_items(names: list[str], idx: Index) -> str:
     for name in names:
         if SKIP_FLOWER(name) or name in EXTRA_RENDER_MODELS:
             continue
-        lines.extend(render_item(f"render/{name}", idx.default_model(name) or "", name))
+        if connection_kind(name):
+            for renderer, model in connection_render_models(name, idx.blockstates[name]).items():
+                lines.extend(render_item(renderer, model, name))
+            continue
+        if is_wall(name):
+            for renderer, model in wall_render_models(name, idx.blockstates[name]).items():
+                lines.extend(render_item(renderer, model, name))
+            continue
+        if step_kind(name):
+            for renderer, model in step_render_models(name, idx.blockstates[name]).items():
+                lines.extend(render_item(renderer, model, name))
+            continue
+        model = idx.default_model(name) or ""
+        if name.startswith("potted_"):
+            definition = json.loads((MODELS_DIR / (model.split(":", 1)[-1] + ".json")).read_text())
+            plant = definition["textures"]["plant"]
+            lines.extend(render_item(f"render/{name}", f"botania:block/potted_plant/{name}", name,
+                                     plant_texture=plant))
+        else:
+            lines.extend(render_item(f"render/{name}", model, name))
     for name, (model, translation) in EXTRA_RENDER_MODELS.items():
         lines.append("")
         lines.extend(render_item(f"render/{name}", f"botania:block/{model}", translation))
@@ -400,13 +426,18 @@ def gen_render_items(names: list[str], idx: Index) -> str:
 
 
 
-def render_item(name: str, model: str, translation: str) -> list[str]:
+def render_item(name: str, model: str, translation: str, *, plant_texture: str | None = None) -> list[str]:
+    generation = []
+    if plant_texture is not None:
+        generation = ["      generation:", "        parent: botania:block/shapes/potted_plant",
+                      "        textures:", f"          plant: {plant_texture}"]
     return [
         f"  {NAMESPACE}:{name}:",
         "    material: paper",
         "    model:",
         "      type: minecraft:model",
         f"      path: {model}",
+        *generation,
         "    data:",
         f"      item_name: '<!i><white><lang:{NAMESPACE}.block.{translation}>'",
     ]
@@ -448,7 +479,7 @@ def gen_block_items(idx: Index, en: dict, zh: dict, skip: set[str]) -> str:
         lines.append("    data:")
         lines.append(f"      item_name: '<!i><white><lang:{NAMESPACE}.block.{name}>'")
         lines.append("    behavior:")
-        lines.append("      type: block_item")
+        lines.append("      type: botania:slab_item" if step_kind(name) == "slab" else "      type: block_item")
         lines.append(f"      block: {NAMESPACE}:{name}")
         owned = tags.get(f"{NAMESPACE}:{name}")
         if owned:
@@ -474,12 +505,16 @@ def carrier_plan(idx: Index, flowers: set[str]) -> dict[str, str]:
 
 
 def item_display(renderer: str, indent: int, carrier: str | None = None) -> list[str]:
-    if carrier:
+    if carrier == "minecraft:flower_pot":
+        # 共用原版可见盆体，显示实体只补上土面以上的植物。
+        lines = [f'state: "{carrier}"', "model: minecraft:block/flower_pot"]
+    elif carrier:
         lines = [f'state: "{carrier}"', "model: botania:block/empty"]
     else:
         lines = ["auto_state:", "  type: sugar_cane", "  id: transparent"]
+    if carrier != "minecraft:flower_pot":
+        lines.append("transparent: true")
     lines.extend([
-        "transparent: true",
         "entity_culling: false",
         "entity_renderer:",
         "  type: item_display",
@@ -544,7 +579,7 @@ def block_loot(name: str) -> list[str]:
     ]
 
 
-def gen_blocks(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str]) -> tuple[str, dict, dict]:
+def gen_blocks(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str]) -> tuple[dict[str, str], dict, dict]:
     flowers = flower_ids()
     plant_carriers = carrier_plan(idx, flowers)
     lines: list[str] = [
@@ -553,6 +588,10 @@ def gen_blocks(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str
         "# （用音符盒当载体的话，客户端会按整块剔除它下方方块的顶面）。",
         "blocks:",
     ]
+    block_files = {"blocks/generated_blocks.yml": lines}
+    step_paths = step_output_paths(idx.block_set)
+    wall_names = sorted(name for name in idx.block_set if is_wall(name))
+    wall_paths = {name: f"blocks/generated_walls_{i // 3 + 1}.yml" for i, name in enumerate(wall_names)}
     en_out: dict[str, str] = {}
     zh_out: dict[str, str] = {}
     block_tags = item_tags()
@@ -568,6 +607,9 @@ def gen_blocks(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str
             zh_out[f"{NAMESPACE}.block.{name}"] = clean_name(key_zh)
             continue
         geometry = geometry_of(idx, name)
+        steps = step_kind(name)
+        connections = connection_kind(name)
+        wall = is_wall(name)
         model = idx.default_model(name)
         if not model:
             continue
@@ -577,13 +619,33 @@ def gen_blocks(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str
         en_out[f"{NAMESPACE}.block.{name}"] = clean_name(key_en)
         zh_out[f"{NAMESPACE}.block.{name}"] = clean_name(key_zh)
 
+        if connections:
+            lines = block_files.setdefault("blocks/generated_connections.yml", [
+                "# 玻璃板、栅栏与栅栏门（tools/gen_content.py、tools/gen_connections.py 生成）。",
+                "blocks:",
+            ])
+        elif wall:
+            lines = block_files.setdefault(wall_paths[name], [
+                "# 石墙（tools/gen_content.py、tools/gen_walls.py 生成，勿手改）。",
+                "blocks:",
+            ])
+        elif steps:
+            lines = block_files.setdefault(step_paths[name], [
+                "# 楼梯与台阶（tools/gen_content.py、tools/gen_steps.py 生成，勿手改）。",
+                "blocks:",
+            ])
+        else:
+            lines = block_files["blocks/generated_blocks.yml"]
         lines.append(f"  {NAMESPACE}:{name}:")
         if name == "alfheim_portal":
             lines.extend(["    behavior:", "      type: botania:alfheim_portal"])
+            # 核心是完整方块，树叶载体提供整格碰撞并保留实体渲染。
+            closed_carrier = "minecraft:azalea_leaves[distance=2,persistent=true,waterlogged=false]"
+            open_carrier = "minecraft:azalea_leaves[distance=3,persistent=true,waterlogged=false]"
             lines.extend(portal_states(
                 "open",
-                ("closed", tripwire(), name),
-                ("open", tripwire(directions=("east", "north", "south")), "alfheim_portal_activated"),
+                ("closed", closed_carrier, name),
+                ("open", open_carrier, "alfheim_portal_activated"),
             ))
             lines.extend(special_block_settings(name, "stone", 1.5, 3.0, fluid_state=False))
             lines.extend(block_loot(name))
@@ -591,7 +653,9 @@ def gen_blocks(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str
             continue
         if name == "terra_plate":
             lines.extend(["    behavior:", "      type: botania:terra_plate", "    state:"])
-            lines.extend(item_display(name, 6, tripwire(powered=True)))
+            # 下半关闭的活板门与上游凝聚板的 16×3×16 碰撞相同。
+            plate_carrier = "minecraft:iron_trapdoor[facing=north,half=bottom,open=false,powered=true,waterlogged=false]"
+            lines.extend(item_display(name, 6, plate_carrier))
             lines.extend(special_block_settings(name, "metal", 3.0, 10.0, label=True))
             lines.append("")
             continue
@@ -606,8 +670,15 @@ def gen_blocks(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str
             # 野花（神秘花、发光花、蘑菇…）：只做"能不能站住"的判定，不建方块实体
             lines.append("    behavior:")
             lines.append("      type: botania:ground_plant")
-        lines.append("    state:")
-        if geometry == "cross" and name in plant_carriers:
+        if not steps and not connections and not wall:
+            lines.append("    state:")
+        if connections:
+            lines.extend(connection_states(name, connections, idx.blockstates[name]))
+        elif wall:
+            lines.extend(wall_states(name, idx.blockstates[name]))
+        elif steps:
+            lines.extend(step_states(name, steps, idx.blockstates[name]))
+        elif geometry == "cross" and name in plant_carriers:
             # 有专属 0 碰撞载体：直接盖方块模型，材质完整、能穿过去、不遮挡
             lines.append(f"      state: \"{plant_carriers[name]}\"")
             lines.append(f"      model: {NAMESPACE}:{model}")
@@ -616,16 +687,19 @@ def gen_blocks(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str
             lines.append(f"      model: {NAMESPACE}:{model}")
         else:
             carrier = None
-            if name in PYLON_TRIPWIRE:
-                directions = tuple(direction for direction in DIRECTIONS
-                                   if direction != PYLON_TRIPWIRE[name])
-                carrier = tripwire(directions=directions)
+            if name.startswith("potted_"):
+                carrier = "minecraft:flower_pot"
+            elif name in PYLON_LEAF_DISTANCE:
+                distance = PYLON_LEAF_DISTANCE[name]
+                carrier = f"minecraft:flowering_azalea_leaves[distance={distance},persistent=true,waterlogged=false]"
             lines.extend(item_display(name, 6, carrier))
             lines.append("        scale: 1.0")
             lines.append("        translation: '0,0,0'")
             lines.append("        rotation: '0,180,0'")
         tool_tags = []
-        lines.extend(["    settings:", "      support_shape: cobweb"])
+        lines.append("    settings:")
+        if not steps and not connections and not wall:
+            lines.append("      support_shape: cobweb")
         if geometry == "cross" or name in flowers:
             # 和原版花一样：一碰就碎、不需要工具、音效用草方块那套
             lines.append("      sounds:")
@@ -662,12 +736,20 @@ def gen_blocks(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str
                 lines.append("      resistance: 3.0")
                 lines.append("      require_correct_tools: false")
                 tool_tags = []
-        if geometry != "full":
+        if connections or wall:
+            lines.extend(["      can_occlude: false", "      is_suffocating: false", "      is_view_blocking: false"])
+        elif geometry != "full" and not steps:
             lines.append("      can_occlude: false")
             lines.append("      is_suffocating: false")
             lines.append("      is_view_blocking: false")
             lines.append("      fluid_state: false")
         owned = list(block_tags.get(f"{NAMESPACE}:{name}", []))
+        if steps:
+            owned.append(STEP_TAGS[steps])
+        if connections:
+            owned.extend(CONNECTION_TAGS[connections])
+        if wall:
+            owned.append(WALL_TAG)
         # 工具标签 + 物品标签合并写一个 tags 段（写两个会后者覆盖前者）
         all_tags = sorted(set(tool_tags if geometry != "cross" and name not in flowers else [])
                           | set(owned))
@@ -679,9 +761,12 @@ def gen_blocks(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str
         if wild_flower(name):
             # 野花不掉方块：原版是打掉直接掉花瓣（插件里的 PetalDropListener 负责）
             lines.append("    loot: {}")
+        elif steps == "slab":
+            lines.extend(slab_loot(name))
         else:
             lines.extend(block_loot(name))
 
+    lines = block_files["blocks/generated_blocks.yml"]
     lines.extend(["", "  botania:alfheim_portal_block:"])
     lines.extend(portal_states(
         "along_x",
@@ -690,7 +775,7 @@ def gen_blocks(idx: Index, en: dict[str, str], zh: dict[str, str], skip: set[str
     ))
     lines.extend(special_block_settings("alfheim_portal_block", "glass", 0.0, 0.0,
                                         events=("break", "place", "hit")))
-    return "\n".join(lines) + "\n\n", en_out, zh_out
+    return {path: "\n".join(data) + "\n\n" for path, data in block_files.items()}, en_out, zh_out
 
 
 
@@ -1018,11 +1103,12 @@ def main() -> int:
 
     flowers = flower_ids()
     items_txt, en1, zh1 = gen_items(idx, en, zh, skip)
-    blocks_txt, en2, zh2 = gen_blocks(idx, en, zh, skip)
+    block_outputs, en2, zh2 = gen_blocks(idx, en, zh, skip)
     # 核心方块（被 _core_overrides 跳过的那批）也要外观物品：它们同样走实体渲染
     carrier_names = set(carrier_plan(idx, flowers))
     render_names = [n for n in sorted(idx.block_set)
-                    if geometry_of(idx, n) != "full" and n not in carrier_names]
+                    if step_kind(n) or connection_kind(n) or is_wall(n)
+                    or (geometry_of(idx, n) != "full" and n not in carrier_names)]
     render_txt = gen_render_items(render_names, idx)
     block_items_txt = gen_block_items(idx, en, zh, skip)
     categories_txt = gen_categories(idx, flowers, skip)
@@ -1034,7 +1120,7 @@ def main() -> int:
         "items/generated_render.yml": render_txt,
         "items/generated_block_items.yml": block_items_txt,
         "items/generated_items.yml": items_txt,
-        "blocks/generated_blocks.yml": blocks_txt,
+        **block_outputs,
         "categories.yml": categories_txt,
         "langs/zh_cn.yml": zh_txt,
         "langs/en_us.yml": en_txt,
@@ -1052,7 +1138,7 @@ def main() -> int:
         path.write_bytes(content.encode("utf-8"))
 
     print(f"物品 {items_txt.count(chr(10) + '  botania:')} 条")
-    print(f"方块 {blocks_txt.count(chr(10) + '  botania:')} 条")
+    print(f"方块 {sum(content.count(chr(10) + '  botania:') for content in block_outputs.values())} 条")
     print(f"语言键 {len(zh1) + len(zh2)} 条")
     return 0
 

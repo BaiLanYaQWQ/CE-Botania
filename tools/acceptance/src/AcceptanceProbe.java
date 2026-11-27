@@ -63,14 +63,44 @@ public final class AcceptanceProbe extends JavaPlugin {
             return;
         }
         try {
+            checkSolidMachines(world);
+            checkSwampBricks(world);
+            PoolChecks.run(world);
+            getLogger().info("CE_ACCEPT POOLS variants=4 collision=upstream");
+            int spreaders = SpreaderChecks.run(world);
+            getLogger().info("CE_ACCEPT SPREADERS states=" + spreaders + " collision=upstream");
+            StepChecks.run(world);
+            getLogger().info("CE_ACCEPT STEPS variants=51+51 states=4386 slabs=bottom,top,double,drops=2"
+                    + " stairs=4directions,2halves,4corners waterlogged=true");
+            var pots = PotChecks.run(world);
             checkPortal(world, true);
             checkPortal(world, false);
             checkNaturalFlowers(world);
-            SparkChecks.run(this, world, this::finish);
+            ConnectionChecks.run(this, world, summary -> {
+                getLogger().info("CE_ACCEPT CONNECTIONS " + summary);
+                checkPackThenSparks(world, pots);
+            }, failure -> {
+                getLogger().log(Level.WARNING, "Connection check failed", failure);
+                finish(failure.toString());
+            });
         } catch (Exception | LinkageError failure) {
             getLogger().log(Level.WARNING, "Acceptance check failed", failure);
             finish(failure.toString());
         }
+    }
+
+    private void checkPackThenSparks(World world, List<Key> pots) {
+        Bukkit.getScheduler().runTaskAsynchronously(this, () -> {
+            try {
+                PotChecks.checkGeneratedModels(pots);
+                getLogger().info("CE_ACCEPT POTTED_PLANTS count=" + pots.size()
+                        + " collision=vanilla visual_models=verified vanilla_interactions=2");
+                Bukkit.getScheduler().runTask(this, () -> SparkChecks.run(this, world, this::finish));
+            } catch (Exception | LinkageError failure) {
+                getLogger().log(Level.WARNING, "Generated plant model check failed", failure);
+                Bukkit.getScheduler().runTask(this, () -> finish(failure.toString()));
+            }
+        });
     }
 
     private void checkPortal(World world, boolean alongX) throws ReflectiveOperationException {
@@ -81,6 +111,8 @@ public final class AcceptanceProbe extends JavaPlugin {
         var drops = new ArrayList<Item>();
         try {
             place(world, core, "alfheim_portal", blocks);
+            var coreBlock = blockAt(world, core);
+            checkPortalCoreCollision(coreBlock, false);
             for (int side = -2; side <= 2; side++) {
                 for (int height = 0; height <= 4; height++) {
                     if (isFrameBlock(side, height)) {
@@ -120,10 +152,12 @@ public final class AcceptanceProbe extends JavaPlugin {
                 var axis = state.getProperty("along_x");
                 require(axis != null && Boolean.valueOf(!alongX).equals(state.get(axis)),
                         direction + " portal has incorrect gate orientation at " + block.getLocation());
+                checkCollision(block, false, direction + " portal gate");
             }
 
             // The public one-argument method leaves orientation unset. The controller must recover it.
             controller.setOpen(true);
+            checkPortalCoreCollision(coreBlock, true);
             var preexistingOutput = findTradeOutput(world, core);
             require(preexistingOutput.isEmpty(), "Portal fixture has preexisting dreamwood drops");
             Item inside = drop(world, portalCell(core, alongX, -1, 1), 2, drops);
@@ -138,7 +172,8 @@ public final class AcceptanceProbe extends JavaPlugin {
                     direction + " portal traded an item outside its plane");
             require(output == 1, direction + " portal produced " + output + " dreamwood, expected one");
 
-            getLogger().info("CE_ACCEPT PORTAL_" + direction + " gates=9 trade=1 outside_preserved=true");
+            getLogger().info("CE_ACCEPT PORTAL_" + direction
+                    + " gates=9 trade=1 outside_preserved=true core_collision=closed,open gate_collision=none");
         } finally {
             for (var item : drops) {
                 item.remove();
@@ -150,6 +185,71 @@ public final class AcceptanceProbe extends JavaPlugin {
                 }
             }
         }
+    }
+
+    private void checkSolidMachines(World world) {
+        var fixtures = List.of("mana_pylon", "natura_pylon", "gaia_pylon", "terra_plate");
+        int y = world.getMaxHeight() - 16;
+        var blocks = new ArrayList<Block>();
+        try {
+            for (int i = 0; i < fixtures.size(); i++) {
+                var id = fixtures.get(i);
+                var pos = new BlockPos(PORTAL_X + 8 + i * 2, y, PORTAL_Z);
+                place(world, pos, id, blocks);
+                var block = blockAt(world, pos);
+                var state = CraftEngineBlocks.getCustomBlockState(block);
+                require(state != null && !state.isEmpty() && Key.of("botania", id).equals(state.owner().value().id()),
+                        "Wrong custom state for " + id + " at " + block.getLocation());
+                checkCollision(block, true, id);
+            }
+            getLogger().info("CE_ACCEPT MACHINE_COLLISIONS mana_pylon,natura_pylon,gaia_pylon,terra_plate");
+        } finally {
+            for (var block : blocks) {
+                CraftEngineBlocks.remove(block);
+            }
+        }
+    }
+
+    private void checkSwampBricks(World world) {
+        var fixtures = List.of("metamorphic_swamp_bricks", "chiseled_metamorphic_swamp_bricks");
+        var blocks = new ArrayList<Block>();
+        try {
+            for (int i = 0; i < fixtures.size(); i++) {
+                var id = fixtures.get(i);
+                var pos = new BlockPos(PORTAL_X + 20 + i, world.getMaxHeight() - 16, PORTAL_Z);
+                place(world, pos, id, blocks);
+                var block = blockAt(world, pos);
+                var state = CraftEngineBlocks.getCustomBlockState(block);
+                require(state != null && !state.isEmpty() && Key.of("botania", id).equals(state.owner().value().id()),
+                        "Unexpected block at " + block.getLocation());
+                var shape = block.getCollisionShape().getBoundingBoxes();
+                var fullCube = new org.bukkit.util.BoundingBox(0, 0, 0, 1, 1, 1);
+                require(shape.size() == 1 && shape.contains(fullCube), id + " collision: " + shape);
+            }
+            getLogger().info("CE_ACCEPT SWAMP_BRICKS blocks=2 collision=full_cube");
+        } finally {
+            for (var block : blocks) {
+                CraftEngineBlocks.remove(block);
+            }
+        }
+    }
+
+    private static void checkPortalCoreCollision(Block block, boolean open) {
+        var state = CraftEngineBlocks.getCustomBlockState(block);
+        require(state != null && !state.isEmpty() && AlfheimPortalBehavior.KEY.equals(state.owner().value().id()),
+                "Portal core is missing at " + block.getLocation());
+        var property = state.getProperty("open");
+        require(property != null && Boolean.valueOf(open).equals(state.get(property)),
+                "Portal core did not switch to open=" + open + " at " + block.getLocation());
+        checkCollision(block, true, "portal core open=" + open);
+    }
+
+    private static void checkCollision(Block block, boolean expected, String fixture) {
+        var boxes = block.getCollisionShape().getBoundingBoxes();
+        boolean hasCollision = !boxes.isEmpty();
+        require(hasCollision == expected,
+                "Unexpected collision for " + fixture + " at " + block.getLocation() + " (" + block.getType()
+                        + "), expected " + (expected ? "a solid shape" : "no shape") + ", was " + boxes);
     }
 
     private void checkNaturalFlowers(World world) {

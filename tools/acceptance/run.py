@@ -101,7 +101,8 @@ def main():
     project = ROOT / "plugin"
     subprocess.run([str(project / "gradlew"), *(["--offline"] if args.offline else []),
                     "build", "acceptanceProbe"], cwd=project, check=True)
-    plugin, = (project / "build/libs").glob("CE-植物魔法-*.jar")
+    version, = re.findall(r'^version = "([^"]+)"$', (project / "build.gradle.kts").read_text(), re.M)
+    plugin = project / "build/libs" / f"CE-植物魔法-{version}.jar"
     output = project / "build/acceptance"
     run = Path(tempfile.mkdtemp(prefix="run-", dir=output))
     log = run / "server.log"

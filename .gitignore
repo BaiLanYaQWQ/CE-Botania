@@ -12,6 +12,7 @@ plugin/.gradle/
 
 # 中间产物（可由 tools/ 重新生成）
 /tmp-*
+__pycache__/
 *.log
 
 # 编辑器

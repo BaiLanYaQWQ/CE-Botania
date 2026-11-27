@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "net.bailanya"
-version = "0.1.0"
+version = "1.0.0"
 
 // 编译期依赖全部 compileOnly：运行时由 CraftEngine 插件与 Paper 提供。
 // paper-api 与 CE 版本对齐服务端（Leaves 26.3 / CraftEngine 26.9.2）。

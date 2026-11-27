@@ -1,0 +1,6 @@
+{
+  "parent": "botania:block/shapes/fence_side_overlay",
+  "textures": {
+    "texture": "botania:block/livingwood_planks"
+  }
+}

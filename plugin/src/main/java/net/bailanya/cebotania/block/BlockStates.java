@@ -1,6 +1,7 @@
 package net.bailanya.cebotania.block;
 
 import net.momirealms.craftengine.core.block.ImmutableBlockState;
+import net.momirealms.craftengine.core.block.UpdateFlags;
 import net.momirealms.craftengine.core.block.entity.BlockEntity;
 import net.momirealms.craftengine.core.block.property.Property;
 
@@ -37,8 +38,36 @@ public final class BlockStates {
     }
 
     /** 精灵门核心：切换开启/关闭外观。 */
+    @SuppressWarnings({"unchecked", "rawtypes"})
     public static boolean setPortalOpen(BlockEntity entity, boolean open) {
-        return setBoolean(entity, OPEN, open);
+        if (entity == null || entity.world == null || entity.world.getBlockEntityAtIfLoaded(entity.pos) != entity) {
+            return false;
+        }
+        ImmutableBlockState state = entity.blockState();
+        if (state == null) {
+            return false;
+        }
+        Property property = state.getProperty(OPEN);
+        if (property == null) {
+            return false;
+        }
+        var pos = entity.pos;
+        var world = entity.world.world();
+        var next = ImmutableBlockState.with(state, property, open);
+        var liveState = world.getBlockState(pos.x(), pos.y(), pos.z());
+        if (!liveState.ownerId().equals(next.customBlockState().ownerId())) {
+            return false;
+        }
+        if (liveState.registryId() != next.customBlockState().registryId()) {
+            // 更新服务器原版区块并同步客户端，同时保留 CE 方块实体和控制器。
+            world.setBlockState(pos.x(), pos.y(), pos.z(), next.customBlockState(),
+                    UpdateFlags.UPDATE_CLIENTS | UpdateFlags.UPDATE_SKIP_ALL_SIDEEFFECTS);
+        } else if (state == next) {
+            return false;
+        }
+        entity.world.setBlockStateAtIfLoaded(pos, next);
+        entity.setBlockState(next);
+        return true;
     }
 
     public static boolean setFilled(BlockEntity entity, boolean filled) {

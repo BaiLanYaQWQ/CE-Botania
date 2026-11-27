@@ -517,7 +517,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.black_pavement_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:black_pavement_slab
   botania:black_pavement_stairs:
     material: paper
@@ -587,7 +587,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.blaze_quartz_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:blaze_quartz_slab
   botania:blaze_quartz_stairs:
     material: paper
@@ -668,7 +668,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.blue_pavement_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:blue_pavement_slab
   botania:blue_pavement_stairs:
     material: paper
@@ -1071,7 +1071,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.corporea_brick_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:corporea_brick_slab
   botania:corporea_brick_stairs:
     material: paper
@@ -1151,7 +1151,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.corporea_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:corporea_slab
   botania:corporea_stairs:
     material: paper
@@ -1322,7 +1322,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.dark_quartz_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:dark_quartz_slab
   botania:dark_quartz_stairs:
     material: paper
@@ -1456,7 +1456,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.dreamwood_planks_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:dreamwood_planks_slab
   botania:dreamwood_planks_stairs:
     material: paper
@@ -1476,7 +1476,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.dreamwood_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:dreamwood_slab
   botania:dreamwood_stairs:
     material: paper
@@ -1599,7 +1599,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.elf_quartz_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:elf_quartz_slab
   botania:elf_quartz_stairs:
     material: paper
@@ -2098,7 +2098,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.green_pavement_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:green_pavement_slab
   botania:green_pavement_stairs:
     material: paper
@@ -2360,7 +2360,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.lavender_quartz_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:lavender_quartz_slab
   botania:lavender_quartz_stairs:
     material: paper
@@ -2633,7 +2633,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.livingrock_bricks_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:livingrock_bricks_slab
   botania:livingrock_bricks_stairs:
     material: paper
@@ -2663,7 +2663,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.livingrock_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:livingrock_slab
   botania:livingrock_slate:
     material: paper
@@ -2759,7 +2759,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.livingwood_planks_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:livingwood_planks_slab
   botania:livingwood_planks_stairs:
     material: paper
@@ -2779,7 +2779,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.livingwood_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:livingwood_slab
   botania:livingwood_stairs:
     material: paper
@@ -3015,7 +3015,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.mana_quartz_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:mana_quartz_slab
   botania:mana_quartz_stairs:
     material: paper
@@ -3139,7 +3139,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_desert_bricks_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_desert_bricks_slab
   botania:metamorphic_desert_bricks_stairs:
     material: paper
@@ -3179,7 +3179,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_desert_cobblestone_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_desert_cobblestone_slab
   botania:metamorphic_desert_cobblestone_stairs:
     material: paper
@@ -3219,7 +3219,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_desert_stone_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_desert_stone_slab
   botania:metamorphic_desert_stone_stairs:
     material: paper
@@ -3259,7 +3259,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_forest_bricks_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_forest_bricks_slab
   botania:metamorphic_forest_bricks_stairs:
     material: paper
@@ -3299,7 +3299,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_forest_cobblestone_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_forest_cobblestone_slab
   botania:metamorphic_forest_cobblestone_stairs:
     material: paper
@@ -3339,7 +3339,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_forest_stone_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_forest_stone_slab
   botania:metamorphic_forest_stone_stairs:
     material: paper
@@ -3379,7 +3379,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_fungal_bricks_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_fungal_bricks_slab
   botania:metamorphic_fungal_bricks_stairs:
     material: paper
@@ -3419,7 +3419,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_fungal_cobblestone_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_fungal_cobblestone_slab
   botania:metamorphic_fungal_cobblestone_stairs:
     material: paper
@@ -3459,7 +3459,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_fungal_stone_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_fungal_stone_slab
   botania:metamorphic_fungal_stone_stairs:
     material: paper
@@ -3499,7 +3499,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_mesa_bricks_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_mesa_bricks_slab
   botania:metamorphic_mesa_bricks_stairs:
     material: paper
@@ -3539,7 +3539,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_mesa_cobblestone_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_mesa_cobblestone_slab
   botania:metamorphic_mesa_cobblestone_stairs:
     material: paper
@@ -3579,7 +3579,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_mesa_stone_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_mesa_stone_slab
   botania:metamorphic_mesa_stone_stairs:
     material: paper
@@ -3619,7 +3619,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_mountain_bricks_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_mountain_bricks_slab
   botania:metamorphic_mountain_bricks_stairs:
     material: paper
@@ -3659,7 +3659,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_mountain_cobblestone_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_mountain_cobblestone_slab
   botania:metamorphic_mountain_cobblestone_stairs:
     material: paper
@@ -3699,7 +3699,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_mountain_stone_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_mountain_stone_slab
   botania:metamorphic_mountain_stone_stairs:
     material: paper
@@ -3739,7 +3739,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_plains_bricks_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_plains_bricks_slab
   botania:metamorphic_plains_bricks_stairs:
     material: paper
@@ -3779,7 +3779,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_plains_cobblestone_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_plains_cobblestone_slab
   botania:metamorphic_plains_cobblestone_stairs:
     material: paper
@@ -3819,7 +3819,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_plains_stone_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_plains_stone_slab
   botania:metamorphic_plains_stone_stairs:
     material: paper
@@ -3859,7 +3859,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_swamp_bricks_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_swamp_bricks_slab
   botania:metamorphic_swamp_bricks_stairs:
     material: paper
@@ -3899,7 +3899,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_swamp_cobblestone_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_swamp_cobblestone_slab
   botania:metamorphic_swamp_cobblestone_stairs:
     material: paper
@@ -3939,7 +3939,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_swamp_stone_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_swamp_stone_slab
   botania:metamorphic_swamp_stone_stairs:
     material: paper
@@ -3979,7 +3979,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_taiga_bricks_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_taiga_bricks_slab
   botania:metamorphic_taiga_bricks_stairs:
     material: paper
@@ -4019,7 +4019,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_taiga_cobblestone_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_taiga_cobblestone_slab
   botania:metamorphic_taiga_cobblestone_stairs:
     material: paper
@@ -4059,7 +4059,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.metamorphic_taiga_stone_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:metamorphic_taiga_stone_slab
   botania:metamorphic_taiga_stone_stairs:
     material: paper
@@ -4109,7 +4109,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.mossy_livingrock_bricks_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:mossy_livingrock_bricks_slab
   botania:mossy_livingrock_bricks_stairs:
     material: paper
@@ -4434,7 +4434,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.polished_livingrock_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:polished_livingrock_slab
   botania:polished_livingrock_stairs:
     material: paper
@@ -5722,7 +5722,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.red_pavement_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:red_pavement_slab
   botania:red_pavement_stairs:
     material: paper
@@ -5772,7 +5772,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.red_quartz_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:red_quartz_slab
   botania:red_quartz_stairs:
     material: paper
@@ -5927,7 +5927,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.shimmerrock_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:shimmerrock_slab
   botania:shimmerrock_stairs:
     material: paper
@@ -5957,7 +5957,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.shimmerwood_planks_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:shimmerwood_planks_slab
   botania:shimmerwood_planks_stairs:
     material: paper
@@ -6119,7 +6119,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.stripped_dreamwood_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:stripped_dreamwood_slab
   botania:stripped_dreamwood_stairs:
     material: paper
@@ -6175,7 +6175,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.stripped_livingwood_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:stripped_livingwood_slab
   botania:stripped_livingwood_stairs:
     material: paper
@@ -6225,7 +6225,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.sunny_quartz_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:sunny_quartz_slab
   botania:sunny_quartz_stairs:
     material: paper
@@ -6465,7 +6465,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.white_pavement_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:white_pavement_slab
   botania:white_pavement_stairs:
     material: paper
@@ -6566,7 +6566,7 @@ items:
     data:
       item_name: '<!i><white><lang:botania.block.yellow_pavement_slab>'
     behavior:
-      type: block_item
+      type: botania:slab_item
       block: botania:yellow_pavement_slab
   botania:yellow_pavement_stairs:
     material: paper

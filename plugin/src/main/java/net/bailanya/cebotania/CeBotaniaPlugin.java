@@ -1,6 +1,7 @@
 package net.bailanya.cebotania;
 
 import net.bailanya.cebotania.block.ApothecaryBehavior;
+import net.bailanya.cebotania.block.SlabItemBehavior;
 import net.bailanya.cebotania.block.FlowerBehavior;
 import net.bailanya.cebotania.block.GroundPlantBehavior;
 import net.bailanya.cebotania.bauble.BaubleEquipment;
@@ -12,11 +13,14 @@ import net.bailanya.cebotania.block.TerrasteelBehavior;
 import net.bailanya.cebotania.block.AlfheimPortalBehavior;
 import net.bailanya.cebotania.block.AlfheimTrade;
 import net.bailanya.cebotania.block.ManaPoolBehavior;
+import net.bailanya.cebotania.block.PaneBehavior;
+import net.bailanya.cebotania.block.WallBehavior;
 import net.bailanya.cebotania.block.SpreaderBehavior;
 import net.bailanya.cebotania.command.BotaniaCommand;
 import net.bailanya.cebotania.recipe.RecipeBook;
 import net.momirealms.craftengine.bukkit.api.CraftEngineItems;
 import net.momirealms.craftengine.core.block.behavior.BlockBehaviors;
+import net.momirealms.craftengine.core.item.behavior.ItemBehaviors;
 import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -60,6 +64,9 @@ public final class CeBotaniaPlugin extends JavaPlugin {
         BlockBehaviors.register(ManaPoolBehavior.KEY, ManaPoolBehavior.factory(this));
         BlockBehaviors.register(SpreaderBehavior.KEY, SpreaderBehavior.factory());
         BlockBehaviors.register(ApothecaryBehavior.KEY, ApothecaryBehavior.factory(this));
+        BlockBehaviors.register(PaneBehavior.KEY, PaneBehavior.factory(this));
+        BlockBehaviors.register(WallBehavior.KEY, WallBehavior.factory());
+        ItemBehaviors.register(SlabItemBehavior.KEY, SlabItemBehavior.factory());
 
         // 2b) 植物魔法辞典：索引界面 + 成书阅读
         this.lexicon = net.bailanya.cebotania.lexicon.Lexicon.load(getClassLoader());
@@ -112,6 +119,8 @@ public final class CeBotaniaPlugin extends JavaPlugin {
         var baubleMenu = new BaubleMenu(this, equipment);
         var magnets = new MagnetRings(equipment);
         var events = Bukkit.getPluginManager();
+        events.registerEvents(new net.bailanya.cebotania.listener.ConnectionUpgrade(this), this);
+        events.registerEvents(new net.bailanya.cebotania.block.MachineShapes(), this);
         events.registerEvents(equipment, this);
         events.registerEvents(baubleMenu, this);
         events.registerEvents(magnets, this);

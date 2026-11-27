@@ -50,7 +50,7 @@ Forge (mod) to Paper (plugin) and claims no rights over the original assets.
 | **Terrasteel line** | ✅ | Agglomeration plate + three tools (3×3 mine / tree felling / beam) |
 | **Alfheim portal** | ✅ | 11-block livingwood frame (both orientations) + states + 14 trades |
 | **Spark system** | ✅ | Installs on pools/altars/plates, 16-block radius, particles only on transfer |
-| Decorative block collision | ⚠️ | Slabs/walls/fences still full-block |
+| Decorative block collision | ⚠️ | Slabs, stairs, panes, fences, gates and walls have placement-dependent shapes. |
 
 **Distribution contents** include 610 block definitions, 1,356 item definitions (including render items), and 611 CraftEngine recipes. The plugin also loads 61 tag groups.
 
@@ -88,6 +88,8 @@ Mystical flower --break--> petal --+--> petal apothecary (fill with water)
 ## Build and distribution
 
 Use JDK 25, Leaves 26.3 or a compatible Paper 26.3 server, and CraftEngine 26.9.2.
+
+The 51 slabs and 51 stairs define 4,386 states. Panes, fences, gates and walls define another 10,916 states. The test server uses `block.serverside-blocks: 18000` in `plugins/CraftEngine/config.yml`. Allow additional capacity for other packs and restart the server after changing this setting.
 Minecraft 26.3 clients connect with the server resource pack.
 
 From the repository root, run the Gradle wrapper and package the CraftEngine resource directory.
@@ -97,9 +99,9 @@ From the repository root, run the Gradle wrapper and package the CraftEngine res
 python3 -c 'from shutil import make_archive; make_archive("plugin/build/libs/CE-Botania-pack", "zip", "pack")'
 ```
 
-Distribute `plugin/build/libs/CE-植物魔法-0.1.0.jar` with the matching
+Distribute `plugin/build/libs/CE-植物魔法-1.0.0.jar` with the matching
 `plugin/build/libs/CE-Botania-pack.zip`. The local distribution archive at
-`dist/ce-botania-latest/CE-Botania-0.1.0.zip` contains deployment instructions, the plugin JAR
+`dist/ce-botania-latest/CE-Botania-1.0.0.zip` contains deployment instructions, the plugin JAR
 and the pack ZIP. The alpha packs under `dist/` are historical releases.
 
 ## Installation
