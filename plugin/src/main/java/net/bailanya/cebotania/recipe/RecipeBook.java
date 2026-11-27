@@ -1,13 +1,5 @@
 package net.bailanya.cebotania.recipe;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,19 +22,32 @@ public final class RecipeBook {
                            String catalystBlock) {
     }
 
-    /** 符文祭坛配方。 */
     /** 精灵交易条目。 */
     public record Elven(String input, String tag, String output, int count) {
     }
 
+    /** 符文祭坛配方。 */
     public record Runic(String id, List<Ingredient> ingredients, String output, int count, long mana) {
     }
 
-    private final Tags tags = new Tags();
-    private final List<Apothecary> apothecary = new ArrayList<>();
-    private final List<Infusion> infusions = new ArrayList<>();
-    private final List<Runic> runics = new ArrayList<>();
-    private final java.util.List<Elven> elvens = new java.util.ArrayList<>();
+    private final Tags tags;
+    private final List<Apothecary> apothecary;
+    private final List<Infusion> infusions;
+    private final List<Runic> runics;
+    private final List<Elven> elvens;
+
+    public RecipeBook() {
+        this(new Tags(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+    }
+
+    RecipeBook(Tags tags, List<Apothecary> apothecary, List<Infusion> infusions,
+               List<Runic> runics, List<Elven> elvens) {
+        this.tags = tags;
+        this.apothecary = apothecary;
+        this.infusions = infusions;
+        this.runics = runics;
+        this.elvens = elvens;
+    }
 
     public Tags tags() {
         return this.tags;
@@ -69,123 +74,8 @@ public final class RecipeBook {
     }
 
     public static RecipeBook load(ClassLoader loader) {
-        RecipeBook book = new RecipeBook();
-        book.loadTags(loader);
-        book.loadApothecary(loader);
-        book.loadInfusions(loader);
-        book.loadRunics(loader);
-        book.loadElven(loader);
-        return book;
+        return new RecipeBookLoader(loader).load();
     }
-
-    private JsonElement read(ClassLoader loader, String name) {
-        try (InputStream in = loader.getResourceAsStream("data/" + name)) {
-            if (in == null) {
-                return null;
-            }
-            return JsonParser.parseReader(new InputStreamReader(in, StandardCharsets.UTF_8));
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
-    private void loadTags(ClassLoader loader) {
-        JsonElement root = read(loader, "tags.json");
-        if (root == null || !root.isJsonObject()) {
-            return;
-        }
-        for (Map.Entry<String, JsonElement> entry : root.getAsJsonObject().entrySet()) {
-            List<String> values = new ArrayList<>();
-            for (JsonElement v : entry.getValue().getAsJsonArray()) {
-                values.add(v.getAsString());
-            }
-            this.tags.put(entry.getKey(), values);
-        }
-    }
-
-    private void loadApothecary(ClassLoader loader) {
-        JsonElement root = read(loader, "recipes/petal_apothecary.json");
-        if (root == null || !root.isJsonArray()) {
-            return;
-        }
-        for (JsonElement e : root.getAsJsonArray()) {
-            JsonObject obj = e.getAsJsonObject();
-            List<Ingredient> ingredients = new ArrayList<>();
-            for (JsonElement ing : obj.getAsJsonArray("ingredients")) {
-                Ingredient parsed = Ingredient.parse(ing);
-                if (parsed != null) {
-                    ingredients.add(parsed);
-                }
-            }
-            Ingredient reagent = obj.has("reagent") ? Ingredient.parse(obj.get("reagent")) : null;
-            String output = outputId(obj.getAsJsonObject("output"));
-            if (output != null) {
-                this.apothecary.add(new Apothecary(
-                        obj.get("id").getAsString(), ingredients, reagent, output));
-            }
-        }
-    }
-
-    private void loadInfusions(ClassLoader loader) {
-        JsonElement root = read(loader, "recipes/mana_infusion.json");
-        if (root == null || !root.isJsonArray()) {
-            return;
-        }
-        for (JsonElement e : root.getAsJsonArray()) {
-            JsonObject obj = e.getAsJsonObject();
-            JsonArray ingredients = obj.getAsJsonArray("ingredients");
-            if (ingredients == null || ingredients.isEmpty()) {
-                continue;
-            }
-            Ingredient input = Ingredient.parse(ingredients.get(0));
-            String output = outputId(obj.getAsJsonObject("output"));
-            if (input == null || output == null) {
-                continue;
-            }
-            int count = obj.getAsJsonObject("output").has("count")
-                    ? obj.getAsJsonObject("output").get("count").getAsInt() : 1;
-            long mana = obj.has("mana") ? obj.get("mana").getAsLong() : 0L;
-            String catalyst = obj.has("catalyst_block") ? obj.get("catalyst_block").getAsString() : null;
-            this.infusions.add(new Infusion(obj.get("id").getAsString(), input, output, count, mana, catalyst));
-        }
-    }
-
-    private void loadRunics(ClassLoader loader) {
-        JsonElement root = read(loader, "recipes/runic_altar.json");
-        if (root == null || !root.isJsonArray()) {
-            return;
-        }
-        for (JsonElement e : root.getAsJsonArray()) {
-            JsonObject obj = e.getAsJsonObject();
-            List<Ingredient> ingredients = new ArrayList<>();
-            for (JsonElement ing : obj.getAsJsonArray("ingredients")) {
-                Ingredient parsed = Ingredient.parse(ing);
-                if (parsed != null) {
-                    ingredients.add(parsed);
-                }
-            }
-            String output = outputId(obj.getAsJsonObject("output"));
-            if (output == null) {
-                continue;
-            }
-            int count = obj.getAsJsonObject("output").has("count")
-                    ? obj.getAsJsonObject("output").get("count").getAsInt() : 1;
-            long mana = obj.has("mana") ? obj.get("mana").getAsLong() : 0L;
-            this.runics.add(new Runic(obj.get("id").getAsString(), ingredients, output, count, mana));
-        }
-    }
-
-    private static String outputId(JsonObject output) {
-        if (output == null) {
-            return null;
-        }
-        if (output.has("item")) {
-            return output.get("item").getAsString();
-        }
-        return null;
-    }
-
-    // —— 匹配 ——
 
     /** 花药台：投入的物品里挑一个当种子，其余必须凑齐配方。 */
     public Apothecary matchApothecary(List<String> thrown) {
@@ -258,38 +148,6 @@ public final class RecipeBook {
             }
         }
         return null;
-    }
-
-    private void loadElven(ClassLoader loader) {
-        try (var in = loader.getResourceAsStream("data/recipes/elven_trade.json")) {
-            if (in == null) {
-                return;
-            }
-            var reader = new java.io.InputStreamReader(in, java.nio.charset.StandardCharsets.UTF_8);
-            var array = com.google.gson.JsonParser.parseReader(reader).getAsJsonArray();
-            for (var element : array) {
-                var object = element.getAsJsonObject();
-                var ingredients = object.getAsJsonArray("ingredients");
-                var output = object.getAsJsonObject("output");
-                if (ingredients == null || ingredients.isEmpty() || output == null) {
-                    continue;
-                }
-                var first = ingredients.get(0).getAsJsonObject();
-                String inputId = first.has("item") ? first.get("item").getAsString() : null;
-                String inputTag = first.has("tag") ? first.get("tag").getAsString() : null;
-                if (inputId == null && inputTag == null) {
-                    continue;
-                }
-                if (!output.has("item")) {
-                    continue;
-                }
-                String outId = output.get("item").getAsString();
-                int count = output.has("count") ? output.get("count").getAsInt() : 1;
-                this.elvens.add(new Elven(inputId, inputTag, outId, count));
-            }
-        } catch (Throwable ignored) {
-            // 数据缺失就跳过
-        }
     }
 
     /** 符文祭坛：材料多重集合匹配。 */
