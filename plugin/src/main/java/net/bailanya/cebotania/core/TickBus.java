@@ -20,9 +20,6 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public final class TickBus {
 
-    /** 一次 tick 里跑多少个方块实体之后让出一次（避免单刻卡顿）。 */
-    private static final int YIELD_EVERY = 512;
-
     private final JavaPlugin plugin;
     private final Set<ManaBlockController> controllers = ConcurrentHashMap.newKeySet();
     private int taskId = -1;
@@ -85,7 +82,6 @@ public final class TickBus {
     }
 
     private void pump() {
-        int processed = 0;
         for (ManaBlockController controller : this.controllers) {
             try {
                 controller.serverTick();
@@ -94,9 +90,6 @@ public final class TickBus {
                 this.plugin.getLogger().warning("方块实体 tick 失败，已从调度里摘除："
                         + throwable);
                 this.controllers.remove(controller);
-            }
-            if (++processed % YIELD_EVERY == 0) {
-                return;  // 这一批到此为止，下一批下个服务器刻再来
             }
         }
     }

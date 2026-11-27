@@ -18,6 +18,14 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:26.3.build.9-alpha")
     compileOnly("net.momirealms:craft-engine-core:26.9.2-SNAPSHOT")
     compileOnly("net.momirealms:craft-engine-bukkit:26.9.2-SNAPSHOT")
+    compileOnly("net.momirealms:craft-engine-bukkit-proxy:26.9.2-SNAPSHOT")
+    testImplementation(files(configurations.compileClasspath))
+    testImplementation("org.junit.jupiter:junit-jupiter:5.11.4")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.11.4")
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
 
 java {

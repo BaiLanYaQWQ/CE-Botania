@@ -1,13 +1,13 @@
 package net.bailanya.cebotania.block;
 
 import net.momirealms.craftengine.bukkit.block.behavior.BukkitBlockBehavior;
-import net.momirealms.craftengine.bukkit.util.LocationUtils;
+import net.momirealms.craftengine.bukkit.util.BlockStateUtils;
+import net.momirealms.craftengine.proxy.minecraft.core.BlockPosProxy;
+import net.momirealms.craftengine.proxy.minecraft.world.level.BlockGetterProxy;
 import net.momirealms.craftengine.core.block.BlockDefinition;
 import net.momirealms.craftengine.core.block.behavior.BlockBehaviorFactory;
 import net.momirealms.craftengine.core.util.Key;
 import org.bukkit.Material;
-import org.bukkit.World;
-import org.bukkit.block.Block;
 
 import java.util.EnumSet;
 import java.util.Set;
@@ -45,36 +45,9 @@ public class GroundPlantBehavior extends BukkitBlockBehavior {
 
     @Override
     public boolean canSurvive(Object thisBlock, Object[] args) {
-        World world = worldOf(args[1]);
-        if (world == null) {
-            return true;  // 拿不到世界就别拦，免得把方块全弹了
-        }
-        var pos = LocationUtils.fromBlockPos(args[2]);
-        Block below = world.getBlockAt(pos.x(), pos.y() - 1, pos.z());
-        return SOIL.contains(below.getType());
-    }
-
-    /**
-     * NMS Level → Bukkit World。
-     *
-     * <p>CE 的 proxy 包不是编译期依赖（它跟着插件一起发），所以这里走反射，
-     * 拿不到就返回 null，由调用方决定放行。</p>
-     */
-    protected static World worldOf(Object minecraftLevel) {
-        if (minecraftLevel == null) {
-            return null;
-        }
-        if (minecraftLevel instanceof World world) {
-            return world;
-        }
-        try {
-            Class<?> proxy = Class.forName(
-                    "net.momirealms.craftengine.proxy.minecraft.world.level.LevelProxy");
-            Object instance = proxy.getField("INSTANCE").get(null);
-            Object result = proxy.getMethod("getWorld", Object.class).invoke(instance, minecraftLevel);
-            return result instanceof World world ? world : null;
-        } catch (ReflectiveOperationException | LinkageError ignored) {
-            return null;
-        }
+        // 区块生成时这里是 WorldGenRegion；直接通过当前视图读取土壤。
+        Object below = BlockPosProxy.INSTANCE.offset(args[2], 0, -1, 0);
+        Object soil = BlockGetterProxy.INSTANCE.getBlockState(args[1], below);
+        return SOIL.contains(BlockStateUtils.fromBlockData(soil).getMaterial());
     }
 }
