@@ -1,6 +1,8 @@
-# 【插件】植物魔法 Botania · Paper 服务端移植版（CraftEngine）
+# 【插件】植物魔法 Botania · Paper 服务端移植版（CraftEngine）· 1.0.0 正式版
 
 > 让玩家**不用装 mod**，只收一个资源包，就能在 Paper/Leaves 服务器里玩植物魔法。
+
+[下载 1.0.0 正式版](https://github.com/BaiLanYaQWQ/CE-Botania/releases/tag/v1.0.0) · [中文更新日志](https://github.com/BaiLanYaQWQ/CE-Botania/blob/main/CHANGELOG.md) · [English changelog](https://github.com/BaiLanYaQWQ/CE-Botania/blob/main/CHANGELOG_EN.md)
 
 ---
 
@@ -119,42 +121,13 @@ Botania（植物魔法）是 Minecraft 最经典的魔法向 mod 之一。这个
 Java：25
 ```
 
-### 步骤
+### 安装或升级到 1.0.0
 
-**1. 安装前置**
-
-先装好 **CraftEngine**，确认能正常生成资源包。
-
-**2. 放插件**
-
-把 `CE-植物魔法-1.0.0.jar` 放进 `plugins/` 目录。
-
-**3. 放资源包**
-
-```bash
-rm -rf plugins/CraftEngine/resources/botania
-mkdir -p plugins/CraftEngine/resources/botania
-unzip CE-Botania-pack.zip -d plugins/CraftEngine/resources/botania
-```
-
-> ⚠️ 注意：解压后应该是 `configuration/`、`resourcepack/`、`pack.yml` 直接在这个目录下，**不要多套一层 `pack/`**
-
-**4. 清缓存（必须）**
-
-```bash
-rm -f plugins/CraftEngine/cache/*.json
-rm -f plugins/CraftEngine/cache/*.bin
-```
-
-> 不清缓存会导致资源包生成不完整（贴图缺失、模型黑紫）
-
-**5. 启动服务器**
-
-CraftEngine 会自动生成资源包并推送给客户端。
-
-**6. 客户端完全退出重进**
-
-不是重连，是**关掉游戏再开**。资源包有较大改动时，重连可能用到旧缓存。
+1. 下载并解压总包 `CE-Botania-1.0.0.zip`。停服，备份世界和现有 CraftEngine 包。
+2. 安装 CraftEngine 26.9.2，将旧版 CeBotania JAR 移出插件目录，把 `CE-植物魔法-1.0.0.jar` 放入 `plugins/`。
+3. 将旧的 Botania 包移至备份位置，把内层 `CE-Botania-pack.zip` 解压到 `plugins/CraftEngine/resources/botania/`。打开这个目录应直接看到 `pack.yml`、`configuration/`、`resourcepack/` 和 `blueprint/`。
+4. 在 CraftEngine 的 `config.yml` 设置 `misc.delay-configuration-load: true`。测试服使用 `block.serverside-blocks: 18000`，同服加载其他包时需额外预留容量。
+5. 启动服务器，让玩家接受更新的资源包。
 
 ---
 
@@ -212,7 +185,7 @@ CraftEngine 会自动生成资源包并推送给客户端。
 ### 还没做的
 
 - **盖亚守护者（Boss 战）**——主线终局内容
-- **装饰方块的精确碰撞**——台阶/墙/栅栏目前都是满格
+- **部分功能方块的精确碰撞**——花药台和符文祭坛仍使用满格碰撞
 - **精灵实体**——交易目前是直接交换，没有精灵飞出来
 - **Corporea 物流网络**——物品管道系统
 - **植物酿造**——20+ 种药水
@@ -241,7 +214,7 @@ A：确认解压到 `resources/botania/` 而不是 `resources/botania/pack/`。
 
 **Q：某个方块放下后没有碰撞**
 
-A：部分装饰方块是满格碰撞。核心方块（池子/祭坛/凝聚板）有正常碰撞。
+A：1.0.0 已修复盆栽、台阶、楼梯、玻璃板、墙、栅栏和栅栏门。魔力池服务端采用内凹池形，发射器采用居中小方块；原版客户端对这两类仍按整格预测。反馈时请附方块名、朝向及相邻方块。
 
 **Q：精灵门薄片方向不对**
 
@@ -254,6 +227,12 @@ A：用 `/botania`。`/bot` 是 Leaves 的假人命令。
 ---
 
 ## 更新日志
+
+### 1.0.0 正式版 · 2026-11-27
+
+- 加入双戒指饰品栏、磁化指环和弱磁兰保护。
+- 对齐 103 种盆栽、51 种台阶、51 种楼梯的碰撞，修复玻璃板、栅栏、栅栏门及 33 种墙的相邻连接。
+- 修复三种水晶、精灵门和泰拉凝聚板碰撞。测试服验证了四种魔力池的池底和池壁，以及四种发射器的全部 24 个朝向状态。
 
 ### 2026-11-14
 

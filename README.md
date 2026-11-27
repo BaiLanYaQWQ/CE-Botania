@@ -1,16 +1,14 @@
 # CeBotania —— 用 CraftEngine 还原植物魔法
 
-> **⚠️ 早期测试阶段（Early Alpha）**
+> **1.0.0 正式版 · 2026 年 11 月 27 日**
 >
-> 这是一个**还在开发中**的还原项目，玩法不完整、接口会变、随时可能出 bug。
-> 目前可从神秘花一路玩到魔力灌注、符文祭坛、泰拉钢和精灵交易。
-> 盖亚守护者及部分工具、饰品和装饰交互仍待补齐。**不建议直接用于正式服务器。**
+> 插件 JAR 和配套 CraftEngine 包已合并提供下载。盖亚守护者及部分工具、饰品和装饰交互仍在开发中。
 
-**语言 / Language** · 中文（本页） | [English](README_EN.md)
+[下载 1.0.0 正式版](https://github.com/BaiLanYaQWQ/CE-Botania/releases/tag/v1.0.0) · [中文更新日志](CHANGELOG.md) · [English changelog](CHANGELOG_EN.md)
 
-📌 **已发布更新日志**：[2026-11-11 更新日志](docs/更新日志-2026-11-11.md) · [English changelog](docs/CHANGELOG-2026-11-11-EN.md)
+中文 | [English](README_EN.md)
 
-📚 往期：[2026-11-10](docs/更新日志-2026-11-10.md) · [2026-11-09](docs/更新日志-2026-11-09.md)
+往期日志 · [2026-11-11](docs/更新日志-2026-11-11.md) · [2026-11-10](docs/更新日志-2026-11-10.md) · [2026-11-09](docs/更新日志-2026-11-09.md)
 
 ---
 

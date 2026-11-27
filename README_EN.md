@@ -1,18 +1,14 @@
 # CeBotania — Recreating Botania on CraftEngine
 
-> **⚠️ Early Alpha**
+> **1.0.0 · Official release · November 27, 2026**
 >
-> This is a **work-in-progress** port. Content is incomplete, APIs will change, and bugs are
-> expected. You can progress from mystical flowers through mana infusion, runes,
-> terrasteel and Alfheim trading. The Gaia Guardian and some tools, trinkets and
-> decorative interactions remain unfinished.
-> **Not recommended for production servers yet.**
+> Download the plugin JAR and matching CraftEngine pack together. The Gaia Guardian and some tools, trinkets and decorative interactions are still in development.
 
-**Language**: [中文](README.md) | English (this page)
+[Download 1.0.0](https://github.com/BaiLanYaQWQ/CE-Botania/releases/tag/v1.0.0) · [English changelog](CHANGELOG_EN.md) · [中文更新日志](CHANGELOG.md)
 
-📌 **Published changelog**: [Changelog 2026-11-11](docs/CHANGELOG-2026-11-11-EN.md) · [中文更新日志](docs/更新日志-2026-11-11.md)
+[中文](README.md) | English
 
-📚 Previous: [2026-11-10](docs/CHANGELOG-2026-11-10-EN.md) · [2026-11-09](docs/CHANGELOG-2026-11-09-EN.md)
+Previous updates · [2026-11-11](docs/CHANGELOG-2026-11-11-EN.md) · [2026-11-10](docs/CHANGELOG-2026-11-10-EN.md) · [2026-11-09](docs/CHANGELOG-2026-11-09-EN.md)
 
 ---
 
