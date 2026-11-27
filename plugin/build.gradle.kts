@@ -54,3 +54,15 @@ tasks.processResources {
 tasks.jar {
     archiveFileName.set("CE-植物魔法-${version}.jar")
 }
+
+// 测试服探针独立打包，使用与生产插件相同的编译依赖。
+val acceptance = sourceSets.create("acceptance") {
+    java.setSrcDirs(listOf("../tools/acceptance/src"))
+    compileClasspath += sourceSets.main.get().output + configurations.compileClasspath.get()
+}
+tasks.register<Jar>("acceptanceProbe") {
+    from(acceptance.output)
+    from("../tools/acceptance/src/plugin.yml")
+    archiveFileName.set("CeBotaniaAcceptance.jar")
+    destinationDirectory.set(layout.buildDirectory.dir("acceptance"))
+}

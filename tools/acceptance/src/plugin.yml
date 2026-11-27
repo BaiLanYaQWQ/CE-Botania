@@ -1,0 +1,9 @@
+name: CeBotaniaAcceptance
+version: '1.0'
+main: acceptance.AcceptanceProbe
+api-version: '1.21'
+depend: [CraftEngine, CeBotania]
+commands:
+  ceaccept:
+    description: Run the CE Botania acceptance checks in an isolated test server
+    usage: /ceaccept
